@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+//apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+ext {
+    // kotlin版本
+    kotlin_version = '1.3.72'
+    // 约束布局的版本
+    contraint_layout_version = '1.1.3'
+    // v7兼容库版本
+    appcompat_v7_version = '28.0.0'
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+//publish {
+//    userOrg = 'kavipyouxiang'// 用户所在组织,好像是用
+//    groupId = 'com.xiaolei'// 包名
+//    artifactId = 'AppTitle'// library的名字
+//    publishVersion = '1.0.1'// 版本
+//    desc = '自适应沉浸式以及凹口屏的标题栏'
+//    website = "https://github.com/xiaolei123/AppTitle"
+//}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support.constraint:constraint-layout:$contraint_layout_version"
+    implementation "com.android.support:appcompat-v7:$appcompat_v7_version"
+}

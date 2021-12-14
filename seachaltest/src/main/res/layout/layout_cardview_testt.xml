@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="普通狀態cardview" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="圆角狀態cardview" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardElevation="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="阴影狀態cardview" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@android:color/holo_orange_light"
+        app:contentPadding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="内边距狀態cardview" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_background" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="10dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_background" />
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

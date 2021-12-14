@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainMenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp" />
+
+    </LinearLayout>
+</ScrollView><!--
+链接：https://blog.csdn.net/mg2flyingff/article/details/105877114-->

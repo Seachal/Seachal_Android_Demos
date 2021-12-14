@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical"
+    tools:context=".Activity.ViewMeasureActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:text="此 demo主要为验证，子 view的MeasureSpec ,
+        受自己的 LayoutParams和父 view 的 MeasureMode共同影响,
+
+
+"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--    子都是 match_parent ，父变化-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:match_parent   ,   LinearLayout:match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_blue_light">
+
+
+                <!--父 wrap_content，子 match_parent，父的大小受子影响  -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:match_parent   ,   LinearLayout:wrap_content" />
+
+            </LinearLayout>
+
+
+            <!-- 子都是wrap_content，  父变化    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:wrap_content   ,   LinearLayout:match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:wrap_content   ,   LinearLayout:wrap_content" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorAccent"
+                android:text="第二波， 让文字足够长,都发生了换行"
+                />
+<!--  第二波          -->
+            <!--    子都是 match_parent ，父变化-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:match_parent   ,   LinearLayout:match_parent  xxxxxxxxxxxxxxxxxxxxxxxxxxxxaaaaabbbbccccddddddeeeeeefffffffccccccccgggggddddddeeeeeefffffffccddddddeeeeeefffffffcc " />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_blue_light">
+
+
+                <!--父 wrap_content，子 match_parent，父的大小受子影响  -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:match_parent   ,   LinearLayout:wrap_content xxxxxxxxxxxxxxxxxxxxxxxxxxxxaaaaabbbbccccddddddeeeeeefffffffccccccccgggggddddddeeeeeefffffffccddddddeeeeeefffffffcc " />
+
+            </LinearLayout>
+
+
+            <!-- 子都是wrap_content，  父变化    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:wrap_content   ,   LinearLayout:match_parent xxxxxxxxxxxxxxxxxxxxxxxxxxxxaaaaabbbbccccddddddeeeeeefffffffccccccccgggggddddddeeeeeefffffffccddddddeeeeeefffffffcc " />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    android:text="TextView:wrap_content   ,   LinearLayout:wrap_content  xxxxxxxxxxxxxxxxxxxxxxxxxxxxaaaaabbbbccccddddddeeeeeefffffffccccccccgggggddddddeeeeeefffffffccddddddeeeeeefffffffcc " />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- 得到的结论是，
+    当View的宽/高是match_parent时,
+       如果父容器的模式是精准模式,那么View也是精准模式并且其大小是父容器的剩余空间;
+       如果父容器是最大模式,那么View也是最大模式并且其大小不会超过父容器的剩余空间。
+
+    当View的宽/高是wrap_content时,
+       不管父容器的模式是精准还是最大化,View的模式总是最大化并且大小不能超过父容器的剩余空间。
+         -->
+</LinearLayout>

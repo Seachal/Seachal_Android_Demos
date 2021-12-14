@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customview.CustomTextViewTestActivity"
+    android:orientation="vertical"
+    >
+
+    <com.seachal.seachaltest.customview.CustomTextView
+        android:id="@+id/tv_measure"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="settext时会调用onLayout吗"
+        android:onClick="buttonClick"
+        />
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#fadfad"
+        android:gravity="center_vertical"
+        android:typeface="monospace"
+        tools:text="《三体》是刘慈欣创作的系列长"/>
+
+
+<!--   用于显示是否超出一行。 -->
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        tools:text="超出一行"/>
+
+<!--    -->
+
+
+    <TextView
+        android:id="@+id/tv_SpannableString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        tools:text="这是大文字,这是小文字”"/>
+
+    <TextView
+        android:id="@+id/tv_SpannableStringPrice_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        tools:text="价格文字 1”"/>
+    <TextView
+        android:id="@+id/tv_SpannableStringPrice_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        tools:text="价格文字 2”"/>
+
+    <TextView
+        android:id="@+id/tv_SpannableStringPrice_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        tools:text="价格文字 2"/>
+
+</LinearLayout>

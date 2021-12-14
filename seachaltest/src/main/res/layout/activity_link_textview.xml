@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="15"
+                tools:text="hhh" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent"
+
+                />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:maxLines="15"
+                android:text="text1"
+                tools:text="text1" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="15"
+                android:text="text2"
+                tools:text="text2" />
+
+            <TextView
+                android:id="@+id/text21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="15"
+                android:text="text21"
+                tools:text="text21" />
+
+
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="15" />
+
+
+            <!--       <TextView-->
+            <!--        android:id="@+id/tv_show"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        tools:text="hhh"/>-->
+
+
+            <TextView
+                android:id="@+id/tv_my_span"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="15"
+                tools:text="hhh" />
+
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="-1"
+                android:singleLine="true"
+                android:text="TextView,TextView2,TextView3,TextView4"
+                tools:text="TextView,TextView2,TextView3,TextView4" />
+
+            <com.seachal.seachaltest.View.MarqueeTextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:marqueeRepeatLimit="-1"
+                android:singleLine="true"
+                android:text="MarqueeTextView,MarqueeTextView,MarqueeTextView,MarqueeTextView"
+                tools:text="MarqueeTextView,MarqueeTextView,MarqueeTextView,Marquee" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:text="checkbox11 不使用过自定义图标，则没有图标显示"
+                />
+
+
+            <CheckBox
+                android:id="@+id/checkbox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@drawable/icon_select"
+                android:drawableStart="@drawable/icon_select"
+                android:text="checkbox10 使用过自定义图标，图标很小仔细看"
+                />
+
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="checkbox，不设置clickable值（默认为true），不设置点击事件，可以切换状态" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:text="checkbox2，clickable=false，不设置点击事件，无法切换状态" />
+
+            <CheckBox
+                android:id="@+id/checkbox3"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:text="选择3，clickable=false，设置点击事件，正确设置 setClick，可以切换状态" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox4"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:text="选择4，clickable=false，设置点击事件，不能正确设置 setClick, 不可以切换状态" />
+
+            <CheckBox
+                android:id="@+id/checkbox5"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="选择5，clickable=true，设置点击事件，可以正常切换状态" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox6"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="选择6，clickable=true，设置点击事件，但是不改变 check 值" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox7"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="选择7，enable=false ， setChecked = true不设置点击事件" />
+
+            <CheckBox
+                android:id="@+id/checkbox8"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="选择8，enable=false，setChecked = false 不设置点击事件" />
+
+            <CheckBox
+                android:id="@+id/checkbox9"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="选择9，enable=false，不设置点击事件" />
+
+
+
+             <Button
+                 android:id="@+id/btn_clickable_false"
+                 android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                 android:clickable="false"
+                 android:text="测试 button setOnClickListener 初始:clickable=false"
+                 android:layout_marginTop="20dp"
+                 android:background="@drawable/btn_clickable_selector"
+                 />
+            <Button
+                android:id="@+id/btn_clickable_true"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:clickable="true"
+                android:text="测试 button setOnClickListener 初始:clickable=false"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_clickable_selector"
+                />
+            <Button
+                android:id="@+id/btn_clickable_3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:enabled="false"
+                android:text="测试 button setOnClickListener enabled=false"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_clickable_selector"
+                />
+            <Button
+                android:id="@+id/btn_clickable_4"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:enabled="true"
+                android:layout_marginTop="20dp"
+                android:text="测试 button setOnClickListener enabled=true"
+                android:background="@drawable/btn_clickable_selector"
+                />
+
+            <Button
+                android:id="@+id/btn_clickable_5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:enabled="false"
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/black"
+                android:text="测试 button setOnClickListener  enabled=false"
+                />
+
+            <Button
+                android:id="@+id/btn_clickable_6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:enabled="true"
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/black"
+                android:text="测试 button setOnClickListener enabled=true"
+                />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

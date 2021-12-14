@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+<!--     子 View  match_parent 后，margin是生效的 -->
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="75dp"
+        android:background="#1343f5"
+        android:layout_marginRight="75dp"
+        android:layout_marginLeft="5dp" />
+
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+
+<!--   在不设置 background时，  默认是透明的。
+android:alpha="0" 时，是会让自己完全透明，子 View也完全看不到了
+android:alpha="1" 时，也就是默认值，变成默认状态。
+
+
+-->
+    <LinearLayout
+        android:id="@+id/rvHead"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:alpha="1"
+        >
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="3"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:text="乌鲁不齐"/>
+    </LinearLayout>
+</FrameLayout>

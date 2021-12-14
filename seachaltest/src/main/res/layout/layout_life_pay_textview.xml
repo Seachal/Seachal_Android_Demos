@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvName"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:textSize="15sp"
+    android:text="北京缴费公司北京缴费公司北京缴费公司北京缴费公司北京缴费公司"
+    android:ellipsize="end"
+    android:maxLines="1"
+    >
+</TextView>

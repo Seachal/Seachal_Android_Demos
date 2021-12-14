@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.seachal.seachaltest">
+    <!-- 读取位置信息 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activity.CustomTitleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AndroiodScreenPropertyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CardVeiwScrollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CardViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BackgroundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImageViewActivity"
+            android:exported="false" />
+        <activity android:name=".Activity.OnTouchActivity" />
+        <activity android:name=".Activity.SwitchButtonActivity" />
+
+        <activity
+            android:name=".permission.PermissionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.AndroidShenRuQianChuActivity" />
+        <activity android:name=".Activity.CustomViewPreviewActivity" />
+        <activity android:name=".Activity.DebugActivity" />
+        <activity android:name=".kotlin.lambda.LambdaActivity" /> <!-- <activity android:name=".kotlin.JavaMainActivity" /> -->
+        <activity android:name=".MainMenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ClipActivity" />
+        <activity android:name=".Activity.CountDownTimerActivity" />
+        <activity android:name=".customview.CustomTextViewTestActivity" />
+        <activity android:name=".Activity.SkipToTaobaoActivity" />
+        <activity android:name=".Activity.SkipToTaobaoActivity2" />
+        <activity android:name=".Activity.TestActivity" />
+        <activity android:name=".Activity.URITestActivity" />
+        <activity android:name=".TextView.LinkTextViewActivity" />
+        <activity android:name=".ShareGeneratePicture.ShareGeneratePictureActivity" />
+        <activity android:name=".RecyclerViewTest.RecyclerViewTestActivity" />
+        <activity android:name=".BitmapDip.BitmapDipActivity" />
+        <activity android:name=".Activity.ThirdActivity" />
+        <activity android:name=".Activity.SecondActivity" />
+        <activity android:name=".Activity.EditTextMinAndMaxLengthActivity" />
+        <activity android:name=".Activity.ViewMeasureActivity" />
+        <activity android:name=".kotlin.KotlinMainActivity" />
+        <activity android:name=".Activity.FourthActivity" />
+    </application>
+
+</manifest>

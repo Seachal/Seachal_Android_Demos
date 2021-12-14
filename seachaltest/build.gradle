@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'//启用扩展支持直接使用ID
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.seachal.seachaltest"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    // butterknife
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+    // retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    // RxJava2
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    // eventbus
+    implementation "org.greenrobot:eventbus:$eventbus"
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+    // 运行时权限
+    implementation "pub.devrel:easypermissions:$easypermissions"
+
+    implementation("com.alibaba.android:vlayout:${vlayout}@aar") { transitive = true }
+    // banner导航栏
+    implementation "com.youth.banner:banner:$banner"
+    //
+    implementation "com.blankj:utilcode:$utilcode"
+//    implementation "com.github.yalantis:ucrop:$ucrop"
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+
+
+    annotationProcessor 'com.zhangyue.we:x2c-apt:1.1.2'
+    implementation 'com.zhangyue.we:x2c-lib:1.0.6'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.multidex:multidex:2.0.1"
+
+    implementation project(':AppTitle')
+
+}

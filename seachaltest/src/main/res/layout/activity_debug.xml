@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DebugActivity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="debug"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="debug"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="debug"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="debug"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="debug"
+        android:gravity="center"
+        />
+</LinearLayout>

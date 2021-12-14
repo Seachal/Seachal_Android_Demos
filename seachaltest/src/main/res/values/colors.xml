@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="inside_color">#d1cdcd</color>
+    <color name="color_radish_progress">#1aad19</color>
+
+
+    <color name="default_image_background">#FFDEDEDE</color>
+
+    <!--新版颜色-->
+    <color name="simple_gray">#eeeeee</color>
+    <color name="gray_white">#a9a9a9</color>
+    <!-- edittext hint文字颜色 -->
+    <color name="edit_hint_color">#cacaca</color>
+    <!-- 点击button变色 -->
+    <color name="pressed_btn_bg">#ae1906</color>
+    <!-- 我的  余额黄色-->
+    <color name="profile_yellow">#ffee00</color>
+    <!-- 获取验证码字体颜色 -->
+    <color name="get_the_code_color">#5187c2</color>
+    <!-- 按钮不能点击时文字颜色 -->
+    <color name="btn_noclick_text">#929292</color>
+    <!-- 背景底色色值 -->
+    <color name="backgroundColor">#f7f7f7</color>
+    <!-- 灰色文字色值 -->
+    <color name="text_gray">#9a9a9a</color>
+    <color name="text_gray_9a">#a9a9a9</color>
+
+    <color name="dialog_bg_color">#60000000</color>
+    <!-- 点击效果背景色 -->
+    <color name="click_background">#efefef</color>
+    <color name="choose_eara_item_press_color">#f2f2f2</color>
+    <!-- 分割线及图片描边色值 -->
+    <color name="text_black">#525252</color>
+    <color name="text_red">#ee302d</color>
+    <color name="quxiao_zhangdan_bg">#DEDEDE</color>
+    <!-- 橘红文字色值 -->
+    <color name="text_orange">#ff5a00</color>
+    <color name="color_f26518">#f26518</color>
+
+    <!-- 返现比例box -->
+    <color name="return_box">#ff5a00</color>
+    <!-- 主题色红色色值 -->
+    <color name="title_color">#d81300</color>
+    <!-- 淡灰色 -->
+    <color name="gray_light">#585858</color>
+    <color name="transparent">#00000000</color>
+    <!-- 微信文字颜色 -->
+    <color name="weixin_text">#373737</color>
+    <!-- 商家地址 点击变色  -->
+    <color name="press_yellow">#fff67f</color>
+    <color name="text_gray_guide">#969696</color>
+    <!-- 绿色 -->
+    <color name="text_green">#00b600</color>
+    <color name="coupon_on_text">#40b597</color>
+    <color name="search_text_hint">#fd9086</color>
+
+
+    <!--上门是老板的-->
+    <!--点击前后颜色-->
+    <color name="common_list_item_bg_pressed_color">#FFEEEEEE</color>
+    <color name="common_list_item_bg_normal_color">@color/white</color>
+    <!-- 边框线颜色 -->
+    <color name="square_edit_box_line">#d9d9d9</color>
+
+    <color name="sr_color_primary">#FFD81300</color>
+    <color name="sr_color_primary_dark">#FFD81300</color>
+    <!--背景底色色值-->
+    <color name="sr_window_background">#f7f7f7</color>
+    <color name="black">#FF000000</color>
+    <color name="blue">#007AFF</color>
+    <color name="gray">#a3a3a3</color>
+    <color name="dark_red">#ba1000</color>
+    <color name="light_gray">#dedede</color>
+    <color name="light_gray1">#e5e5e5</color>
+    <color name="red">#d81300</color>
+    <color name="drak_gray">#585858</color>
+    <color name="stl_indicator">#DC1B00</color>
+    <color name="deep_gray">#9a9a9a</color>
+    <color name="text_black_small">#5e5e5e</color>
+
+    <!--新版的规范-->
+    <color name="back">#f3f3f3</color>
+    <color name="red1">#fc3d1e</color>
+    <color name="red2">#ae1906</color>
+    <color name="red4">#f9e4df</color>
+    <color name="red04">#66fc3d1e</color>
+    <color name="yellow1">#4f4a3d</color>
+    <color name="yellow2">#c3a868</color>
+    <color name="orange1">#ff5a00</color>
+    <color name="orange2">#f78141</color>
+    <color name="green1">#01b509</color>
+    <color name="green2">#6cc863</color>
+    <color name="blue1">#40a7f0</color>
+    <color name="gray1">#222222</color>
+    <color name="c_CC222222">#CC222222</color>
+    <color name="gray2">#666666</color>
+    <color name="gray3">#acacac</color>
+    <color name="gray4">#e5e5e5</color>
+    <color name="gray5">#eeeeee</color>
+    <color name="gray6">#f3f3f3</color>
+    <color name="gray7">#fafbfb</color>
+    <color name="yellow3">#f8edc6</color>
+    <color name="white">@android:color/white</color>
+    <color name="white1">#fffffe</color>
+    <color name="trawhite1">#aafffffe</color>
+    <color name="dividing_line">#dddddd</color>
+    <color name="translucence">#b3ffffff</color>
+    <color name="orange2translu">#dff78141</color>
+    <color name="popup_dividing_line">#3fff</color>
+    <color name="c_fc3d1e">#fc3d1e</color>
+    <color name="c_fc3455">#fc3455</color>
+    <color name="c_e6e6e6">#e6e6e6</color>
+    <color name="c_e5e5e5">#e5e5e5</color>
+    <color name="c_f9edc7">#f9edc7</color>
+    <color name="c_f78141">#f78141</color>
+    <color name="c_fbe0cb">#fbe0cb</color>
+    <color name="c_f57149">#f57149</color>
+    <color name="c_ff4c71">#ff4c71</color>
+    <color name="c_b3b3b3">#b3b3b3</color>
+    <color name="c_8b8b8b">#8b8b8b</color>
+    <color name="c_dddddd">#dddddd</color>
+    <color name="c_f9f9f9">#f9f9f9</color>
+    <color name="c_b3f78141">#b3f78141</color>
+    <color name="c_80f78141">#80f78141</color>
+
+    <color name="c_09141f">#09141f</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_888888">#888888</color>
+    <color name="c_222222">#222222</color>
+    <color name="c_49E68C">#49E68C</color>
+    <color name="c_f3f3f3">#f3f3f3</color>
+    <color name="c_e6ffffff">#e6ffffff</color>
+    <color name="c_1a666666">#1a666666</color>
+    <color name="c_1a000000">#1a000000</color>
+    <!--    <color name="gray6">#f3f3f3</color>-->
+
+
+
+
+</resources>

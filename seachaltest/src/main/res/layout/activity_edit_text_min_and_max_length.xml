@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.EditTextMinAndMaxLengthActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_min"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="输入"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/et_min2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="输入"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/et_min3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="输入"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/et_min4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="输入date"
+                android:inputType="date"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/et_min5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="输入text"
+                android:inputType="text"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/et_min6"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="输入none"
+                android:inputType="none"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/et_min7"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="numberDecimal"
+                android:inputType="numberDecimal"
+                android:maxLength="10" />
+
+
+            <EditText
+                android:id="@+id/et_min8"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="numberDecimal"
+                android:inputType="numberDecimal"
+                android:maxLength="10" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="zhang phil @ csdn"
+        android:textColor="@android:color/white"
+        android:textSize="80dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="80dp"
+        android:autoSizeMinTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="zhang phil @ csdn"
+        android:textColor="@android:color/white"
+        android:textSize="80dp" />
+
+
+    <!--两个一行显示文字是，特大显示会产生什么影响呢，  两个 textview 的size 是不能同时变大小的-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="@android:color/holo_blue_bright"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="zhang phil @ csdn1111111"
+            android:textColor="@android:color/white"
+            android:textSize="80dp" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="80dp"
+            android:autoSizeMinTextSize="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="zhang phil @ csdn"
+            android:textColor="@android:color/white"
+            android:textSize="80dp" />
+    </LinearLayout>
+</LinearLayout>
