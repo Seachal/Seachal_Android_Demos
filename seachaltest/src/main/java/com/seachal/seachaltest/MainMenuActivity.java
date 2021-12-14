@@ -33,7 +33,6 @@ import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.LinkTextViewActivity;
-import com.seachal.seachaltest.bean.StartActivityBean;
 import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 
@@ -53,7 +52,7 @@ public class MainMenuActivity extends AppCompatActivity  {
     private long exitTime = 0;
 
 
-    private List<StartActivityBean> activityList = new ArrayList<StartActivityBean>();
+    private List activityList = new ArrayList<StartActivityBean>();
 
 
     {
@@ -203,6 +202,37 @@ public class MainMenuActivity extends AppCompatActivity  {
             }
         }
     }
+
+    class StartActivityBean {
+
+        private String mTitle;
+
+        private Class mActivityClass;
+
+
+        public StartActivityBean(String title, Class activityClass) {
+            mTitle = title;
+            mActivityClass = activityClass;
+        }
+
+        public String getTitle() {
+            return mTitle;
+        }
+
+        public void setTitle(String title) {
+            mTitle = title;
+        }
+
+        public Class getActivityClass() {
+            return mActivityClass;
+        }
+
+        public void setActivityClass(Class activityClass) {
+            mActivityClass = activityClass;
+        }
+
+    }
+
 
 
 }
