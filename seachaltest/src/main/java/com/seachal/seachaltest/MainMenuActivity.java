@@ -203,7 +203,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         }
     }
 
-    class StartActivityBean {
+   public class StartActivityBean {
 
         private String mTitle;
 
