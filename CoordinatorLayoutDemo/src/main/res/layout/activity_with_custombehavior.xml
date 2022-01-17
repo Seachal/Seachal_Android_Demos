@@ -5,6 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+  <!--
+
+* CoordinatorLayout 是 parent View
+* Button 是  child View
+* DependencyView 是 Button 依赖的 View, 就是 Button 做改变时，会参照 DependencyView.
+
+
+  -->
+
     <Button
         android:id="@+id/child"
         android:layout_width="wrap_content"

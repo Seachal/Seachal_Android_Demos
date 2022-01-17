@@ -27,6 +27,14 @@ public class DependencyView extends androidx.appcompat.widget.AppCompatButton {
         super(context, attrs, defStyleAttr);
     }
 
+
+    /**
+     * 这里的作用是是， 在 view  响应触摸事件时，随手指移动位置。
+     *
+     *
+     * @param event
+     * @return
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
