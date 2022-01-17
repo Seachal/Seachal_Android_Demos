@@ -12,8 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AppTitle" />
+            <option value="$PROJECT_DIR$/CoordinatorLayoutDemo" />
             <option value="$PROJECT_DIR$/LaunchOtherApp" />
             <option value="$PROJECT_DIR$/LaunchedApp" />
+            <option value="$PROJECT_DIR$/NestedScrolling" />
             <option value="$PROJECT_DIR$/seachaltest" />
           </set>
         </option>
