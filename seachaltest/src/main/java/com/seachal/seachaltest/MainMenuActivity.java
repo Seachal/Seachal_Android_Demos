@@ -93,7 +93,7 @@ public class MainMenuActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_nenu);
         ButterKnife.bind(this);
         recycler_view.setAdapter(new MyAdapter(MainMenuActivity.this, activityList));
         recycler_view.setLayoutManager(new LinearLayoutManager(MainMenuActivity.this));
