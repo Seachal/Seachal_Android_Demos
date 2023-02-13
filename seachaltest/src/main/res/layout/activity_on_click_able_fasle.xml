@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:enabled="false"
+    tools:context=".Activity.OnClickAbleFasleActivity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="root   enabled false ,是不是可以禁用所有的点击事件,\n"
+
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/tvd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=" 答案是并不能禁用其他 view  的点击事件。不信点击 tv1,tv2"
+        android:textColor="@color/red"
+        android:textSize="30sp" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=" tv1"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=" tv2"
+        android:textSize="30sp" />
+
+
+</LinearLayout>

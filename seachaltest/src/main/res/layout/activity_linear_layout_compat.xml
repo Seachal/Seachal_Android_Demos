@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:divider="@drawable/line"
+    app:dividerPadding="15dp"
+    app:showDividers="beginning|middle|end"
+    >
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=" line1   root   enabled false ,是不是可以禁用所有的点击事件,\n"
+
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="lin2  root   enabled false ,是不是可以禁用所有的点击事件,\n"
+
+        android:textSize="30sp" />
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+<!--
+
+   LinearLayoutCompat 相比  LinearLayout主要是增加了 分割线。
+-->

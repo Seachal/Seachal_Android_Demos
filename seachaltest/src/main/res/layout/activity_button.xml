@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ButtonActivity">
+
+    <RadioGroup
+        android:id="@+id/rgAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/rbErrorBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="错误反馈"
+            android:textColor="@color/gray2"
+            android:button="@null"
+            />
+
+        <RadioButton
+            android:id="@+id/rbFunctionBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="功能建议"
+            android:textColor="@color/gray2"
+            android:button="@null"
+            />
+
+    </RadioGroup>
+
+</LinearLayout>

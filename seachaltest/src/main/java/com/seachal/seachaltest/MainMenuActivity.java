@@ -17,18 +17,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.seachal.seachaltest.Activity.AndroiodScreenPropertyActivity;
 import com.seachal.seachaltest.Activity.BackgroundActivity;
+import com.seachal.seachaltest.Activity.ButtonActivity;
 import com.seachal.seachaltest.Activity.CardVeiwScrollActivity;
 import com.seachal.seachaltest.Activity.CardViewActivity;
 import com.seachal.seachaltest.Activity.CountDownTimerActivity;
 import com.seachal.seachaltest.Activity.CustomTitleActivity;
 import com.seachal.seachaltest.Activity.CustomViewPreviewActivity;
 import com.seachal.seachaltest.Activity.DebugActivity;
+import com.seachal.seachaltest.Activity.DialogTestActivity;
 import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
+import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity2;
 import com.seachal.seachaltest.Activity.URITestActivity;
 import com.seachal.seachaltest.Activity.ViewMeasureActivity;
+import com.seachal.seachaltest.Activity.ViewStubActivity;
 import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
@@ -75,7 +79,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("自定义 进度条", CustomViewPreviewActivity.class));
         activityList.add(new StartActivityBean("权限 & 设置, 在设置拒绝位置权限，app是否会被杀死？是。", PermissionActivity.class));
         activityList.add(new StartActivityBean("IamgeView gif  selector师傅支持 gif", ImageViewActivity.class));
-        activityList.add(new StartActivityBean("background 并不会对上层的 view裁剪， 甚至会被上层的 view 遮挡住圆角。 ", BackgroundActivity.class));
+        activityList.add(new StartActivityBean("background 并不会对子 view裁剪， 甚至会被子 view 遮挡住圆角。 ", BackgroundActivity.class));
         activityList.add(new StartActivityBean("cardview 阴影颜色",
                 CardViewActivity.class));
         activityList.add(new StartActivityBean("cardview 原生  越靠近屏幕底部颜色越深",
@@ -85,7 +89,15 @@ public class MainMenuActivity extends AppCompatActivity  {
                 AndroiodScreenPropertyActivity.class));
         activityList.add(new StartActivityBean("自定义 title",
                 CustomTitleActivity.class));
+        activityList.add(new StartActivityBean("ViewStub",
+                ViewStubActivity.class));
+        activityList.add(new StartActivityBean("如果禁用 Activity 中所有点击事件",
+                OnClickAbleFasleActivity.class));
+        activityList.add(new StartActivityBean("Button RadioGroupButton  RadioButton",
+                ButtonActivity.class));
 
+        activityList.add(new StartActivityBean("Dialog",
+                DialogTestActivity.class));
 
     }
 

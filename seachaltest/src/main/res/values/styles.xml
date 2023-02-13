@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="train_search_filter_anim">
+        <item name="android:windowEnterAnimation">@anim/train_filter_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/train_filter_dialog_out_anim</item>
+    </style>
+
 </resources>

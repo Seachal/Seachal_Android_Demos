@@ -12,10 +12,10 @@ class TestDiYiHangDaiMa {
 
 
 
-    public fun  ss(){
-        val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape", "Watermelon")
-        val lambda = { fruit: String -> fruit.length }
-        val maxLengthFruit = list.maxBy(lambda)
-
-    }
+//    public fun  ss(){
+//        val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape", "Watermelon")
+//        val lambda = { fruit: String -> fruit.length }
+//        val maxLengthFruit = list.maxBy(lambda)
+//
+//    }
 }

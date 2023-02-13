@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Activity.DialogTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ButtonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.OnClickAbleFasleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ViewStubActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.CustomTitleActivity"
             android:exported="false" />
         <activity
@@ -33,7 +45,6 @@
             android:exported="false" />
         <activity android:name=".Activity.OnTouchActivity" />
         <activity android:name=".Activity.SwitchButtonActivity" />
-
         <activity
             android:name=".permission.PermissionActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

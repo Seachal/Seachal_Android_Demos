@@ -7,12 +7,14 @@
     android:layout_marginTop="10dp"
     android:layout_marginBottom="20dp"
     android:background="@color/cardview_dark_background"
-    tools:context=".Activity.BackgroundActivity">
+    tools:context=".Activity.BackgroudActivity"
+    android:orientation="vertical"
+    >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/shape_solid_white_full_corner_20dp"
@@ -30,5 +32,48 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        >
+        <ImageView
+            android:id="@+id/iv_generating_playback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/bg_game"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+
+
+<!--       通过背景图设置 颜色透明度， 达到半透明效果。 -->
+        <LinearLayout
+            android:id="@+id/ll_generating_playback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@color/c_bf000000"
+            >
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="回放视频正在生成中，请稍候..."
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </LinearLayout>
