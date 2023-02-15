@@ -5,3 +5,17 @@ n
 \seachaltest/src/main/java/com/seachal/seachaltest/Activity/AndroidShenRuQianChuActivity.java,5/4/543ad8c4bb37a06dda40f62841dcb111f99a81a0
 ƒ
 SCoordinatorLayoutDemo/src/main/java/android/coordinatorlayoutdemo/MainActivity.java,f/e/fefaeae8eff235bdc85dd24c931dbb8152667873
+X
+(seachaltest/src/main/AndroidManifest.xml,a/7/a71dd6bb4874088639bf8a16e55fcd2ebf65d35e
+ˆ
+Xseachaltest/src/main/java/com/seachal/seachaltest/Activity/OnClickAbleFasleActivity.java,c/f/cfbf785fe38692c909078c6fcb0fb4316f40c2b4
+w
+Gseachaltest/src/main/java/com/seachal/seachaltest/MainMenuActivity.java,2/5/2586dc68af495a5603621924b654459a579a06fe
+ƒ
+Sseachaltest/src/main/java/com/seachal/seachaltest/ConstraintLayoutTestActivity.java,4/5/452945e93f58edd17c9ce83835fdac701b5fc813
+~
+Nseachaltest/src/main/java/com/seachal/seachaltest/Activity/ButtonActivity.java,b/b/bb1ecf33a57e56d78a80d1915f20983208290204
+s
+Cseachaltest/src/main/java/com/seachal/seachaltest/ColorsDialog.java,b/7/b78751af3043c1224d239a600e4051b76335f0e3
+‚
+Rseachaltest/src/main/java/com/seachal/seachaltest/Activity/DialogTestActivity.java,1/d/1db721f146ae82c3279f12e69555cb52440260bf

@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <translate
-        android:duration="100"
-        android:fromYDelta="-100%p"
-        android:toYDelta="0%p"
-        />
+<!--    <scale-->
+<!--        android:duration="100"-->
+<!--        android:fillAfter="true"-->
+<!--        android:fillBefore="false"-->
+<!--        android:fromXScale="0.7"-->
+<!--        android:fromYScale="0.7"-->
+<!--        android:pivotX="50%"-->
+<!--        android:pivotY="50%"-->
+<!--        android:toXScale="1.0"-->
+<!--        android:toYScale="1.0"/>-->
+<!--    <translate-->
+<!--        android:duration="200"-->
+<!--        android:fillAfter="true"-->
+<!--        android:fillBefore="false"-->
+<!--        android:fromYDelta="0"-->
+<!--        android:toYDelta="100%"/>-->
+
+        <translate
+            android:duration="200"
+            android:fillAfter="true"
+            android:fillBefore="false"
+            android:fromYDelta="50%"
+            android:toYDelta="100%"/>
+
+
 
 </set>
