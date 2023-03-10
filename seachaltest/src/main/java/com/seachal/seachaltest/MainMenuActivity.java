@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.seachal.seachaltest.Activity.AndroiodScreenPropertyActivity;
 import com.seachal.seachaltest.Activity.BackgroundActivity;
 import com.seachal.seachaltest.Activity.ButtonActivity;
+import com.seachal.seachaltest.Activity.CanvasSaveRestoreActivity;
 import com.seachal.seachaltest.Activity.CardVeiwScrollActivity;
 import com.seachal.seachaltest.Activity.CardViewActivity;
 import com.seachal.seachaltest.Activity.CountDownTimerActivity;
@@ -98,6 +99,9 @@ public class MainMenuActivity extends AppCompatActivity  {
 
         activityList.add(new StartActivityBean("Dialog",
                 DialogTestActivity.class));
+
+        activityList.add(new StartActivityBean("Canvase Save Restore",
+                CanvasSaveRestoreActivity.class));
 
     }
 

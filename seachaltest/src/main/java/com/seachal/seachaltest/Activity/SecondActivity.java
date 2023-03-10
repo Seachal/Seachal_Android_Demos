@@ -11,13 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.seachal.seachaltest.BaseApp;
 import com.seachal.seachaltest.MainMenuActivity;
 import com.seachal.seachaltest.R;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseActivity {
 
     int clickCount = 0;
 

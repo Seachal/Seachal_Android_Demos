@@ -80,3 +80,71 @@ FloatingActionButton.Behavior 的主要作用就是防止被 Snackbar 盖住。
 ```bash
 app:layout_behavior="具体Behavior的类路径"
 ```
+
+
+## canvas save restore 
+```Java
+      Paint paint_green = new Paint();
+        paint_green.setColor(Color.GREEN);
+        Paint paint_red   =  new Paint();
+        paint_red.setColor(Color.RED);
+
+        Rect rect1 = new Rect(300,10,500,100);
+        canvas.drawRect(rect1, paint_red); //画出原轮廓
+
+        canvas.rotate(30);//顺时针旋转画布
+        canvas.drawRect(rect1, paint_green);//画出旋转后的矩形
+```
+![img.png](img.png)
+
+2 save  restore
+``` Java
+        Paint paint_green = new Paint();
+        paint_green.setColor(Color.GREEN);
+        Paint paint_red   =  new Paint();
+        paint_red.setColor(Color.RED);
+
+        Rect rect1 = new Rect(300,10,500,100);
+        canvas.drawRect(rect1, paint_red); //画出原轮廓
+
+        canvas.save(); // 保存当前未旋转状态
+
+        canvas.rotate(30);//顺时针旋转画布
+        canvas.restore();  // 恢复之前保存的画布状态，那么就看不到"canvas.rotate(30)"的效果
+        canvas.drawRect(rect1, paint_green);//画出旋转后的矩形
+```
+![img_1.png](img_1.png)
+
+> PS中的图层可谓PS的精华，它保证了在一个图层中绘制而不会影响到其他的图层
+在Canvas中每次的save()都存将先前的状态保存下来，产生一个新的绘图层，
+我们可以随心所欲地地画而不会影响其他已画好的图，最后用restore()将这个图层合并到原图层
+这像是栈的概念，每次save()，新图层入栈(注意可以save多次)，只有栈顶的层可以进行操作，restore()弹栈
+
+![img_3.png](img_3.png)
+
+[Android关于Canvas你所知道的和不知道的一切 - 掘金](https://juejin.cn/post/6844903705930629128#heading-21)
+
+3 translate
+```Java
+ Paint paint_green = new Paint();
+        paint_green.setColor(Color.GREEN);
+        Paint paint_red   =  new Paint();
+        paint_red.setColor(Color.RED);
+
+        Rect rect1 = new Rect(300,10,500,100);
+        canvas.drawRect(rect1, paint_red); //画出原轮廓
+
+        canvas.save(); // 保存当前未旋转状态
+
+        canvas.rotate(30);//顺时针旋转画布
+        canvas.restore();  // 恢复之前保存的画布状态，那么就看不到"canvas.rotate(30)"的效果
+
+        canvas.translate(100,100);
+        canvas.drawRect(rect1, paint_green);//画出旋转后的矩形
+```
+![img_2.png](img_2.png)
+
+我们看到红色的矩形并没有跟随发生旋转,所以说我们的canvas并不是我们看到的屏幕.刚才我们说canvas是一个静态缓冲层,缓冲层已经证明了,那么为什么说是静态的呢?说canvas是静态是因为它发生变换(包括位移,旋转,切割,放缩,斜切)后是不可逆的,假如说我们执行了canvas.translate()方法让canvas向右平移100个像素,那么我们之后对canvas的所有绘画动作都是基于它位移过后的位置.
+
+那么我们如何在一次canvas变换后重新得到初始状态的canvas呢,我们可以使用canvas.save()保存canvas状态,使用canvas.restore()来取回canvas.我们这里主要说的是canvas.save()和canvas.restore()的保存和取回规则.我们可以这样认为,调用canvas.save()方法我们将一个canvas实例放进了一个栈中,调用canvas.restore()方法是将一个canvas实例从栈中取出,我们知道栈的特点是后进先出,所以当我们多次调用canvas.save()方法后,再调用canvas.restore()方法,我们取出的是最后一个存入栈中的canvas实例,如果继续调用canvas.restore()我们得到的是倒数第二个存入栈中的canvas实例.
+

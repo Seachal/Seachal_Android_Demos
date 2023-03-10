@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Activity.CanvasSaveRestoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HighLevelFunctionActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.DialogTestActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,21 @@
+
+C
+java:S1604)"(Make this anonymous inner class a lambda(×µˆ²ûÿÿÿÿ
+=
+java:S16047"(Make this anonymous inner class a lambda(ëÑÕ
+C
+java:S1604B"(Make this anonymous inner class a lambda(Ÿõşéıÿÿÿÿ
+C
+java:S1604I"(Make this anonymous inner class a lambda(ê°¡Ëùÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËÔÃO
+o
+java:S1450"YRemove the "mViewStub1" field and declare it as a local variable in the relevant methods.(ÜÎÙË
+
+java:S1450"dRemove the "mViewStubContentView2" field and declare it as a local variable in the relevant methods.(€°ˆÙùÿÿÿÿ
+V	java:S1256"<This block of commented-out lines of code should be removed.(·¦–’ûÿÿÿÿ
+_
+java:S1854P"IRemove this useless assignment to local variable "mViewStubContentView3".(÷ 
+P
+java:S1481P":Remove this unused "mViewStubContentView3" local variable.(÷ 
+T
+java:S1068"9Remove this unused "mViewStubContentView2" private field.(€°ˆÙùÿÿÿÿ
