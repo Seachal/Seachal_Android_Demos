@@ -82,11 +82,8 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("权限 & 设置, 在设置拒绝位置权限，app是否会被杀死？是。", PermissionActivity.class));
         activityList.add(new StartActivityBean("IamgeView gif  selector师傅支持 gif", ImageViewActivity.class));
         activityList.add(new StartActivityBean("background 并不会对子 view裁剪， 甚至会被子 view 遮挡住圆角。 ", BackgroundActivity.class));
-        activityList.add(new StartActivityBean("cardview 阴影颜色",
-                CardViewActivity.class));
-        activityList.add(new StartActivityBean("cardview 原生  越靠近屏幕底部颜色越深",
-                CardVeiwScrollActivity.class));
-
+        activityList.add(new StartActivityBean("cardview 阴影颜色", CardViewActivity.class));
+        activityList.add(new StartActivityBean("cardview 原生  越靠近屏幕底部颜色越深", CardVeiwScrollActivity.class));
         activityList.add(new StartActivityBean("屏幕分辨率", AndroiodScreenPropertyActivity.class));
         activityList.add(new StartActivityBean("自定义 title", CustomTitleActivity.class));
         activityList.add(new StartActivityBean("ViewStub", ViewStubActivity.class));
@@ -99,6 +96,9 @@ public class MainMenuActivity extends AppCompatActivity  {
 
         activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
 
+        activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
+
+        activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
     }
 
 
