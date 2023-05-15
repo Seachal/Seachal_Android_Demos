@@ -41,6 +41,7 @@ import com.seachal.seachaltest.TextView.LinkTextViewActivity;
 import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
 import com.seachal.seachaltest.gestureDetector.GestureDetector1Activity;
 import com.seachal.seachaltest.permission.PermissionActivity;
+import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,7 +99,7 @@ public class MainMenuActivity extends AppCompatActivity  {
 
         activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
 
-        activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
+        activityList.add(new StartActivityBean("一次启动多个 Activity", StartMultiActivity.class));
     }
 
 

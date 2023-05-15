@@ -18,11 +18,7 @@
             android:exported="false"
             android:label="@string/title_activity_start_multi"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".gestureDetector.GestureDetectorTapActivity"
-            android:exported="false"
-            android:label="@string/title_activity_gesture_detector_tap"
-            android:theme="@style/AppTheme" />
+
         <activity
             android:name=".gestureDetector.GestureDetector1Activity"
             android:exported="false" />

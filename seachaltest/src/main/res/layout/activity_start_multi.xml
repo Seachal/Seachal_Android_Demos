@@ -10,10 +10,10 @@
 
     <TextView
         android:id="@+id/tv_start_multi"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="100dp"
-        android:text="ddd"
-        android:textColor="@color/back"
+        android:text="启动多个activity，打开多个activity"
+        android:textColor="@color/red"
         />
 
 </LinearLayout>

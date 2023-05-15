@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.seachal.seachaltest.R;
 
-public class GestureDetector1Activity extends AppCompatActivity {
+public class GestureDetector2Activity extends AppCompatActivity {
 
 
 
@@ -73,6 +73,32 @@ public class GestureDetector1Activity extends AppCompatActivity {
 
         });
 
+        // 步骤2：创建 & 设置OnDoubleTapListener接口实现类
+        mGestureDetector.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener() {
+
+            // 1. 单击事件
+            // 关于OnDoubleTapListener.onSingleTapConfirmed（）和 OnGestureListener.onSingleTapUp()的区别
+            // onSingleTapConfirmed：再次点击（即双击），则不会执行
+            // onSingleTapUp：手抬起就会执行
+            public boolean onSingleTapConfirmed(MotionEvent e) {
+                Log.i("MyGesture", "onSingleTapConfirmed");
+                return false;
+            }
+
+            // 2. 双击事件
+            public boolean onDoubleTap(MotionEvent e) {
+                Log.i("MyGesture", "onDoubleTap");
+                return false;
+            }
+            // 3. 双击间隔中发生的动作
+            // 指触发onDoubleTap后，在双击之间发生的其它动作，包含down、up和move事件；
+            public boolean onDoubleTapEvent(MotionEvent e) {
+                Log.i("MyGesture", "onDoubleTapEvent");
+                return false;
+            }
+        });
+
+
         // 步骤2：让TextView检测手势：重写View的onTouch函数，将触屏事件交给GestureDetector处理，从而对用户手势作出响应
         mTextView = (TextView) findViewById(R.id.textView);
         mTextView.setOnTouchListener(new View.OnTouchListener() {
@@ -84,16 +110,5 @@ public class GestureDetector1Activity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
     }
-
-//    // 步骤2-2：让某个Activity检测手势：重写Activity的dispatchTouchEvent函数，将触屏事件交给GestureDetector处理，从而对用户手势作出响应
-//    @Override
-//    public boolean dispatchTouchEvent(MotionEvent ev) {
-//        mGestureDetector.onTouchEvent(ev); // 让GestureDetector响应触碰事件
-//        super.dispatchTouchEvent(ev); // 让Activity响应触碰事件
-//        return false;
-//    }
 }
