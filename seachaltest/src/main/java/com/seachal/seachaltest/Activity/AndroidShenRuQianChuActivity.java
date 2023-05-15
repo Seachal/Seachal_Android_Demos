@@ -13,6 +13,7 @@ public class AndroidShenRuQianChuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_shen_ru_qian_chu);
 
+//        To achieve a read txt function
 
     }
 }

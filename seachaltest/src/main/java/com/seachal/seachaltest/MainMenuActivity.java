@@ -39,6 +39,7 @@ import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.LinkTextViewActivity;
 import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
+import com.seachal.seachaltest.gestureDetector.GestureDetector1Activity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 
 import java.util.ArrayList;
@@ -86,22 +87,17 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("cardview 原生  越靠近屏幕底部颜色越深",
                 CardVeiwScrollActivity.class));
 
-        activityList.add(new StartActivityBean("屏幕分辨率",
-                AndroiodScreenPropertyActivity.class));
-        activityList.add(new StartActivityBean("自定义 title",
-                CustomTitleActivity.class));
-        activityList.add(new StartActivityBean("ViewStub",
-                ViewStubActivity.class));
-        activityList.add(new StartActivityBean("如果禁用 Activity 中所有点击事件",
-                OnClickAbleFasleActivity.class));
-        activityList.add(new StartActivityBean("Button RadioGroupButton  RadioButton",
-                ButtonActivity.class));
+        activityList.add(new StartActivityBean("屏幕分辨率", AndroiodScreenPropertyActivity.class));
+        activityList.add(new StartActivityBean("自定义 title", CustomTitleActivity.class));
+        activityList.add(new StartActivityBean("ViewStub", ViewStubActivity.class));
+        activityList.add(new StartActivityBean("如果禁用 Activity 中所有点击事件", OnClickAbleFasleActivity.class));
+        activityList.add(new StartActivityBean("Button RadioGroupButton  RadioButton", ButtonActivity.class));
 
-        activityList.add(new StartActivityBean("Dialog",
-                DialogTestActivity.class));
+        activityList.add(new StartActivityBean("Dialog", DialogTestActivity.class));
 
-        activityList.add(new StartActivityBean("Canvase Save Restore",
-                CanvasSaveRestoreActivity.class));
+        activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
+
+        activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
 
     }
 
