@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.seachal.seachaltest.R;
 
-public class GestureDetectorOnGestureListener1Activity extends AppCompatActivity {
+public class OnGestureListener1Activity extends AppCompatActivity {
 
 
 
@@ -24,7 +24,7 @@ public class GestureDetectorOnGestureListener1Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gesture_detector1);
-
+        getSupportActionBar().setTitle(this.getClass().getSimpleName());
         // 步骤1：创建手势检测器实例 & 传入OnGestureListener接口（需要复写对应方法）
         mGestureDetector = new GestureDetector(this, new GestureDetector.OnGestureListener() {
 

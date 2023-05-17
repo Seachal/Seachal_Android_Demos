@@ -31,26 +31,22 @@ public class GestureMenuActivity extends AppCompatActivity  {
 
     {
 
-        activityList.add(new StartActivityBean("手势 GestureDetector OnGestureListener return true", GestureDetectorOnGestureListener1Activity.class));
+        activityList.add(new StartActivityBean("手势  OnGestureListener return true", OnGestureListener1Activity.class));
 
-        activityList.add(new StartActivityBean("手势 GestureDetector OnGestureListener return false", GestureDetectorOnGestureListener2Activity.class));
-
-
-        activityList.add(new StartActivityBean("手势 GestureDetector OnGestureListener return true 分发给 Activity ", GestureDetectorOnGestureListener3Activity.class));
-
-        activityList.add(new StartActivityBean("手势 GestureDetector OnGestureListener return false  分发给 Activity", GestureDetectorOnGestureListener4Activity.class));
+        activityList.add(new StartActivityBean("手势  OnGestureListener return false", OnGestureListener2Activity.class));
 
 
-        activityList.add(new StartActivityBean("手势 GestureDetector OnDoubleTapListener", GestureDetectorOnDoubleTapListenerActivity.class));
+        activityList.add(new StartActivityBean("手势  OnGestureListener return true 分发给 Activity ", OnGestureListener3Activity.class));
 
-        activityList.add(new StartActivityBean("手势 GestureDetector OnDoubleTapListener 分发给 Activity", GestureDetectorOnDoubleTapListenerActivity.class));
-
-
-        activityList.add(new StartActivityBean("手势 GestureDetector SimpleOnGestureListener", GestureDetectorSimpleOnGestureListenerActivity.class));
+        activityList.add(new StartActivityBean("手势  OnGestureListener return false  分发给 Activity", OnGestureListener4Activity.class));
 
 
+        activityList.add(new StartActivityBean("手势  OnDoubleTapListener", OnDoubleTapListenerActivity.class));
+        activityList.add(new StartActivityBean("手势  OnDoubleTapListener 分发给 Activity", OnDoubleTapListener2Activity.class));
 
-        activityList.add(new StartActivityBean("手势 GestureDetector SimpleOnGestureListener 分发给 Activity", GestureDetectorSimpleOnGestureListenerActivity.class));
+
+        activityList.add(new StartActivityBean("手势  SimpleOnGestureListener", SimpleOnGestureListenerActivity.class));
+        activityList.add(new StartActivityBean("手势  SimpleOnGestureListener 分发给 Activity", SimpleOnGestureListener2Activity.class));
 
 
 
@@ -62,6 +58,7 @@ public class GestureMenuActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_nenu);
         ButterKnife.bind(this);
+        getSupportActionBar().setTitle(this.getClass().getSimpleName());
         recycler_view.setAdapter(new MyAdapter(GestureMenuActivity.this, activityList));
         recycler_view.setLayoutManager(new LinearLayoutManager(GestureMenuActivity.this));
     }

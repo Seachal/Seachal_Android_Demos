@@ -20,35 +20,35 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".gesturedetector.GestureDetectorOnGestureListener1Activity"
+            android:name=".gesturedetector.OnGestureListener1Activity"
             android:exported="false"
             />
         <activity
-            android:name=".gesturedetector.GestureDetectorOnGestureListener2Activity"
-            android:exported="false"
-            />
-
-        <activity
-            android:name=".gesturedetector.GestureDetectorOnGestureListener3Activity"
+            android:name=".gesturedetector.OnGestureListener2Activity"
             android:exported="false"
             />
 
         <activity
-            android:name=".gesturedetector.GestureDetectorOnGestureListener4Activity"
+            android:name=".gesturedetector.OnGestureListener3Activity"
+            android:exported="false"
+            />
+
+        <activity
+            android:name=".gesturedetector.OnGestureListener4Activity"
             android:exported="false" />
 
         <activity
-            android:name=".gesturedetector.GestureDetectorOnDoubleTapListenerActivity"
+            android:name=".gesturedetector.OnDoubleTapListenerActivity"
             android:exported="false" />
         <activity
-            android:name=".gesturedetector.GestureDetectorSimpleOnGestureListenerActivity"
+            android:name=".gesturedetector.SimpleOnGestureListenerActivity"
             android:exported="false" />
 
         <activity
-            android:name=".gesturedetector.GestureDetectorOnDoubleTapListener2Activity"
+            android:name=".gesturedetector.OnDoubleTapListener2Activity"
             android:exported="false" />
         <activity
-            android:name=".gesturedetector.GestureDetectorSimpleOnGestureListener2Activity"
+            android:name=".gesturedetector.SimpleOnGestureListenerActivity"
             android:exported="false" />
 
         <activity

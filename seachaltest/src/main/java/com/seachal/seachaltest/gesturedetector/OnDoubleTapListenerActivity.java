@@ -19,7 +19,7 @@ import com.seachal.seachaltest.R;
  * @return * @return null
  **/
 
-public class GestureDetectorOnDoubleTapListener2Activity extends AppCompatActivity {
+public class OnDoubleTapListenerActivity extends AppCompatActivity {
 
 
     TextView mTextView;
@@ -29,13 +29,13 @@ public class GestureDetectorOnDoubleTapListener2Activity extends AppCompatActivi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gesture_detector1);
-
+        getSupportActionBar().setTitle(this.getClass().getSimpleName());
         // 步骤1：创建手势检测器实例 & 传入OnGestureListener接口（需要复写对应方法）
         mGestureDetector = new GestureDetector(this, new GestureDetector.OnGestureListener() {
 
             // 1. 用户轻触触摸屏
             public boolean onDown(MotionEvent e) {
-                Log.i("MyGesture1", "onDown");
+                Log.i("ScGesture1", "onDown");
                 return false;
             }
 
@@ -115,11 +115,11 @@ public class GestureDetectorOnDoubleTapListener2Activity extends AppCompatActivi
         });
     }
 
-    // 步骤3-2：让某个Activity检测手势：重写Activity的dispatchTouchEvent函数，将触屏事件交给GestureDetector处理，从而对用户手势作出响应
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        mGestureDetector.onTouchEvent(ev); // 让GestureDetector响应触碰事件
-        super.dispatchTouchEvent(ev); // 让Activity响应触碰事件
-        return false;
-    }
+//    // 步骤3-2：让某个Activity检测手势：重写Activity的dispatchTouchEvent函数，将触屏事件交给GestureDetector处理，从而对用户手势作出响应
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+//        mGestureDetector.onTouchEvent(ev); // 让GestureDetector响应触碰事件
+//        super.dispatchTouchEvent(ev); // 让Activity响应触碰事件
+//        return false;
+//    }
 }

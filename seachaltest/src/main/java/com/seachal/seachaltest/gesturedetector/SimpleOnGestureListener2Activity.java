@@ -19,7 +19,7 @@ import com.seachal.seachaltest.R;
  * @return * @return null
  **/
 
-public class GestureDetectorSimpleOnGestureListener2Activity extends AppCompatActivity {
+public class SimpleOnGestureListener2Activity extends AppCompatActivity {
 
 
     TextView mTextView;
@@ -29,14 +29,14 @@ public class GestureDetectorSimpleOnGestureListener2Activity extends AppCompatAc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gesture_detector1);
-
+        getSupportActionBar().setTitle(this.getClass().getSimpleName());
         // 步骤1：创建手势检测器实例 & 传入OnGestureListener接口（需要复写对应方法）
         mGestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
 
             // OnGestureListener接口的函数
             // 1. 用户轻触触摸屏
             public boolean onDown(MotionEvent e) {
-                Log.i("MyGesture1", "onDown");
+                Log.i("ScGesture1", "onDown");
                 return false;
             }
 
