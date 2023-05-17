@@ -13,8 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.seachal.seachaltest.BaseApp;
-import com.seachal.seachaltest.MainMenuActivity;
 import com.seachal.seachaltest.R;
+import com.seachal.seachaltest.bean.StartActivityBean;
 
 public class SecondActivity extends BaseActivity {
 
@@ -72,7 +72,7 @@ public class SecondActivity extends BaseActivity {
 
 
                 try {
-                    MainMenuActivity.StartActivityBean startActivityBean = null;
+                    StartActivityBean startActivityBean = null;
                     Log.i("SecondActivity log",startActivityBean.getTitle());
                 } catch (Exception e) {
 

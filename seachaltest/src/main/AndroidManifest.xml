@@ -20,14 +20,47 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".gestureDetector.GestureDetector1Activity"
+            android:name=".gesturedetector.GestureDetectorOnGestureListener1Activity"
+            android:exported="false"
+            />
+        <activity
+            android:name=".gesturedetector.GestureDetectorOnGestureListener2Activity"
+            android:exported="false"
+            />
+
+        <activity
+            android:name=".gesturedetector.GestureDetectorOnGestureListener3Activity"
+            android:exported="false"
+            />
+
+        <activity
+            android:name=".gesturedetector.GestureDetectorOnGestureListener4Activity"
             android:exported="false" />
+
+        <activity
+            android:name=".gesturedetector.GestureDetectorOnDoubleTapListenerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gesturedetector.GestureDetectorSimpleOnGestureListenerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".gesturedetector.GestureDetectorOnDoubleTapListener2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".gesturedetector.GestureDetectorSimpleOnGestureListener2Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".gesturedetector.GestureMenuActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Activity.CanvasSaveRestoreActivity"
             android:exported="false" />
-        <activity
-            android:name=".HighLevelFunctionActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".HighLevelFunctionActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".Activity.DialogTestActivity"
             android:exported="false" />

@@ -39,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    /**
+     * @Author zhangxc
+     * @Description //TODO   启动另一个 指定 activity，
+     * @Date 09:47 2023/5/16
+     *
+     * @return * @return null
+     **/
     /**
      * @param view
      */
@@ -57,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+     /**
+      * @Author zhangxc
+      * @Description //TODO  启动另一个 app 的指定 app.
+      * @Date 09:48 2023/5/16
+      *
+      * @return * @return null
+      **/
     /**
      * @param view
      */
@@ -81,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    //   使用 scheme 启动另一个 app.
     //       被启动 app 的 androidmanifest 中 activity 中要指定的数据， <data 数据。 ,
     public void startOtherAppActivity3(View view) {
         Uri uri = Uri.parse("app://my.test");// 对应被启动的 Main3Activity
@@ -125,8 +141,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     /**
      * @param view
+     * 通过包名启动  app.
      */
     public void startOtherAppActivity23(View view) {
         String packname = "com.example.seachal.launchedapp";
@@ -139,8 +157,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     /**
      * @param view
+     * 通过包名启动  app.
      */
     public void startOtherAppActivity5(View view) {
         ComponentName componetName = new ComponentName(
@@ -161,6 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * @param view
+     *
+     * 通过包名打开百度
      */
     public void startOtherAppActivity6(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -176,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * @param view
+     * 通过包名打开  淘宝
      */
     public void startOtherAppActivity61(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -194,8 +217,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+//     scheme 启动另一个 app.
     //      yc://ycbjie.cn:8888/from?type=yangchong ,   被启动 app 的 androidmanifest 中 activity 中要指定的数据， <data 数据。 ,
-    public void startOtherAppActivitYc(View view) {
+    public void startOtherAppActivityYc(View view) {
         Uri uri = Uri.parse("yc://ycbjie.cn:8888/from?type=yangchong");// 对应被启动的 Main3Activity
         Intent intent = new Intent("com.example.seachal.launchedapp.app", uri);
         try {

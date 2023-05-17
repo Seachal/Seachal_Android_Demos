@@ -1,14 +1,6 @@
 package com.seachal.seachaltest;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,8 +30,10 @@ import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.LinkTextViewActivity;
+import com.seachal.seachaltest.adapter.MyAdapter;
+import com.seachal.seachaltest.bean.StartActivityBean;
 import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
-import com.seachal.seachaltest.gestureDetector.GestureDetector1Activity;
+import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
 
@@ -95,9 +89,9 @@ public class MainMenuActivity extends AppCompatActivity  {
 
         activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
 
-        activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
+        activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
 
-        activityList.add(new StartActivityBean("手势 GestureDetector", GestureDetector1Activity.class));
+
 
         activityList.add(new StartActivityBean("一次启动多个 Activity", StartMultiActivity.class));
     }
@@ -168,83 +162,6 @@ public class MainMenuActivity extends AppCompatActivity  {
 
 
 
-    class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-        private Context context;
-        private List<StartActivityBean> arrayList;
-
-        public MyAdapter(Context context, List<StartActivityBean> arrayList) {
-            this.context = context;
-            this.arrayList = arrayList;
-        }
-
-        @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            MyViewHolder myViewHolder = new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list, parent,
-                    false));
-            return myViewHolder;
-        }
-
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-            holder.mTextView.setText(arrayList.get(position).getTitle());
-            holder.mTextView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainMenuActivity.this, arrayList.get(position).getActivityClass());
-                    startActivity(intent);
-                }
-            });
-            holder.llroot.setBackgroundResource(R.drawable.shape_solid_white_full_corner_20dp);
-        }
-
-        @Override
-        public int getItemCount() {
-            return activityList.size();
-        }
-
-        class MyViewHolder extends RecyclerView.ViewHolder {
-            private LinearLayout llroot;
-           private  TextView mTextView;
-
-
-            public MyViewHolder(View itemView) {
-                super(itemView);
-                llroot = itemView.findViewById(R.id.ll_root);
-                mTextView = itemView.findViewById(R.id.tv_items);
-
-            }
-        }
-    }
-
-   public class StartActivityBean {
-
-        private String mTitle;
-
-        private Class mActivityClass;
-
-
-        public StartActivityBean(String title, Class activityClass) {
-            mTitle = title;
-            mActivityClass = activityClass;
-        }
-
-        public String getTitle() {
-            return mTitle;
-        }
-
-        public void setTitle(String title) {
-            mTitle = title;
-        }
-
-        public Class getActivityClass() {
-            return mActivityClass;
-        }
-
-        public void setActivityClass(Class activityClass) {
-            mActivityClass = activityClass;
-        }
-
-    }
 
 
 
