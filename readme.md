@@ -10,7 +10,10 @@
 ## [CoordinatorLayoutDemo](CoordinatorLayoutDemo) 参考：[CoordinatorLayout 完全解析 - 简书](https://www.jianshu.com/p/4a77ae4cd82f)
 
 
-### Android NestedScrolling机制
+---
+
+
+# Android NestedScrolling机制
 
 #### onNestedPreScroll
 
@@ -81,8 +84,12 @@ FloatingActionButton.Behavior 的主要作用就是防止被 Snackbar 盖住。
 app:layout_behavior="具体Behavior的类路径"
 ```
 
+---
 
-## canvas save restore 
+
+# canvas save restore 
+
+## 1  canvas 
 ```Java
       Paint paint_green = new Paint();
         paint_green.setColor(Color.GREEN);
@@ -97,7 +104,7 @@ app:layout_behavior="具体Behavior的类路径"
 ```
 ![img.png](img.png)
 
-2 save  restore
+## 2 save  restore
 ``` Java
         Paint paint_green = new Paint();
         paint_green.setColor(Color.GREEN);
@@ -124,7 +131,7 @@ app:layout_behavior="具体Behavior的类路径"
 
 [Android关于Canvas你所知道的和不知道的一切 - 掘金](https://juejin.cn/post/6844903705930629128#heading-21)
 
-3 translate
+## 3 translate
 ```Java
  Paint paint_green = new Paint();
         paint_green.setColor(Color.GREEN);
@@ -151,7 +158,9 @@ app:layout_behavior="具体Behavior的类路径"
 
 ---
 
-手势    GestureDetector  , https://www.yuque.com/zhangxc/mrevrs/175b1225-f6c9-4437-96bd-18e1f3754d1d
+## 手势    GestureDetector 
+
+ , https://www.yuque.com/zhangxc/mrevrs/175b1225-f6c9-4437-96bd-18e1f3754d1d
 
 
 ---
@@ -163,6 +172,10 @@ app:layout_behavior="具体Behavior的类路径"
 ---
 
 <a name="90c29e9b"></a>
+# 是Android  URL Scheme deeplink
+
+
+---
 
 ### 1. 什么是Android  URL Scheme？
 
