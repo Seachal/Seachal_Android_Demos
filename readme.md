@@ -158,7 +158,7 @@ app:layout_behavior="具体Behavior的类路径"
 
 ---
 
-## 手势    GestureDetector 
+# 手势    GestureDetector 
 
  , https://www.yuque.com/zhangxc/mrevrs/175b1225-f6c9-4437-96bd-18e1f3754d1d
 
@@ -169,7 +169,6 @@ app:layout_behavior="具体Behavior的类路径"
 
 
 
----
 
 <a name="90c29e9b"></a>
 # 是Android  URL Scheme deeplink
