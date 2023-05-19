@@ -8,11 +8,23 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
     <Button
         android:id="@+id/btn_b1"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity"
+        android:text="启动另一个 app 的  activity，setAction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,9 +34,10 @@
 
     <Button
         android:id="@+id/btn_b2"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity2"
+        android:text="启动另一个 app 的 activity2,Intent setComponent,ComponentName 指定包名和 activity路径"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_b1"
@@ -33,9 +46,10 @@
 
     <Button
         android:id="@+id/btn_b3"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity3"
+        android:text="启动另一个 app 的 activity3，Intent scheme uri"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_b2"
@@ -45,9 +59,10 @@
 
     <Button
         android:id="@+id/btn_b4"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity4"
+        android:text="启动另一个 app 的 activity4，intent.setClassName方式"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_b3"
@@ -56,9 +71,10 @@
 
     <Button
         android:id="@+id/btn_b5"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity4  使用 application"
+        android:text="启动另一个 app 的 activity4  GlobalLication"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="startOtherAppActivity42"
@@ -66,9 +82,10 @@
 
     <Button
         android:id="@+id/btn_b6"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity2  使用 application"
+        android:text="启动另一个 app 的 activity2  使用 application，包名和 activity 路径"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="startOtherAppActivity22"/>
@@ -76,9 +93,10 @@
 
     <Button
         android:id="@+id/btn_b7"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity  使用 packagename"
+        android:text="启动另一个 app 的 activity  使用 packagename，getLaunchIntentForPackage"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="startOtherAppActivity23"
@@ -88,9 +106,10 @@
 
     <Button
         android:id="@+id/btn_b8"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity 5 ,recent apps"
+        android:text="启动另一个 app 的 activity 5 ,recent apps，ComponentName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="startOtherAppActivity5"
@@ -100,9 +119,10 @@
 
     <Button
         android:id="@+id/btn_b9"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity ,6 百度 url"
+        android:text="启动另一个 app 的 activity ,6 百度 url，会跳转到浏览器"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="startOtherAppActivity6"
@@ -111,23 +131,48 @@
 
     <Button
         android:id="@+id/btn_b11"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity ,61 淘宝 url"
+        android:text="启动另一个 app 的 activity ,61 淘宝 url,会跳转到浏览器"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="startOtherAppActivity61"
         />
 
-    <Button
-        android:id="@+id/btn_b10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="启动另一个 app 的 activity ,recent apps3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:onClick="startOtherAppActivity7"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/btn_b10"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="启动另一个 app 的 activity ,scheme方式"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        android:onClick="startOtherAppActivity7"-->
+<!--        />-->
 
+        <Button
+            android:id="@+id/btn_b12_1"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动另一个 app 的 activity ,"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="startOtherAppActivity12_1"
+            />
+
+        <Button
+            android:id="@+id/btn_b12_2"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动另一个 app 的 activity ,"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="startOtherAppActivity12_2"
+            />
+
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

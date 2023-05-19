@@ -4,12 +4,15 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.List;
 
 /**
  * https://blog.csdn.net/qq475703980/article/details/78941370
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * 启动另一个 app 的 activity.
      * 启动另一个 app 的 default activity， 主 activity，不能灵活指定 activity
      *
      * @param view
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("wangluo", "这个参数是要启动的Activity的全路径名");
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -88,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 //            GlobalLication.getContext().startActivity(intent);
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -104,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -117,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     "com.example.seachal.launchedapp.Main4Activity");
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -128,11 +132,10 @@ public class MainActivity extends AppCompatActivity {
             //第二种方式
             intent.setClassName("com.example.seachal.launchedapp",  //这个是另外一个应用程序的包名
                     "com.example.seachal.launchedapp.Main4Activity");
-//            GlobalLication.getContext().startActivity(intent);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             GlobalLication.getContext().startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -153,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = packageManager.getLaunchIntentForPackage(packname);
             startActivity(intent);
         } else {
-            Toast.makeText(MainActivity.this, "没有安装" + packname, 1).show();
+            Toast.makeText(MainActivity.this, "没有安装" + packname, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -174,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_RETAIN_IN_RECENTS);
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -225,10 +228,46 @@ public class MainActivity extends AppCompatActivity {
         try {
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", 0).show();
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
 
+    public void startOtherAppActivity12_1(View view) {
+
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me"));
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    public void startOtherAppActivity12_2(View view) {
+
+       Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
 
 
 

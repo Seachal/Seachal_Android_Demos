@@ -72,6 +72,41 @@
             android:name=".Main5Activity"
             android:exported="true"></activity>
 
+<!--        <activity-->
+<!--            android:name=".Main61Activity"-->
+<!--            android:exported="true">-->
+
+<!--                &lt;!&ndash;Android 接收外部跳转过滤器&ndash;&gt;-->
+<!--                <intent-filter>-->
+<!--                    <action android:name="android.intent.action.VIEW" />-->
+<!--                    <category android:name="android.intent.category.DEFAULT" />-->
+<!--                    <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                    &lt;!&ndash; 协议部分配置 ,要在web配置相同的&ndash;&gt;-->
+<!--                    &lt;!&ndash;            sc://seachal.me/macthDetail?macthId=222&time=10001&ndash;&gt;-->
+<!--                    <data-->
+<!--                        android:host="seachal.me"-->
+<!--                        android:scheme="sc" />-->
+<!--                </intent-filter>-->
+<!--        </activity>-->
+
+        <activity
+            android:name=".Main62Activity"
+            android:exported="true">
+            <!--Android 接收外部跳转过滤器-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 协议部分配置 ,要在web配置相同的-->
+                <!--            sc://seachal.me/macthDetail?macthId=222&time=10001-->
+                <data
+                    android:host="seachal.me"
+                    android:scheme="sc"
+                    android:path="/macthDetail"
+                    />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
