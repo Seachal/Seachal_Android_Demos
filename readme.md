@@ -152,3 +152,272 @@ app:layout_behavior="具体Behavior的类路径"
 ---
 
 手势    GestureDetector  , https://www.yuque.com/zhangxc/mrevrs/175b1225-f6c9-4437-96bd-18e1f3754d1d
+
+
+---
+
+
+
+
+
+---
+
+<a name="90c29e9b"></a>
+
+### 1. 什么是Android  URL Scheme？
+
+简单的说就是android中的一种页面内跳转协议，方便app页面的内的跳转
+
+<a name="86221628"></a>
+
+### 2.什么时候使用
+
+1. 服务器下发跳转路径，客户端根据 服务器下发跳转路径跳转相应的页面
+2. H5页面点击描点，根据描点具体跳转路径APP端跳转具体的页面
+3. APP端收到服务器端下发的PUSH通知栏消息，根据消息的点击跳转路径跳转相关页面
+4. APP根据URL跳转到另外一个APP指定页面
+
+<a name="cba9303a"></a>
+
+### 3.协议格式
+
+```properties
+mobi://seachal.me:9999/macthDetail?macthId=222&time=10001
+```
+
+| scheme | 代表该Schema 协议名称      | scmobi                  |
+| ------ | -------------------------- | ----------------------- |
+| host   | 代表Schema作用于哪个地址域 | seachal.me              |
+| port   | 代表该路径的端口号         | 9999                    |
+| path   | 代表Schema指定的页面       | /macthDetail            |
+| --     | 代表传递的参数             | ?macthId=222&time=10001 |
+
+
+<a name="b1495ac5"></a>
+
+### 4.在app中如何使用
+
+在AndroidManifest.xml中对**activity**标签增加**intent-filter**设置**Schema**
+
+```properties
+ <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="scmobi"
+                    android:host="seachal.me"
+                    android:port="9999"
+                    android:path="/macthDetail"
+                    />
+
+            </intent-filter>
+
+        </activity>
+```
+
+注意：
+
+```properties
+<action android:name="android.intent.action.VIEW"/>
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+```
+
+<a name="13b7073a"></a>
+
+### 5.如何调用
+
+**1.在html中调用非常简单**
+
+```properties
+<a href="scmobi://seachal.me:9999/macthDetail?macthId=222&time=10001">打开源生应用指定的页面</a>
+```
+
+**2.在源生应用中调用也很简单**
+
+```properties
+Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("scmobi://seachal.me:9999/macthDetail?macthId=222&time=10001"));
+startActivity(intent);
+```
+
+<a name="8757017f"></a>
+
+### 6.在原生界面获取uri和各个参数
+
+```properties
+ Intent intent = getIntent();
+        Uri data = intent.getData();  //
+        String action = intent.getAction();
+        String scheme = intent.getScheme();
+        Set<String> categories = intent.getCategories();
+        Log.e("TAG", "data==========="+data);
+        Log.e("TAG", "action==========="+action);
+        Log.e("TAG", "categories==========="+categories);
+        Log.e("TAG", "DataString==========="+intent.getDataString());
+        Log.e("TAG", "==============================");
+        Log.e("TAG", "scheme==========="+scheme);
+        Log.e("TAG", "id ==========="+data.getQueryParameterNames());
+        Log.e("TAG", "host==========="+data.getHost());
+        Log.e("TAG", "path==========="+data.getPath());
+        Log.e("TAG", "port==========="+data.getPort());
+```
+
+输出结果
+
+```properties
+4-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: data===========scmobi://seachal.me:9999/macthDetail?goodsId=10011002&time=1111
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: action===========android.intent.action.VIEW
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: categories===========null
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: DataString===========scmobi://seachal.me:9999/macthDetail?goodsId=10011002&time=1111
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: ==============================
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: scheme===========scmobi
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: id ===========[goodsId, time]
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: host===========seachal.me
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: path===========/macthDetail
+04-11 18:13:56.335 5198-5198/com.phone.myapplication E/TAG: port===========9999
+```
+
+具体含义可以对比传入的参数
+
+<a name="18556a4d"></a>
+
+### 7. 判断Schema是否有效
+
+判断Schema是否有效，也可以说判断应用是否安装（在确定要启动的应用已经配置了scheme）
+
+app源生判断Sheme是否有效
+
+```properties
+Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("scmobi://seachal.me:9999/macthDetail?macthId=222&time=10001"));
+
+List<ResolveInfo> activities =getpackageManager().queryIntentActivities(intent, 0);
+boolean isValid = !activities.isEmpty();
+Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+```
+
+也可以用 apb  命令试试
+
+```
+adb shell am start -W -a "android.intent.action.VIEW" -d "yourUri" yourPackageName
+```
+
+参考链接： [Scheme协议详细介绍 - 简书](https://www.jianshu.com/p/49b11da1f0a9)<br />[Android 中Scheme协议的使用详解 - 掘金](https://juejin.cn/post/7080492841872392229)<br />[腾讯开放平台 OPEN.QQ.COM](https://wikinew.open.qq.com/index.html#/iwiki/4007776119)<br />[Android 开发者  |  Android Developers](https://developer.android.com/guide/topics/manifest/data-element?hl=zh-cn#:~:text=android%3Ascheme%20The%20scheme%20part%20of%20a%20URI.%20This,trailing%20colon%2C%20such%20as%20http%20rather%20than%20http%3A.)
+
+
+
+---
+
+<a name="CNwlV"></a>
+
+## 提一个问题，
+
+<a name="kB63Z"></a>
+
+### 1  如果启动方填写的"地址"信息更详细
+
+如果之前启动方的链接是 'sc://seachal.me'<br />现在更新链接为 'sc://seachal.me/macthDetail?macthId=222&time=10001',
+
+被启动方不变：
+
+```
+      <data
+                        android:host="seachal.me"
+                        android:scheme="sc" />
+```
+
+新链接可以启动吗？  答案是可以启动。
+
+```
+    public void startOtherAppActivity12_1(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me"));
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
+```
+
+```
+    public void startOtherAppActivity12_2(View view) {
+
+       Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
+```
+
+被启动的 app 的配置
+
+```
+        <activity
+            android:name=".Main61Activity"
+            android:exported="true">
+
+                <!--Android 接收外部跳转过滤器-->
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    <!-- 协议部分配置 ,要在web配置相同的-->
+                    <!--            sc://seachal.me/macthDetail?macthId=222&time=10001-->
+                    <data
+                        android:host="seachal.me"
+                        android:scheme="sc" />
+                </intent-filter>
+        </activity>
+```
+
+startOtherAppActivity12_1  和 startOtherAppActivity12_2 都可以启动Main61Activity。
+
+<a name="XDcwJ"></a>
+
+## 2   如果启动方填写"地址"的信息更少
+
+如果
+
+```
+      <data
+                        android:host="seachal.me"
+                        android:scheme="sc" />
+```
+
+更新一下成为
+
+```
+   <data
+                    android:host="seachal.me"
+                    android:scheme="sc"
+                    android:path="/macthDetail"
+                    />
+```
+
+startOtherAppActivity12_1   无法启动Main61Activity<br /> startOtherAppActivity12_2 可以启动Main61Activity。
+
+<a name="CVVEj"></a>
+
+### 总结
+
+通过上面的两个例子可以得到。 <br />启动方 uri scheme 可以设置的特别详细， 可以有荣誉信息， 只要它包含别启动方的 Scheme 就可以。<br />如果被启动方缺少被启动方的一些时他就启动不了了。
+
+例如我们平时寄快递。 <br />如果寄件地址写：北京市海淀区双榆树街道湖北大厦 101 室。   但是收件人的地址是：北京市海淀区双榆树街道湖北大厦。因为信息足够全，不会错投。 <br />如果寄件地址写：北京市海淀区双榆树街道湖北大厦，但是收件人地址：北京市海淀区双榆树街道湖北大厦 1001 室（10楼）。 因为缺少了一些地址信息，送件的时候，到了湖北大厦不知道给谁了。

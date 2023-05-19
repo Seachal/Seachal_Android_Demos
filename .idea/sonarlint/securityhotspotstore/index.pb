@@ -27,8 +27,6 @@ E
 LaunchedApp/readme.md,a/3/a33ad93dfbb113b50c82e493fd1e818d49070abd
 H
 LaunchOtherApp/readme.md,5/f/5f79fda19fad783e432ecba69b3c7ef9ebd1e76d
-9
-	readme.md,2/7/275d783e298228506068436512433d343feb52aa
 ƒ
 SLaunchOtherApp/src/main/java/com/example/seachal/launchotherapp/GlobalLication.java,7/6/76da1b4f8b1626ebc49b53124cd0d67ea973e742
 }

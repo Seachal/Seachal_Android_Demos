@@ -49,8 +49,6 @@ H
 LaunchOtherApp/readme.md,5/f/5f79fda19fad783e432ecba69b3c7ef9ebd1e76d
 ƒ
 SLaunchOtherApp/src/main/java/com/example/seachal/launchotherapp/GlobalLication.java,7/6/76da1b4f8b1626ebc49b53124cd0d67ea973e742
-9
-	readme.md,2/7/275d783e298228506068436512433d343feb52aa
 }
 Mseachaltest/src/main/java/com/seachal/seachaltest/bean/StartActivityBean.java,8/3/83efe649870077b4cd2320b6b5ce94c8aee458e0
 x
