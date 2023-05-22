@@ -234,8 +234,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void startOtherAppActivity12_1(View view) {
 
-//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/native/?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me"));
         List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
@@ -253,8 +253,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void startOtherAppActivity12_2(View view) {
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
 
-       Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
         List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();

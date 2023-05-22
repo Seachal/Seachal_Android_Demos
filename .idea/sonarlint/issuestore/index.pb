@@ -61,3 +61,5 @@ cseachaltest/src/main/java/com/seachal/seachaltest/gesturedetector/OnDoubleTapLi
 fseachaltest/src/main/java/com/seachal/seachaltest/gesturedetector/SimpleOnGestureListenerActivity.java,0/6/06adc283319e9999af1bfc6a63239ad01a9204d5
 w
 Gseachaltest/src/main/java/com/seachal/seachaltest/MainMenuActivity.java,2/5/2586dc68af495a5603621924b654459a579a06fe
+|
+LLaunchedApp/src/main/java/com/example/seachal/launchedapp/Main5Activity.java,e/a/ea0141d46819af42e3e1e42efd25d6263945f9f5
