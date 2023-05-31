@@ -23,10 +23,12 @@ public class Main62Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Uri data = intent.getData();  //
+        Bundle extras = intent.getExtras();  //
         String action = intent.getAction();
         String scheme = intent.getScheme();
         Set<String> categories = intent.getCategories();
         Log.e("TAG", "data==========="+data);
+        Log.e("TAG", "extras==========="+extras);
         Log.e("TAG", "action==========="+action);
         Log.e("TAG", "categories==========="+categories);
         Log.e("TAG", "DataString==========="+intent.getDataString());

@@ -18,7 +18,7 @@ import com.seachal.seachaltest.R;
 /**
  * TextView setText 的时候，onMeasure,会被调用吗?
  * <p>
- * 会被调用
+ * 结论： 会被调用
  */
 public class CustomTextViewTestActivity extends AppCompatActivity {
 

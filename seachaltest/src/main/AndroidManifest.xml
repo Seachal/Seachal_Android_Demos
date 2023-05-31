@@ -4,6 +4,7 @@
     <!-- 读取位置信息 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:name=".BaseApp"
@@ -14,53 +15,51 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Activity.StringToUriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.StackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".layout.RelativeLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".startmultiActivity.StartMultiActivity"
             android:exported="false"
             android:label="@string/title_activity_start_multi"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".gesturedetector.OnGestureListener1Activity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".gesturedetector.OnGestureListener2Activity"
-            android:exported="false"
-            />
-
+            android:exported="false" />
         <activity
             android:name=".gesturedetector.OnGestureListener3Activity"
-            android:exported="false"
-            />
-
+            android:exported="false" />
         <activity
             android:name=".gesturedetector.OnGestureListener4Activity"
             android:exported="false" />
-
         <activity
             android:name=".gesturedetector.OnDoubleTapListenerActivity"
             android:exported="false" />
         <activity
             android:name=".gesturedetector.SimpleOnGestureListenerActivity"
             android:exported="false" />
-
         <activity
             android:name=".gesturedetector.OnDoubleTapListener2Activity"
             android:exported="false" />
         <activity
             android:name=".gesturedetector.SimpleOnGestureListenerActivity"
             android:exported="false" />
-
         <activity
             android:name=".gesturedetector.GestureMenuActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.CanvasSaveRestoreActivity"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".HighLevelFunctionActivity"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".HighLevelFunctionActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Activity.DialogTestActivity"
             android:exported="false" />
@@ -126,6 +125,8 @@
         <activity android:name=".Activity.ViewMeasureActivity" />
         <activity android:name=".kotlin.KotlinMainActivity" />
         <activity android:name=".Activity.FourthActivity" />
+
+        <activity android:name=".activitystack.TaskStackMenuActivity" />
     </application>
 
 </manifest>

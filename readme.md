@@ -430,6 +430,45 @@ startOtherAppActivity12_1   无法启动Main61Activity<br /> startOtherAppActivi
 
 ### 总结
 
+
 通过上面的两个例子可以得到。 <br />启动方 uri scheme 可以设置的特别详细， 可以有荣誉信息， 只要它包含别启动方的 Scheme 就可以。<br />如果被启动方缺少被启动方的一些时他就启动不了了。
 
 例如我们平时寄快递。 <br />如果寄件地址写：北京市海淀区双榆树街道湖北大厦 101 室。   但是收件人的地址是：北京市海淀区双榆树街道湖北大厦。因为信息足够全，不会错投。 <br />如果寄件地址写：北京市海淀区双榆树街道湖北大厦，但是收件人地址：北京市海淀区双榆树街道湖北大厦 1001 室（10楼）。 因为缺少了一些地址信息，送件的时候，到了湖北大厦不知道给谁了。
+
+
+---
+
+# 一个布局依赖混乱的问题
+
+
+都依赖右侧，右侧第一个隐藏的情况下，布局会混乱吗？ 都跑到桌面左边吗？
+答案是：会的，battery gone  就混乱了
+
+![img_4.png](img_4.png)
+
+
+如上图。  相对布局，假如最右边的设置gone后， 左边两个就会跑到最左边去。
+
+```xml
+    <RelativeLayout
+        android:id="@+id/layout_top"/>
+```
+
+![img_5.png](img_5.png)
+
+
+
+在这两个里面加上
+
+```xml
+android:layout_alignWithParentIfMissing="true"
+```
+就好了~
+
+If set to true, the parent will be used as the anchor when the anchor cannot be be found for layout_toLeftOf, layout_toRightOf, etc. [boolean]
+
+针对RelativeLayout有一点需要注意，因为它内部是通过多个View之间的关系而确定的框架，那么当其中某一个View因为某些需要调用GONE 来完全隐藏掉后，会影响与其相关联的Views。Android为我们提供了一个属性 layout_alignWithParentIfMissing  用于解决类似问题，当某一个View无法找到与其相关联 的Views后将依据alignWithParentIfMissing 的设定判断是否与父级View对齐。
+
+---
+如果把右侧倒数第二 2 个 share gone调，布局是不混乱的
+![img_6.png](img_6.png)

@@ -23,6 +23,7 @@ import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity2;
+import com.seachal.seachaltest.Activity.StringToUriActivity;
 import com.seachal.seachaltest.Activity.URITestActivity;
 import com.seachal.seachaltest.Activity.ViewMeasureActivity;
 import com.seachal.seachaltest.Activity.ViewStubActivity;
@@ -30,6 +31,7 @@ import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.LinkTextViewActivity;
+import com.seachal.seachaltest.activitystack.TaskStackMenuActivity;
 import com.seachal.seachaltest.adapter.MyAdapter;
 import com.seachal.seachaltest.bean.StartActivityBean;
 import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
@@ -61,24 +63,24 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("TextView setText 的时候，onMessure,会被调用吗。测量文字是否2行", CustomTextViewTestActivity.class));
         activityList.add(new StartActivityBean("android 分享生成图片", ShareGeneratePictureActivity.class));
         activityList.add(new StartActivityBean("textView 带超链接", LinkTextViewActivity.class));
-        activityList.add(new StartActivityBean("RecyclerView 多种 gride 布局", RecyclerViewTestActivity.class));
+        activityList.add(new StartActivityBean("RecyclerView 多种 grid 布局", RecyclerViewTestActivity.class));
         activityList.add(new StartActivityBean("CountDownTimer 倒计时", CountDownTimerActivity.class));
-        activityList.add(new StartActivityBean("uri", URITestActivity.class));
+        activityList.add(new StartActivityBean("Uri.parse", URITestActivity.class));
         activityList.add(new StartActivityBean("跳转到淘宝", SkipToTaobaoActivity.class));
         activityList.add(new StartActivityBean("跳转到淘宝2", SkipToTaobaoActivity.class));
         activityList.add(new StartActivityBean("android 跳转栈测试", SkipToTaobaoActivity2.class));
         activityList.add(new StartActivityBean("View与父 View 的测量", ViewMeasureActivity.class));
         activityList.add(new StartActivityBean("EditText  最小字符数，最大字符数,addView", EditTextMinAndMaxLengthActivity.class));
 
-        activityList.add(new StartActivityBean("SecondActivity", SecondActivity.class));
+        activityList.add(new StartActivityBean("Activity 声明周期 SecondActivity", SecondActivity.class));
         activityList.add(new StartActivityBean("DebugActivity", DebugActivity.class));
 
         activityList.add(new StartActivityBean("自定义 进度条", CustomViewPreviewActivity.class));
         activityList.add(new StartActivityBean("权限 & 设置, 在设置拒绝位置权限，app是否会被杀死？是。", PermissionActivity.class));
-        activityList.add(new StartActivityBean("IamgeView gif  selector师傅支持 gif", ImageViewActivity.class));
+        activityList.add(new StartActivityBean("ImageView gif  selector师傅支持 gif", ImageViewActivity.class));
         activityList.add(new StartActivityBean("background 并不会对子 view裁剪， 甚至会被子 view 遮挡住圆角。 ", BackgroundActivity.class));
-        activityList.add(new StartActivityBean("cardview 阴影颜色", CardViewActivity.class));
-        activityList.add(new StartActivityBean("cardview 原生  越靠近屏幕底部颜色越深", CardVeiwScrollActivity.class));
+        activityList.add(new StartActivityBean("cardView 阴影颜色", CardViewActivity.class));
+        activityList.add(new StartActivityBean("cardView 原生  越靠近屏幕底部颜色越深", CardVeiwScrollActivity.class));
         activityList.add(new StartActivityBean("屏幕分辨率", AndroiodScreenPropertyActivity.class));
         activityList.add(new StartActivityBean("自定义 title", CustomTitleActivity.class));
         activityList.add(new StartActivityBean("ViewStub", ViewStubActivity.class));
@@ -88,12 +90,12 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("Dialog", DialogTestActivity.class));
 
         activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
-
         activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
-
-
-
         activityList.add(new StartActivityBean("一次启动多个 Activity", StartMultiActivity.class));
+        activityList.add(new StartActivityBean(" 获取栈", TaskStackMenuActivity.class));
+        activityList.add(new StartActivityBean("String 转 uri", StringToUriActivity.class));
+
+
     }
 
 

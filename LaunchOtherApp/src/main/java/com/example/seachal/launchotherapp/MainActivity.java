@@ -234,8 +234,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void startOtherAppActivity12_1(View view) {
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/native/?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/native/?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
 //        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me"));
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("xkw://train/native/?targetType=172&params={\"courseId\":\"978593720889311232\",\"chapterId\": \"978597518969995264\"}"));
+
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // 不然新 app 会和被启动的 app 在一个栈里。
         List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
@@ -250,15 +255,20 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
         }
     }
-
 
     public void startOtherAppActivity12_2(View view) {
-//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/native/?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me"));
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("xkw://train/native/?targetType=172&params={\"courseId\":\"978593720889311232\",\"chapterId\": \"978596699155529728\"}"));
+
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // 不然新 app 会和被启动的 app 在一个栈里。
         List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+
         try {
             if (isValid) {
                 startActivity(intent);
@@ -270,6 +280,47 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    public void startOtherAppActivity13_1(View view) {
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
+
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?targetType=xxx&params=\"{\"key1\": \"value1\", \"key2\": \"value2\"}\""));
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("xkw://train/native/?targetType=172&params={\"courseId\":\"980140202226417664\",\"chapterId\": \"981936664908201984\"}"));
+
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    public void startOtherAppActivity13_2(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("xkw://train/native/?targetType=172&params={\"courseId\":\"980140202226417664\",\"chapterId\": \"981936664908201984\"}"));
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
 
 
 

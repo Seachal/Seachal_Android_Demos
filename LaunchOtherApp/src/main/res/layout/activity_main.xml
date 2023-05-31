@@ -155,7 +155,7 @@
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="启动另一个 app 的 activity，地址模糊,"
+            android:text="英语  章节一"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:onClick="startOtherAppActivity12_1"
@@ -166,10 +166,33 @@
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="启动另一个 app 的 activity  地址更精确,"
+            android:text="英语 章节二"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:onClick="startOtherAppActivity12_2"
+            />
+
+        <Button
+            android:id="@+id/btn_b13_1"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="erp yi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="startOtherAppActivity13_1"
+            />
+
+
+        <Button
+            android:id="@+id/btn_b13_2"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="erp yi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="startOtherAppActivity13_2"
             />
 
     </LinearLayout>
