@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".touchevent.DragTwoViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".touchevent.DragViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.StringToUriActivity"
             android:exported="false" />
         <activity
@@ -125,8 +131,8 @@
         <activity android:name=".Activity.ViewMeasureActivity" />
         <activity android:name=".kotlin.KotlinMainActivity" />
         <activity android:name=".Activity.FourthActivity" />
-
         <activity android:name=".activitystack.TaskStackMenuActivity" />
+        <activity android:name=".touchevent.DragThreeViewActivity" />
     </application>
 
 </manifest>

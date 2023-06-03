@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AppTitle" />
+            <option value="$PROJECT_DIR$/CircularFloatingActionMenu" />
             <option value="$PROJECT_DIR$/CoordinatorLayoutDemo" />
             <option value="$PROJECT_DIR$/LaunchOtherApp" />
             <option value="$PROJECT_DIR$/LaunchedApp" />

@@ -1,3 +1,4 @@
 include ':seachaltest' ,':LaunchOtherApp', ':LaunchedApp',":AppTitle"
 include ':NestedScrolling'
 include ':CoordinatorLayoutDemo'
+include ':CircularFloatingActionMenu'

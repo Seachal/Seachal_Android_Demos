@@ -19,6 +19,7 @@ class StringToUriActivity : AppCompatActivity() {
             try {
                 val  str = "xkw://train/native/?targetType=172&params={\"course\":\"978593720889311232\",\"chapter\": \"978596699155529728\"}"
 //               String 转 uri。
+
                 val uri:Uri? = Uri.parse(str)
                 val   targetType =  uri?.getQueryParameter("targetType")
                 //  是一个json  字符串
@@ -29,6 +30,16 @@ class StringToUriActivity : AppCompatActivity() {
                 val  chapter =  jsonObject.getString("chapter")
                 val  text =  "targetType=${targetType},course=${course},chapter=${chapter}"
                 textView.text = text
+
+
+//                测试一下会不会报异常
+                val uri1:Uri? = Uri.parse(" ")
+                val uri2:Uri? = Uri.parse("")
+                val  string = uri2?.getQueryParameter("targetType")
+                val uri4:Uri? = Uri.parse("zhangsan") // 会报异常
+                val  string2 = uri4?.getQueryParameter("targetType")
+                val uri3:Uri? = Uri.parse(null) // 会报异常
+
             }catch (e:Exception){
                 Log.e("StringToUriActivity",e.printStackTrace().toString())
                 textView.text = e.message

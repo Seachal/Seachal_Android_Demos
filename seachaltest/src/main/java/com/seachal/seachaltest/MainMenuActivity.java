@@ -38,6 +38,9 @@ import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
+import com.seachal.seachaltest.touchevent.DragThreeViewActivity;
+import com.seachal.seachaltest.touchevent.DragTwoViewActivity;
+import com.seachal.seachaltest.touchevent.DragViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,8 +95,12 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
         activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
         activityList.add(new StartActivityBean("一次启动多个 Activity", StartMultiActivity.class));
-        activityList.add(new StartActivityBean(" 获取栈", TaskStackMenuActivity.class));
+        activityList.add(new StartActivityBean(" 获取栈 menu 多种方式", TaskStackMenuActivity.class));
         activityList.add(new StartActivityBean("String 转 uri", StringToUriActivity.class));
+        activityList.add(new StartActivityBean(" 长按事件", DragViewActivity.class));
+        activityList.add(new StartActivityBean(" 长按事件菜单", DragTwoViewActivity.class));
+        activityList.add(new StartActivityBean(" 长按事件菜单 3", DragThreeViewActivity.class));
+
 
 
     }
