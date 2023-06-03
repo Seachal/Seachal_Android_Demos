@@ -39,12 +39,12 @@ public class DragTwoViewActivity extends AppCompatActivity {
             @Override
             public boolean onLongPressed(MotionEvent event) {
                 Log.d("longPressHandler", "onTouch: ACTION_MOVE onLongPressed");
-                switch (event.getAction()) {
+              /*  switch (event.getAction()) {
                     case MotionEvent.ACTION_MOVE:
                         int x = (int) event.getRawX();
                         int y = (int) event.getRawY();
                         return true;
-                }
+                }*/
                 return false;
             }
 

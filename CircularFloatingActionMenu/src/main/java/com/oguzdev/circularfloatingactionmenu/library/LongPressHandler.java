@@ -82,11 +82,13 @@ public class LongPressHandler implements View.OnTouchListener {
                 resetLongPressEvent();
                 break;
         }
-        return false;
+//
+        return true;
     }
 
     public void setOnLongPressListener(OnLongPressListener listener) {
         this.listener = listener;
+        mLongPressThread.listener = listener;
     }
 
     /**
@@ -139,11 +141,16 @@ public class LongPressHandler implements View.OnTouchListener {
 
         boolean mAdded = false;
 
+         OnLongPressListener listener;
+
         @Override
         public void run() {
             mLongPressing = true;
             if (mLongPressing && mAdded){
                 Log.d(TAG, " onTouch 长按事件被激活");
+                if (this.listener != null) {
+                     listener.onLongPressed(null);
+                }
             }
         }
     }

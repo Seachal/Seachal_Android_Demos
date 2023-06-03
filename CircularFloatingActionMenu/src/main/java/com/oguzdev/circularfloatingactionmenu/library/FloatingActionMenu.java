@@ -3,9 +3,6 @@
  */
 package com.oguzdev.circularfloatingactionmenu.library;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Path;
@@ -13,7 +10,6 @@ import android.graphics.PathMeasure;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -24,6 +20,9 @@ import android.widget.FrameLayout;
 
 import com.oguzdev.circularfloatingactionmenu.library.animation.DefaultAnimationHandler;
 import com.oguzdev.circularfloatingactionmenu.library.animation.MenuAnimationHandler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Provides the main structure of the menu.
@@ -106,6 +105,11 @@ public class FloatingActionMenu {
                             mainActionView.layout(l, t, r, b);
                             return true;
                     }
+                    return false;
+                }
+
+                @Override
+                public boolean onLongPressedUP(MotionEvent event) {
                     return false;
                 }
             });
