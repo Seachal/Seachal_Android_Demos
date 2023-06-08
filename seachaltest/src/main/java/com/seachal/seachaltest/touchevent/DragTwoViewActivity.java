@@ -49,8 +49,8 @@ public class DragTwoViewActivity extends AppCompatActivity {
             }
 
             @Override
-            public boolean onLongPressedUP(MotionEvent event) {
-                Log.d("longPressHandler", "onTouch: ACTION_UP  onLongPressedUP");
+            public boolean onLongPressedUp(MotionEvent event) {
+                Log.d("longPressHandler", "onTouch: ACTION_UP  onLongPressedUp");
                 return false;
             }
         });

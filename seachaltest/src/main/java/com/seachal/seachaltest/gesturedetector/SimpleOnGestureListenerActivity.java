@@ -97,6 +97,12 @@ public class SimpleOnGestureListenerActivity extends AppCompatActivity {
                 Log.i("ScGesture", "onDoubleTapEvent");
                 return false;
             }
+
+//             / 4.
+            public boolean onContextClick(MotionEvent e) {
+                Log.i("ScGesture", "onContextClick");
+                return false;
+            }
         });
 
         // 步骤2：重写View的onTouch函数，将触屏事件交给GestureDetector处理，从而对用户手势作出响应

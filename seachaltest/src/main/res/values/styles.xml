@@ -15,4 +15,28 @@
         <item name="android:windowHideAnimation">@anim/train_filter_dialog_out_anim</item>
     </style>
 
+
+        <style name="StyleBarTitle">
+            <item name="android:layout_gravity">center_vertical</item>
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:gravity">center_horizontal</item>
+            <item name="android:textSize">20dip</item>
+            <item name="android:textStyle">bold</item>
+            <item name="android:textColor">#FFFFFF</item>
+            <item name="android:shadowColor">#ff000000</item>
+            <item name="android:shadowDx">5</item>
+            <item name="android:shadowDy">5</item>
+            <item name="android:shadowRadius">3</item>
+            <item name="android:background">@null</item>
+        </style>
+
+
+    <style name="ImageviewStyle">
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">5</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
 </resources>

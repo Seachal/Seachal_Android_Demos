@@ -109,7 +109,7 @@ public class FloatingActionMenu {
                 }
 
                 @Override
-                public boolean onLongPressedUP(MotionEvent event) {
+                public boolean onLongPressedUp(MotionEvent event) {
                     return false;
                 }
             });

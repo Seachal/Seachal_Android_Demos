@@ -19,6 +19,12 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+
     lintOptions {
         abortOnError false
         checkReleaseBuilds false

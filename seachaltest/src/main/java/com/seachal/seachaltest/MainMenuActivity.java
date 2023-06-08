@@ -19,6 +19,7 @@ import com.seachal.seachaltest.Activity.CustomViewPreviewActivity;
 import com.seachal.seachaltest.Activity.DebugActivity;
 import com.seachal.seachaltest.Activity.DialogTestActivity;
 import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
+import com.seachal.seachaltest.Activity.LayerListActivity;
 import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
@@ -98,9 +99,9 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" 获取栈 menu 多种方式", TaskStackMenuActivity.class));
         activityList.add(new StartActivityBean("String 转 uri", StringToUriActivity.class));
         activityList.add(new StartActivityBean(" 长按事件", DragViewActivity.class));
-        activityList.add(new StartActivityBean(" 长按事件菜单", DragTwoViewActivity.class));
+        activityList.add(new StartActivityBean(" 自定义长按事件，成功案例 ", DragTwoViewActivity.class));
         activityList.add(new StartActivityBean(" 长按事件菜单 3", DragThreeViewActivity.class));
-
+        activityList.add(new StartActivityBean(" layer-list 测试案例", LayerListActivity.class));
 
 
     }

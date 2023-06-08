@@ -11,8 +11,8 @@ import android.view.ViewConfiguration;
  * 
  * A long press event detector.
  */
-public class LongPressHandler implements View.OnTouchListener {
-    private static final String TAG = LongPressHandler.class.getSimpleName();
+public class LongPressHandler2 implements View.OnTouchListener {
+    private static final String TAG = LongPressHandler2.class.getSimpleName();
 
     // Default long press time threshold.  默认的长按时间阈值
     private static final long LONG_PRESS_TIME_THRESHOLD = 500;
@@ -32,11 +32,11 @@ public class LongPressHandler implements View.OnTouchListener {
     // The long press callback.  长按回调。
     private OnLongPressListener listener;
 
-    public LongPressHandler(View view) {
+    public LongPressHandler2(View view) {
         this(view, LONG_PRESS_TIME_THRESHOLD);
     }
 
-    public LongPressHandler(View view, long holdTime) {
+    public LongPressHandler2(View view, long holdTime) {
         view.setOnTouchListener(this);
         mTouchSlop = ViewConfiguration.get(view.getContext()).getScaledEdgeSlop();
         mPressTimeThreshold = holdTime;
@@ -95,7 +95,6 @@ public class LongPressHandler implements View.OnTouchListener {
      * Reset the long press event. 重置长按事件。
      */
     private void resetLongPressEvent() {
-//         加了一道校验，程序更健壮一些了。
         if (mLongPressThread.mAdded) {
             mHandler.removeCallbacks(mLongPressThread);
             mLongPressThread.mAdded = false;
