@@ -72,7 +72,7 @@ dependencies {
     implementation("com.alibaba.android:vlayout:${vlayout}@aar") { transitive = true }
     // banner导航栏
     implementation "com.youth.banner:banner:$banner"
-    //
+    //  各种工具
     implementation "com.blankj:utilcode:$utilcode"
 //    implementation "com.github.yalantis:ucrop:$ucrop"
 

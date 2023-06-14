@@ -1,31 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.DialogTestActivity">
+    tools:context=".PopupDialog.DialogTestActivity">
+
+  <LinearLayout
+      android:id="@+id/ll_top1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+      >
+
+      <Button
+          android:id="@+id/btn1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAllCaps="false"
+          android:text="show" />
+
+
+      <Button
+          android:id="@+id/btn2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAllCaps="false"
+          android:text="hide" />
+
+      <Button
+          android:id="@+id/btn3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAllCaps="false"
+          android:text="其他测试" />
+  </LinearLayout>
+
+
+<!--      创建一个  dialog,   -->
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/ll_top1"
+        android:text="创建一个 dialog, 让 dialog依赖 button 居中（位于 button 中心）"
+        />
+
 
     <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="show" />
+        android:id="@+id/btn5"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/btn4"
+        android:text="创建一个 popupWindow, 让 popupWindow依赖 button 居中（位于 button 中心）"
+        />
 
-
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="hide" />
-
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="其他测试" />
-
-</LinearLayout>
+</RelativeLayout>

@@ -17,7 +17,7 @@ import com.seachal.seachaltest.Activity.CountDownTimerActivity;
 import com.seachal.seachaltest.Activity.CustomTitleActivity;
 import com.seachal.seachaltest.Activity.CustomViewPreviewActivity;
 import com.seachal.seachaltest.Activity.DebugActivity;
-import com.seachal.seachaltest.Activity.DialogTestActivity;
+import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
 import com.seachal.seachaltest.Activity.LayerListActivity;
 import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
@@ -37,6 +37,7 @@ import com.seachal.seachaltest.adapter.MyAdapter;
 import com.seachal.seachaltest.bean.StartActivityBean;
 import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
+import com.seachal.seachaltest.getdimension.GetDimensionActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
 import com.seachal.seachaltest.touchevent.DragThreeViewActivity;
@@ -102,6 +103,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" 自定义长按事件，成功案例 ", DragTwoViewActivity.class));
         activityList.add(new StartActivityBean(" 长按事件菜单 3", DragThreeViewActivity.class));
         activityList.add(new StartActivityBean(" layer-list 测试案例", LayerListActivity.class));
+        activityList.add(new StartActivityBean(" GetDimension  getDimensionPixelSize   ", GetDimensionActivity.class));
 
 
     }

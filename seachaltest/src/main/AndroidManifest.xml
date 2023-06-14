@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".getdimension.GetDimensionActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.LayerListActivity"
             android:exported="false" />
         <activity
@@ -70,7 +73,7 @@
         <!-- android:name=".HighLevelFunctionActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".Activity.DialogTestActivity"
+            android:name=".PopupDialog.DialogTestActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.ButtonActivity"
