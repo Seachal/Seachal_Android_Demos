@@ -11,45 +11,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-
-
         <activity android:name=".Main0Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
 
         <activity-alias
-        android:name=".MainAliasActivity"
-        android:targetActivity=".Main0Activity"
-        android:label="UNIQLO ICON"
-        android:icon="@mipmap/ic_launcher_alias"
-        android:enabled="false">
+            android:name=".MainAliasActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_alias"
+            android:label="UNIQLO ICON"
+            android:targetActivity=".Main0Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-    </activity-alias>
-
-
-        <!--        启动方 使用包名加类路径启动-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias> <!-- 启动方 使用包名加类路径启动 -->
         <activity
             android:name=".Main2Activity"
             android:exported="true">
 
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN"/>-->
-            <!--                <category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--            </intent-filter>-->
-        </activity>
-        <!-- 3       -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity> <!-- 3 -->
         <activity android:name=".Main3Activity">
             <intent-filter>
                 <action android:name="com.example.seachal.launchedapp.app" />
@@ -61,52 +51,37 @@
                     android:host="my.test"
                     android:scheme="app" />
             </intent-filter>
-        </activity>
-        <!-- 4 -->
+        </activity> <!-- 4 -->
         <activity
             android:name=".Main4Activity"
-            android:exported="true"></activity>
-
-
+            android:exported="true" />
         <activity
             android:name=".Main5Activity"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".Main61Activity"
             android:exported="true">
-
-                <!--Android 接收外部跳转过滤器-->
-                <intent-filter>
-                    <action android:name="android.intent.action.VIEW" />
-                    <category android:name="android.intent.category.DEFAULT" />
-                    <category android:name="android.intent.category.BROWSABLE" />
-                    <!-- 协议部分配置 ,要在web配置相同的-->
-                    <!--            sc://seachal.me/macthDetail?macthId=222&time=10001-->
-                    <data
-                        android:host="seachal.me"
-                        android:scheme="sc" />
-                </intent-filter>
         </activity>
 
-<!--        <activity
-            android:name=".Main62Activity"
-            android:exported="true">
-            &lt;!&ndash;Android 接收外部跳转过滤器&ndash;&gt;
+
+<!--    和 seachal demo 配合使用， 从另一个 app 启动此app ， 看 onnewIntent的情况      -->
+        <activity
+            android:name=".TrainTransferActivity"
+            android:exported="true" >
+
+            <!-- Android 接收外部跳转过滤器 -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                &lt;!&ndash; 协议部分配置 ,要在web配置相同的&ndash;&gt;
-                &lt;!&ndash;            sc://seachal.me/macthDetail?macthId=222&time=10001&ndash;&gt;
+                <!-- 协议部分配置 ,要在web配置相同的 -->
+                <!-- sc://seachal.me/macthDetail?macthId=222&time=10001 -->
                 <data
                     android:host="seachal.me"
-                    android:scheme="sc"
-                    android:path="/macthDetail"
-                    />
+                    android:scheme="sc" />
             </intent-filter>
-        </activity>-->
-
+        </activity>
     </application>
 
 </manifest>

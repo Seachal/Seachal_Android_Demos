@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Activity.LaunchOtherActivity"
+            android:exported="false" />
+        <activity
             android:name=".getdimension.GetDimensionActivity"
             android:exported="false" />
         <activity

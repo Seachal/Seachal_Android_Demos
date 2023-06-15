@@ -17,8 +17,8 @@ import com.seachal.seachaltest.Activity.CountDownTimerActivity;
 import com.seachal.seachaltest.Activity.CustomTitleActivity;
 import com.seachal.seachaltest.Activity.CustomViewPreviewActivity;
 import com.seachal.seachaltest.Activity.DebugActivity;
-import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
+import com.seachal.seachaltest.Activity.LaunchOtherActivity;
 import com.seachal.seachaltest.Activity.LayerListActivity;
 import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;
@@ -29,6 +29,7 @@ import com.seachal.seachaltest.Activity.URITestActivity;
 import com.seachal.seachaltest.Activity.ViewMeasureActivity;
 import com.seachal.seachaltest.Activity.ViewStubActivity;
 import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
+import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.LinkTextViewActivity;
@@ -77,7 +78,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("View与父 View 的测量", ViewMeasureActivity.class));
         activityList.add(new StartActivityBean("EditText  最小字符数，最大字符数,addView", EditTextMinAndMaxLengthActivity.class));
 
-        activityList.add(new StartActivityBean("Activity 声明周期 SecondActivity", SecondActivity.class));
+        activityList.add(new StartActivityBean("Activity 生命周期 SecondActivity", SecondActivity.class));
         activityList.add(new StartActivityBean("DebugActivity", DebugActivity.class));
 
         activityList.add(new StartActivityBean("自定义 进度条", CustomViewPreviewActivity.class));
@@ -96,14 +97,15 @@ public class MainMenuActivity extends AppCompatActivity  {
 
         activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
         activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
-        activityList.add(new StartActivityBean("一次启动多个 Activity", StartMultiActivity.class));
-        activityList.add(new StartActivityBean(" 获取栈 menu 多种方式", TaskStackMenuActivity.class));
+        activityList.add(new StartActivityBean("一次启动多个 Activity,完全可以", StartMultiActivity.class));
+        activityList.add(new StartActivityBean(" 获取Activity Task栈 menu 多种方式", TaskStackMenuActivity.class));
         activityList.add(new StartActivityBean("String 转 uri", StringToUriActivity.class));
-        activityList.add(new StartActivityBean(" 长按事件", DragViewActivity.class));
-        activityList.add(new StartActivityBean(" 自定义长按事件，成功案例 ", DragTwoViewActivity.class));
-        activityList.add(new StartActivityBean(" 长按事件菜单 3", DragThreeViewActivity.class));
+        activityList.add(new StartActivityBean(" 自定义长按事件 1 ", DragViewActivity.class));
+        activityList.add(new StartActivityBean(" 自定义长按事件 2 成功案例 ", DragTwoViewActivity.class));
+        activityList.add(new StartActivityBean(" 自定义长按事件 3失败案例", DragThreeViewActivity.class));
         activityList.add(new StartActivityBean(" layer-list 测试案例", LayerListActivity.class));
-        activityList.add(new StartActivityBean(" GetDimension  getDimensionPixelSize   ", GetDimensionActivity.class));
+        activityList.add(new StartActivityBean(" GetDimension  getDimensionPixelSize q区别  ", GetDimensionActivity.class));
+        activityList.add(new StartActivityBean(" 另一个 app LaunchOtherActivity  ", LaunchOtherActivity.class));
 
 
     }

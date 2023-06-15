@@ -2,9 +2,7 @@ package com.example.seachal.launchedapp;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Main5Activity extends AppCompatActivity {
+public class Main5Activity   extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

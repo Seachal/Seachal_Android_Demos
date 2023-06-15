@@ -6,18 +6,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Set;
 
-public class Main62Activity extends AppCompatActivity {
+public class Main62Activity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         GlobalLication.getContext();
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.activity_main62);
         TextView textView = findViewById(R.id.text5);
         textView.setText(Main62Activity.class.getName());
 
@@ -44,6 +43,12 @@ public class Main62Activity extends AppCompatActivity {
         Log.e("TAG", "getLastPathSegment==========="+data.getLastPathSegment());
         Log.e("TAG", "getSchemeSpecificPart==========="+data.getSchemeSpecificPart());
         Log.e("TAG", "getUserInfo==========="+data.getUserInfo());
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
 
     }
 }
