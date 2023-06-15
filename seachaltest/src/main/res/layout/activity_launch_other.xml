@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.LaunchOtherActivity">
+    android:orientation="vertical"
+    tools:context=".intentflag.LaunchOtherActivity">
 
 
     <TextView
@@ -14,4 +15,8 @@
         android:text="其他另一个app "
         android:gravity="center"
         />
+
+
+
+
 </LinearLayout>

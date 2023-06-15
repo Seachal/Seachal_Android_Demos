@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class BaseActivity  extends AppCompatActivity {
 
-    private String TAG = getClass().getSimpleName();
+    private String TAG = "BaseActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,7 +67,6 @@ public class BaseActivity  extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Log.e(TAG, "onNewIntent:==========="+intent.toString());
-        setIntent(intent);
     }
 
 }

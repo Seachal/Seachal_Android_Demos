@@ -1,4 +1,4 @@
-package com.seachal.seachaltest.Activity;
+package com.seachal.seachaltest.intentflag;
 
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
@@ -25,15 +25,32 @@ public class LaunchOtherActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startOtherAppActivity13_1(v);
+                startOtherAppActivity1(v);
             }
         });
     }
 
 
 
-    public void startOtherAppActivity13_1(View view) {
+    public void startOtherAppActivity1(View view) {
        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
+        List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            if (isValid) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"没有安装",Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "可以在这里提示用户没有找到应用程序，或者是做其他的操作！", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void startOtherAppActivity2(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sc://seachal.me/macthDetail?macthId=222&time=10001"));
         List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();

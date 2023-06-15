@@ -18,7 +18,7 @@ import com.seachal.seachaltest.Activity.CustomTitleActivity;
 import com.seachal.seachaltest.Activity.CustomViewPreviewActivity;
 import com.seachal.seachaltest.Activity.DebugActivity;
 import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
-import com.seachal.seachaltest.Activity.LaunchOtherActivity;
+import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
 import com.seachal.seachaltest.Activity.LayerListActivity;
 import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;

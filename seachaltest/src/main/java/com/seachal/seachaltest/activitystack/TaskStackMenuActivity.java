@@ -17,7 +17,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
+/**
+ * @Author zhangxc
+ * @Description //TODO   获取任务栈
+ * @Date 15:16 2023/6/15
+ *
+ * @return * @return null
+ **/
 public class TaskStackMenuActivity extends AppCompatActivity  {
 
     @BindView(R.id.recycler_view)
@@ -33,10 +39,6 @@ public class TaskStackMenuActivity extends AppCompatActivity  {
     {
 
         activityList.add(new StartActivityBean("1 反射", StackActivity.class));
-
-
-
-
 
 
 
