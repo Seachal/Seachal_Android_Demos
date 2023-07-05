@@ -42,6 +42,7 @@ public class DialogTestActivity extends AppCompatActivity {
 
         Button btn4 = findViewById(R.id.btn4);
 
+//          创建一个 dialog, 让 dialog依赖 button 居中（位于 button 中心）。  不成功
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +57,22 @@ public class DialogTestActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+       Button  btn6 =  findViewById(R.id.btn6);
+        findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View localView = LayoutInflater.from(DialogTestActivity.this).inflate(R.layout.video_dialog_brightness6, null);
+                Dialog   dialog = createDialogWithView6(btn6,localView);
+                if (!dialog.isShowing()){
+                    dialog.show();
+                }else {
+                    dialog.dismiss();
+                }
+            }
+        });
+
 
         Button btn5 = findViewById(R.id.btn5);
         btn5.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +111,8 @@ public class DialogTestActivity extends AppCompatActivity {
      * Dialog 是依赖于 Window 的，不能直接设置 margin。但是可以通过设置 Dialog 中的内容布局和父容器来实现距离顶部的 margin。下面是一个示例代码：
      **/
     public Dialog createDialogWithView2(View anchorView ,View localView) {
-        Dialog dialog = new Dialog(DialogTestActivity.this, R.style.video_style_dialog_progress);
+//
+        Dialog dialog = new Dialog(DialogTestActivity.this, R.style.orange_style_dialog_windowBackground);
         dialog.setContentView(localView);
         Window window = dialog.getWindow();
         window.addFlags(Window.FEATURE_ACTION_BAR);
@@ -130,5 +148,43 @@ public class DialogTestActivity extends AppCompatActivity {
 
     }
 
+
+    public Dialog createDialogWithView6(View anchorView ,View localView) {
+//
+        Dialog dialog = new Dialog(DialogTestActivity.this, R.style.orange_style_dialog_background);
+        dialog.setContentView(localView);
+        Window window = dialog.getWindow();
+        window.addFlags(Window.FEATURE_ACTION_BAR);
+        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
+        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        window.setLayout(-2, -2);
+        WindowManager.LayoutParams localLayoutParams = window.getAttributes();
+        localLayoutParams.gravity = Gravity.TOP| Gravity.CENTER_HORIZONTAL;
+        window.setAttributes(localLayoutParams);
+
+
+//        localView的父view 的布局参数，这里改成 RelativeLayout.LayoutParams就报错了，用 FrameLayout.LayoutParams 是对的。
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+
+        /**
+         *   E  anchorView.getHeight() = 550
+         *   E   localView.getHeight() = 0
+         *   E   marginTop = 275
+         **/
+        int marginTop = (int) ((anchorView.getHeight() - localView.getHeight())/2f); // 设置距离顶部的 margin
+        Log.e( "seachalheig","anchorView.getHeight() = " + anchorView.getHeight()); // 550 ,为什么是550呢？因为已经测量过了，所以是550
+        Log.e( "seachalheig"," localView.getHeight() = " + localView.getHeight());  // 0 ,为什么是0呢？因为还没有测量，所以是0，怎样测量？下面有方法
+//         帮我写 localView.getHeight()测量方法
+        Log.e( "seachalheig"," marginTop = " + marginTop);
+        layoutParams.topMargin = marginTop;
+        localView.setLayoutParams(layoutParams);
+
+
+        return dialog;
+
+    }
 
 }

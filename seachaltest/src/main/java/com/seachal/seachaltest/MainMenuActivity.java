@@ -106,6 +106,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" layer-list 测试案例", LayerListActivity.class));
         activityList.add(new StartActivityBean(" GetDimension  getDimensionPixelSize q区别  ", GetDimensionActivity.class));
         activityList.add(new StartActivityBean(" 另一个 app LaunchOtherActivity  ", LaunchOtherActivity.class));
+        activityList.add(new StartActivityBean(" xml锁定方向，还可以监听横竖屏切换方向数据吗?  ", HorizontalAndVerticalScreenSwitchActivity.class));
 
 
     }

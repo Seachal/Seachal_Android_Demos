@@ -41,18 +41,29 @@
     <Button
         android:id="@+id/btn4"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/ll_top1"
-        android:text="创建一个 dialog, 让 dialog依赖 button 居中（位于 button 中心）"
+        android:text="创建一个 dialog, 让 dialog依赖 button 居中（位于 button 中心）,不成功，但是创建了透明背景的 Dialog"
         />
 
 
     <Button
         android:id="@+id/btn5"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/btn4"
         android:text="创建一个 popupWindow, 让 popupWindow依赖 button 居中（位于 button 中心）"
         />
+
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/btn5"
+        android:text="创建一个 dialog ， 设置 android:background 属性"
+        />
+
+
 
 </RelativeLayout>

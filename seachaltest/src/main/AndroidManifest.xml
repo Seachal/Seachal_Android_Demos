@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".TextView.TextSizeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HorizontalAndVerticalScreenSwitchActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
             android:name=".intentflag.LaunchOtherActivity"
             android:exported="false" />
         <activity
