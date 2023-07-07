@@ -2,6 +2,7 @@ package com.seachal.seachaltest.PopupDialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -79,6 +80,14 @@ public class DialogTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PopupUtil.showPopupWindow(DialogTestActivity.this,btn5);
+            }
+        });
+
+        Button btn7 = findViewById(R.id.btn7);
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialogWithView7(btn7);
             }
         });
 
@@ -184,6 +193,61 @@ public class DialogTestActivity extends AppCompatActivity {
 
 
         return dialog;
+
+    }
+
+    public void createDialogWithView7(View targetView ) {
+        // 获取目标 View 在屏幕上的坐标
+        int[] targetLocation = new int[2];
+        targetView.getLocationOnScreen(targetLocation);
+        int targetX = targetLocation[0] + targetView.getWidth() / 2;
+        int targetY = targetLocation[1] + targetView.getHeight() / 2;
+
+// 创建 Dialog
+        Dialog dialog = new Dialog(DialogTestActivity.this);
+//        View localView = LayoutInflater.from(DialogTestActivity.this).inflate(R.layout.video_dialog_brightness6, null);
+        // 设置 Dialog 布局
+        dialog.setContentView(R.layout.video_dialog_brightness7);
+// 设置 Dialog 布局等参数
+
+// 获取 Window 对象
+        Window window = dialog.getWindow();
+        if (window != null) {
+            // 设置 Dialog 的宽度和高度
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+            layoutParams.copyFrom(window.getAttributes());
+            layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+            layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+            // 设置 Dialog 的位置为目标 View 中心
+            layoutParams.gravity = Gravity.CENTER | Gravity.LEFT; // 或者使用 Gravity.TOP | Gravity.START
+            layoutParams.x = targetX - layoutParams.width / 2;
+            layoutParams.y = targetY - layoutParams.height / 2;
+
+            // 检查 Dialog 的位置是否超出屏幕范围，如果是，则根据需要进行调整
+            DisplayMetrics displayMetrics = DialogTestActivity.this.getResources().getDisplayMetrics();
+            int screenWidth = displayMetrics.widthPixels;
+            int screenHeight = displayMetrics.heightPixels;
+
+            if (layoutParams.x < 0) {
+                layoutParams.x = 0;
+            } else if (layoutParams.x + layoutParams.width > screenWidth) {
+                layoutParams.x = screenWidth - layoutParams.width;
+            }
+
+            if (layoutParams.y < 0) {
+                layoutParams.y = 0;
+            } else if (layoutParams.y + layoutParams.height > screenHeight) {
+                layoutParams.y = screenHeight - layoutParams.height;
+            }
+
+            // 应用 Dialog 的位置参数
+            window.setAttributes(layoutParams);
+        }
+
+
+       // 显示 Dialog
+        dialog.show();
 
     }
 

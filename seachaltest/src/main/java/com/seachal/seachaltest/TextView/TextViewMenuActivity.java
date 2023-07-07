@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.seachal.seachaltest.R;
 import com.seachal.seachaltest.adapter.MyAdapter;
 import com.seachal.seachaltest.bean.StartActivityBean;
+import com.seachal.seachaltest.customview.CustomTextViewTestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +33,8 @@ public class TextViewMenuActivity extends AppCompatActivity  {
     {
 
         activityList.add(new StartActivityBean("textView 带超链接", LinkTextViewActivity.class));
-        activityList.add(new StartActivityBean("textView 带超链接", LinkTextViewActivity.class));
-
+        activityList.add(new StartActivityBean("textView textsize 使用像素单位", TextSizeActivity.class));
+        activityList.add(new StartActivityBean("TextView setText 的时候，onMessure,会被调用吗。测量文字是否2行", CustomTextViewTestActivity.class));
     }
 
 

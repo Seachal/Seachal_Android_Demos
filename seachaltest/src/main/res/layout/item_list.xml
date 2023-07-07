@@ -3,8 +3,9 @@
     android:id="@+id/ll_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/shape_stroke_white_middle_corner"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <TextView
         android:id="@+id/tv_items"
@@ -12,6 +13,12 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:textSize="18sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/search_text_hint"
         />
 
 </LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.WheelViewActivity">
+
+
+    <com.seachal.seachaltest.widget.WheelView
+        android:id="@+id/alivc_wheelView_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/white"
+        app:npv_ItemPaddingHorizental="5dp"
+        app:npv_ItemPaddingVertical="5dp"
+        app:npv_ShowCount="5"
+        app:npv_TextSizeNormal="13sp"
+        app:npv_TextSizeSelected="18sp"
+        app:npv_WrapSelectorWheel="true" />
+
+</LinearLayout>

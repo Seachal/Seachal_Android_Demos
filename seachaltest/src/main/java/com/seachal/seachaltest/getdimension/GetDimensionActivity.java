@@ -80,12 +80,15 @@ public class GetDimensionActivity extends AppCompatActivity {
  * GetDimensionActivity    com.seachal.seachaltest              E  floatDp：112.75
  * GetDimensionActivity    com.seachal.seachaltest              E  pixelSizeDp：113
  * GetDimensionActivity    com.seachal.seachaltest              E  pixelOffsetDp：112
+ * ---
  * GetDimensionActivity    com.seachal.seachaltest              E  floatPx：44.0
  * GetDimensionActivity    com.seachal.seachaltest              E  pixelSizePx：44
  * GetDimensionActivity    com.seachal.seachaltest              E  pixelOffsetPx：44
+ * ----
  * GetDimensionActivity    com.seachal.seachaltest              E  floatSp：157.84999
  * GetDimensionActivity    com.seachal.seachaltest              E  pixelSizeSp：158
  * GetDimensionActivity    com.seachal.seachaltest              E  pixelOffsetSp：157
+ * ----
  * GetDimensionActivity    com.seachal.seachaltest              E  sp2px：154
  * GetDimensionActivity    com.seachal.seachaltest              E  dp2px：110
  **/

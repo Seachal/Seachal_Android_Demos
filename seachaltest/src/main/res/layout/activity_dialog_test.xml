@@ -64,6 +64,14 @@
         android:text="创建一个 dialog ， 设置 android:background 属性"
         />
 
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/btn6"
+        android:text="创建一个 dialog ， 相对目标 view居中"
+        />
+
 
 
 </RelativeLayout>
