@@ -10,7 +10,7 @@ public class TrainTransferActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_train_transfer);
         startOtherAppActivity_4();
-
+        finish();
 
     }
 

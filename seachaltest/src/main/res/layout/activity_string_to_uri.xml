@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.StringToUriActivity">
+    tools:context=".Activity.StringToUriActivity"
+    android:orientation="vertical"
+    >
 
 
     <TextView
@@ -13,5 +15,29 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="StringToUriActivity"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="StringToUriActivity   JSONObject  解析空字符串  Long接收，会异常（非空字符不异常）"
+        />
+
+    <TextView
+        android:id="@+id/textView_gson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="StringToUriActivity  gson 解析空字符串  Long接收，会异常吗？"
+        />
+
+    <TextView
+        android:id="@+id/textView_gson_String"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="StringToUriActivity  gson 解析空字符串  Long接收，会异常吗？"
         />
 </LinearLayout>

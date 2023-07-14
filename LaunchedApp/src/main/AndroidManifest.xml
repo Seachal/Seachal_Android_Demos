@@ -64,9 +64,12 @@
         </activity>
 
 
-<!--    和 seachal demo 配合使用， 从另一个 app 启动此app ， 看 onnewIntent的情况      -->
+<!--    和 seachal demo 配合使用， 从另一个 app 启动此app ， 看 onnewIntent的情况
+    被启动的 App 里 launchMode 为 singleTask
+    -->
         <activity
             android:name=".TrainTransferActivity"
+            android:launchMode="singleTask"
             android:exported="true" >
 
             <!-- Android 接收外部跳转过滤器 -->

@@ -37,7 +37,9 @@ public class LaunchOtherActivity extends AppCompatActivity {
         List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         Toast.makeText(this,isValid+"",Toast.LENGTH_LONG).show();
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        如果不加 new Task,   启动 App与被启动 App 会在同一个 Task 中,  会有一些问题,  比如,  从被启动 App 返回时,  会回到 App 的首页。
+//        除了在这里用代码设置 Flag,  还可以在 AndroidManifest.xml 中设置,  但是,  两者不能同时设置,  否则会有冲突。
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         try {
             if (isValid) {
                 startActivity(intent);
