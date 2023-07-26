@@ -1,6 +1,7 @@
 package com.seachal.seachaltest;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -116,6 +117,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_nenu);
         ButterKnife.bind(this);
+        Log.e("TAG", "onCreate: " + "MainMenuActivity");
         recycler_view.setAdapter(new MyAdapter(MainMenuActivity.this, activityList));
         recycler_view.setLayoutManager(new LinearLayoutManager(MainMenuActivity.this));
 
