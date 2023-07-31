@@ -155,6 +155,8 @@
         <activity android:name=".activitystack.TaskStackMenuActivity" />
         <activity android:name=".touchevent.DragThreeViewActivity" />
         <activity android:name=".TextView.TextViewMenuActivity" />
+
+        <activity android:name=".floatrv.RvFloatActivity" />
     </application>
 
 </manifest>

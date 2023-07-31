@@ -7,6 +7,15 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
+/**
+ * @Author zhangxc
+ * @Description //TODO   xml  可以锁定布局， 但是通过 Android Api 也可以修改屏幕方向。
+ * @Date 09:57 2023/7/31
+ *
+ * @return * @return null
+ **/
 public class HorizontalAndVerticalScreenSwitchActivity extends AppCompatActivity {
 
 //    tag
