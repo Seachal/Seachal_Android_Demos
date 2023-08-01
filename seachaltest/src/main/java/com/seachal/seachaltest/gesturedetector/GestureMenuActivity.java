@@ -56,7 +56,7 @@ public class GestureMenuActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_textview_menu);
+        setContentView(R.layout.activity_float_rv_onscroll);
         ButterKnife.bind(this);
         getSupportActionBar().setTitle(this.getClass().getSimpleName());
         recycler_view.setAdapter(new MyAdapter(GestureMenuActivity.this, activityList));

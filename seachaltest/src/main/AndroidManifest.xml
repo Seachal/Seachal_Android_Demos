@@ -157,6 +157,7 @@
         <activity android:name=".TextView.TextViewMenuActivity" />
 
         <activity android:name=".floatrv.RvFloatActivity" />
+        <activity android:name=".floatrv.behavior.RvFloatBehaviorActivity" />
     </application>
 
 </manifest>

@@ -21,7 +21,6 @@ import com.seachal.seachaltest.Activity.DebugActivity;
 import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
 import com.seachal.seachaltest.Activity.LayerListActivity;
 import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
-import com.seachal.seachaltest.floatrv.RvFloatActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity2;
@@ -37,6 +36,8 @@ import com.seachal.seachaltest.TextView.TextViewMenuActivity;
 import com.seachal.seachaltest.activitystack.TaskStackMenuActivity;
 import com.seachal.seachaltest.adapter.MyAdapter;
 import com.seachal.seachaltest.bean.StartActivityBean;
+import com.seachal.seachaltest.floatrv.RvFloatActivity;
+import com.seachal.seachaltest.floatrv.behavior.RvFloatBehaviorActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.getdimension.GetDimensionActivity;
 import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
@@ -108,7 +109,8 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" getDimension  与 getDimensionPixelSize 区别  ", GetDimensionActivity.class));
         activityList.add(new StartActivityBean(" 另一个 app LaunchOtherActivity  ", LaunchOtherActivity.class));
         activityList.add(new StartActivityBean(" xml锁定方向，手机横竖屏旋转，屏幕内容不会发生变化， 不会触发onConfigurationChanged?  ", HorizontalAndVerticalScreenSwitchActivity.class));
-        activityList.add(new StartActivityBean(" 悬浮效果  ", RvFloatActivity.class));
+        activityList.add(new StartActivityBean(" 悬浮效果  scroll实现 ", RvFloatActivity.class));
+        activityList.add(new StartActivityBean(" 悬浮效果  behavior 实现, behavior更丝滑", RvFloatBehaviorActivity.class));
 
 
     }
