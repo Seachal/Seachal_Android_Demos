@@ -22,6 +22,7 @@ import com.seachal.seachaltest.Activity.EditTextMinAndMaxLengthActivity;
 import com.seachal.seachaltest.Activity.LayerListActivity;
 import com.seachal.seachaltest.Activity.OnClickAbleFasleActivity;
 import com.seachal.seachaltest.Activity.SecondActivity;
+import com.seachal.seachaltest.Activity.SeekBarSynchronizeActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity2;
 import com.seachal.seachaltest.Activity.StringToUriActivity;
@@ -111,7 +112,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" xml锁定方向，手机横竖屏旋转，屏幕内容不会发生变化， 不会触发onConfigurationChanged?  ", HorizontalAndVerticalScreenSwitchActivity.class));
         activityList.add(new StartActivityBean(" 悬浮效果  scroll实现 ", RvFloatActivity.class));
         activityList.add(new StartActivityBean(" 悬浮效果  behavior 实现, behavior更丝滑", RvFloatBehaviorActivity.class));
-
+        activityList.add(new StartActivityBean(" 2 个 seekbar进度同步", SeekBarSynchronizeActivity.class));
 
     }
 

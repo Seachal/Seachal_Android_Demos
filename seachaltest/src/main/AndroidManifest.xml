@@ -158,6 +158,7 @@
 
         <activity android:name=".floatrv.RvFloatActivity" />
         <activity android:name=".floatrv.behavior.RvFloatBehaviorActivity" />
+        <activity android:name="com.seachal.seachaltest.Activity.SeekBarSynchronizeActivity" />
     </application>
 
 </manifest>
