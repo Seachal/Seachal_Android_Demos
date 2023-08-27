@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -16,36 +15,44 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_gravity="start"
             android:background="?attr/colorPrimary"
             android:contentInsetStart="0dp"
-            android:layout_gravity="start"
-            app:layout_scrollFlags="scroll|enterAlways" >
+            app:layout_scrollFlags="scroll|enterAlways">
+
             <TextView
                 android:id="@+id/tv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="30sp"
+                android:gravity="center"
                 android:text="这是一个搜索框"
-                android:gravity="center"/>
+                android:textSize="30sp" />
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-
 
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/t_studio_refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-<!--   不加这行， 列表会出现拉不下来的情况 -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/round_rectangle_shape"
+            android:backgroundTint="#fff"
+            app:cardElevation="10dp">
+            <!--   不加这行， 列表会出现拉不下来的情况 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 

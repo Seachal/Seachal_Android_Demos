@@ -10,7 +10,7 @@ package com.seachal.seachaltest.bean
  * @Version：1.0
  */
 // 如果解析失败  chapterId = 0
-//data class CourseJumpBean(val courseId: Long, val chapterId: Long)
+data class CourseJumpBeanNotNull(val courseId: Long, val chapterId: Long)
 
 // 如果解析失败  chapterId = null
 data class CourseJumpBean(val courseId: Long?, val chapterId: Long?)

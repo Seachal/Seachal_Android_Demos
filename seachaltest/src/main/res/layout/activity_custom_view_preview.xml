@@ -14,4 +14,13 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp" />
 
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:text="视频加载中..."
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
 </LinearLayout>

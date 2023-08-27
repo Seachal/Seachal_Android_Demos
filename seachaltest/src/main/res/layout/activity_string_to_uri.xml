@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.StringToUriActivity"
     android:orientation="vertical"
-    >
+    tools:context=".Activity.StringToUriActivity">
 
 
     <TextView
@@ -14,30 +13,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="StringToUriActivity"
-        />
+        android:text="StringToUriActivity" />
+
+
+
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="StringToUriActivity   JSONObject  解析空字符串  Long接收，会异常（非空字符不异常）"
-        />
+        android:text="StringToUriActivity   JSONObject，   Long?接收，* 解析空字符串会异常 * 解析非空字符不会异常" />
+
+
+    <TextView
+        android:id="@+id/textView_gson_not_null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="StringToUriActivity   Gson，   Long接收，* 解析空字符串会异常 * 解析非空字符不会异常" />
+
 
     <TextView
         android:id="@+id/textView_gson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="StringToUriActivity  gson 解析空字符串  Long接收，会异常吗？"
-        />
+        android:text="StringToUriActivity  gson  String   用Long接收，解析空字符串会异常吗？不会异常" />
 
     <TextView
         android:id="@+id/textView_gson_String"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="StringToUriActivity  gson 解析空字符串  Long接收，会异常吗？"
-        />
+        android:text="StringToUriActivity  gson String 用  String 接收，解析空字符串会异常吗？不会异常" />
 </LinearLayout>

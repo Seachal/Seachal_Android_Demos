@@ -472,3 +472,7 @@ If set to true, the parent will be used as the anchor when the anchor cannot be 
 ---
 如果把右侧倒数第二 2 个 share gone调，布局是不混乱的
 ![img_6.png](img_6.png)
+
+
+## 下一步的整理计划，项目代码的整理
+* 

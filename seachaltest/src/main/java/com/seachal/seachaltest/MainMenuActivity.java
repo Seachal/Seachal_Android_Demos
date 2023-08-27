@@ -102,7 +102,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
         activityList.add(new StartActivityBean("一次启动多个 Activity,完全可以", StartMultiActivity.class));
         activityList.add(new StartActivityBean(" 获取Activity Task栈 menu 多种方式", TaskStackMenuActivity.class));
-        activityList.add(new StartActivityBean("String 转 uri,Json String 解析", StringToUriActivity.class));
+        activityList.add(new StartActivityBean("String 转 uri,JsonString 转 Bean", StringToUriActivity.class));
         activityList.add(new StartActivityBean(" 自定义长按事件 1 ", DragViewActivity.class));
         activityList.add(new StartActivityBean(" 自定义长按事件 2 成功案例 ", DragTwoViewActivity.class));
         activityList.add(new StartActivityBean(" 自定义长按事件 3失败案例", DragThreeViewActivity.class));
