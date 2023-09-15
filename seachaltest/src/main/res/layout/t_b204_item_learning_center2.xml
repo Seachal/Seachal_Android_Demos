@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/yellow"
+    >
+
+
+
+<!--    hl_shadowLimit  相当于给四周 padding -->
+
+    <com.lihang.ShadowLayout
+        android:id="@+id/card_container"
+        android:layout_width="@dimen/dp_px_686"
+        android:layout_height="@dimen/dp_px_292"
+        android:layout_gravity="center_horizontal"
+        app:hl_cornerRadius="@dimen/dp_px_20"
+        app:hl_layoutBackground="@color/red"
+        app:hl_shadowColor="@color/c_f3f3f3"
+        app:hl_shadowLimit="@dimen/dp_px_10"
+        app:hl_shadowOffsetY="@dimen/dp_px_10"
+        >
+<!--
+
+
+app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_35"
+            android:background="@color/green"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dp_px_32">
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+
+                               Error inflating class com.google.android.material.card.MaterialCardView。
+
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                    android:textSize="30sp"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.lihang.ShadowLayout>
+
+</FrameLayout>

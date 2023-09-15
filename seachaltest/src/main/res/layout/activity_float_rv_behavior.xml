@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+<!--     style="@style/Widget.Design.AppBarLayout"    -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
+         android:background="@color/c_f9fbfc"
         android:layout_height="150dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -16,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_gravity="start"
-            android:background="?attr/colorPrimary"
             android:contentInsetStart="0dp"
             app:layout_scrollFlags="scroll|enterAlways">
 

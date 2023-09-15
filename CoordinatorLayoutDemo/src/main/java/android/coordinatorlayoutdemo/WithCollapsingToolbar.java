@@ -24,7 +24,7 @@ public class WithCollapsingToolbar extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitle("标题");
-        toolbar.setLogo(getResources().getDrawable(R.mipmap.ic_launcher));
+        toolbar.setLogo(getResources().getDrawable(R.drawable.ic_launcher));
         setSupportActionBar(toolbar);
 
 

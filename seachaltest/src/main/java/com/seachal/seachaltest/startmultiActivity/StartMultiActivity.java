@@ -11,6 +11,13 @@ import com.seachal.seachaltest.Activity.SecondActivity;
 import com.seachal.seachaltest.Activity.ThirdActivity;
 import com.seachal.seachaltest.R;
 
+
+/**
+ * @Author zhangxc
+ * @Description //TODO    一次 start 多 Activity 是可以的。
+ * @Date 10:33 2023/9/2
+ * @return * @return null
+ **/
 public class StartMultiActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +25,7 @@ public class StartMultiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_multi);
 
-       TextView tv_start_multi = findViewById(R.id.tv_start_multi);
+        TextView tv_start_multi = findViewById(R.id.tv_start_multi);
 
         tv_start_multi.setOnClickListener(new View.OnClickListener() {
             @Override

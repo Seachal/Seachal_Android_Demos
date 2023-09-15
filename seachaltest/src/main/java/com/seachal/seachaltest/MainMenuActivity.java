@@ -10,10 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.seachal.seachaltest.Activity.AndroiodScreenPropertyActivity;
 import com.seachal.seachaltest.Activity.BackgroundActivity;
+import com.seachal.seachaltest.Activity.BackgroundTransparentActivity;
+import com.seachal.seachaltest.Activity.BackgroundTransparentActivity2;
+import com.seachal.seachaltest.Activity.BackgroundTransparentActivity3;
 import com.seachal.seachaltest.Activity.ButtonActivity;
 import com.seachal.seachaltest.Activity.CanvasSaveRestoreActivity;
 import com.seachal.seachaltest.Activity.CardVeiwScrollActivity;
 import com.seachal.seachaltest.Activity.CardViewActivity;
+import com.seachal.seachaltest.Activity.CardViewActivity3;
+import com.seachal.seachaltest.Activity.CardViewActivity4;
+import com.seachal.seachaltest.Activity.CardViewActivity5;
 import com.seachal.seachaltest.Activity.CountDownTimerActivity;
 import com.seachal.seachaltest.Activity.CustomTitleActivity;
 import com.seachal.seachaltest.Activity.CustomViewPreviewActivity;
@@ -36,8 +42,10 @@ import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity
 import com.seachal.seachaltest.TextView.TextViewMenuActivity;
 import com.seachal.seachaltest.activitystack.TaskStackMenuActivity;
 import com.seachal.seachaltest.adapter.MyAdapter;
+import com.seachal.seachaltest.baservhelper.MultipleItemUseActivity;
 import com.seachal.seachaltest.bean.StartActivityBean;
 import com.seachal.seachaltest.floatrv.RvFloatActivity;
+import com.seachal.seachaltest.floatrv.WithAppBarLayout2;
 import com.seachal.seachaltest.floatrv.behavior.RvFloatBehaviorActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.getdimension.GetDimensionActivity;
@@ -90,6 +98,10 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("background 并不会对子 view裁剪， 甚至会被子 view 遮挡住圆角。 ", BackgroundActivity.class));
         activityList.add(new StartActivityBean("cardView 阴影颜色", CardViewActivity.class));
         activityList.add(new StartActivityBean("cardView 原生  越靠近屏幕底部颜色越深", CardVeiwScrollActivity.class));
+        activityList.add(new StartActivityBean("MaterialCardView", CardViewActivity3.class));
+        activityList.add(new StartActivityBean("cardview 嵌套 cardview", CardViewActivity4.class));
+        activityList.add(new StartActivityBean("lihangleo2:ShadowLayout:3.3.2", CardViewActivity5.class));
+        activityList.add(new StartActivityBean(" shadeoimage", CardViewActivity6.class));
         activityList.add(new StartActivityBean("屏幕 各种参数", AndroiodScreenPropertyActivity.class));
         activityList.add(new StartActivityBean("自定义 titleView", CustomTitleActivity.class));
         activityList.add(new StartActivityBean("ViewStub", ViewStubActivity.class));
@@ -112,7 +124,12 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" xml锁定方向，手机横竖屏旋转，屏幕内容不会发生变化， 不会触发onConfigurationChanged?  ", HorizontalAndVerticalScreenSwitchActivity.class));
         activityList.add(new StartActivityBean(" 悬浮效果  scroll实现 ", RvFloatActivity.class));
         activityList.add(new StartActivityBean(" 悬浮效果  behavior 实现, behavior更丝滑", RvFloatBehaviorActivity.class));
+        activityList.add(new StartActivityBean("  去掉AppBarLayout阴影", WithAppBarLayout2.class));
         activityList.add(new StartActivityBean(" 2 个 seekbar进度同步", SeekBarSynchronizeActivity.class));
+        activityList.add(new StartActivityBean(" Transparent  Transparency 不透明度", BackgroundTransparentActivity.class));
+        activityList.add(new StartActivityBean(" Transparent  Transparency 透明度", BackgroundTransparentActivity2.class));
+        activityList.add(new StartActivityBean(" recycleview 的几种滑动模式", BackgroundTransparentActivity3.class));
+        activityList.add(new StartActivityBean(" baseRecyclerViewAdapterHelper MultipleItemUseActivity", MultipleItemUseActivity.class));
 
     }
 

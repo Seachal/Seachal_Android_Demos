@@ -86,4 +86,17 @@
         <item name="android:windowExitAnimation">@anim/pop_from_bottom_anim_out</item>
     </style>
 
+
+<!--      移除  AppBarLayout 的阴影 ,  但是是全局修改，这样体验并不好。 -->
+<!--    <style name="Widget.Design.AppBarLayout" parent="android:Widget">-->
+<!--        <item name="elevation">0dp</item>-->
+<!--        <item name="android:background">@color/c_f9fbfc</item>-->
+<!--    </style>-->
+
+
+<!--    移除  AppBarLayout 的阴影 ,哪里需要哪里 拿过去-->
+    <style name="Widget.Design.AppBarLayout.Custom" parent="android:Widget">
+        <item name="elevation">0dp</item>
+    </style>
+
 </resources>

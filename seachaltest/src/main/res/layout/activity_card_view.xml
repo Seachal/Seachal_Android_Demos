@@ -19,7 +19,6 @@
         android:visibility="visible"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="10dp"
-
         app:cardElevation="10dp"
         app:cardMaxElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +124,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="官方控件 " />
+            android:text="件container2 点击改变前面两个 cardview 阴影 " />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

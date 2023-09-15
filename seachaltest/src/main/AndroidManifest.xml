@@ -15,6 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Activity.BackgroundTransparentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BackgroundTransparentActivity2"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.BackgroundTransparentActivity3"
+            android:exported="false" />
+        <activity
             android:name=".Activity.WheelViewActivity"
             android:exported="false" />
         <activity
@@ -155,10 +165,15 @@
         <activity android:name=".activitystack.TaskStackMenuActivity" />
         <activity android:name=".touchevent.DragThreeViewActivity" />
         <activity android:name=".TextView.TextViewMenuActivity" />
-
         <activity android:name=".floatrv.RvFloatActivity" />
         <activity android:name=".floatrv.behavior.RvFloatBehaviorActivity" />
-        <activity android:name="com.seachal.seachaltest.Activity.SeekBarSynchronizeActivity" />
+        <activity android:name=".floatrv.WithAppBarLayout2" />
+        <activity android:name=".Activity.SeekBarSynchronizeActivity" />
+        <activity android:name=".baservhelper.MultipleItemUseActivity" />
+        <activity android:name=".Activity.CardViewActivity3" />
+        <activity android:name=".Activity.CardViewActivity4" />
+        <activity android:name=".Activity.CardViewActivity5" />
+
     </application>
 
 </manifest>

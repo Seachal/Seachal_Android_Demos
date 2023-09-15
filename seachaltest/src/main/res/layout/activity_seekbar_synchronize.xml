@@ -3,17 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     >
+    <SeekBar
+        android:id="@+id/seekBar0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        />
 
     <SeekBar
         android:id="@+id/seekBar1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:max="100"
+        android:maxHeight="@dimen/dp_px_6"
+        android:minHeight="@dimen/dp_px_2"
+        android:progressDrawable="@drawable/t_jz_bottom_seek_progress_default"
 
-    <SeekBar
+        />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/seekBar2"
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/dp_px_2"
+        android:minHeight="@dimen/dp_px_1"
+        android:background="@null"
+        android:max="100"
+        android:progressDrawable="@drawable/t_jz_bottom_seek_progress_default"
+        />
 
 </LinearLayout>

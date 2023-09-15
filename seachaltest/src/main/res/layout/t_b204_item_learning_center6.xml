@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <!--    hl_shadowLimit  相当于给四周 padding -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/red">
+
+
+                <ImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_px_50"
+                    android:elevation="30dp"
+                    android:outlineAmbientShadowColor="@color/gray2"
+                    android:outlineSpotShadowColor="@color/gray2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:src="@drawable/qipao" />
+
+
+            </LinearLayout>
+
+            <com.lihang.ShadowLayout
+                android:id="@+id/card_container"
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_px_50"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowHiddenTop="true"
+                app:hl_shadowLimit="@dimen/dp_px_10"
+                app:hl_shadowOffsetY="@dimen/dp_px_5">
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_px_686"
+                    android:layout_height="@dimen/dp_px_292"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_10,     app:hl_shadowHiddenTop=  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_20">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_20, dp_px_0  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowHiddenTop="true"
+                app:hl_shadowLimit="@dimen/dp_px_20"
+                app:hl_shadowOffsetY="@dimen/dp_px_5">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_20, dp_px_5      app:hl_shadowHiddenTop  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_20"
+                app:hl_shadowOffsetY="@dimen/dp_px_6">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_20, dp_px_6  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_20"
+                app:hl_shadowOffsetY="@dimen/dp_px_7">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_20, dp_px_7  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_20"
+                app:hl_shadowOffsetY="@dimen/dp_px_8">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_20, dp_px_8  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_20"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_20, dp_px_10  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_5">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_5  天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_10   c_2a000000色 天2020年5月25日，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#999999"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_10 999999 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#999999"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_6">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_6 999999 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#1a000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_10 1a000000 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_10 0F000000 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_px_686"
+                    android:layout_height="@dimen/dp_px_292"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_10 0F000000 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+
+            <com.lihang.ShadowLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_10">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_px_686"
+                    android:layout_height="@dimen/dp_px_292"
+                    android:background="@color/red"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_10 0F000000 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="@dimen/dp_px_686"
+                android:layout_height="@dimen/dp_px_292"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="@dimen/dp_px_20"
+                app:hl_layoutBackground="@color/white"
+                app:hl_shadowColor="#0F000000"
+                app:hl_shadowLimit="@dimen/dp_px_30"
+                app:hl_shadowOffsetY="@dimen/dp_px_6">
+
+                <!--               app:hl_shadowColor="@color/c_f3f3f3"   -->
+                <!--        #0F000000 -->
+                <!--
+
+
+                app:hl_shadowLimit="@dimen/dp_px_10"
+
+
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=" dp_px_30, dp_px_6 0F000000 色，我在学习使用MaterialCardView控件的时候，遇到一个错误：
+谷歌了很久，也没看到有人遇到这问题，最后还是让我找到了，其实就是Material库版本的问题，升级到1.1.0之后，在使用MarterialCardView控件的时候，需要加上一个属性：android:theme="
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/red" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -19,6 +19,9 @@ public class CardViewActivity extends AppCompatActivity {
     CardView  card_view_menu_container1;
     CardView  card_view_menu_container2;
 
+//
+    private  int count = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +35,26 @@ public class CardViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    cardview.setOutlineAmbientShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray3));
-                    cardview.setOutlineSpotShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray3));
 
+                   if (count %2 >0){
+//                         会比 xml 中初始的颜色更浅一些
+                       cardview.setOutlineAmbientShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray3));
+                       cardview.setOutlineSpotShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray3));
 
-                    card_view_menu_container1.setOutlineAmbientShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray1));
-                    card_view_menu_container1.setOutlineSpotShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray1));
+                       card_view_menu_container1.setOutlineAmbientShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray1));
+                       card_view_menu_container1.setOutlineSpotShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.gray1));
 
+                   }else {
+//                    看不到边框，  完全融为一体。
 
+                       cardview.setOutlineAmbientShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.white));
+                       cardview.setOutlineSpotShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.white));
 
+                       card_view_menu_container1.setOutlineAmbientShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.white));
+                       card_view_menu_container1.setOutlineSpotShadowColor(ContextCompat.getColor(CardViewActivity.this, R.color.white));
+
+                   }
+                    count++ ;
                 }
             }
         });

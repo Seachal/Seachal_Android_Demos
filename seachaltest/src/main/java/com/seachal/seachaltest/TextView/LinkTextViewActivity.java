@@ -126,7 +126,7 @@ public class LinkTextViewActivity extends AppCompatActivity {
         //        ssb.setSpan(new BackgroundColorSpan(Color.GREEN),0,1,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //        ssb.setSpan(new ForegroundColorSpan(Color.RED),1,2,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //        //获取图片
-        //        Drawable d = getResources().getDrawable(R.mipmap.ic_launcher);
+        //        Drawable d = getResources().getDrawable(R.drawable.ic_launcher);
         //        //这行不能少 设置固有宽高
         //        d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
         //        ImageSpan imageSpan = new ImageSpan(d);
