@@ -101,7 +101,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("MaterialCardView", CardViewActivity3.class));
         activityList.add(new StartActivityBean("cardview 嵌套 cardview", CardViewActivity4.class));
         activityList.add(new StartActivityBean("lihangleo2:ShadowLayout:3.3.2", CardViewActivity5.class));
-        activityList.add(new StartActivityBean(" shadeoimage", CardViewActivity6.class));
+//        activityList.add(new StartActivityBean(" shadeoimage", CardViewActivity6.class));
         activityList.add(new StartActivityBean("屏幕 各种参数", AndroiodScreenPropertyActivity.class));
         activityList.add(new StartActivityBean("自定义 titleView", CustomTitleActivity.class));
         activityList.add(new StartActivityBean("ViewStub", ViewStubActivity.class));

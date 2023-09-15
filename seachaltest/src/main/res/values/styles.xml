@@ -99,4 +99,13 @@
         <item name="elevation">0dp</item>
     </style>
 
+
+    <style name="SeekBarDefaultStyle8">
+        <item name="android:maxHeight">8dp</item>
+    </style>
+
+    <style name="SeekBarDefaultStyle4">
+        <item name="android:maxHeight">4dp</item>
+    </style>
+
 </resources>

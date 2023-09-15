@@ -106,5 +106,4 @@ dependencies {
     implementation 'com.github.lihangleo2:ShadowLayout:3.3.3'
 
 //   自适应高度的 viewpager
-    implementation 'com.github.iffa:wrapping-viewpager:1.10'
 }

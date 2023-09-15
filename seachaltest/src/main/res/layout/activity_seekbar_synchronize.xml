@@ -1,16 +1,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/black"
-    >
+    android:orientation="vertical">
+
     <SeekBar
         android:id="@+id/seekBar0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="0dp"
-        />
+        android:paddingStart="0dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="调整文档seekBar1"
+        android:textColor="@color/white" />
 
     <SeekBar
         android:id="@+id/seekBar1"
@@ -22,19 +29,22 @@
         android:maxHeight="@dimen/dp_px_6"
         android:minHeight="@dimen/dp_px_2"
         android:progressDrawable="@drawable/t_jz_bottom_seek_progress_default"
+        android:thumb="@drawable/t_jz_bottom_seek_poster_thumb"
 
         />
 
     <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/seekBar2"
-        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxHeight="@dimen/dp_px_2"
-        android:minHeight="@dimen/dp_px_1"
+        android:layout_marginTop="80dp"
         android:background="@null"
         android:max="100"
-        android:progressDrawable="@drawable/t_jz_bottom_seek_progress_default"
-        />
+        android:maxHeight="@dimen/dp_px_2"
+        android:minHeight="@dimen/dp_px_1"
+        android:progressDrawable="@drawable/t_jz_bottom_seek_progress_default" />
+
+
+
 
 </LinearLayout>
