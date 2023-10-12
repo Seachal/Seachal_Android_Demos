@@ -14,7 +14,7 @@ import android.widget.SeekBar;
  * @date 2023/9/5 18:37
  * @Version：1.0
  */
-public class MySeekBar  extends SeekBar {
+public class MySeekBar  extends androidx.appcompat.widget.AppCompatSeekBar {
 
     public MySeekBar(Context context) {
         super(context);
@@ -31,4 +31,5 @@ public class MySeekBar  extends SeekBar {
     public MySeekBar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
+
 }
