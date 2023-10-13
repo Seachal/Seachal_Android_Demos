@@ -2,7 +2,6 @@ package com.seachal.seachaltest.View;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.SeekBar;
 
 /**
  * *
@@ -28,8 +27,6 @@ public class MySeekBar  extends androidx.appcompat.widget.AppCompatSeekBar {
         super(context, attrs, defStyleAttr);
     }
 
-    public MySeekBar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
+
 
 }

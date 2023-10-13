@@ -15,12 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FloatingActionButton.FloatingActionButtonActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.BackgroundTransparentActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.BackgroundTransparentActivity2"
             android:exported="false" />
-
         <activity
             android:name=".Activity.BackgroundTransparentActivity3"
             android:exported="false" />
@@ -173,7 +175,6 @@
         <activity android:name=".Activity.CardViewActivity3" />
         <activity android:name=".Activity.CardViewActivity4" />
         <activity android:name=".Activity.CardViewActivity5" />
-
     </application>
 
 </manifest>

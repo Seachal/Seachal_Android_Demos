@@ -36,6 +36,7 @@ import com.seachal.seachaltest.Activity.URITestActivity;
 import com.seachal.seachaltest.Activity.ViewMeasureActivity;
 import com.seachal.seachaltest.Activity.ViewStubActivity;
 import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
+import com.seachal.seachaltest.FloatingActionButton.FloatingActionButtonActivity;
 import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
@@ -130,6 +131,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" Transparent  Transparency 透明度", BackgroundTransparentActivity2.class));
         activityList.add(new StartActivityBean(" recycleview 的几种滑动模式", BackgroundTransparentActivity3.class));
         activityList.add(new StartActivityBean(" baseRecyclerViewAdapterHelper MultipleItemUseActivity", MultipleItemUseActivity.class));
+        activityList.add(new StartActivityBean(" FloatingActionButton ", FloatingActionButtonActivity.class));
 
     }
 
