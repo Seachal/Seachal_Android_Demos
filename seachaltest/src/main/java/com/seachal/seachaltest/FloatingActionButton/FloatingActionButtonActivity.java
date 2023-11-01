@@ -89,7 +89,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
         RelativeLayout.LayoutParams layoutParams =       layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 // 设置margin
         int marginInPixels = getResources().getDimensionPixelSize(R.dimen.dp_px_10);
-        
+
         layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
 // 应用新的布局参数
         fab.setLayoutParams(layoutParams);

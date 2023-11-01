@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".dialogfragment.DialogFragmentTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".layoutparams.LayoutParamsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".overlap.OverlapViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".FloatingActionButton.FloatingActionButtonActivity"
             android:exported="false" />
         <activity
@@ -175,6 +184,7 @@
         <activity android:name=".Activity.CardViewActivity3" />
         <activity android:name=".Activity.CardViewActivity4" />
         <activity android:name=".Activity.CardViewActivity5" />
+        <activity android:name=".TextView.TextStrokeActivity" />
     </application>
 
 </manifest>

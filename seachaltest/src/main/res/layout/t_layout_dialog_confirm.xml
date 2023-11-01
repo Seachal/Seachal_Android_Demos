@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_px_620"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_mall_rectangle_tag_platform"
+        >
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_px_40"
+            android:text="测试，复用 Dialog的情况下，修改文案是否生效"
+            android:textColor="@color/common33"
+            android:textSize="@dimen/dp_px_36" />
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_px_50"
+            android:paddingHorizontal="@dimen/dp_px_65"
+            android:text="清除后不可恢复"
+            tools:text=""
+            android:textColor="@color/common33"
+            android:textSize="@dimen/dp_px_36" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_1"
+            android:layout_marginTop="@dimen/dp_px_57"
+            android:background="@color/c_cccccc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_96">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_px_26"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/common77"
+                android:textSize="@dimen/dp_px_36" />
+
+            <View
+                android:layout_width="@dimen/dp_px_1"
+                android:layout_height="match_parent"
+                android:background="@color/c_cccccc" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_px_26"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="@color/c_ff6b00"
+                android:textSize="@dimen/dp_px_36"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

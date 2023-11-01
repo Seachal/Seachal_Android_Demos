@@ -108,4 +108,14 @@
         <item name="android:maxHeight">4dp</item>
     </style>
 
+
+<!--   文字阴影，文字描边    -->
+    <style name="video_dialog_text_view">
+        <item name="android:shadowColor">#99000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3.0</item>
+        <item name="android:textSize">@dimen/dp_px_36</item>
+    </style>
+
 </resources>

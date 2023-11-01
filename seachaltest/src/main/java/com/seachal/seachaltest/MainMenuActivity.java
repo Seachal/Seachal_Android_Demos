@@ -45,12 +45,15 @@ import com.seachal.seachaltest.activitystack.TaskStackMenuActivity;
 import com.seachal.seachaltest.adapter.MyAdapter;
 import com.seachal.seachaltest.baservhelper.MultipleItemUseActivity;
 import com.seachal.seachaltest.bean.StartActivityBean;
+import com.seachal.seachaltest.dialogfragment.DialogFragmentTestActivity;
 import com.seachal.seachaltest.floatrv.RvFloatActivity;
 import com.seachal.seachaltest.floatrv.WithAppBarLayout2;
 import com.seachal.seachaltest.floatrv.behavior.RvFloatBehaviorActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.getdimension.GetDimensionActivity;
 import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
+import com.seachal.seachaltest.layoutparams.LayoutParamsActivity;
+import com.seachal.seachaltest.overlap.OverlapViewActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
 import com.seachal.seachaltest.touchevent.DragThreeViewActivity;
@@ -110,6 +113,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("Button RadioGroupButton  RadioButton", ButtonActivity.class));
 
         activityList.add(new StartActivityBean("Dialog", DialogTestActivity.class));
+        activityList.add(new StartActivityBean("DialogFragment", DialogFragmentTestActivity.class));
 
         activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
         activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
@@ -119,6 +123,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" 自定义长按事件 1 ", DragViewActivity.class));
         activityList.add(new StartActivityBean(" 自定义长按事件 2 成功案例 ", DragTwoViewActivity.class));
         activityList.add(new StartActivityBean(" 自定义长按事件 3失败案例", DragThreeViewActivity.class));
+        activityList.add(new StartActivityBean(" 有两个重叠的 view , 点击的时候，上层的 view 和下层的 view 都能响应事件吗?", OverlapViewActivity.class));
         activityList.add(new StartActivityBean(" layer-list 测试案例", LayerListActivity.class));
         activityList.add(new StartActivityBean(" getDimension  与 getDimensionPixelSize 区别  ", GetDimensionActivity.class));
         activityList.add(new StartActivityBean(" 另一个 app LaunchOtherActivity  ", LaunchOtherActivity.class));
@@ -132,7 +137,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" recycleview 的几种滑动模式", BackgroundTransparentActivity3.class));
         activityList.add(new StartActivityBean(" baseRecyclerViewAdapterHelper MultipleItemUseActivity", MultipleItemUseActivity.class));
         activityList.add(new StartActivityBean(" FloatingActionButton ", FloatingActionButtonActivity.class));
-
+        activityList.add(new StartActivityBean(" LayoutParams gravity  layout_gravity addRule ", LayoutParamsActivity.class));
     }
 
 

@@ -17,103 +17,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="下面开始在xml中设置 textsize"
-                android:background="@color/c_ffc292"
-                />
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World!   30sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
-
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World!  dp_px_30"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/dp_px_30"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World!  dp_px_60"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/dp_px_60"
-                android:textStyle="bold|italic" />
-
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World! 4"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="下面开始在代码中设置 textsize"
-                android:background="@color/c_ffc292"
-                />
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World! 5"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World! 6"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Hello World! 7"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
 
 
             <TextView
@@ -122,6 +25,53 @@
                 android:text="下面开始在代码中设置文字描边"
                 android:background="@color/c_ffc292"
                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                >
+                <TextView
+                    android:id="@+id/textView_stroke_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="TextViewTextView描边 1"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="1"
+                    android:shadowColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                >
+                <TextView
+                    android:id="@+id/textView_stroke_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="TextViewTextView描边 1"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="2"
+                    android:shadowColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
