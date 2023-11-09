@@ -9,7 +9,7 @@
         android:layout_width="@dimen/dp_px_620"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/shape_mall_rectangle_tag_platform"
+        android:background="@drawable/shape_bg_ffffff_12dp_corner"
         >
 
 

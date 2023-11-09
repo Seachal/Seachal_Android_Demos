@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onActivityResult.SecondBActivity"
+    android:orientation="vertical"
+    >
+
+<!--    有一个 button， 点击 button 回到 OnActivityResultActivity-->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_100"
+        android:text="回到 OnActivityResultActivity  requestCode:100"
+        android:textColor="@color/common33"
+        android:textSize="@dimen/dp_px_36"
+      />
+
+    <Button
+        android:id="@+id/btn_back_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_100"
+        android:text="回到 OnActivityResultActivity  resultCode:200"
+        android:textColor="@color/common33"
+        android:textSize="@dimen/dp_px_36"
+    />
+
+</LinearLayout>

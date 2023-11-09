@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 
-open class BaseDialogFragment : DialogFragment() {
+open class BaseDialogFragmentKotlin : DialogFragment() {
     override fun show(manager: FragmentManager, tag: String?) {
         Log.e("BaseDialogFragment", "show")
         if (!manager.isDestroyed && !manager.isStateSaved) {

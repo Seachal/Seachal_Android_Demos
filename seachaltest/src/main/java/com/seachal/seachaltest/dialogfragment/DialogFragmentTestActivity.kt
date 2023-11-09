@@ -9,9 +9,9 @@ import kotlinx.android.synthetic.main.activity_dialog_fragment_test.btn_show_dia
 
 class DialogFragmentTestActivity : AppCompatActivity() {
 
-    //     TrainingConfirmDialogFragment 懒加载
+    //     AConfirmDialogFragment 懒加载
     private val trainingConfirmDialogFragment by lazy {
-        TrainingConfirmDialogFragment("确定删除该条目？")
+        AConfirmDialogFragment("确定删除该条目？")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,14 +20,14 @@ class DialogFragmentTestActivity : AppCompatActivity() {
 
         btn_show_dialog.setOnClickListener {
             trainingConfirmDialogFragment.content = "测试第 1 show修改文案是否生效？"
-            trainingConfirmDialogFragment.show(supportFragmentManager, "TrainingConfirmDialogFragment")
+            trainingConfirmDialogFragment.show(supportFragmentManager, "AConfirmDialogFragment")
         }
         btn_hide_dialog.setOnClickListener {
             trainingConfirmDialogFragment.dismiss()
         }
         btn_3.setOnClickListener {
             trainingConfirmDialogFragment.content = "测试第 2 次修改 dialog文案是否生效？"
-            trainingConfirmDialogFragment.show(supportFragmentManager, "TrainingConfirmDialogFragment")
+            trainingConfirmDialogFragment.show(supportFragmentManager, "AConfirmDialogFragment")
         }
 
     }
