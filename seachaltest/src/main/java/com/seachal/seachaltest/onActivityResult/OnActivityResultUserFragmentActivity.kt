@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_on_result.tv_result
 
 /**
  * TODO onActivityResult.
- *  1. 从ActivityA跳转到ActivityB，ActivityB中有一个按钮，点击按钮后，返回ActivityA，并且携带数据
+ *  1. 从ActivityA 弹出 DialogFragment A, DialogFragment A,跳转到ActivityB，ActivityB中有一个按钮，点击按钮后，返回ActivityA，并且携带数据
  *
  */
 class OnActivityResultUserFragmentActivity : AppCompatActivity(),
@@ -22,6 +22,11 @@ class OnActivityResultUserFragmentActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_result)
+        btn_activity_b.setOnClickListener {
+            btn_activity_b_click()
+        }
+
+
         btn_activity_b.setOnClickListener {
             btn_activity_b_click()
         }
@@ -36,6 +41,7 @@ class OnActivityResultUserFragmentActivity : AppCompatActivity(),
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        Log.d("OnActivityResult", "First onActivityResult requestCode: $requestCode, resultCode: $resultCode, data: $data")
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 200) {
             if (resultCode == RESULT_OK) {

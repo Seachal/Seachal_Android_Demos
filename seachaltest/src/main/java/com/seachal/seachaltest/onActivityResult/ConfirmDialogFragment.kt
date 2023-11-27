@@ -18,6 +18,8 @@ import com.seachal.seachaltest.dialogfragment.BaseDialogFragmentKotlin
 import kotlinx.android.synthetic.main.activity_on_result.tv_result
 import kotlinx.android.synthetic.main.t_layout_dialog_confirm.tv_content
 import kotlinx.android.synthetic.main.t_layout_dialog_confirm.view.tv_cancel
+import kotlinx.android.synthetic.main.t_layout_dialog_confirm.view.tv_click1
+import kotlinx.android.synthetic.main.t_layout_dialog_confirm.view.tv_click2
 import kotlinx.android.synthetic.main.t_layout_dialog_confirm.view.tv_confirm
 import kotlinx.android.synthetic.main.t_layout_dialog_confirm.view.tv_content
 
@@ -67,6 +69,10 @@ class ConfirmDialogFragment(var content: String) : BaseDialogFragmentKotlin() {
 //                dismiss()
                 listener.onConfirm()
             }
+            tv_click2.setOnClickListener {
+                val intent = Intent(mActivity, SecondBActivity::class.java)
+                startActivityForResult(intent, 200)
+            }
         }
     }
 
@@ -100,6 +106,7 @@ class ConfirmDialogFragment(var content: String) : BaseDialogFragmentKotlin() {
 //    在 Fragment 中处理 onActivityResult
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        Log.d("OnActivityResult", "Dialog onActivityResult requestCode: $requestCode, resultCode: $resultCode, data: $data")
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 200) {
             if (resultCode == AppCompatActivity.RESULT_OK) {

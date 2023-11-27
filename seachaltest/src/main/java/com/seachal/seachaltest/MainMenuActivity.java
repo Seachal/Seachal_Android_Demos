@@ -55,6 +55,7 @@ import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
 import com.seachal.seachaltest.layoutparams.LayoutParamsActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentActivity;
+import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentContainerActivity;
 import com.seachal.seachaltest.overlap.OverlapViewActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
@@ -142,6 +143,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" LayoutParams gravity  layout_gravity addRule ", LayoutParamsActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:Activity ", OnActivityResultActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:DialogFragment ", OnActivityResultUserFragmentActivity.class));
+        activityList.add(new StartActivityBean(" onActivityResult:DialogFragment 2 ", OnActivityResultUserFragmentContainerActivity.class));
 
     }
 

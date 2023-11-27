@@ -1,8 +1,10 @@
 package com.seachal.seachaltest.onActivityResult
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.blankj.utilcode.util.ActivityUtils.startActivityForResult
 import com.seachal.seachaltest.R
 import com.zhangyue.we.x2c.X2C.setContentView
 import kotlinx.android.synthetic.main.activity_on_result.btn_activity_b
@@ -29,6 +31,7 @@ class OnActivityResultActivity : AppCompatActivity() {
         val intent = Intent(this, SecondBActivity::class.java)
         startActivityForResult(intent, 100)
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

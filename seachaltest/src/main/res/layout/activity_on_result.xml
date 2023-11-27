@@ -19,6 +19,17 @@
         android:textSize="@dimen/dp_px_36"
        />
 
+    <Button
+        android:id="@+id/btn_activity_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_100"
+        android:text="弹出Dialog"
+        android:textColor="@color/common33"
+        android:textSize="@dimen/dp_px_36"
+        />
+
+
 <!--    一个 textview， 用于显示结果-->
     <TextView
         android:id="@+id/tv_result"
