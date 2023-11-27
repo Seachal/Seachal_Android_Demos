@@ -94,4 +94,6 @@ public class ViewUtils {
         textView.setGravity(Gravity.CENTER);//文本居中
         textView.setSingleLine();//文本单行
     }
+
+
 }

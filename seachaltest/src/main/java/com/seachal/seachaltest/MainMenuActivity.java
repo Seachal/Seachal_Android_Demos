@@ -39,6 +39,7 @@ import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
 import com.seachal.seachaltest.FloatingActionButton.FloatingActionButtonActivity;
 import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
+import com.seachal.seachaltest.ScrollListFragment.ScrollListFragmentActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.TextViewMenuActivity;
 import com.seachal.seachaltest.activitystack.TaskStackMenuActivity;
@@ -144,6 +145,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" onActivityResult:Activity ", OnActivityResultActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:DialogFragment ", OnActivityResultUserFragmentActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:DialogFragment 2 ", OnActivityResultUserFragmentContainerActivity.class));
+        activityList.add(new StartActivityBean(" 列表中有 Fragment ,上滑完全离开可视区域 会执行Fragment哪些方法？ ", ScrollListFragmentActivity.class));
 
     }
 
