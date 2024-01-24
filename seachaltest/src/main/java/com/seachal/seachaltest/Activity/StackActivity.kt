@@ -16,7 +16,7 @@ import com.seachal.seachaltest.utils.ActivityUtils.allActivitys
  *
  * @return * @return null
  *
- * 获取栈内所有的 Activity。
+ * 获取栈内所有的 TimerActivity。
  *
  * [获取栈中所有activity的方法 - 简书](https://www.jianshu.com/p/3f74a06a71a1)
  *

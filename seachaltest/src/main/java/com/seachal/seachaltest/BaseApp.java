@@ -24,7 +24,7 @@ public class BaseApp  extends MultiDexApplication {
 //  帮我写完   registerActivityLifecycleCallbacks
 
 
-//    Activity 栈
+//    TimerActivity 栈
     public  static  Stack<Activity> stack = new Stack<>();
 
     public  static  Context getContext() {

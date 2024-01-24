@@ -3,10 +3,12 @@ package com.seachal.seachaltest.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 
 import com.seachal.seachaltest.R;
 import com.zhangyue.we.x2c.X2C;
@@ -20,7 +22,6 @@ import com.zhangyue.we.x2c.ano.Xml;
  * @author zhangxc
  * @date 2019-10-23 16:10
  * *
- *
  */
 @Xml(layouts = "activity_count_down_timer")
 public class CountDownTimerActivity extends AppCompatActivity {
@@ -51,6 +52,25 @@ public class CountDownTimerActivity extends AppCompatActivity {
             }
         }.start();
     }
+
+
+//    public void scrollToView(NestedScrollView scrollView, View view) {
+//        // Compute the coordinates of the view inside the scroll view
+//        int x = view.getLeft();
+//        int y = view.getTop();
+//        for(ViewParent parent = view.getParent();
+//            parent instanceof ViewGroup;
+//            parent != scrollView;
+//            parent = ((View)parent).getParent()) {
+//            x += ((View)parent).getLeft();
+//            y += ((View)parent).getTop();
+//        }
+//
+//        // Scroll to the computed coordinates
+//        scrollView.smoothScrollTo(x, y);
+//    }
+
+
 
 
 }

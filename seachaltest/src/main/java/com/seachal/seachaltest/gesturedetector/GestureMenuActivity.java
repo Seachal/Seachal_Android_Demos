@@ -36,17 +36,17 @@ public class GestureMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("手势  OnGestureListener return false", OnGestureListener2Activity.class));
 
 
-        activityList.add(new StartActivityBean("手势  OnGestureListener return true 分发给 Activity ", OnGestureListener3Activity.class));
+        activityList.add(new StartActivityBean("手势  OnGestureListener return true 分发给 TimerActivity ", OnGestureListener3Activity.class));
 
-        activityList.add(new StartActivityBean("手势  OnGestureListener return false  分发给 Activity", OnGestureListener4Activity.class));
+        activityList.add(new StartActivityBean("手势  OnGestureListener return false  分发给 TimerActivity", OnGestureListener4Activity.class));
 
 
         activityList.add(new StartActivityBean("手势  OnDoubleTapListener", OnDoubleTapListenerActivity.class));
-        activityList.add(new StartActivityBean("手势  OnDoubleTapListener 分发给 Activity", OnDoubleTapListener2Activity.class));
+        activityList.add(new StartActivityBean("手势  OnDoubleTapListener 分发给 TimerActivity", OnDoubleTapListener2Activity.class));
 
 
         activityList.add(new StartActivityBean("手势  SimpleOnGestureListener", SimpleOnGestureListenerActivity.class));
-        activityList.add(new StartActivityBean("手势  SimpleOnGestureListener 分发给 Activity", SimpleOnGestureListener2Activity.class));
+        activityList.add(new StartActivityBean("手势  SimpleOnGestureListener 分发给 TimerActivity", SimpleOnGestureListener2Activity.class));
 
 
 

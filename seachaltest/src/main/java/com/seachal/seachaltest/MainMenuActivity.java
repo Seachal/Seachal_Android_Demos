@@ -32,11 +32,13 @@ import com.seachal.seachaltest.Activity.SeekBarSynchronizeActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity2;
 import com.seachal.seachaltest.Activity.StringToUriActivity;
+import com.seachal.seachaltest.Activity.TimerActivity;
 import com.seachal.seachaltest.Activity.URITestActivity;
 import com.seachal.seachaltest.Activity.ViewMeasureActivity;
 import com.seachal.seachaltest.Activity.ViewStubActivity;
 import com.seachal.seachaltest.BitmapDip.BitmapDipActivity;
 import com.seachal.seachaltest.FloatingActionButton.FloatingActionButtonActivity;
+import com.seachal.seachaltest.ObjectAnimator.ObjectAnimatorActivity;
 import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
 import com.seachal.seachaltest.ScrollListFragment.ScrollListFragmentActivity;
@@ -44,6 +46,7 @@ import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity
 import com.seachal.seachaltest.TextView.TextViewMenuActivity;
 import com.seachal.seachaltest.activitystack.TaskStackMenuActivity;
 import com.seachal.seachaltest.adapter.MyAdapter;
+import com.seachal.seachaltest.anr.ANRTestActivity;
 import com.seachal.seachaltest.baservhelper.MultipleItemUseActivity;
 import com.seachal.seachaltest.bean.StartActivityBean;
 import com.seachal.seachaltest.dialogfragment.DialogFragmentTestActivity;
@@ -53,12 +56,16 @@ import com.seachal.seachaltest.floatrv.behavior.RvFloatBehaviorActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.getdimension.GetDimensionActivity;
 import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
+import com.seachal.seachaltest.jumptobaseact.JumpActivity;
+import com.seachal.seachaltest.jumptobaseact.JumpReferenceActivity;
 import com.seachal.seachaltest.layoutparams.LayoutParamsActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentContainerActivity;
+import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentContainerActivity2;
 import com.seachal.seachaltest.overlap.OverlapViewActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
+import com.seachal.seachaltest.scroll.ScrollToTargetViewActivity;
 import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
 import com.seachal.seachaltest.touchevent.DragThreeViewActivity;
 import com.seachal.seachaltest.touchevent.DragTwoViewActivity;
@@ -84,6 +91,9 @@ public class MainMenuActivity extends AppCompatActivity  {
 
 
     {
+
+        activityList.add(new StartActivityBean("android ANR测试", ANRTestActivity.class));
+
         activityList.add(new StartActivityBean("Bitmmap 放在不同的资源文件夹下，加载时所占用的内存", BitmapDipActivity.class));
 
         activityList.add(new StartActivityBean("android 分享生成图片", ShareGeneratePictureActivity.class));
@@ -97,12 +107,12 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("EditText  最小字符数，最大字符数,addView", EditTextMinAndMaxLengthActivity.class));
         activityList.add(new StartActivityBean("TextView ", TextViewMenuActivity.class));
 
-        activityList.add(new StartActivityBean("Activity 生命周期 SecondActivity", SecondActivity.class));
+        activityList.add(new StartActivityBean("TimerActivity 生命周期 SecondActivity", SecondActivity.class));
         activityList.add(new StartActivityBean("DebugActivity", DebugActivity.class));
 
         activityList.add(new StartActivityBean("自定义 进度条", CustomViewPreviewActivity.class));
         activityList.add(new StartActivityBean("权限 & 设置, 在设置拒绝位置权限，app是否会被杀死？是。", PermissionActivity.class));
-        activityList.add(new StartActivityBean("测试 RadioButton 是否可以使用 gif", ImageViewActivity.class));
+        activityList.add(new StartActivityBean("测试 RadioButton 是否可以使用 gif,tint png", ImageViewActivity.class));
         activityList.add(new StartActivityBean("background 并不会对子 view裁剪， 甚至会被子 view 遮挡住圆角。 ", BackgroundActivity.class));
         activityList.add(new StartActivityBean("cardView 阴影颜色", CardViewActivity.class));
         activityList.add(new StartActivityBean("cardView 原生  越靠近屏幕底部颜色越深", CardVeiwScrollActivity.class));
@@ -113,15 +123,15 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("屏幕 各种参数", AndroiodScreenPropertyActivity.class));
         activityList.add(new StartActivityBean("自定义 titleView", CustomTitleActivity.class));
         activityList.add(new StartActivityBean("ViewStub", ViewStubActivity.class));
-        activityList.add(new StartActivityBean("如果禁用 Activity 中所有点击事件", OnClickAbleFasleActivity.class));
+        activityList.add(new StartActivityBean("如果禁用 TimerActivity 中所有点击事件", OnClickAbleFasleActivity.class));
         activityList.add(new StartActivityBean("Button RadioGroupButton  RadioButton", ButtonActivity.class));
 
         activityList.add(new StartActivityBean("Dialog", DialogTestActivity.class));
-        activityList.add(new StartActivityBean("DialogFragment", DialogFragmentTestActivity.class));
+        activityList.add(new StartActivityBean("DialogFragment, 从 TimerActivity 弹出 Dialog不会影响，TimerActivity 生命周期 ", DialogFragmentTestActivity.class));
 
         activityList.add(new StartActivityBean("Canvas Save Restore 画布保存与恢复", CanvasSaveRestoreActivity.class));
         activityList.add(new StartActivityBean("手势 GestureDetector menu ", GestureMenuActivity.class));
-        activityList.add(new StartActivityBean("一次启动多个 Activity,完全可以", StartMultiActivity.class));
+        activityList.add(new StartActivityBean("一次启动多个 TimerActivity,完全可以", StartMultiActivity.class));
         activityList.add(new StartActivityBean(" 获取Activity Task栈 menu 多种方式", TaskStackMenuActivity.class));
         activityList.add(new StartActivityBean("String 转 uri,JsonString 转 Bean", StringToUriActivity.class));
         activityList.add(new StartActivityBean(" 自定义长按事件 1 ", DragViewActivity.class));
@@ -142,11 +152,18 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" baseRecyclerViewAdapterHelper MultipleItemUseActivity", MultipleItemUseActivity.class));
         activityList.add(new StartActivityBean(" FloatingActionButton ", FloatingActionButtonActivity.class));
         activityList.add(new StartActivityBean(" LayoutParams gravity  layout_gravity addRule ", LayoutParamsActivity.class));
-        activityList.add(new StartActivityBean(" onActivityResult:Activity ", OnActivityResultActivity.class));
-        activityList.add(new StartActivityBean(" onActivityResult:DialogFragment ", OnActivityResultUserFragmentActivity.class));
-        activityList.add(new StartActivityBean(" onActivityResult:DialogFragment 2 ", OnActivityResultUserFragmentContainerActivity.class));
-        activityList.add(new StartActivityBean(" 列表中有 Fragment ,上滑完全离开可视区域 会执行Fragment哪些方法？ ", ScrollListFragmentActivity.class));
+        activityList.add(new StartActivityBean(" onActivityResult:TimerActivity ", OnActivityResultActivity.class));
+        activityList.add(new StartActivityBean(" onActivityResult:DialogFragment ",   OnActivityResultUserFragmentActivity.class));
+        activityList.add(new StartActivityBean(" onActivityResult:Fragment 发起 StartActivityForResult", OnActivityResultUserFragmentContainerActivity.class));
+        activityList.add(new StartActivityBean(" onActivityResult:MyFragment 发起 StartActivityForResult, BaseFragment1会收到onActivityResult 回调吗？", OnActivityResultUserFragmentContainerActivity2.class));
 
+        activityList.add(new StartActivityBean(" 列表中有 Fragment ,上滑完全离开可视区域，会执行Fragment 生命周期方法吗？ 答：不会 ", ScrollListFragmentActivity.class));
+
+        activityList.add(new StartActivityBean(" 点击启动属性动画左右滑动3s 后隐藏 ", ObjectAnimatorActivity.class));
+        activityList.add(new StartActivityBean("用基类的伴生对象方法跳转，和基类 TimerActivity 调用子类 TimerActivity 的方式 1  ", JumpActivity.class));
+        activityList.add(new StartActivityBean("基类 TimerActivity 调用子类 TimerActivity 的方式2   ", JumpReferenceActivity.class));
+        activityList.add(new StartActivityBean("Timer 定时器启动了  ", TimerActivity.class));
+        activityList.add(new StartActivityBean("滑动到指定位置  ", ScrollToTargetViewActivity.class));
     }
 
 

@@ -6,6 +6,7 @@ import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.style.AbsoluteSizeSpan;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
@@ -27,6 +28,10 @@ public class CustomTextViewTestActivity extends AppCompatActivity {
     private TextView tvPrice1;
     private TextView tvPrice2;
     private TextView tvPrice3;
+    private TextView tvPrice4;
+    private TextView tvPrice5;
+    private TextView tvPrice6;
+    private TextView tvPrice7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +41,26 @@ public class CustomTextViewTestActivity extends AppCompatActivity {
         tvPrice1 = findViewById(R.id.tv_SpannableStringPrice_1);
         tvPrice2 = findViewById(R.id.tv_SpannableStringPrice_2);
         tvPrice3 = findViewById(R.id.tv_SpannableStringPrice_3);
-
+        tvPrice4 = findViewById(R.id.tv_SpannableStringPrice_4);
+        tvPrice5 = findViewById(R.id.tv_SpannableStringPrice_5);
+        tvPrice6 = findViewById(R.id.tv_SpannableStringPrice_6);
+        tvPrice7 = findViewById(R.id.tv_SpannableStringPrice_7);
         measureTextText();
 
         tvSpannableString();
 
-        PriceUtils.setPriceFonts(tvPrice1, 12345.6789+"起", 18, 13);
+        PriceUtils.setPriceFonts(tvPrice1, 12345.6789 + "起", 18, 13);
         PriceUtils.setPriceFonts(tvPrice2, "12345.6789", 18, 13);
 //        PriceUtils.setPriceFonts(tvPrice3, "5.6", 18, 13);
 //
-        PriceUtils.setPriceFonts( "¥"+"05.06",tvPrice3, 13, 13);
+        PriceUtils.setPriceFonts("¥" + "05.06", tvPrice3, 13, 13);
+//        PriceUtils.setPriceFonts( "¥"+"100.99",tvPrice4, 13, 13);
+
+        this.tvPrice5.setTextSize(TypedValue.COMPLEX_UNIT_PX,  getResources().getDimension(R.dimen.dp_px_64));
+//        PriceUtils.setPriceFontsPx("¥" + "100.99", tvPrice5, getResources().getDimensionPixelOffset(R.dimen.dp_px_32), getResources().getDimensionPixelOffset(R.dimen.dp_px_32));
+        PriceUtils.setPriceFontsPx( "100.99", tvPrice5, getResources().getDimensionPixelOffset(R.dimen.dp_px_32), getResources().getDimensionPixelOffset(R.dimen.dp_px_32));
+        PriceUtils.setPriceFontsPx("¥" + "100.99", tvPrice6, 32, 32);
+        PriceUtils.setPriceFontsPx("¥" + "10000", tvPrice7, 32, 32);
     }
 
     public void buttonClick(View view) {
@@ -56,7 +71,7 @@ public class CustomTextViewTestActivity extends AppCompatActivity {
     /**
      * 测量文字是否大于一行
      */
-    public void  measureTextText(){
+    public void measureTextText() {
         TextView tv1 = (TextView) findViewById(R.id.tv1);
         TextView tv2 = (TextView) findViewById(R.id.tv2);
         ViewTreeObserver vto2 = tv1.getViewTreeObserver();
@@ -68,6 +83,7 @@ public class CustomTextViewTestActivity extends AppCompatActivity {
                 mTextPaint.setTextSize(tv1.getTextSize());
                 int mTextViewWidth = (int) mTextPaint.measureText("《三体》刘慈欣1Ad的系列长篇小说");
                 tv1.setText("《三体》刘慈欣1Ad的系列长篇小说");
+//               超出 view 的宽度
                 if (mTextViewWidth > tv1.getWidth()) {//超出一行
                     tv2.setText("超出一行");
                 } else {
@@ -81,21 +97,21 @@ public class CustomTextViewTestActivity extends AppCompatActivity {
     /**
      * 大文字，小文字
      */
-    private void  tvSpannableString(){
-       TextView  tvText = (TextView) findViewById(R.id.tv_SpannableString);
+    private void tvSpannableString() {
+        TextView tvText = (TextView) findViewById(R.id.tv_SpannableString);
         String text = "123y大.这是小文字?";
 
         int start = text.indexOf('.');
-        Log.d("SpannableS", start+"");
-        Log.d("SpannableS i 1", text.indexOf('1')+"");
-        Log.d("SpannableS i ?", text.indexOf('?')+"");
-        Log.d("SpannableS 大", "大".length()+"");
-        Log.d("SpannableS s", "s".length()+"");
+        Log.d("SpannableS", start + "");
+        Log.d("SpannableS i 1", text.indexOf('1') + "");
+        Log.d("SpannableS i ?", text.indexOf('?') + "");
+        Log.d("SpannableS 大", "大".length() + "");
+        Log.d("SpannableS s", "s".length() + "");
 
         int end = text.length();
-        SpannableString textSpan = new SpannableString (text);
-        textSpan.setSpan(new AbsoluteSizeSpan(50),0,start, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        textSpan.setSpan(new AbsoluteSizeSpan(32),start,end,Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        SpannableString textSpan = new SpannableString(text);
+        textSpan.setSpan(new AbsoluteSizeSpan(50), 0, start, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        textSpan.setSpan(new AbsoluteSizeSpan(32), start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         tvText.setText(textSpan);
     }
 }

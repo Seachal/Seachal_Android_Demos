@@ -3,11 +3,13 @@ package com.seachal.seachaltest.dialogfragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.seachal.seachaltest.R
+import com.seachal.seachaltest.log.LogActivity
+import com.zhangyue.we.x2c.X2C.setContentView
 import kotlinx.android.synthetic.main.activity_dialog_fragment_test.btn_3
 import kotlinx.android.synthetic.main.activity_dialog_fragment_test.btn_hide_dialog
 import kotlinx.android.synthetic.main.activity_dialog_fragment_test.btn_show_dialog
 
-class DialogFragmentTestActivity : AppCompatActivity() {
+class DialogFragmentTestActivity : LogActivity() {
 
     //     AConfirmDialogFragment 懒加载
     private val trainingConfirmDialogFragment by lazy {

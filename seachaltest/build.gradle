@@ -110,4 +110,7 @@ dependencies {
     implementation 'com.github.lihangleo2:ShadowLayout:3.3.3'
 
 //   自适应高度的 viewpager
+
+
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

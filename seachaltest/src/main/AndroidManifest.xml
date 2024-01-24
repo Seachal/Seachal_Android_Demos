@@ -15,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".anr.ANRTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".scroll.ScrollToTargetViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.TimerActivity"
+            android:exported="false" /> <!-- 控制跳转 -->
+        <activity android:name=".jumptobaseact.JumpActivity" />
+        <activity android:name=".jumptobaseact.JumpOneActivity" />
+        <activity android:name=".jumptobaseact.JumpTwoActivity" />
+        <activity
+            android:name=".ObjectAnimator.ObjectAnimatorActivity"
+            android:exported="false" />
+        <activity
             android:name=".ScrollListFragment.ScrollListFragmentActivity"
             android:exported="false"
             android:label="@string/title_activity_scroll_list_fragment"
@@ -202,6 +217,8 @@
         <activity android:name=".Activity.CardViewActivity4" />
         <activity android:name=".Activity.CardViewActivity5" />
         <activity android:name=".TextView.TextStrokeActivity" />
+        <activity android:name=".onActivityResult.OnActivityResultUserFragmentContainerActivity2" />
+        <activity android:name=".jumptobaseact.JumpReferenceActivity" />
     </application>
 
 </manifest>

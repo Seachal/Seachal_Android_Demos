@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".getdimension.GetDimensionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    10个 TextView-->
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView1"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView2"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView3"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView4"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView5"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView6"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:gravity="top|center"
+        android:text="分割线"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/dp_px_28" />
+
+    <TextView
+        android:id="@+id/tv_d1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView7 px"
+        android:textColor="#fff"
+        android:textSize="@dimen/dp_px_28" />
+
+    <TextView
+        android:id="@+id/tv_d2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView7 dp"
+        android:textColor="#fff"
+        android:textSize="28dp" />
+
+
+    <TextView
+        android:id="@+id/tv_d3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView7 sp"
+        android:textColor="#fff"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/tv_43"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="top|center"
+        android:text="TextView7 pt"
+        android:textColor="#fff"
+        android:textSize="28pt" />
+
+
+</LinearLayout>

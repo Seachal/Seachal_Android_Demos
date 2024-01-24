@@ -148,5 +148,12 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <string name="title_activity_scroll_to_target">在 Android 中，如果你想让 NestedScrollView 滚动到指定的 View 位置，可以使用 scrollTo 或者 smoothScrollTo 方法。这两个方法都接受 x 和 y 坐标作为参数。scrollTo 会立即滚动到指定位置，而 smoothScrollTo 会平滑地滚动到指定位置。
+
+但是，这两个方法需要的是绝对坐标，如果你想滚动到某个特定 View 的位置，你需要先计算出这个 View 在 NestedScrollView 中的相对坐标。
+
+下面是一段示例代码：</string>
+
     <string name="action_settings">Settings</string>
 </resources>

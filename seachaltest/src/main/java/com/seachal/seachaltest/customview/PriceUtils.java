@@ -57,4 +57,26 @@ public class PriceUtils {
             textView.setText(price);
         }
     }
+
+    public static void setPriceFontsPx(String price,TextView textView, int smallSize1,int smallSize2) {
+        if ( !TextUtils.isEmpty(price)) {
+            SpannableString span = new SpannableString(price);
+            int end = price.length();
+            if (price.contains("¥")){
+                int start1 = price.indexOf("¥");
+                span.setSpan(new AbsoluteSizeSpan(smallSize1),start1,start1+1,Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+            }
+            //  包含小数点
+            if (price.contains(".")){
+                int start2 = price.indexOf(".");
+                //  SPAN_EXCLUSIVE_INCLUSIVE 开闭区间
+                span.setSpan(new AbsoluteSizeSpan(smallSize2),start2,end,Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+            }
+            textView.setText(span);
+        }else{
+            textView.setText(price);
+        }
+    }
+
+
 }

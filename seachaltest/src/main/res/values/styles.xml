@@ -9,6 +9,11 @@
     </style>
 
 
+    <style name="Widget.Design.AppBarLayout.NoShadow" parent="android:Widget">
+        <item name="elevation">0dp</item>
+    </style>
+
+
 
     <style name="train_search_filter_anim">
         <item name="android:windowShowAnimation">@anim/train_filter_dialog_in_anim</item>

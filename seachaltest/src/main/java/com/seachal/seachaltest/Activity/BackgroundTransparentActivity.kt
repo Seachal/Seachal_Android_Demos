@@ -95,6 +95,7 @@ class BackgroundTransparentActivity : AppCompatActivity() {
                 90 -> {
                     holder.textView!!.setBackgroundColor(Color.parseColor("#E6000000")); // 90%
                 }
+//                 会变成纯黑色
                 100 -> {
                     holder.textView!!.setBackgroundColor(Color.parseColor("#FF000000")); // 100%
                 }

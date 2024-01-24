@@ -13,13 +13,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.seachal.seachaltest.ColorsDialog;
 import com.seachal.seachaltest.R;
+import com.seachal.seachaltest.log.LogActivity;
 
-public class DialogTestActivity extends AppCompatActivity {
+public class DialogTestActivity extends LogActivity {
+
     Dialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,27 +49,27 @@ public class DialogTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 View localView = LayoutInflater.from(DialogTestActivity.this).inflate(R.layout.video_dialog_brightness, null);
-                if (dialog == null){
-                    dialog = createDialogWithView2(btn4,localView);
+                if (dialog == null) {
+                    dialog = createDialogWithView2(btn4, localView);
                 }
-                if (!dialog.isShowing()){
+                if (!dialog.isShowing()) {
                     dialog.show();
-                }else {
+                } else {
                     dialog.dismiss();
                 }
             }
         });
 
 
-       Button  btn6 =  findViewById(R.id.btn6);
+        Button btn6 = findViewById(R.id.btn6);
         findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View localView = LayoutInflater.from(DialogTestActivity.this).inflate(R.layout.video_dialog_brightness6, null);
-                Dialog   dialog = createDialogWithView6(btn6,localView);
-                if (!dialog.isShowing()){
+                Dialog dialog = createDialogWithView6(btn6, localView);
+                if (!dialog.isShowing()) {
                     dialog.show();
-                }else {
+                } else {
                     dialog.dismiss();
                 }
             }
@@ -79,7 +80,7 @@ public class DialogTestActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupUtil.showPopupWindow(DialogTestActivity.this,btn5);
+                PopupUtil.showPopupWindow(DialogTestActivity.this, btn5);
             }
         });
 
@@ -110,16 +111,16 @@ public class DialogTestActivity extends AppCompatActivity {
 
 
     /**
+     * @param localView
+     * @return android.app.Dialog
+     * <p>
+     * <p>
+     * Dialog 是依赖于 Window 的，不能直接设置 margin。但是可以通过设置 Dialog 中的内容布局和父容器来实现距离顶部的 margin。下面是一个示例代码：
      * @Author zhangxc
      * @Description //TODO
      * @Date 15:36 2023/6/9
-     * @param localView
-     * @return android.app.Dialog
-     *
-     *
-     * Dialog 是依赖于 Window 的，不能直接设置 margin。但是可以通过设置 Dialog 中的内容布局和父容器来实现距离顶部的 margin。下面是一个示例代码：
      **/
-    public Dialog createDialogWithView2(View anchorView ,View localView) {
+    public Dialog createDialogWithView2(View anchorView, View localView) {
 //
         Dialog dialog = new Dialog(DialogTestActivity.this, R.style.orange_style_dialog_windowBackground);
         dialog.setContentView(localView);
@@ -129,7 +130,7 @@ public class DialogTestActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         window.setLayout(-2, -2);
         WindowManager.LayoutParams localLayoutParams = window.getAttributes();
-        localLayoutParams.gravity = Gravity.TOP| Gravity.CENTER_HORIZONTAL;
+        localLayoutParams.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
         window.setAttributes(localLayoutParams);
 
 
@@ -144,11 +145,11 @@ public class DialogTestActivity extends AppCompatActivity {
          *   E   localView.getHeight() = 0
          *   E   marginTop = 275
          **/
-        int marginTop = (int) ((anchorView.getHeight() - localView.getHeight())/2f); // 设置距离顶部的 margin
-        Log.e( "seachalheig","anchorView.getHeight() = " + anchorView.getHeight()); // 550 ,为什么是550呢？因为已经测量过了，所以是550
-        Log.e( "seachalheig"," localView.getHeight() = " + localView.getHeight());  // 0 ,为什么是0呢？因为还没有测量，所以是0，怎样测量？下面有方法
+        int marginTop = (int) ((anchorView.getHeight() - localView.getHeight()) / 2f); // 设置距离顶部的 margin
+        Log.e("seachalheig", "anchorView.getHeight() = " + anchorView.getHeight()); // 550 ,为什么是550呢？因为已经测量过了，所以是550
+        Log.e("seachalheig", " localView.getHeight() = " + localView.getHeight());  // 0 ,为什么是0呢？因为还没有测量，所以是0，怎样测量？下面有方法
 //         帮我写 localView.getHeight()测量方法
-        Log.e( "seachalheig"," marginTop = " + marginTop);
+        Log.e("seachalheig", " marginTop = " + marginTop);
         layoutParams.topMargin = marginTop;
         localView.setLayoutParams(layoutParams);
 
@@ -158,7 +159,7 @@ public class DialogTestActivity extends AppCompatActivity {
     }
 
 
-    public Dialog createDialogWithView6(View anchorView ,View localView) {
+    public Dialog createDialogWithView6(View anchorView, View localView) {
 //
         Dialog dialog = new Dialog(DialogTestActivity.this, R.style.orange_style_dialog_background);
         dialog.setContentView(localView);
@@ -168,7 +169,7 @@ public class DialogTestActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         window.setLayout(-2, -2);
         WindowManager.LayoutParams localLayoutParams = window.getAttributes();
-        localLayoutParams.gravity = Gravity.TOP| Gravity.CENTER_HORIZONTAL;
+        localLayoutParams.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
         window.setAttributes(localLayoutParams);
 
 
@@ -183,11 +184,11 @@ public class DialogTestActivity extends AppCompatActivity {
          *   E   localView.getHeight() = 0
          *   E   marginTop = 275
          **/
-        int marginTop = (int) ((anchorView.getHeight() - localView.getHeight())/2f); // 设置距离顶部的 margin
-        Log.e( "seachalheig","anchorView.getHeight() = " + anchorView.getHeight()); // 550 ,为什么是550呢？因为已经测量过了，所以是550
-        Log.e( "seachalheig"," localView.getHeight() = " + localView.getHeight());  // 0 ,为什么是0呢？因为还没有测量，所以是0，怎样测量？下面有方法
+        int marginTop = (int) ((anchorView.getHeight() - localView.getHeight()) / 2f); // 设置距离顶部的 margin
+        Log.e("seachalheig", "anchorView.getHeight() = " + anchorView.getHeight()); // 550 ,为什么是550呢？因为已经测量过了，所以是550
+        Log.e("seachalheig", " localView.getHeight() = " + localView.getHeight());  // 0 ,为什么是0呢？因为还没有测量，所以是0，怎样测量？下面有方法
 //         帮我写 localView.getHeight()测量方法
-        Log.e( "seachalheig"," marginTop = " + marginTop);
+        Log.e("seachalheig", " marginTop = " + marginTop);
         layoutParams.topMargin = marginTop;
         localView.setLayoutParams(layoutParams);
 
@@ -196,7 +197,7 @@ public class DialogTestActivity extends AppCompatActivity {
 
     }
 
-    public void createDialogWithView7(View targetView ) {
+    public void createDialogWithView7(View targetView) {
         // 获取目标 View 在屏幕上的坐标
         int[] targetLocation = new int[2];
         targetView.getLocationOnScreen(targetLocation);
@@ -246,7 +247,7 @@ public class DialogTestActivity extends AppCompatActivity {
         }
 
 
-       // 显示 Dialog
+        // 显示 Dialog
         dialog.show();
 
     }

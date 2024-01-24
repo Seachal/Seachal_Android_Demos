@@ -475,4 +475,14 @@ If set to true, the parent will be used as the anchor when the anchor cannot be 
 
 
 ## 下一步的整理计划，项目代码的整理
-* 
+
+# onActivityResult
+
+```agsl
+2023-12-20 15:51:37.827  8182-8182  onActivityResult        com.seachal.seachaltest              D  ContainerActivity: requestCode = 65736, resultCode = -1, data = Intent { cmp=com.seachal.seachaltest/.onActivityResult.SecondBActivity (has extras) }
+2023-12-20 15:51:37.827  8182-8182  OnActivityResult        com.seachal.seachaltest              D  OnActivityResultUserFragmentContainerFragment onActivityResult requestCode: 200, resultCode: -1, data: Intent { cmp=com.seachal.seachaltest/.onActivityResult.SecondBActivity (has extras) }
+2023-12-20 15:51:37.828  8182-8182  Compatibil...geReporter com.seachal.seachaltest              D  Compat change id reported: 147798919; UID 11366; state: DISABLED
+2023-12-20 15:51:37.869  8182-8182  OnActivityResult        com.seachal.seachaltest              D  ContainerFragment requestCode: 200, resultCode: -1, result: Hello FirstActivity
+
+```
+通过日志可以看出，从 Fragment 发出 StartActivityForResult, 在 Fragment，是可以收到onActivityResult的

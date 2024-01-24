@@ -14,7 +14,7 @@ import com.seachal.seachaltest.R;
 
 /**
  * @Author zhangxc
- * @Description //TODO    一次 start 多 Activity 是可以的。
+ * @Description //TODO    一次 start 多 TimerActivity 是可以的。
  * @Date 10:33 2023/9/2
  * @return * @return null
  **/

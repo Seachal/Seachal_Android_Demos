@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import com.seachal.seachaltest.R
 import com.seachal.seachaltest.onActivityResult.ui.main.OnActivityResultUserFragmentContainerFragment
-
-class OnActivityResultUserFragmentContainerActivity : AppCompatActivity() {
+import com.seachal.seachaltest.onActivityResult.ui.main.OnActivityResultUserFragmentContainerFragment2
+//  onActivityResult:MyFragment 发起 StartActivityForResult, BaseFragment1会收到onActivityResult 回调吗？
+class OnActivityResultUserFragmentContainerActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +17,7 @@ class OnActivityResultUserFragmentContainerActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(
                     R.id.container,
-                    OnActivityResultUserFragmentContainerFragment.newInstance()
+                    OnActivityResultUserFragmentContainerFragment2.newInstance()
                 )
                 .commitNow()
         }

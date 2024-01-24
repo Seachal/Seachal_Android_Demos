@@ -4,25 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ImageViewActivity">
+    android:orientation="vertical">
 
 
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="100dp"
-
-        />
+        android:layout_height="10dp" />
 
     <RadioGroup
         android:id="@+id/rgTabbar"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        >
-
+        android:orientation="horizontal">
 
 
         <RadioButton
@@ -30,8 +25,180 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:drawableTop="@drawable/selector_tab_mine"
-            android:text="我的"/>
+            android:text="我的" />
     </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:paddingVertical="@dimen/dp_px_20"
+        android:text="测试  tint用于改变图片的颜色, tint 可以改变 png,也可以改变 webp的颜色"
+        android:textColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--            在Android开发中，tintMode属性用于设置图片的着色模式。如果不设置默认值，tintMode的默认行为可能会因版本而异。
+
+                tintMode属性值有六种可选值，分别是add、multiply、screen、src_over、src_in和src_atop。这些值的具体效果如下：
+
+                src_over：遮罩颜色和图片都显示，相当于遮罩在图片上方。
+                src_in：只显示设置的遮罩颜色，相当于遮罩在里面。
+                src_atop：遮罩在图片上方，混合色遮罩。
+                multiply：混合色遮罩，与drawable颜色和透明度混合。
+                screen：add 混合遮罩，drawable颜色和透明度。
+                add：混合色遮罩，与drawable颜色和透明度混合。
+                需要注意的是，这些属性只适用于API 21（Android 5.0）及更高版本。同时，这些属性只作用于给定的View或Drawable，而不是整个布局或应用。因此，在使用tintMode属性时，需要考虑这些因素对应用视觉效果的影响。
+
+                -->
+
+
+                <ImageView
+                    android:id="@+id/ivCoupon_2"
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coupon"
+                    android:tintMode="src_over"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/ivCoupon_3"
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coupon"
+                    android:tintMode="src_in"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/ivCoupon_4"
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coupon"
+                    android:tintMode="src_atop"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/ivCoupon_5"
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coupon"
+                    android:tintMode="multiply"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/ivCoupon_1"
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coupon"
+                    android:tintMode="screen"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/ivCoupon_6"
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coupon"
+                    android:tintMode="add"
+                    tools:tint="@color/blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_px_50"
+                android:orientation="vertical">
+
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="src_over"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="src_in"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="src_atop"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="multiply"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="screen"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="add"
+                    tools:tint="@color/blue" />
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector" />
+
+
+                <ImageView
+
+                    android:layout_width="@dimen/dp_px_150"
+                    android:layout_height="@dimen/dp_px_150"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_selector"
+                    android:tintMode="src_in"
+                    tools:tint="#666666" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
