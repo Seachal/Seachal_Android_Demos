@@ -55,6 +55,7 @@ import com.seachal.seachaltest.floatrv.WithAppBarLayout2;
 import com.seachal.seachaltest.floatrv.behavior.RvFloatBehaviorActivity;
 import com.seachal.seachaltest.gesturedetector.GestureMenuActivity;
 import com.seachal.seachaltest.getdimension.GetDimensionActivity;
+import com.seachal.seachaltest.info.OsInfoActivity;
 import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
 import com.seachal.seachaltest.jumptobaseact.JumpActivity;
 import com.seachal.seachaltest.jumptobaseact.JumpReferenceActivity;
@@ -164,6 +165,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("基类 TimerActivity 调用子类 TimerActivity 的方式2   ", JumpReferenceActivity.class));
         activityList.add(new StartActivityBean("Timer 定时器启动了  ", TimerActivity.class));
         activityList.add(new StartActivityBean("滑动到指定位置  ", ScrollToTargetViewActivity.class));
+        activityList.add(new StartActivityBean("判断手机系统  ", OsInfoActivity.class));
     }
 
 
