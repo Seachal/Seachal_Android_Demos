@@ -180,4 +180,14 @@ class SpannableStringActivity : AppCompatActivity() {
         textView.text = spannableString
         textView.movementMethod = LinkMovementMethod.getInstance()
     }
+
+    private fun mode11() {
+        val spannableString = SpannableStringBuilder()
+        spannableString.append("暗影IV已经开始暴走了")
+        val underlineSpan = backgroundColorSpan()
+        spannableString.setSpan(clickableSpan, 5, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        val textView = findViewById<View>(R.id.mode11) as TextView
+        textView.text = spannableString
+        textView.movementMethod = LinkMovementMethod.getInstance()
+    }
 }
