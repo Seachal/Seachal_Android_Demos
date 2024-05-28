@@ -30,7 +30,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity-alias> <!-- 启动方 使用包名加类路径启动 -->
+        </activity-alias>
+        <!-- 启动方 使用包名加类路径启动 -->
         <activity
             android:name=".Main2Activity"
             android:exported="true">

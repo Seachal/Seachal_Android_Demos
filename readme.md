@@ -486,3 +486,14 @@ If set to true, the parent will be used as the anchor when the anchor cannot be 
 
 ```
 通过日志可以看出，从 Fragment 发出 StartActivityForResult, 在 Fragment，是可以收到onActivityResult的
+
+
+## 我经过测试发现， 即使我不重写onSaveInstanceState， editText在旋转屏幕后也恢复了这是为什么
+
+即使你不重写 onSaveInstanceState() 方法，EditText 控件在旋转屏幕后仍有可能恢复其内容，这是因为从 Android API 级别 11（Android 3.0 Honeycomb）开始，Android 系统默认会对一些常见的视图组件（包括 EditText）执行自动状态保存和恢复的过程。
+
+在系统层面，Android 框架会自动捕获并保存这些组件的基本状态信息，如 EditText 的文本内容。当屏幕方向改变导致 Activity 重建时，系统会根据之前保存的信息自动填充这些视图的状态。
+
+然而，自动保存并不是万无一失的，它只针对一部分内置组件的特定属性，并且只保存基本状态。如果你的应用中存在自定义视图或者需要额外保存非标准状态数据，就需要手动在 onSaveInstanceState() 和 onRestoreInstanceState() 中实现保存和恢复逻辑。
+
+因此，如果你观察到 EditText 的内容在屏幕旋转后能够恢复，很可能是因为你正在使用的 Android 版本和设备支持这一自动状态保存功能，并且你的 EditText 控件拥有一个唯一的 ID（这对于系统识别和恢复其状态至关重要）。如果在老版本或者特殊情况下的自定义需求，仍需手动处理以确保数据安全保存。

@@ -64,6 +64,8 @@ import com.seachal.seachaltest.onActivityResult.OnActivityResultActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentContainerActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentContainerActivity2;
+import com.seachal.seachaltest.onSaveInstanceState.ui.login.LoginActivity;
+import com.seachal.seachaltest.onSaveInstanceState.ui.no.LoginActivityNo;
 import com.seachal.seachaltest.overlap.OverlapViewActivity;
 import com.seachal.seachaltest.permission.PermissionActivity;
 import com.seachal.seachaltest.scroll.ScrollToTargetViewActivity;
@@ -141,7 +143,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" 有两个重叠的 view , 点击的时候，上层的 view 和下层的 view 都能响应事件吗?", OverlapViewActivity.class));
         activityList.add(new StartActivityBean(" layer-list 测试案例", LayerListActivity.class));
         activityList.add(new StartActivityBean(" getDimension  与 getDimensionPixelSize 区别  ", GetDimensionActivity.class));
-        activityList.add(new StartActivityBean(" 另一个 app LaunchOtherActivity  ", LaunchOtherActivity.class));
+        activityList.add(new StartActivityBean(" 通过协议启动另一个 App  ", LaunchOtherActivity.class));
         activityList.add(new StartActivityBean(" xml锁定方向，手机横竖屏旋转，屏幕内容不会发生变化， 不会触发onConfigurationChanged?  ", HorizontalAndVerticalScreenSwitchActivity.class));
         activityList.add(new StartActivityBean(" 悬浮效果  scroll实现 ", RvFloatActivity.class));
         activityList.add(new StartActivityBean(" 悬浮效果  behavior 实现, behavior更丝滑", RvFloatBehaviorActivity.class));
@@ -166,6 +168,8 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("Timer 定时器启动了  ", TimerActivity.class));
         activityList.add(new StartActivityBean("滑动到指定位置  ", ScrollToTargetViewActivity.class));
         activityList.add(new StartActivityBean("判断手机系统  ", OsInfoActivity.class));
+        activityList.add(new StartActivityBean("onSaveInstanceState 和 onRestoreInstanceState    ", LoginActivity.class));
+        activityList.add(new StartActivityBean("No  onSaveInstanceState 和 onRestoreInstanceState    ", LoginActivityNo.class));
     }
 
 
@@ -200,6 +204,8 @@ public class MainMenuActivity extends AppCompatActivity  {
             super.onBackPressed();
         }
     }
+
+
 
 //    @Override
 //    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {

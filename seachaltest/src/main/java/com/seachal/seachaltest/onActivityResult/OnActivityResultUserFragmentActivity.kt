@@ -41,16 +41,23 @@ class OnActivityResultUserFragmentActivity : AppCompatActivity(),
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.d("OnActivityResult", "First onActivityResult requestCode: $requestCode, resultCode: $resultCode, data: $data")
+        Log.d(
+            "OnActivityResult",
+            "First onActivityResult requestCode: $requestCode, resultCode: $resultCode, data: $data"
+        )
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 200) {
             if (resultCode == RESULT_OK) {
                 val result = data?.getStringExtra("result")
-                if (result!= null) {
+                if (result != null) {
                     //  把所有信息展示出来，requestCode: Int, resultCode: Int, data: Intent
-                    tv_result.text  = "requestCode: $requestCode, resultCode: $resultCode, result: $result"
+                    tv_result.text =
+                        "requestCode: $requestCode, resultCode: $resultCode, result: $result"
 //                    用 Log 把数据打印出来
-                    Log.d("OnActivityResult", "First onActivityResult requestCode: $requestCode, resultCode: $resultCode, result: $result")
+                    Log.d(
+                        "OnActivityResult",
+                        "First onActivityResult requestCode: $requestCode, resultCode: $resultCode, result: $result"
+                    )
                 }
             }
         }
@@ -60,6 +67,7 @@ class OnActivityResultUserFragmentActivity : AppCompatActivity(),
         dialogFragment
             .onActivityResult(requestCode, resultCode, data);
     }
+
 
 
 

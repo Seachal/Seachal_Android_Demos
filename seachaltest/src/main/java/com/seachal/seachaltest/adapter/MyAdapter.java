@@ -14,7 +14,6 @@ package com.seachal.seachaltest.adapter;
 import static com.blankj.utilcode.util.ActivityUtils.startActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.seachal.seachaltest.R;
@@ -31,10 +31,10 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    private Activity context;
+    private AppCompatActivity context;
     private List<StartActivityBean> arrayList;
 
-    public MyAdapter(Activity context, List<StartActivityBean> arrayList) {
+    public MyAdapter(AppCompatActivity context, List<StartActivityBean> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }

@@ -61,6 +61,18 @@ public class DialogTestActivity extends LogActivity {
         });
 
 
+
+
+        Button btn5 = findViewById(R.id.btn5);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupUtil.showPopupWindow(DialogTestActivity.this, btn5);
+            }
+        });
+
+
+        //        创建一个 dialog, 让 dialog依赖 button 居中（位于 button 中心）。  不成功
         Button btn6 = findViewById(R.id.btn6);
         findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,14 +87,6 @@ public class DialogTestActivity extends LogActivity {
             }
         });
 
-
-        Button btn5 = findViewById(R.id.btn5);
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupUtil.showPopupWindow(DialogTestActivity.this, btn5);
-            }
-        });
 
         Button btn7 = findViewById(R.id.btn7);
         btn7.setOnClickListener(new View.OnClickListener() {

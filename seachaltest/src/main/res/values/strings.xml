@@ -156,4 +156,5 @@
 下面是一段示例代码：</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>

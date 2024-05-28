@@ -15,6 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".TextView.SpannableStringActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".info.OsInfoActivity"
             android:exported="false" />
         <activity
@@ -222,6 +229,8 @@
         <activity android:name=".TextView.TextStrokeActivity" />
         <activity android:name=".onActivityResult.OnActivityResultUserFragmentContainerActivity2" />
         <activity android:name=".jumptobaseact.JumpReferenceActivity" />
+        <activity android:name=".onSaveInstanceState.ui.login.LoginActivity" />
+        <activity android:name=".onSaveInstanceState.ui.no.LoginActivityNo" />
     </application>
 
 </manifest>
