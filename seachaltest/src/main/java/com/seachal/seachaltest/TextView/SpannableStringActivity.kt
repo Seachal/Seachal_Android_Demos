@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.AbsoluteSizeSpan
 import android.text.style.BackgroundColorSpan
@@ -19,7 +21,12 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.seachal.seachaltest.R
+import com.seachal.seachaltest.TextView.spannableString.RadiusBackgroundSpan
+import com.seachal.seachaltest.TextView.spannableString.RoundBackgroundColorSpan
+import com.seachal.seachaltest.TextView.spannableString.UserRoleUtils
+import com.xiaolei.library.wdiget.dp2px
 
 
 class SpannableStringActivity : AppCompatActivity() {
@@ -37,6 +44,9 @@ class SpannableStringActivity : AppCompatActivity() {
         mode8()
         mode9()
         //mode10();
+        mode11()
+        mode12()
+        mode13()
     }
 
     /**
@@ -182,11 +192,46 @@ class SpannableStringActivity : AppCompatActivity() {
     }
 
     private fun mode11() {
+          var bss: RoundBackgroundColorSpan
+        val pxvalue1 = getResources().getDimensionPixelOffset(R.dimen.dp_px_8)
+        val pxvalue2 = getResources().getDimensionPixelOffset(R.dimen.dp_px_20)
+        bss = RoundBackgroundColorSpan( pxvalue1,  ContextCompat.getColor(this@SpannableStringActivity,
+            R.color.color_D22E1B),
+            ContextCompat.getColor(this@SpannableStringActivity, R.color.color_D22E1B),pxvalue2
+        )
         val spannableString = SpannableStringBuilder()
         spannableString.append("暗影IV已经开始暴走了")
-        val underlineSpan = backgroundColorSpan()
-        spannableString.setSpan(clickableSpan, 5, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        spannableString.setSpan(bss, 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         val textView = findViewById<View>(R.id.mode11) as TextView
+        textView.text = spannableString
+        textView.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+
+    private fun mode12() {
+        val roleName = "【管理员】"
+        val userName = "暗影IV"
+        val msg: String = roleName + userName + ": "
+        val ss = SpannableString(msg)
+        if (!TextUtils.isEmpty(roleName)) {
+            val span: RadiusBackgroundSpan =
+                UserRoleUtils.getVerticalUserRoleLabelSpan("publisher")
+            ss.setSpan(span, 0, roleName.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+        val textView = findViewById<View>(R.id.mode12) as TextView
+        textView.text = ss
+    }
+
+    private fun mode13() {
+        var bss: RadiusBackgroundSpan
+        bss = RadiusBackgroundSpan(ContextCompat.getColor(this@SpannableStringActivity,
+            R.color.color_D22E1B),
+            20
+        )
+        val spannableString = SpannableStringBuilder()
+        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.setSpan(bss, 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        val textView = findViewById<View>(R.id.mode13) as TextView
         textView.text = spannableString
         textView.movementMethod = LinkMovementMethod.getInstance()
     }

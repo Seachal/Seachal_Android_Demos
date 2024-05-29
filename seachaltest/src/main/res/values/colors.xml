@@ -362,7 +362,231 @@
     <color name="dull_blue">#3B4BBF</color>
     <color name="c_f9fbfc">#f9fbfc</color>
 
+<!--   2024 -->
+
+    <color name="colorDarkBlue">#153C6A</color>
+    <color name="colorGray">#F4F4F4</color>
+    <color name="color_ffffff">#FFFFFF</color>
+    <color name="color_66ffffff">#66FFFFFF</color>
+    <color name="color_99ffffff">#99FFFFFF</color>
+    <color name="color_8899999">#88999999</color>
+    <color name="color_88000000">#88000000</color>
+    <color name="color_22000000">#22000000</color>
+    <color name="color_009fe9">#009FE9</color>
+    <color name="color_54b8eb">#54B8EB</color>
+    <color name="color_ff9d11">#ff9d11</color>
+    <color name="color_f93b01">#F93B01</color>
+    <color name="color_afa4a4">#AFA4A4</color>
+    <color name="colorTextGray">#666666</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_010101">#010101</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_555555">#555555</color>
+    <color name="color_888888">#888888</color>
+    <color name="colortransparen">#00ffffff</color>
+    <color name="color_666666">#666666</color>
+    <color name="colorText999999">#999999</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_ff0000">#ff0000</color>
+    <color name="color_D12D1B">#D12D1B</color>
+    <color name="color_313131">#313131</color>
+    <color name="color_EBEBEB">#EBEBEB</color>
+
+    <color name="color_E52727">#E52727</color>
+    <color name="color_e01d1d">#E01D1D</color>
+    <color name="colorYello">#FDB927</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_EEEEEE">#EEEEEE</color>
+    <color name="color_f9c54a">#F9C54A</color>
+    <color name="color_3355d3">#3355D3</color>
+    <color name="color_fff5b3">#FFF5B3</color>
+    <color name="color_f5f5f5">#F5F5F5</color>
+    <color name="color_2686e5">#2686E5</color>
+    <color name="color_53aff7">#53AFF7</color>
+    <color name="color_65d2fb">#65D2FB</color>
+    <color name="color_01b07d">#01B07D</color>
+    <color name="color_e53935">#E53935</color>
+    <color name="color_ff6600">#FF6600</color>
+    <color name="color_00a0ea">#00A0EA</color>
+    <color name="color_366b02">#4AA35D</color>
+    <color name="color_ff7800">#FF7800</color>
+
+    <color name="color_ec6e79">#F3A2A8</color>
+    <color name="color_e7091a">#e7091a</color>
+    <color name="color_F03F00">#F03F00</color>
+    <color name="comm_text_gray">#666666</color>
+    <color name="comm_text_gray_dark">#333333</color>
+    <color name="color_ffeeeeee">#ffeeeeee</color>
+    <color name="color_F00F0F">#F00F0F</color>
+    <color name="color_f3f3f5">#f3f3f5</color>
 
 
+    <color name="comm_white">#FFFFFF</color>
+    <color name="comm_price">#ff5c5c</color>
+    <color name="text_network_error">#FE5969</color>
+
+    <color name="comm_line">#dddddd</color>
+    <color name="color_ff666666">#ff666666</color>
+    <color name="color_ff333333">#ff333333</color>
+    <color name="color_fff93b01">#fff93b01</color>
+    <color name="color_fff5f5f5">#fff5f5f5</color>
+    <color name="color_151515">#151515</color>
+
+
+    <color name="top_conversation_color">#e5e5e5</color>
+    <color name="white_color">#ffffff</color>
+    <color name="main_bg_color">#EDEDED</color>
+    <color name="item_split_color">#cccccc</color>
+
+    <color name="text_color_black">#000</color>
+    <color name="text_color_gray">#696969</color>
+
+    <color name="font_blue">#066fff</color>
+
+    <color name="voice_pressed">#DEDEDE</color>
+    <color name="voice_normal">#ffffff</color>
+
+
+    <color name="list_bottom_text_bg">#777777</color>
+    <color name="partTranslucent">#39000000</color>
+    <color name="custom_transparent">#B3000000</color>
+    <color name="dialog_line_bg">#c6c6c6</color>
+    <color name="read_dot_bg">#f74c31</color>
+
+
+
+    <color name="color_FF6202">#FF6202</color>
+    <color name="line">#DDDDDD</color>
+
+    <color name="text_gray1">#777777</color>
+
+    <color name="title_bar_font_color">#016fff</color>
+
+    // 积极钮色值
+    <color name="btn_positive">#00a4ff</color>
+    <color name="btn_positive_hover">#006eff</color>
+
+    // 积极按钮文本色值
+    <color name="text_positive">#ffffff</color>
+    <color name="text_positive_hover">#ffffff</color>
+
+    // 消极按钮背景色值
+    <color name="btn_negative">#ffffff</color>
+    <color name="btn_negative_hover">#cc3428</color>
+
+    // 消极按钮文本色值
+    <color name="text_negative">#fb6155</color>
+    <color name="text_negative_hover">#FFFFFF</color>
+
+    // 聊天昵称/时间条背景色值
+
+
+    <!--    淘宝联盟-->
+
+
+    <color name="color_25A6EB">#25A6EB</color>
+    <color name="color_48BB2C">#48BB2C</color>
+    <color name="color_ffdd7d">#ffdd7d</color>
+
+
+    <color name="gray_dark">#10150E</color>
+
+    <color name="gray_light_1">#F8F8F8</color>
+
+    <color name="color_649efd">#649efd</color>
+
+    <color name="color_F5F00">#FF5F00</color>
+    <color name="color_FF0000">#FF0000</color>
+
+    <color name="color_f52800">#f52800</color>
+
+
+    <color name="color_dadada">#dadada</color>
+
+    <color name="color_fff3f3f3">#fff3f3f3</color>
+
+
+    <color name="color_D22E1B">#D22E1B</color>
+
+
+    <color name="color_029fea">#029fea</color>
+
+    <color name="color_F77D2C">#F77D2C</color>
+
+    <color name="color_FEF7E9">#FEF7E9</color>
+
+    <color name="color_D2373B">#D2373B</color>
+
+    <color name="color_F4F2EC">#F4F2EC</color>
+
+    <color name="color_D4D0BF">#D4D0BF</color>
+
+    <color name="color_E28586">#E28586</color>
+
+    <color name="color_FFE896">#FFE896</color>
+
+    <color name="color_C3A76E">#C3A76E</color>
+
+    <color name="color_A81014">#A81014</color>
+
+    <color name="color_B52124">#B52124</color>
+
+    <color name="color_E0A56D">#E0A56D</color>
+
+    <color name="color_line_E6E4DE">#E6E4DE</color>
+
+    <color name="color_bg_F4F2EC">#F4F2EC</color>
+
+    <color name="color_bg_D93D2B">#D93D2B</color>
+
+    <color name="color_23aae8">#23aae8</color>
+
+    <!--    IM 相关-->
+    <color name="color_9d9d9d">#9d9d9d</color>
+    <color name="color_4c95ef">#4c95ef</color>
+
+
+    <!--   第三方商城  -->
+    <color name="color_1B1B1B">#1B1B1B</color>
+    <color name="color_F9EAE8">#F9EAE8</color>
+    <color name="color_F3F3F3">#F3F3F3</color>
+    <color name="color_0FC0FC">#0FC0FC</color>
+
+<!--     ###   -->
+
+    <!--togglebutton color-->
+    <color name="colorBack">#999999</color>
+
+    <!--标题背景色-->
+    <!--内容区域背景色-->
+    <!--item 分割线-->
+    <color name="colorItemLine">#DDDDDD</color>
+    <!--界面提示文字颜色-->
+    <color name="colorTopTip">#666666</color>
+    <color name="colorItemTip">#333333</color>
+
+    <!--扫描界面-->
+    <color name="viewfinder_mask">#60000000</color>
+
+    <!--公告-->
+
+    <color name="qa_list_divider_color">#f5f5f5</color>
+
+    <!--rtc-->
+    <color name="bg_color_black">#E62E3037</color>
+
+
+
+    <color name="reply_button_disable">#f5f5f5</color>
+    <color name="text_primary">#df000000</color>
+
+    <!--竖屏直播-->
+    <color name="vertical_live_primary_orange">#FFFF842F</color>
+    <color name="color_vertical_live_chat_hint_disable">#73F7F7F7</color>
+    <color name="color_vertical_live_chat_hint">#D9F7F7F7</color>
+    <color name="color_vertical_translucent">#66000000</color>
+    <color name="color_title_bg_dark">#FF373B3E</color>
 
 </resources>
