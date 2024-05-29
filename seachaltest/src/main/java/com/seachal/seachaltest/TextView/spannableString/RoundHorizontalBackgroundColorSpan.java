@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
  *
  * describe:
  */
-public class RoundBackgroundColorSpan extends ReplacementSpan {
+public class RoundHorizontalBackgroundColorSpan extends ReplacementSpan {
 
     private int bgColor;
     private int textColor;
@@ -22,7 +22,7 @@ public class RoundBackgroundColorSpan extends ReplacementSpan {
 
 
 
-    public RoundBackgroundColorSpan( int radius,  int bgColor, int textColor, float textSizePx) {
+    public RoundHorizontalBackgroundColorSpan(int radius, int bgColor, int textColor, float textSizePx) {
         super();
         this.radius = radius;
         this.bgColor = bgColor;
