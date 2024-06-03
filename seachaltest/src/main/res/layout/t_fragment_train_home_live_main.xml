@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/t_home_live_main_update_data"
+        android:layout_width="100dp"
+        android:text="更新数据"
+        android:layout_height="wrap_content"/>
+
+    <!--         android:paddingBottom="@dimen/dp_px_24"
+    24 + 74  = 98
+    -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/t_home_live_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_px_24"
+        android:layout_marginStart="@dimen/dp_px_22"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/transparent"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="@dimen/dp_px_5"
+        app:tabPaddingStart="@dimen/dp_px_5"
+        app:tabRippleColor="@color/transparent" />
+
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/t_home_live_main_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+       />
+
+</LinearLayout>
