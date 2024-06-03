@@ -17,12 +17,12 @@ public class RoundBackgroundColorSpan extends ReplacementSpan {
 
     private int bgColor;
     private int textColor;
-    private float textSizePx;
+    private int textSizePx;
     private int radius ;
 
 
 
-    public RoundBackgroundColorSpan( int radius,  int bgColor, int textColor, float textSizePx) {
+    public RoundBackgroundColorSpan( int radius,  int bgColor, int textColor, int textSizePx) {
         super();
         this.radius = radius;
         this.bgColor = bgColor;
@@ -79,7 +79,7 @@ public class RoundBackgroundColorSpan extends ReplacementSpan {
         };
 
         // 创建一个矩形 , top + radius 矩形顶部的y坐标，  bottom - radius 矩形底部的 y坐标。
-        RectF rect = new RectF(x + 1, top + radius , x + textWidth + radius *2, bottom - radius );
+        RectF rect = new RectF(x + 1, top + radius * 2 , x + textWidth + radius *2, bottom - radius );
 
         // 添加圆角矩形到路径
         path.addRoundRect(rect, radii, Path.Direction.CW);

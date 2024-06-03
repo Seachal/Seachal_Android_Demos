@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".viewpager2.Viewpager2Activity"
+            android:exported="false" />
+        <activity
             android:name=".TextView.SpannableStringActivity"
             android:exported="false" />
         <activity

@@ -2,7 +2,6 @@ package com.seachal.seachaltest;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -73,6 +72,7 @@ import com.seachal.seachaltest.startmultiActivity.StartMultiActivity;
 import com.seachal.seachaltest.touchevent.DragThreeViewActivity;
 import com.seachal.seachaltest.touchevent.DragTwoViewActivity;
 import com.seachal.seachaltest.touchevent.DragViewActivity;
+import com.seachal.seachaltest.viewpager2.Viewpager2Activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +81,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MainMenuActivity extends AppCompatActivity  {
+public class MainMenuActivity extends AppCompatActivity {
 
     @BindView(R.id.recycler_view)
     RecyclerView recycler_view;
@@ -156,7 +156,7 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean(" FloatingActionButton ", FloatingActionButtonActivity.class));
         activityList.add(new StartActivityBean(" LayoutParams gravity  layout_gravity addRule ", LayoutParamsActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:TimerActivity ", OnActivityResultActivity.class));
-        activityList.add(new StartActivityBean(" onActivityResult:DialogFragment ",   OnActivityResultUserFragmentActivity.class));
+        activityList.add(new StartActivityBean(" onActivityResult:DialogFragment ", OnActivityResultUserFragmentActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:Fragment 发起 StartActivityForResult", OnActivityResultUserFragmentContainerActivity.class));
         activityList.add(new StartActivityBean(" onActivityResult:MyFragment 发起 StartActivityForResult, BaseFragment1会收到onActivityResult 回调吗？", OnActivityResultUserFragmentContainerActivity2.class));
 
@@ -170,6 +170,8 @@ public class MainMenuActivity extends AppCompatActivity  {
         activityList.add(new StartActivityBean("判断手机系统  ", OsInfoActivity.class));
         activityList.add(new StartActivityBean("onSaveInstanceState 和 onRestoreInstanceState    ", LoginActivity.class));
         activityList.add(new StartActivityBean("No  onSaveInstanceState 和 onRestoreInstanceState    ", LoginActivityNo.class));
+        activityList.add(new StartActivityBean("viewpgager2    ", Viewpager2Activity.class));
+
     }
 
 
@@ -194,17 +196,16 @@ public class MainMenuActivity extends AppCompatActivity  {
     }
 
 
-    // 双击退出
-    @Override
-    public void onBackPressed() {
-        if (System.currentTimeMillis() - exitTime > 2000) {
-            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
-            exitTime = System.currentTimeMillis();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
+//    // 双击退出
+//    @Override
+//    public void onBackPressed() {
+//        if (System.currentTimeMillis() - exitTime > 2000) {
+//            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//            exitTime = System.currentTimeMillis();
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 
 
 //    @Override
@@ -237,11 +238,6 @@ public class MainMenuActivity extends AppCompatActivity  {
 //        Toast.makeText(this, "权限", Toast.LENGTH_SHORT).show();
 //        finish();
 //    }
-
-
-
-
-
 
 
 }

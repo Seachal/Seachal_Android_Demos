@@ -23,8 +23,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.seachal.seachaltest.R
+import com.seachal.seachaltest.TextView.spannableString.LeftRoundBackgroundColorSpan
 import com.seachal.seachaltest.TextView.spannableString.RadiusBackgroundSpan
-import com.seachal.seachaltest.TextView.spannableString.RoundBackgroundColorSpan
+import com.seachal.seachaltest.TextView.spannableString.RoundBackgroundColorSpan2
 import com.seachal.seachaltest.TextView.spannableString.UserRoleUtils
 import com.xiaolei.library.wdiget.dp2px
 
@@ -44,7 +45,9 @@ class SpannableStringActivity : AppCompatActivity() {
         mode8()
         mode9()
         //mode10();
-        mode11()
+        mode1101()
+        mode1102()
+        mode1103()
         mode12()
         mode13()
     }
@@ -53,7 +56,7 @@ class SpannableStringActivity : AppCompatActivity() {
      * 使用SpannableString设置样式——字体颜色
      */
     private fun mode1() {
-        val spannableString = SpannableString("暗影IV已经开始暴走了")
+        val spannableString = SpannableString("2022年7月20培周将进行一场精彩的直播")
         val colorSpan = ForegroundColorSpan(Color.parseColor("#009ad6"))
         spannableString.setSpan(colorSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         (findViewById<View>(R.id.mode1) as TextView).text = spannableString
@@ -64,8 +67,8 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode2() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV")
-        spannableString.append("已经开始暴走了")
+        spannableString.append("通识")
+        spannableString.append("2022年7月20培周")
         val colorSpan = ForegroundColorSpan(Color.parseColor("#009ad6"))
         spannableString.setSpan(colorSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         (findViewById<View>(R.id.mode2) as TextView).text = spannableString
@@ -76,7 +79,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode3() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         val bgColorSpan = BackgroundColorSpan(Color.parseColor("#009ad6"))
         spannableString.setSpan(bgColorSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         (findViewById<View>(R.id.mode3) as TextView).text = spannableString
@@ -87,7 +90,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode4() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         val absoluteSizeSpan = AbsoluteSizeSpan(20)
         spannableString.setSpan(absoluteSizeSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         (findViewById<View>(R.id.mode4) as TextView).text = spannableString
@@ -98,7 +101,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode5() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         //setSpan可多次使用
         val styleSpan = StyleSpan(Typeface.BOLD) //粗体
         spannableString.setSpan(styleSpan, 0, 3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
@@ -114,7 +117,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode6() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         val strikethroughSpan = StrikethroughSpan()
         spannableString.setSpan(strikethroughSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         (findViewById<View>(R.id.mode6) as TextView).text = spannableString
@@ -125,7 +128,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode7() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         val underlineSpan = UnderlineSpan()
         spannableString.setSpan(underlineSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         (findViewById<View>(R.id.mode7) as TextView).text = spannableString
@@ -136,7 +139,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode8() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         val imageSpan = ImageSpan(this, R.mipmap.ic_launcher)
         //也可以这样
         //Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
@@ -152,7 +155,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode9() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
                 Toast.makeText(this@SpannableStringActivity, "请不要点我", Toast.LENGTH_SHORT).show()
@@ -169,7 +172,7 @@ class SpannableStringActivity : AppCompatActivity() {
      */
     private fun mode10() {
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         //图片
         val imageSpan = ImageSpan(this, R.mipmap.ic_launcher)
         spannableString.setSpan(imageSpan, 2, 4, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
@@ -191,18 +194,52 @@ class SpannableStringActivity : AppCompatActivity() {
         textView.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    private fun mode11() {
-          var bss: RoundBackgroundColorSpan
+    private fun mode1101() {
         val pxvalue1 = getResources().getDimensionPixelOffset(R.dimen.dp_px_8)
         val pxvalue2 = getResources().getDimensionPixelOffset(R.dimen.dp_px_20)
-        bss = RoundBackgroundColorSpan( pxvalue1,  ContextCompat.getColor(this@SpannableStringActivity,
+        val pxvalue3 = getResources().getDimensionPixelOffset(R.dimen.dp_px_6)
+        var bss = LeftRoundBackgroundColorSpan( pxvalue1,  ContextCompat.getColor(this@SpannableStringActivity,
             R.color.color_D22E1B),
-            ContextCompat.getColor(this@SpannableStringActivity, R.color.color_D22E1B),pxvalue2
+            ContextCompat.getColor(this@SpannableStringActivity, R.color.color_D22E1B),pxvalue2,pxvalue3
         )
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("通识dasdada")
         spannableString.setSpan(bss, 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
-        val textView = findViewById<View>(R.id.mode11) as TextView
+        val textView = findViewById<View>(R.id.mode1101) as TextView
+        textView.text = spannableString
+        textView.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+    private fun mode1102() {
+        val pxvalue1 = getResources().getDimensionPixelOffset(R.dimen.dp_px_8)
+        val pxvalue2 = getResources().getDimensionPixelOffset(R.dimen.dp_px_20)
+        val pxvalue3 = getResources().getDimensionPixelOffset(R.dimen.dp_px_6)
+        var bss = LeftRoundBackgroundColorSpan( pxvalue1,  ContextCompat.getColor(this@SpannableStringActivity,
+            R.color.color_D22E1B),
+            ContextCompat.getColor(this@SpannableStringActivity, R.color.color_D22E1B),pxvalue2,pxvalue3
+        )
+        val spannableString = SpannableStringBuilder()
+        spannableString.append("通识2022年72022年7月20培周将进行一场精彩的直播")
+        spannableString.setSpan(bss, 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        val textView = findViewById<View>(R.id.mode1102) as TextView
+        textView.text = spannableString
+        textView.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+
+
+    private fun mode1103() {
+        val pxvalue1 = getResources().getDimensionPixelOffset(R.dimen.dp_px_8)
+        val pxvalue2 = getResources().getDimensionPixelOffset(R.dimen.dp_px_20)
+        val pxvalue3 = getResources().getDimensionPixelOffset(R.dimen.dp_px_6)
+        var bss = LeftRoundBackgroundColorSpan( pxvalue1,  ContextCompat.getColor(this@SpannableStringActivity,
+            R.color.color_D22E1B),
+            ContextCompat.getColor(this@SpannableStringActivity, R.color.color_D22E1B),pxvalue2,pxvalue3
+        )
+        val spannableString = SpannableStringBuilder()
+        spannableString.append("通识精彩直播2022年7月20培周将进行一场精彩的直播")
+        spannableString.setSpan(bss, 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        val textView = findViewById<View>(R.id.mode1103) as TextView
         textView.text = spannableString
         textView.movementMethod = LinkMovementMethod.getInstance()
     }
@@ -210,7 +247,7 @@ class SpannableStringActivity : AppCompatActivity() {
 
     private fun mode12() {
         val roleName = "【管理员】"
-        val userName = "暗影IV"
+        val userName = "张三老师"
         val msg: String = roleName + userName + ": "
         val ss = SpannableString(msg)
         if (!TextUtils.isEmpty(roleName)) {
@@ -229,7 +266,7 @@ class SpannableStringActivity : AppCompatActivity() {
             20
         )
         val spannableString = SpannableStringBuilder()
-        spannableString.append("暗影IV已经开始暴走了")
+        spannableString.append("2022年7月20培周将进行一场精彩的直播")
         spannableString.setSpan(bss, 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
         val textView = findViewById<View>(R.id.mode13) as TextView
         textView.text = spannableString
