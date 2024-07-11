@@ -33,3 +33,5 @@ Cannot isolate parameters com.android.build.gradle.internal.dependency.AarResour
 ![](.error_images/d8a6ef2b.png)
 
 原因是 gradle  被设置成了离线模式，修改成在线模式就好了。 
+
+还有有一种原因是是， 

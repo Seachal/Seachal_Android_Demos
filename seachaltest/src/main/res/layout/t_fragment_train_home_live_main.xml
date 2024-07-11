@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/t_home_live_main_update_data"
-        android:layout_width="100dp"
-        android:text="更新数据"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_51b36f"
+        android:gravity="center"
+        android:padding="@dimen/dp_px_30"
+        android:text="更新数据" />
 
     <!--         android:paddingBottom="@dimen/dp_px_24"
     24 + 74  = 98
@@ -18,11 +20,11 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/t_home_live_tab_layout"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/dp_px_24"
+        android:layout_gravity="center"
         android:layout_marginStart="@dimen/dp_px_22"
         android:background="@color/white"
+        android:paddingBottom="@dimen/dp_px_24"
         app:tabIndicatorColor="@color/transparent"
         app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
@@ -31,14 +33,11 @@
         app:tabRippleColor="@color/transparent" />
 
 
-
-
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/t_home_live_main_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:overScrollMode="never"
-       />
+        android:overScrollMode="never" />
 
 </LinearLayout>

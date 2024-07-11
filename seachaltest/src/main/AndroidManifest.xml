@@ -5,7 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+<!-- usesCleartextTraffic   [Android 媒体播放器无法通过 HTTP 播放声音文件 - 堆栈溢出](https://stackoverflow.com/questions/60538374/android-media-player-does-not-play-sound-files-over-http)-->
     <application
         android:name=".BaseApp"
         android:allowBackup="true"
@@ -13,7 +14,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        >
+        <activity
+            android:name=".ViewGroupAndChildActivity"
+            android:exported="false" />
         <activity
             android:name=".viewpager2.Viewpager2Activity"
             android:exported="false" />
@@ -234,6 +240,8 @@
         <activity android:name=".jumptobaseact.JumpReferenceActivity" />
         <activity android:name=".onSaveInstanceState.ui.login.LoginActivity" />
         <activity android:name=".onSaveInstanceState.ui.no.LoginActivityNo" />
+        <activity android:name=".MediaPlayerActivity" />
+        <activity android:name=".MediaPlayerActivity2" />
     </application>
 
 </manifest>

@@ -9,8 +9,7 @@ import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import com.seachal.seachaltest.R
-import com.seachal.seachaltest.utils.getViewVisiblePercent
-import kotlinx.android.synthetic.main.activity_os_info.textView1
+
 import kotlinx.android.synthetic.main.fragment1.textView
 
 
@@ -24,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment1.textView
  * @Version：1.0
  */
 
-class Fragment1 : Fragment() {
+class Fragment3 : Fragment() {
 
     override fun onCreateView(
         @NonNull inflater: LayoutInflater,
@@ -36,9 +35,9 @@ class Fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView.text = "Fragment1"
+        textView.text = "Fragment3"
         textView.setOnClickListener {
-            Log.e("Fragment1", "onClick: Fragment1")
+            Log.e("Fragment3", "onClick: Fragment3")
         }
 
     }

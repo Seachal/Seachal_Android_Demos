@@ -197,7 +197,7 @@ class SpannableStringActivity : AppCompatActivity() {
     private fun mode1101() {
         val pxvalue1 = getResources().getDimensionPixelOffset(R.dimen.dp_px_8)
         val pxvalue2 = getResources().getDimensionPixelOffset(R.dimen.dp_px_20)
-        val pxvalue3 = getResources().getDimensionPixelOffset(R.dimen.dp_px_6)
+        val pxvalue3 = getResources().getDimensionPixelOffset(R.dimen.dp_px_4)
         var bss = LeftRoundBackgroundColorSpan( pxvalue1,  ContextCompat.getColor(this@SpannableStringActivity,
             R.color.color_D22E1B),
             ContextCompat.getColor(this@SpannableStringActivity, R.color.color_D22E1B),pxvalue2,pxvalue3

@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".layoutparams.LayoutParamsActivity">
 
+    <TextView
+        android:id="@+id/tv_margin_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用代码设置 margintop"
+        />
+
 
 
 </LinearLayout>

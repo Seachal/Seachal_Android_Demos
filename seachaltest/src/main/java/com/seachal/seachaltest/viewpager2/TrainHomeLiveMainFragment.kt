@@ -1,20 +1,21 @@
 package com.seachal.seachaltest.viewpager2
 
 import android.graphics.Typeface
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.seachal.seachaltest.R
 import com.seachal.seachaltest.ScrollListFragment.Fragment1
+import com.seachal.seachaltest.ScrollListFragment.Fragment2
+import com.seachal.seachaltest.ScrollListFragment.Fragment3
 import com.seachal.seachaltest.bean.HomeLiveAcademicYearItemBean
 import com.xkw.training.adapter.ViewPager2FragmentStateAdapter
 import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.t_home_live_main_update_data
-
 import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.t_home_live_main_view_pager
 import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.t_home_live_tab_layout
 
@@ -46,6 +47,11 @@ class TrainHomeLiveMainFragment : BaseFragment() {
 
     // 学年数据列表
     private var homeLiveAcademicYearItemBeanList: MutableList<HomeLiveAcademicYearItemBean>? = null
+
+//    private var viewPagerAdapter: ViewPager2FragmentStateAdapter? = null
+
+    private  var tabLayoutMediator:TabLayoutMediator? = null
+
     override fun getContentLayoutId(): Int {
         return R.layout.t_fragment_train_home_live_main
     }
@@ -80,8 +86,21 @@ class TrainHomeLiveMainFragment : BaseFragment() {
                 startTime = 1756656000831
                 // 同上
             )
+//            26-27
+            ,
+            HomeLiveAcademicYearItemBean(
+                academicYear = "2026-2027",
+                currentMonth = null,
+                currentTime = null,
+                endTime = 1820323999831,
+                startTime = 1788192000831
+                // 同上
+            )
+
+
         )
     }
+
     override fun initListeners() {
         t_home_live_main_update_data.setOnClickListener {
             val list = createHomeLiveAcademicYearItemBeanList()
@@ -104,8 +123,8 @@ class TrainHomeLiveMainFragment : BaseFragment() {
         if (fragmentList.isNotEmpty()) {
             fragmentList.clear()
         }
-        t_home_live_tab_layout.removeAllTabs()
-
+//         清空数据的时候刷新一下
+        t_home_live_main_view_pager.adapter?.notifyDataSetChanged()
 
 
 
@@ -113,12 +132,25 @@ class TrainHomeLiveMainFragment : BaseFragment() {
             val listSort = list.reversed()
             // 当前学年的索引
             var indexCurrentAcademic = listSort.indexOfFirst { it.isCurrentAcademic }
-            for (academicBean in listSort) {
-                academicBean.formattedAcademicYear?.let {
+            for (i in 0 until listSort.size){
+                listSort[i]?.formattedAcademicYear?.let {
                     titleList.add(it)
-                    fragmentList.add(Fragment1())
+                    when(i){
+                        0 -> {
+                            fragmentList.add(Fragment1())
+                        }
+                        1 -> {
+                            fragmentList.add(Fragment2())
+                        }
+                        2 -> {
+                            fragmentList.add(Fragment3())
+                        }
+
+                        else -> {}
+                    }
                 }
             }
+
             // 如果列表包含 我的预约， 索引+1.
             if (titleList.contains(TYPE_TAB_NAME)) {
                 indexCurrentAcademic = indexCurrentAcademic + 1
@@ -133,33 +165,56 @@ class TrainHomeLiveMainFragment : BaseFragment() {
 
 
     private fun initTabAndViewPager(offscreenPageLimit: Int, currentIndex: Int) {
-        // 为了解决更新 Fragmentlist 后  tab 出现可以多个被选中的情况
-
         // 设置ViewPager2的offscreenPageLimit, 设置为
         t_home_live_main_view_pager.offscreenPageLimit = offscreenPageLimit
-        t_home_live_main_view_pager.adapter =
-            ViewPager2FragmentStateAdapter(this, fragmentList)
 
-        t_home_live_tab_layout.clearOnTabSelectedListeners()
-
-        var tabLayoutMediator = TabLayoutMediator(t_home_live_tab_layout, t_home_live_main_view_pager) { tab, position ->
-            tab.text = titleList.get(position)
+        if (t_home_live_main_view_pager.adapter == null) {
+            t_home_live_main_view_pager.adapter = ViewPager2FragmentStateAdapter(this, fragmentList)
+        }else{
+            t_home_live_main_view_pager.adapter?.notifyDataSetChanged()
         }
-        tabLayoutMediator.attach()
 
+//        tabLayoutMediator?.let {
+//            it.detach()
+//
+//        } ?: run {
+//            tabLayoutMediator = TabLayoutMediator(
+//                t_home_live_tab_layout,
+//                t_home_live_main_view_pager
+//            ) { tab, position ->
+////                tab.text = titleList.get(position)
+//            }
+//        }
+//        tabLayoutMediator?.attach()
+//        var tabLayoutMediator = TabLayoutMediator(
+//            t_home_live_tab_layout,
+//            t_home_live_main_view_pager
+//        ) { tab, position ->
+//            tab.text = titleList.get(position)
+//        }
+//        tabLayoutMediator.attach()
+//         下面这段代码的顺序很重要，
+        t_home_live_tab_layout.clearOnTabSelectedListeners()
+        t_home_live_tab_layout.removeAllTabs()
         Log.e("currentIndexLog:", currentIndex.toString())
-        t_home_live_main_view_pager.setCurrentItem(currentIndex, false)
-        setTabCustomView()
         setTabSelectedListener()
+        setTabCustomView()
+//        t_home_live_main_view_pager.setCurrentItem(currentIndex, false)
+        t_home_live_tab_layout.getTabAt(currentIndex)?.select()
+
         hideLoading()
     }
 
     private fun setTabCustomView() {
         for (index in titleList.indices) {
-            val tab = t_home_live_tab_layout.getTabAt(index)
-            tab?.let {
-                it.setCustomView(R.layout.t_item_tab_layout_background_corner)
-                it.customView.run {
+            val tab = t_home_live_tab_layout.newTab()
+            tab.let {
+//                 设置自定义 ViewTab
+                val inflater = LayoutInflater.from(context)
+                val tabContainerView = (inflater.inflate(R.layout.t_item_tab_layout_background_corner, it.view, false))
+                val taCustomTextView = tabContainerView.findViewById<TextView>(R.id.tv_tab_layout_title)
+                it.setCustomView(taCustomTextView)
+                it.customView?.findViewById<TextView>(R.id.tv_tab_layout_title)?.run {
                     if (this is TextView) {
                         text = titleList[index]
                         // 当前 tab 设置选中效果
@@ -167,6 +222,7 @@ class TrainHomeLiveMainFragment : BaseFragment() {
                     }
                 }
             }
+            t_home_live_tab_layout.addTab(tab)
         }
     }
 

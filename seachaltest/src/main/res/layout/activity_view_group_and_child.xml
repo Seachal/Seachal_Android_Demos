@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewGroupAndChildActivity">
+
+    <TextView
+        android:id="@+id/textView_out1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="我是外部控件1"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+    <TextView
+        android:id="@+id/textView_out2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="我是外部控件2"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+    <TextView
+        android:id="@+id/textView_out3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/dp_px_10"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="我是外部控件2"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_500"
+        android:layout_marginTop="@dimen/dp_px_50"
+        android:background="@color/red"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="父布局的描述词：切换父布局的显示与不显示对子布局的影响 "
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+
+        <TextView
+            android:id="@+id/textView_child"
+            android:layout_width="@dimen/dp_neg_px_90"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_100"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="我是子布局 "
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -170,7 +170,10 @@ public class MainMenuActivity extends AppCompatActivity {
         activityList.add(new StartActivityBean("判断手机系统  ", OsInfoActivity.class));
         activityList.add(new StartActivityBean("onSaveInstanceState 和 onRestoreInstanceState    ", LoginActivity.class));
         activityList.add(new StartActivityBean("No  onSaveInstanceState 和 onRestoreInstanceState    ", LoginActivityNo.class));
-        activityList.add(new StartActivityBean("viewpgager2    ", Viewpager2Activity.class));
+        activityList.add(new StartActivityBean("viewpgager2  更新数据时的刷新   ", Viewpager2Activity.class));
+        activityList.add(new StartActivityBean("父子布局的显示隐藏  ", ViewGroupAndChildActivity.class));
+        activityList.add(new StartActivityBean("音乐媒体播放器 music media player  ", MediaPlayerActivity.class));
+        activityList.add(new StartActivityBean("音乐媒体播放器 music media player prepare 监听  ", MediaPlayerActivity2.class));
 
     }
 

@@ -6,6 +6,7 @@ import android.graphics.Paint.FontMetricsInt
 import android.graphics.Path
 import android.graphics.RectF
 import android.text.style.ReplacementSpan
+import android.util.Log
 import com.seachal.seachaltest.BaseApp.getContext
 import com.seachal.seachaltest.R
 
@@ -56,6 +57,8 @@ class LeftRoundBackgroundColorSpan(
         bottom: Int,
         paint: Paint
     ) {
+//       用 Log打印start  end、   x,top,y,bottom
+        Log.d("TAG", "start:$start end:$end x:$x top:$top y:$y bottom:$bottom")
         val color1 = paint.color
         //      画笔文字
         paint.color = textColor

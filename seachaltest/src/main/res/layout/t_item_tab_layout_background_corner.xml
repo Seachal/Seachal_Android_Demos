@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_px_74"
-    android:ellipsize="end"
-    android:maxLines="1"
-    android:paddingHorizontal="@dimen/dp_px_36"
-    android:gravity="center"
-    android:textSize="@dimen/dp_px_26"
-    tools:text="TabLayout" />
+    android:layout_height="@dimen/dp_px_96">
+
+
+    <TextView
+        android:id="@+id/tv_tab_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_74"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/dp_px_36"
+        android:background="@drawable/t_shape_bg_solid_ff6b00_37px"
+        android:textSize="@dimen/dp_px_26"
+        tools:text="TabLayout" />
+
+</LinearLayout>

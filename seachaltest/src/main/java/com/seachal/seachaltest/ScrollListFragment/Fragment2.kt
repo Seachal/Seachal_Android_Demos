@@ -10,6 +10,7 @@ import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import com.seachal.seachaltest.R
 import com.seachal.seachaltest.utils.getViewVisiblePercent
+import kotlinx.android.synthetic.main.activity_atuto_text_size.view.text
 import kotlinx.android.synthetic.main.activity_os_info.textView1
 import kotlinx.android.synthetic.main.fragment1.textView
 
@@ -24,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment1.textView
  * @Version：1.0
  */
 
-class Fragment1 : Fragment() {
+class Fragment2 : Fragment() {
 
     override fun onCreateView(
         @NonNull inflater: LayoutInflater,
@@ -36,20 +37,20 @@ class Fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView.text = "Fragment1"
+        textView.text = "Fragment2"
         textView.setOnClickListener {
-            Log.e("Fragment1", "onClick: Fragment1")
+            Log.e("Fragment2", "onClick: Fragment2")
         }
 
     }
 
     override fun onResume() {
         super.onResume()
-        Log.e("Fragment1", "onResume: Fragment1")
+        Log.e("Fragment2", "onResume: Fragment2")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.e("Fragment1", "onPause: Fragment1")
+        Log.e("Fragment2", "onPause: Fragment2")
     } // 其他生命周期方法...
 }
