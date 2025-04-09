@@ -589,4 +589,7 @@
     <color name="color_vertical_translucent">#66000000</color>
     <color name="color_title_bg_dark">#FF373B3E</color>
 
+
+    <color name="c_99ffffff_60transparent">#99000000</color>
+
 </resources>

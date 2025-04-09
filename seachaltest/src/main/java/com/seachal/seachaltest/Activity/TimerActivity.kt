@@ -21,6 +21,15 @@ class TimerActivity : AppCompatActivity() {
             Log.d("TimerActivity", "定时器")
             count = count + 1
             tv_timer.text = "定时器启动了${count}次"
+//           为什么在设置count == 10时，并没有成功取消 timer？
+            if (count > 10){
+                uploadLearnTimer?.cancel()
+                uploadLearnTask?.cancel()
+//                 uploadLearnTimer = null 是为了在uploadLearnTimer取消之后，避免被再次调用， 出现异常的情况。
+                uploadLearnTimer = null
+                uploadLearnTask = null
+                LogUtils.d("定时器取消了")
+            }
         }
     }
 
@@ -28,11 +37,11 @@ class TimerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
 
-        tv_timer.text = "定时器"
+        tv_timer.text = "定时器:在启动第 10次，在任务里取消 timer"
         tv_timer.setOnClickListener {
             uploadLearnTimer = Timer()
             uploadLearnTask = UploadLearnTask()
-            uploadLearnTimer?.schedule(uploadLearnTask, 10000, 1000)
+            uploadLearnTimer?.schedule(uploadLearnTask, 1000, 1000)
         }
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_study"
+        android:icon="@drawable/tab_study_selector"
+        android:title="学习" />
+    <item
+        android:id="@+id/nav_exam"
+        android:icon="@drawable/tab_exam_selector"
+        android:title="刷真题" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/tab_profile_selector"
+        android:title="我的" />
+</menu> 

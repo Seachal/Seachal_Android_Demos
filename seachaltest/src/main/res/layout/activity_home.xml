@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_icon1"
+            android:layout_width="@dimen/dp_px_200"
+            android:layout_height="@dimen/dp_px_200"
+            android:src="@drawable/drag_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 音频模式-->
+        <LinearLayout
+            android:id="@+id/t_ll_audio_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_99ffffff_60transparent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!--    左滑 查看课程详情 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_px_40"
+                android:text="在锁屏和切到后台时也能播放音频"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_px_32"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_px_30"
+                android:text="此状态播放不计入学习时长"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_px_32" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_icon2"
+            android:layout_width="@dimen/dp_px_200"
+            android:layout_height="@dimen/dp_px_200"
+            android:src="@drawable/drag_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 音频模式-->
+        <LinearLayout
+            android:id="@+id/t_ll_audio_container_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_99ffffff_60transparent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!--    左滑 查看课程详情 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个 textview 没有设置点击事件，没有消费事件， 那么下层 ImageView 会响应点击事件！"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_px_32"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_icon3"
+            android:layout_width="@dimen/dp_px_200"
+            android:layout_height="@dimen/dp_px_200"
+            android:src="@drawable/drag_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 音频模式-->
+        <LinearLayout
+            android:id="@+id/t_ll_audio_container_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:background="@color/c_99ffffff_60transparent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!--    左滑 查看课程详情 -->
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_px_40"
+                android:text="这个 textview 增加点击事件， 下层 ImageView 是不是就不执行了？是的！"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_px_32"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -242,6 +242,12 @@
         <activity android:name=".onSaveInstanceState.ui.no.LoginActivityNo" />
         <activity android:name=".MediaPlayerActivity" />
         <activity android:name=".MediaPlayerActivity2" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".bundle.AActivity"/>
+        <activity android:name=".bundle.BActivity"/>
+        <activity android:name=".bundle.BundleAActivity"/>
+        <activity android:name=".bundle.Bundle2AActivity"/>
+        <activity android:name=".bundle.Bundle2BActivity"/>
     </application>
 
 </manifest>
