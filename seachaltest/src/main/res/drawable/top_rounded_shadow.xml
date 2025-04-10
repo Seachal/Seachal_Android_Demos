@@ -1,77 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- 第一层阴影 -->
+    <!-- 阴影层 - 使用偏移和半透明黑色 -->
     <item>
-        <shape android:shape="rectangle">
-            <padding
-                android:bottom="0dp"
-                android:left="2dp"
-                android:right="2dp"
-                android:top="2dp" />
-            <solid android:color="#0DFFFFFF" />
+        <shape>
+            <solid android:color="#40000000" />
             <corners
                 android:topLeftRadius="16dp"
                 android:topRightRadius="16dp" />
         </shape>
     </item>
-    <!-- 第二层阴影 -->
-    <item>
-        <shape android:shape="rectangle">
-            <padding
-                android:bottom="0dp"
-                android:left="2dp"
-                android:right="2dp"
-                android:top="2dp" />
-            <solid android:color="#10FFFFFF" />
+    
+    <!-- 再添加一层阴影，偏移更小 -->
+    <item android:top="1dp">
+        <shape>
+            <solid android:color="#30000000" />
             <corners
                 android:topLeftRadius="16dp"
                 android:topRightRadius="16dp" />
         </shape>
     </item>
-    <!-- 第三层阴影 -->
-    <item>
-        <shape android:shape="rectangle">
-            <padding
-                android:bottom="0dp"
-                android:left="2dp"
-                android:right="2dp"
-                android:top="2dp" />
-            <solid android:color="#15FFFFFF" />
-            <corners
-                android:topLeftRadius="16dp"
-                android:topRightRadius="16dp" />
-        </shape>
-    </item>
-    <!-- 第四层阴影 -->
-    <item>
-        <shape android:shape="rectangle">
-            <padding
-                android:bottom="0dp"
-                android:left="2dp"
-                android:right="2dp"
-                android:top="2dp" />
-            <solid android:color="#20FFFFFF" />
-            <corners
-                android:topLeftRadius="16dp"
-                android:topRightRadius="16dp" />
-        </shape>
-    </item>
-    <!-- 第五层阴影 -->
-    <item>
-        <shape android:shape="rectangle">
-            <padding
-                android:bottom="0dp"
-                android:left="2dp"
-                android:right="2dp"
-                android:top="2dp" />
-            <solid android:color="#30FFFFFF" />
-            <corners
-                android:topLeftRadius="16dp"
-                android:topRightRadius="16dp" />
-        </shape>
-    </item>
-    <!-- 主体层 -->
-    <item>
+    
+    <!-- 主体白色层，向下偏移2dp，这样上面的2dp就会形成阴影 -->
+    <item android:top="2dp">
         <shape>
             <solid android:color="#FFFFFF" />
             <corners
