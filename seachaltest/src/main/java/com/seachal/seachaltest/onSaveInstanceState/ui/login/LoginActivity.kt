@@ -123,7 +123,7 @@ class LoginActivity : AppCompatActivity() {
         outState.putInt("key_position", password.getScrollY());
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         // 恢复状态数据
         if (savedInstanceState != null) {

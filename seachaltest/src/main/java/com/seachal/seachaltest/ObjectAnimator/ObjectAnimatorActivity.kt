@@ -40,7 +40,7 @@ class ObjectAnimatorActivity : AppCompatActivity() {
         animator.interpolator = BounceInterpolator() // 设置反弹插值器
 
         animator.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator?) {
+            override fun onAnimationEnd(animation: Animator) {
                 // 动画结束后重新开始
                 view.visibility = android.view.View.GONE
             }

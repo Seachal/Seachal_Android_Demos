@@ -204,7 +204,8 @@
             android:name=".navigation.BottomNavigationActivity"
             android:exported="false"
             android:label="Bottom Navigation Example" />
-        <activity android:name=".menu.CategorizedMainMenuActivity">
+        <activity android:name=".menu.CategorizedMainMenuActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

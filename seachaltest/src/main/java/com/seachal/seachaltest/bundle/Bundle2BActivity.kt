@@ -22,7 +22,7 @@ class Bundle2BActivity : AppCompatActivity() {
         setContentView(R.layout.activity_b)
 
         // 从 Intent 中获取数据
-        val bundle:Bundle = intent.extras
+        val bundle:Bundle? = intent.extras
 
         // 创建 BFragment 实例
         val fragment = Bundle2BFragment()
