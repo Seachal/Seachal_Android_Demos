@@ -11,15 +11,15 @@ import androidx.fragment.app.Fragment;
 
 import com.seachal.seachaltest.R;
 
-public class ExamFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    public static ExamFragment newInstance() {
-        return new ExamFragment();
+    public static ProfileFragment newInstance() {
+        return new ProfileFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_exam, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 } 

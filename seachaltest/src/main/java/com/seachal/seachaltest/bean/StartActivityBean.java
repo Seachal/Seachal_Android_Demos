@@ -13,12 +13,19 @@ package com.seachal.seachaltest.bean;
 public class StartActivityBean {
 
     private String mTitle;
-
+    private String mSubtitle;
     private Class mActivityClass;
 
 
     public StartActivityBean(String title, Class activityClass) {
         mTitle = title;
+        mActivityClass = activityClass;
+        mSubtitle = "";
+    }
+
+    public StartActivityBean(String title, String subtitle, Class activityClass) {
+        mTitle = title;
+        mSubtitle = subtitle;
         mActivityClass = activityClass;
     }
 
@@ -28,6 +35,14 @@ public class StartActivityBean {
 
     public void setTitle(String title) {
         mTitle = title;
+    }
+    
+    public String getSubtitle() {
+        return mSubtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        mSubtitle = subtitle;
     }
 
     public Class getActivityClass() {

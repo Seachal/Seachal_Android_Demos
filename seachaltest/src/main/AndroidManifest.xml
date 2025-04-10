@@ -200,12 +200,18 @@
         <activity android:name=".Activity.CustomViewPreviewActivity" />
         <activity android:name=".Activity.DebugActivity" />
         <activity android:name=".kotlin.lambda.LambdaActivity" /> <!-- <activity android:name=".kotlin.JavaMainActivity" /> -->
-        <activity android:name=".MainMenuActivity">
+        <activity
+            android:name=".navigation.BottomNavigationActivity"
+            android:exported="false"
+            android:label="Bottom Navigation Example" />
+        <activity android:name=".menu.CategorizedMainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainMenuActivity">
         </activity>
         <activity android:name=".Activity.ClipActivity" />
         <activity android:name=".Activity.CountDownTimerActivity" />
