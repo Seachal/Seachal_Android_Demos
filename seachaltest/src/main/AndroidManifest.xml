@@ -204,6 +204,11 @@
             android:name=".navigation.BottomNavigationActivity"
             android:exported="false"
             android:label="Bottom Navigation Example" />
+
+        <activity
+            android:name=".navigation.BottomNavigation2Activity"
+            android:exported="false"
+            android:label="Bottom Navigation Example" />
         <activity android:name=".menu.CategorizedMainMenuActivity"
             android:exported="true">
             <intent-filter>
@@ -255,6 +260,10 @@
         <activity android:name=".bundle.BundleAActivity"/>
         <activity android:name=".bundle.Bundle2AActivity"/>
         <activity android:name=".bundle.Bundle2BActivity"/>
+        <activity 
+            android:name=".Activity.TopShadowTestActivity"
+            android:exported="true"
+            android:label="顶部圆角阴影测试"/>
     </application>
 
 </manifest>

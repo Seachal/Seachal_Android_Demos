@@ -1,32 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- 阴影层 - 使用偏移和半透明黑色 -->
+    <!-- 最外层阴影 -->
     <item>
         <shape>
-            <solid android:color="#40000000" />
+            <solid android:color="#10000000" />
             <corners
-                android:topLeftRadius="16dp"
-                android:topRightRadius="16dp" />
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
         </shape>
     </item>
     
-    <!-- 再添加一层阴影，偏移更小 -->
-    <item android:top="1dp">
+    <!-- 第二层阴影 -->
+    <item android:top="0.5dp" android:left="0.5dp" android:right="0.5dp">
         <shape>
-            <solid android:color="#30000000" />
+            <solid android:color="#12000000" />
             <corners
-                android:topLeftRadius="16dp"
-                android:topRightRadius="16dp" />
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
         </shape>
     </item>
     
-    <!-- 主体白色层，向下偏移2dp，这样上面的2dp就会形成阴影 -->
-    <item android:top="2dp">
+    <!-- 第三层阴影 -->
+    <item android:top="1dp" android:left="1dp" android:right="1dp">
+        <shape>
+            <solid android:color="#15000000" />
+            <corners
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
+        </shape>
+    </item>
+    
+    <!-- 第四层阴影 -->
+    <item android:top="1.5dp" android:left="1.5dp" android:right="1.5dp">
+        <shape>
+            <solid android:color="#18000000" />
+            <corners
+                android:topLeftRadius="19dp"
+                android:topRightRadius="19dp" />
+        </shape>
+    </item>
+    
+    <!-- 第五层阴影，更接近主体 -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp">
+        <shape>
+            <solid android:color="#1A000000" />
+            <corners
+                android:topLeftRadius="19dp"
+                android:topRightRadius="19dp" />
+        </shape>
+    </item>
+    
+    <!-- 主体白色层 -->
+    <item android:top="3dp" android:left="3dp" android:right="3dp">
         <shape>
             <solid android:color="#FFFFFF" />
             <corners
-                android:topLeftRadius="16dp"
-                android:topRightRadius="16dp" />
+                android:topLeftRadius="18dp"
+                android:topRightRadius="18dp" />
         </shape>
     </item>
 </layer-list>

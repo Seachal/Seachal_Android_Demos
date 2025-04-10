@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-
     <style name="Widget.Design.AppBarLayout.NoShadow" parent="android:Widget">
         <item name="elevation">0dp</item>
     </style>
@@ -121,6 +120,15 @@
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">3.0</item>
         <item name="android:textSize">@dimen/dp_px_36</item>
+    </style>
+
+    <!-- 顶部圆角MaterialCardView样式 -->
+    <style name="ShapeAppearanceOverlay.TopRounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
 </resources>

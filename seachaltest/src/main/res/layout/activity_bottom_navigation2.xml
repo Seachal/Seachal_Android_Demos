@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+<!-- 阴影不是很重， 但是可以用，  预览是看不出来的。       -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="10dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.TopRounded"
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            app:itemIconTint="@color/tab_text_selector"
+            app:itemTextColor="@color/tab_text_selector"
+            app:menu="@menu/bottom_nav_menu"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

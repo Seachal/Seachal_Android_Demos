@@ -37,6 +37,7 @@ import com.seachal.seachaltest.Activity.SkipToTaobaoActivity;
 import com.seachal.seachaltest.Activity.SkipToTaobaoActivity2;
 import com.seachal.seachaltest.Activity.StringToUriActivity;
 import com.seachal.seachaltest.Activity.TimerActivity;
+import com.seachal.seachaltest.Activity.TopShadowTestActivity;
 import com.seachal.seachaltest.Activity.URITestActivity;
 import com.seachal.seachaltest.Activity.ViewMeasureActivity;
 import com.seachal.seachaltest.Activity.ViewStubActivity;
@@ -74,6 +75,7 @@ import com.seachal.seachaltest.intentflag.LaunchOtherActivity;
 import com.seachal.seachaltest.jumptobaseact.JumpActivity;
 import com.seachal.seachaltest.jumptobaseact.JumpReferenceActivity;
 import com.seachal.seachaltest.layoutparams.LayoutParamsActivity;
+import com.seachal.seachaltest.navigation.BottomNavigation2Activity;
 import com.seachal.seachaltest.navigation.BottomNavigationActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultActivity;
 import com.seachal.seachaltest.onActivityResult.OnActivityResultUserFragmentActivity;
@@ -239,6 +241,8 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         // 导航组件示例
         Category navigationCategory = new Category("导航组件");
         navigationCategory.addActivity(new StartActivityBean("底部导航栏示例", "实现Material Design风格的底部导航栏", BottomNavigationActivity.class));
+        navigationCategory.addActivity(new StartActivityBean("底部导航栏示例", "实现Material Design风格的底部导航栏2", BottomNavigation2Activity.class));
+
         navigationCategory.addActivity(new StartActivityBean("跳转到淘宝", "使用隐式Intent打开淘宝App", SkipToTaobaoActivity.class));
         navigationCategory.addActivity(new StartActivityBean("跳转到淘宝2", "通过URI方式跳转至淘宝App", SkipToTaobaoActivity.class));
         navigationCategory.addActivity(new StartActivityBean("Android 跳转栈测试", "测试Activity跳转栈行为", SkipToTaobaoActivity2.class));
@@ -290,6 +294,7 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         layoutCategory.addActivity(new StartActivityBean("透明度测试2", "不同透明度效果对比", BackgroundTransparentActivity2.class));
         layoutCategory.addActivity(new StartActivityBean("RecyclerView滑动模式", "不同的滑动行为模式", BackgroundTransparentActivity3.class));
         layoutCategory.addActivity(new StartActivityBean("MultipleItem适配器", "BaseRecyclerViewAdapterHelper的多类型适配器示例", MultipleItemUseActivity.class));
+        layoutCategory.addActivity(new StartActivityBean("顶部圆角阴影测试", "比较不同的顶部圆角和阴影实现方案", TopShadowTestActivity.class));
         categories.add(layoutCategory);
 
         // UI组件 - 弹窗和对话框

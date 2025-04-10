@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F0F0F0">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -12,33 +13,120 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
+    <!-- 底部导航容器 - 使用RadioGroup切换不同阴影效果 -->
+    <RadioGroup
+        android:id="@+id/shadow_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="8dp">
+
+        <RadioButton
+            android:id="@+id/option_layer_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Layer-List"
+            android:checked="true"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/option_material_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MaterialCard"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/option_card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CardView"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/option_elevation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Elevation"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <!-- 1. XML Layer-List多层阴影方案 (默认显示) -->
+    <FrameLayout
+        android:id="@+id/container_layer_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/top_rounded_shadow"
-            android:elevation="8dp"
             app:itemIconTint="@color/tab_text_selector"
             app:itemTextColor="@color/tab_text_selector"
-            app:menu="@menu/bottom_nav_menu"
-            />
+            app:menu="@menu/bottom_nav_menu" />
+    </FrameLayout>
 
+    <!-- 2. MaterialCardView方案 (初始隐藏) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_material_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="10dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.TopRounded"
+        android:visibility="gone">
 
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/bottom_navigation"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        cor-->
-<!--        >-->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:itemIconTint="@color/tab_text_selector"
+            app:itemTextColor="@color/tab_text_selector"
+            app:menu="@menu/bottom_nav_menu" />
+    </com.google.android.material.card.MaterialCardView>
 
+    <!-- 3. CardView方案 (初始隐藏) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:visibility="gone">
 
-<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:elevation="8dp"-->
-<!--            app:itemIconTint="@color/tab_text_selector"-->
-<!--            app:itemTextColor="@color/tab_text_selector"-->
-<!--            app:menu="@menu/bottom_nav_menu" />-->
-<!--    </com.google.android.material.card.MaterialCardView>-->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:itemIconTint="@color/tab_text_selector"
+            app:itemTextColor="@color/tab_text_selector"
+            app:menu="@menu/bottom_nav_menu" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- 4. View Elevation属性方案 (初始隐藏) -->
+    <FrameLayout
+        android:id="@+id/container_elevation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_elevation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_rounded_only"
+            android:elevation="10dp"
+            app:itemIconTint="@color/tab_text_selector"
+            app:itemTextColor="@color/tab_text_selector"
+            app:menu="@menu/bottom_nav_menu" />
+    </FrameLayout>
 </LinearLayout>
