@@ -4,8 +4,8 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 /**
  * 默认图片指示器实现
@@ -14,8 +14,8 @@ import android.widget.LinearLayout;
 public class DefaultImageTabIndicator implements TabIndicator {
     
     private ImageView mIndicatorView;
-    private int mIndicatorWidth = LinearLayout.LayoutParams.WRAP_CONTENT;
-    private int mIndicatorHeight = LinearLayout.LayoutParams.WRAP_CONTENT;
+    private int mIndicatorWidth = FrameLayout.LayoutParams.WRAP_CONTENT;
+    private int mIndicatorHeight = FrameLayout.LayoutParams.WRAP_CONTENT;
     private float mCurrentLeft = 0;
     
     @Override
@@ -25,7 +25,7 @@ public class DefaultImageTabIndicator implements TabIndicator {
         mIndicatorView.setScaleType(ImageView.ScaleType.FIT_XY);
         
         // 设置布局参数
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 mIndicatorWidth, mIndicatorHeight);
         mIndicatorView.setLayoutParams(params);
         
@@ -39,10 +39,10 @@ public class DefaultImageTabIndicator implements TabIndicator {
         }
         
         // 获取指示器当前布局参数
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mIndicatorView.getLayoutParams();
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mIndicatorView.getLayoutParams();
         
         // 更新指示器宽度（如果需要自适应选项卡宽度）
-        if (mIndicatorWidth == LinearLayout.LayoutParams.WRAP_CONTENT) {
+        if (mIndicatorWidth == FrameLayout.LayoutParams.WRAP_CONTENT) {
             params.width = (int) width;
         }
         
@@ -78,7 +78,7 @@ public class DefaultImageTabIndicator implements TabIndicator {
         mIndicatorHeight = height;
         
         if (mIndicatorView != null) {
-            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mIndicatorView.getLayoutParams();
+            FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mIndicatorView.getLayoutParams();
             params.width = width;
             params.height = height;
             mIndicatorView.setLayoutParams(params);

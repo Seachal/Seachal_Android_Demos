@@ -107,14 +107,13 @@ public class CustomTabDemoActivity extends AppCompatActivity {
      * 自定义图片指示器示例
      */
     class CustomImageIndicator implements TabIndicator {
-        private LinearLayout rootView;
+        private FrameLayout rootView;
         private ImageView imageView;
         
         @Override
         public View initIndicator(Context context) {
             // 创建一个新的布局作为指示器
-            rootView = new LinearLayout(context);
-            rootView.setOrientation(LinearLayout.VERTICAL);
+            rootView = new FrameLayout(context);
             
             // 从XML加载自定义指示器布局
             View indicatorView = LayoutInflater.from(context).inflate(R.layout.o_layout_tab_indicator, null);
