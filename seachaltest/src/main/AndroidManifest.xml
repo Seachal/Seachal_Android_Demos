@@ -264,10 +264,11 @@
             android:name=".Activity.TopShadowTestActivity"
             android:exported="true"
             android:label="顶部圆角阴影测试"/>
+
+        <!-- 在已有的AndroidManifest.xml中添加以下内容 -->
+        <activity
+            android:name=".customtab.CustomTabDemoActivity"
+            android:label="自定义Tab示例" />
     </application>
 
 </manifest>
-<!-- 在已有的AndroidManifest.xml中添加以下内容 -->
-<activity
-    android:name=".customtab.CustomTabDemoActivity"
-    android:label="自定义Tab示例" />

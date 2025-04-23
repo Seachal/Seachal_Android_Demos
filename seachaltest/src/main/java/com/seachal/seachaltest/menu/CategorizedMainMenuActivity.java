@@ -333,6 +333,14 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         pageManagementCategory.addActivity(new StartActivityBean("跳转方式1", "Activity跳转方法示例", JumpActivity.class));
         pageManagementCategory.addActivity(new StartActivityBean("跳转方式2", "另一种Activity跳转方式", JumpReferenceActivity.class));
         pageManagementCategory.addActivity(new StartActivityBean("启动多个Activity", "连续启动多个页面", StartMultiActivity.class));
+        // 新增 CustomTabDemoActivity 跳转入口
+        pageManagementCategory.addActivity(
+            new StartActivityBean(
+                "CustomTab演示", // 标题
+                "自定义Tab页面演示", // 简要描述
+                com.seachal.seachaltest.customtab.CustomTabDemoActivity.class // 跳转的Activity类
+            )
+        );
         categories.add(pageManagementCategory);
 
         // 系统功能
@@ -383,4 +391,4 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
 
         return categories;
     }
-} 
+}

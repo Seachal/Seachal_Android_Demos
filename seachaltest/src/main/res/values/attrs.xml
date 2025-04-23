@@ -49,8 +49,7 @@
         <!--the max length of hint content-->
         <attr name="npv_AlternativeHint" format="reference|string" />
     </declare-styleable>
-    <?xml version="1.0" encoding="utf-8"?>
-    <resources>
+
         <declare-styleable name="CustomTabLayout">
             <attr name="o_indicatorColor" format="color" />
             <attr name="o_indicatorHeight" format="dimension" />
@@ -64,4 +63,3 @@
             <attr name="o_normalTextColor" format="color" />
         </declare-styleable>
     </resources>
-</resources>

@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <com.seachal.seachaltest.customtab.CustomTabLayout
         android:id="@+id/o_custom_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:background="@android:color/white"
         app:o_indicatorColor="#FF5722"
         app:o_indicatorHeight="@dimen/dp_px_4"
@@ -20,7 +20,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/o_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_px_500"
         android:layout_weight="1" />
 
 </LinearLayout>
