@@ -85,7 +85,7 @@ public class CustomTabDemoActivity extends AppCompatActivity {
         // customTabLayout.setIndicatorFactory(new CustomIndicatorFactory());
         
         // 设置Tab选中监听器
-        customTabLayout.setOnTabSelectedListener(new CustomTabLayout.OnTabSelectedListener() {
+        customTabLayout.setOnTabSelectedListener(new OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
                 // 可以在这里处理Tab选中事件

@@ -476,11 +476,4 @@ public class CustomTabLayout extends FrameLayout {
             animator.start();
         }
     }
-    
-    /**
-     * Tab选中监听器接口
-     */
-    public interface OnTabSelectedListener {
-        void onTabSelected(int position);
-    }
 } 
