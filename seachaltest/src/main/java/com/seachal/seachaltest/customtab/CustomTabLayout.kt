@@ -4,11 +4,13 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,9 +29,6 @@ class CustomTabLayout @JvmOverloads constructor(
 
     // RecyclerView用于显示Tab项
     private val recyclerView: RecyclerView
-    
-    // 指示器View
-    private val indicatorView: IndicatorView
     
     // Tab适配器
     private val tabAdapter: TabAdapter
@@ -67,6 +66,25 @@ class CustomTabLayout @JvmOverloads constructor(
     // 关联的ViewPager2
     private var viewPager2: ViewPager2? = null
     
+    // 自定义指示器图片
+    private var indicatorDrawable: Drawable? = null
+    
+    // 指示器工厂
+    private var indicatorFactory: TabIndicatorFactory = object : TabIndicatorFactory {
+        override fun createTabIndicator(): TabIndicator = 
+            if (indicatorDrawable != null) DefaultImageTabIndicator() else DefaultTabIndicator()
+    }
+    
+    // 当前使用的指示器
+    private var tabIndicator: TabIndicator? = null
+    
+    // 指示器视图
+    private var indicatorView: View? = null
+    
+    // 目标指示器位置
+    private var targetLeft = 0f
+    private var targetWidth = 0f
+    
     // 页面切换回调
     private val pageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
         override fun onPageSelected(position: Int) {
@@ -84,6 +102,8 @@ class CustomTabLayout @JvmOverloads constructor(
         indicatorRadius = typedArray.getDimensionPixelSize(R.styleable.CustomTabLayout_o_indicatorRadius, indicatorRadius)
         selectedTextColor = typedArray.getColor(R.styleable.CustomTabLayout_o_selectedTextColor, selectedTextColor)
         normalTextColor = typedArray.getColor(R.styleable.CustomTabLayout_o_normalTextColor, normalTextColor)
+        // 获取自定义指示器图片
+        indicatorDrawable = typedArray.getDrawable(R.styleable.CustomTabLayout_o_indicatorDrawable)
         typedArray.recycle()
         
         // 初始化布局
@@ -99,8 +119,38 @@ class CustomTabLayout @JvmOverloads constructor(
         recyclerView.adapter = tabAdapter
         
         // 初始化指示器
-        indicatorView = IndicatorView(context)
-        addView(indicatorView)
+        initIndicator()
+        
+        // 延迟一下，确保初始位置正确
+        post {
+            if (tabItems.isNotEmpty()) {
+                updateIndicator(currentPosition, false)
+            }
+        }
+    }
+    
+    /**
+     * 初始化指示器
+     */
+    private fun initIndicator() {
+        // 如果已经有指示器，先移除
+        indicatorView?.let { removeView(it) }
+        
+        // 创建新的指示器
+        tabIndicator = indicatorFactory.createTabIndicator()
+        indicatorView = tabIndicator?.initIndicator(context)
+        
+        // 设置指示器图片和尺寸
+        indicatorDrawable?.let { tabIndicator?.setIndicatorDrawable(it) }
+        
+        // 添加到视图，确保绘制在最上层
+        indicatorView?.let { 
+            val params = LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT
+            )
+            addView(it, params)
+        }
     }
     
     /**
@@ -116,6 +166,33 @@ class CustomTabLayout @JvmOverloads constructor(
             post {
                 updateIndicator(0, false)
             }
+        }
+    }
+    
+    /**
+     * 设置指示器图片
+     */
+    fun setIndicatorDrawable(drawable: Drawable?) {
+        this.indicatorDrawable = drawable
+        tabIndicator?.setIndicatorDrawable(drawable)
+    }
+    
+    /**
+     * 设置指示器尺寸
+     */
+    fun setIndicatorSize(width: Int, height: Int) {
+        tabIndicator?.setIndicatorSize(width, height)
+    }
+    
+    /**
+     * 设置自定义的指示器工厂
+     * 可以完全自定义指示器的外观和行为
+     */
+    fun setIndicatorFactory(factory: TabIndicatorFactory) {
+        indicatorFactory = factory
+        initIndicator()
+        post {
+            updateIndicator(currentPosition, false)
         }
     }
     
@@ -155,8 +232,33 @@ class CustomTabLayout @JvmOverloads constructor(
         post {
             val targetView = recyclerView.findViewHolderForAdapterPosition(position)?.itemView
             targetView?.let {
-                indicatorView.updateIndicator(it, smoothScroll)
+                // 计算指示器目标位置
+                calculateTargetPosition(it)
+                
+                // 更新指示器位置
+                tabIndicator?.updatePosition(targetLeft, targetWidth, smoothScroll)
+                
+                // 强制重新布局，确保指示器更新
+                requestLayout()
+                invalidate()
             }
+        }
+    }
+    
+    /**
+     * 计算目标位置
+     */
+    private fun calculateTargetPosition(targetView: View) {
+        // 计算目标位置
+        targetLeft = targetView.left.toFloat()
+        targetWidth = when (indicatorWidthMode) {
+            0 -> indicatorFixedWidth.toFloat() // 固定宽度
+            else -> targetView.width.toFloat() // 跟随文本宽度
+        }
+        
+        // 居中显示
+        if (indicatorWidthMode == 0) {
+            targetLeft += (targetView.width - indicatorFixedWidth) / 2f
         }
     }
     
@@ -220,67 +322,53 @@ class CustomTabLayout @JvmOverloads constructor(
     }
     
     /**
-     * 指示器View
+     * 默认绘制指示器实现
      */
-    inner class IndicatorView(context: Context) : View(context) {
+    inner class DefaultTabIndicator : TabIndicator {
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         private val rectF = RectF()
-        
-        // 当前指示器位置
-        private var currentLeft = 0f
-        private var currentWidth = 0f
-        
-        // 目标指示器位置
-        private var targetLeft = 0f
-        private var targetWidth = 0f
+        private val indicatorView = View(context)
         
         // 动画进度
         private var animationProgress = 1f
+        private var currentLeft = 0f
+        private var currentWidth = 0f
         
-        init {
+        override fun initIndicator(context: Context): View {
             paint.color = indicatorColor
+            return indicatorView
         }
         
-        override fun onDraw(canvas: Canvas) {
-            super.onDraw(canvas)
-            
-            // 计算当前指示器位置
-            val left = currentLeft + (targetLeft - currentLeft) * animationProgress
-            val width = currentWidth + (targetWidth - currentWidth) * animationProgress
-            
-            // 绘制指示器
-            rectF.set(left, height - indicatorHeight.toFloat(), left + width, height.toFloat())
-            canvas.drawRoundRect(rectF, indicatorRadius.toFloat(), indicatorRadius.toFloat(), paint)
-        }
-        
-        /**
-         * 更新指示器位置
-         */
-        fun updateIndicator(targetView: View, animate: Boolean) {
-            // 保存当前位置作为动画起点
-            currentLeft = targetLeft
-            currentWidth = targetWidth
-            
-            // 计算目标位置
-            targetLeft = targetView.left.toFloat()
-            targetWidth = when (indicatorWidthMode) {
-                0 -> indicatorFixedWidth.toFloat() // 固定宽度
-                else -> targetView.width.toFloat() // 跟随文本宽度
-            }
-            
-            // 居中显示
-            if (indicatorWidthMode == 0) {
-                targetLeft += (targetView.width - indicatorFixedWidth) / 2f
-            }
-            
-            // 是否执行动画
+        override fun updatePosition(left: Float, width: Float, animate: Boolean) {
             if (animate) {
+                // 保存当前位置作为动画起点
+                currentLeft = targetLeft
+                currentWidth = targetWidth
+                
+                // 设置新的目标位置
+                targetLeft = left
+                targetWidth = width
+                
+                // 执行动画
                 animationProgress = 0f
                 animateIndicator()
             } else {
+                // 直接设置位置
+                currentLeft = left
+                currentWidth = width
+                targetLeft = left
+                targetWidth = width
                 animationProgress = 1f
-                invalidate()
+                indicatorView.invalidate()
             }
+        }
+        
+        override fun setIndicatorDrawable(drawable: Drawable?) {
+            // 默认指示器不支持图片，忽略
+        }
+        
+        override fun setIndicatorSize(width: Int, height: Int) {
+            // 默认指示器使用全局设置，忽略
         }
         
         /**
@@ -291,9 +379,38 @@ class CustomTabLayout @JvmOverloads constructor(
             animator.duration = 250 // 动画时长
             animator.addUpdateListener { animation ->
                 animationProgress = animation.animatedValue as Float
-                invalidate()
+                indicatorView.invalidate()
             }
             animator.start()
+        }
+        
+        init {
+            indicatorView.setWillNotDraw(false)
+            
+            // 设置绘制回调
+            indicatorView.setOnDraw { canvas ->
+                // 计算当前指示器位置
+                val left = currentLeft + (targetLeft - currentLeft) * animationProgress
+                val width = currentWidth + (targetWidth - currentWidth) * animationProgress
+                
+                // 绘制指示器
+                rectF.set(left, indicatorView.height - indicatorHeight.toFloat(), left + width, indicatorView.height.toFloat())
+                canvas.drawRoundRect(rectF, indicatorRadius.toFloat(), indicatorRadius.toFloat(), paint)
+            }
+        }
+    }
+    
+    /**
+     * 设置View的绘制回调
+     */
+    private fun View.setOnDraw(onDraw: (Canvas) -> Unit) {
+        this.javaClass.getDeclaredMethod("onDraw", Canvas::class.java).let { method ->
+            method.isAccessible = true
+            method.invoke(this, object : Canvas() {
+                override fun drawRoundRect(rect: RectF, rx: Float, ry: Float, paint: Paint) {
+                    onDraw(this)
+                }
+            })
         }
     }
     

@@ -61,5 +61,7 @@
             <attr name="o_indicatorRadius" format="dimension" />
             <attr name="o_selectedTextColor" format="color" />
             <attr name="o_normalTextColor" format="color" />
+            <attr name="o_indicatorDrawable" format="reference" />
+            <attr name="o_useLayoutIndicator" format="boolean" />
         </declare-styleable>
     </resources>
