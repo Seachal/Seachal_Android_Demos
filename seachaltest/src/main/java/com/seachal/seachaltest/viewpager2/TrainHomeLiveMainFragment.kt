@@ -15,6 +15,7 @@ import com.seachal.seachaltest.ScrollListFragment.Fragment2
 import com.seachal.seachaltest.ScrollListFragment.Fragment3
 import com.seachal.seachaltest.bean.HomeLiveAcademicYearItemBean
 import com.xkw.training.adapter.ViewPager2FragmentStateAdapter
+import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.o_tab_exercise_categories
 import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.t_home_live_main_update_data
 import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.t_home_live_main_view_pager
 import kotlinx.android.synthetic.main.t_fragment_train_home_live_main.t_home_live_tab_layout
@@ -59,6 +60,9 @@ class TrainHomeLiveMainFragment : BaseFragment() {
     override fun initData() {
         val list = createHomeLiveAcademicYearItemBeanList()
         updateData(list)
+        
+        // 初始化底部TabLayout，用于测试tabIndicator
+        initExerciseCategoriesTab()
     }
 
     fun createHomeLiveAcademicYearItemBeanList(): MutableList<HomeLiveAcademicYearItemBean> {
@@ -106,10 +110,50 @@ class TrainHomeLiveMainFragment : BaseFragment() {
             val list = createHomeLiveAcademicYearItemBeanList()
             updateData(list)
         }
+        
+        // 添加底部TabLayout的选择监听
+        o_tab_exercise_categories.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                // 处理选中状态
+                tab?.let {
+                    // 可以在这里处理选中逻辑
+                }
+            }
+            
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // 处理未选中状态
+            }
+            
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                // 处理重新选中状态
+            }
+        })
     }
 
     override fun loadData() {
 
+    }
+    
+    /**
+     * 初始化底部练习分类TabLayout
+     * 用于测试tabIndicator效果
+     */
+    private fun initExerciseCategoriesTab() {
+        // 清除已有Tab
+        o_tab_exercise_categories.removeAllTabs()
+        // 添加测试数据
+        val categories = listOf("全部", "语文", "思想政治","数学", "英语", "物理", "化学", "生物", "历史", "地理")
+        
+        // 创建并添加Tab
+        categories.forEach { category ->
+            val tab = o_tab_exercise_categories.newTab().apply {
+                text = category
+            }
+            o_tab_exercise_categories.addTab(tab)
+        }
+        
+        // 默认选中第一个
+        o_tab_exercise_categories.getTabAt(0)?.select()
     }
 
 

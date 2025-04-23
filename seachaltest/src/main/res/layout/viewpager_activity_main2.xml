@@ -11,7 +11,7 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-f
+
 <!--    <xyz.santeri.wvp.WrappingViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"

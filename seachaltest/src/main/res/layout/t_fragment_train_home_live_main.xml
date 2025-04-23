@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/c_51b36f"
     android:orientation="vertical">
 
     <TextView
@@ -23,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/dp_px_22"
-        android:background="@color/white"
         android:paddingBottom="@dimen/dp_px_24"
         app:tabIndicatorColor="@color/transparent"
         app:tabIndicatorHeight="0dp"
@@ -39,5 +39,26 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:overScrollMode="never" />
+
+    <!--   测试消除 TabLayout 的白色背景 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/o_tab_exercise_categories"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_106"
+        android:layout_marginStart="@dimen/dp_px_32"
+        android:layout_marginTop="@dimen/dp_px_24"
+        android:background="@android:color/transparent"
+        android:paddingBottom="@dimen/dp_px_24"
+        app:tabGravity="fill"
+        app:tabIndicator="@drawable/o_shape_tab_underline_png2"
+        app:tabIndicatorColor="@color/c_ff6b00"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="@dimen/dp_px_6"
+        app:tabMinWidth="@dimen/dp_px_32"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="@dimen/dp_px_24"
+        app:tabPaddingStart="@dimen/dp_px_24"
+        app:tabRippleColor="@color/transparent" />
 
 </LinearLayout>
