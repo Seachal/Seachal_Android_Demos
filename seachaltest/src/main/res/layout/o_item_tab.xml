@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/dp_px_12"
+    android:paddingTop="@dimen/dp_px_12"
+    android:paddingEnd="@dimen/dp_px_12"
+    android:paddingBottom="@dimen/dp_px_12">
+
+    <TextView
+        android:id="@+id/o_tv_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/dp_px_28"
+        tools:text="月考" />
+
+</LinearLayout>

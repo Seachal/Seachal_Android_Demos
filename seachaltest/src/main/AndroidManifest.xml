@@ -267,3 +267,7 @@
     </application>
 
 </manifest>
+<!-- 在已有的AndroidManifest.xml中添加以下内容 -->
+<activity
+    android:name=".customtab.CustomTabDemoActivity"
+    android:label="自定义Tab示例" />
