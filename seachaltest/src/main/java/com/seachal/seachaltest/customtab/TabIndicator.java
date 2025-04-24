@@ -6,6 +6,7 @@ import android.view.View;
 
 /**
  * 自定义Tab指示器接口
+ * 定义指示器必须实现的方法
  */
 public interface TabIndicator {
     /**
@@ -17,15 +18,15 @@ public interface TabIndicator {
     
     /**
      * 更新指示器位置
-     * @param left 左边距
-     * @param width 宽度
-     * @param animate 是否使用动画
+     * @param left 指示器左侧位置
+     * @param width 指示器宽度
+     * @param animate 是否执行动画
      */
     void updatePosition(float left, float width, boolean animate);
     
     /**
      * 设置指示器图像
-     * @param drawable 图像资源
+     * @param drawable 指示器图像资源
      */
     void setIndicatorDrawable(Drawable drawable);
     

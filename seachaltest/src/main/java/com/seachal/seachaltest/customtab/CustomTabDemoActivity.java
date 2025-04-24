@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +23,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 自定义TabLayout演示Activity
+ * 展示如何使用CustomTabLayout并设置图片指示器
+ */
 public class CustomTabDemoActivity extends AppCompatActivity {
 
     private CustomTabLayout customTabLayout;
@@ -69,19 +72,22 @@ public class CustomTabDemoActivity extends AppCompatActivity {
         // 关联ViewPager2
         customTabLayout.setupWithViewPager2(viewPager);
         
+        // ----- 设置图片指示器的几种方式 -----
+        
         // 方法1：在XML中已经设置app:o_indicatorDrawable属性
         
-        // 方法2：通过代码设置指示器图片
-        customTabLayout.setIndicatorDrawable(ContextCompat.getDrawable(this, R.drawable.o_shape_tab_underline));
+        // 方法2：通过代码设置指示器图片（推荐方式）
+        // 直接使用设计稿中的图片资源
+        Drawable indicatorDrawable = ContextCompat.getDrawable(this, R.drawable.o_shape_tab_underline_png2);
+        customTabLayout.setIndicatorDrawable(indicatorDrawable);
         
-        // 方法3：通过代码设置指示器图片尺寸
+        // 方法3：设置指示器图片尺寸，确保不会被拉伸变形
         customTabLayout.setIndicatorSize(
-                getResources().getDimensionPixelSize(R.dimen.dp_px_40),
-                getResources().getDimensionPixelSize(R.dimen.dp_px_8)
+                getResources().getDimensionPixelSize(R.dimen.dp_px_40),  // 设计稿上的宽度
+                getResources().getDimensionPixelSize(R.dimen.dp_px_8)    // 设计稿上的高度
         );
         
-        // 方法4：使用自定义指示器工厂
-        // 如果需要完全自定义指示器，可以取消注释下面的代码
+        // 方法4：如果有特殊需求，可以使用自定义指示器工厂
         // customTabLayout.setIndicatorFactory(new CustomIndicatorFactory());
         
         // 设置Tab选中监听器
@@ -95,6 +101,7 @@ public class CustomTabDemoActivity extends AppCompatActivity {
     
     /**
      * 自定义指示器工厂示例
+     * 只在需要更复杂的自定义指示器时才需要使用
      */
     class CustomIndicatorFactory implements TabIndicatorFactory {
         @Override
@@ -105,6 +112,7 @@ public class CustomTabDemoActivity extends AppCompatActivity {
     
     /**
      * 自定义图片指示器示例
+     * 可以实现更复杂的指示器效果
      */
     class CustomImageIndicator implements TabIndicator {
         private FrameLayout rootView;
@@ -120,7 +128,7 @@ public class CustomTabDemoActivity extends AppCompatActivity {
             imageView = indicatorView.findViewById(R.id.o_iv_tab_indicator);
             
             // 设置默认图片
-            imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.o_shape_tab_underline));
+            imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.o_shape_tab_underline_png2));
             imageView.setVisibility(View.VISIBLE);
             
             // 添加到根视图

@@ -27,6 +27,7 @@ import java.util.List;
 
 /**
  * 自定义TabLayout，使用RecyclerView实现，可以更灵活地自定义indicator
+ * 支持直接使用图片作为指示器，无需绘制形状
  */
 public class CustomTabLayout extends FrameLayout {
 
@@ -72,11 +73,16 @@ public class CustomTabLayout extends FrameLayout {
     // 自定义指示器图片
     private Drawable indicatorDrawable;
     
+    // 指示器宽度和高度
+    private int indicatorWidth = -1;
+    private int indicatorHeight2 = -1;
+    
     // 指示器工厂
     private TabIndicatorFactory indicatorFactory = new TabIndicatorFactory() {
         @Override
         public TabIndicator createTabIndicator() {
-            return indicatorDrawable != null ? new DefaultImageTabIndicator() : new DefaultTabIndicator();
+            // 默认使用图片指示器
+            return new DefaultImageTabIndicator();
         }
     };
     
@@ -177,6 +183,15 @@ public class CustomTabLayout extends FrameLayout {
         // 设置指示器图片
         if (indicatorDrawable != null) {
             tabIndicator.setIndicatorDrawable(indicatorDrawable);
+        } else {
+            // 如果没有设置图片，使用默认图片
+            indicatorDrawable = ContextCompat.getDrawable(getContext(), R.drawable.o_shape_tab_underline_png2);
+            tabIndicator.setIndicatorDrawable(indicatorDrawable);
+        }
+        
+        // 设置指示器尺寸
+        if (indicatorWidth > 0 && indicatorHeight2 > 0) {
+            tabIndicator.setIndicatorSize(indicatorWidth, indicatorHeight2);
         }
         
         // 添加到视图，确保绘制在最上层
@@ -222,6 +237,8 @@ public class CustomTabLayout extends FrameLayout {
      * 设置指示器尺寸
      */
     public void setIndicatorSize(int width, int height) {
+        this.indicatorWidth = width;
+        this.indicatorHeight2 = height;
         if (tabIndicator != null) {
             tabIndicator.setIndicatorSize(width, height);
         }
@@ -311,6 +328,10 @@ public class CustomTabLayout extends FrameLayout {
         // 居中显示
         if (indicatorWidthMode == 0) {
             targetLeft += (targetView.getWidth() - indicatorFixedWidth) / 2f;
+        } else if (indicatorWidth > 0) {
+            // 如果设置了固定指示器宽度，居中显示
+            targetLeft += (targetView.getWidth() - indicatorWidth) / 2f;
+            targetWidth = indicatorWidth;
         }
     }
     
