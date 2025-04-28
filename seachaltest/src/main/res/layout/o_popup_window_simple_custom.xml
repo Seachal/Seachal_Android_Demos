@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_ffffff_12dp_corner"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/o_tv_popup_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="标题"
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 内容 -->
+    <TextView
+        android:id="@+id/o_tv_popup_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="这是PopupWindow的内容"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <!-- 关闭按钮 -->
+    <Button
+        android:id="@+id/o_btn_close_popup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭" />
+
+</LinearLayout>

@@ -301,6 +301,7 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         Category dialogCategory = new Category("弹窗和对话框");
         dialogCategory.addActivity(new StartActivityBean("对话框测试", "各种对话框的使用方法", DialogTestActivity.class));
         dialogCategory.addActivity(new StartActivityBean("DialogFragment测试", "使用DialogFragment创建对话框", DialogFragmentTestActivity.class));
+        dialogCategory.addActivity(new StartActivityBean("PopupWindow示例", "各种PopupWindow的使用方法和效果展示", com.seachal.seachaltest.popupwindow.PopupWindowMenuActivity.class));
         categories.add(dialogCategory);
 
         // 动画和过渡效果

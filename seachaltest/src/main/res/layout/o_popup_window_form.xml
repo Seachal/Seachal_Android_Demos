@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_ffffff_12dp_corner"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="表单示例"
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 表单内容 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 姓名输入 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="姓名"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/o_et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/shape_bg_ffffff_12dp_corner"
+            android:hint="请输入姓名"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <!-- 手机号输入 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="手机号"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/o_et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/shape_bg_ffffff_12dp_corner"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <!-- 备注输入 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="备注"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/o_et_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_bg_ffffff_12dp_corner"
+            android:gravity="top"
+            android:hint="请输入备注信息"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:padding="8dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- 按钮区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/o_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/o_btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="提交" />
+    </LinearLayout>
+
+</LinearLayout>

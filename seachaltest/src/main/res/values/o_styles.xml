@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PopupWindow动画样式 -->
+    <style name="o_PopupAnimation">
+        <item name="android:windowEnterAnimation">@anim/pop_from_bottom_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_from_bottom_anim_out</item>
+    </style>
+
+    <!-- 从底部弹出的PopupWindow动画样式 -->
+    <style name="o_PopupAnimationFromBottom">
+        <item name="android:windowEnterAnimation">@anim/o_anim_popup_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/o_anim_popup_bottom_out</item>
+    </style>
+
+    <!-- 从顶部弹出的PopupWindow动画样式 -->
+    <style name="o_PopupAnimationFromTop">
+        <item name="android:windowEnterAnimation">@anim/o_anim_popup_top_in</item>
+        <item name="android:windowExitAnimation">@anim/o_anim_popup_top_out</item>
+    </style>
+
+    <!-- 从左侧弹出的PopupWindow动画样式 -->
+    <style name="o_PopupAnimationFromLeft">
+        <item name="android:windowEnterAnimation">@anim/o_anim_popup_left_in</item>
+        <item name="android:windowExitAnimation">@anim/o_anim_popup_left_out</item>
+    </style>
+
+    <!-- 从右侧弹出的PopupWindow动画样式 -->
+    <style name="o_PopupAnimationFromRight">
+        <item name="android:windowEnterAnimation">@anim/o_anim_popup_right_in</item>
+        <item name="android:windowExitAnimation">@anim/o_anim_popup_right_out</item>
+    </style>
+</resources>
