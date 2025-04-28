@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 从顶部进入的动画 -->
+    <translate
+        android:duration="300"
+        android:fromYDelta="-100%"
+        android:toYDelta="0" />
+    
+    <!-- 透明度动画，从透明到不透明 -->
+    <alpha
+        android:duration="300"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
+</set>
