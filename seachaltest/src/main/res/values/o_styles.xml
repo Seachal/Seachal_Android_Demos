@@ -7,25 +7,25 @@
     </style>
 
     <!-- 从底部弹出的PopupWindow动画样式 -->
-    <style name="o_PopupAnimationFromBottom">
+    <style name="o_PopupAnimationBottom">
         <item name="android:windowEnterAnimation">@anim/o_anim_popup_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/o_anim_popup_bottom_out</item>
     </style>
 
     <!-- 从顶部弹出的PopupWindow动画样式 -->
-    <style name="o_PopupAnimationFromTop">
+    <style name="o_PopupAnimationTop">
         <item name="android:windowEnterAnimation">@anim/o_anim_popup_top_in</item>
         <item name="android:windowExitAnimation">@anim/o_anim_popup_top_out</item>
     </style>
 
     <!-- 从左侧弹出的PopupWindow动画样式 -->
-    <style name="o_PopupAnimationFromLeft">
+    <style name="o_PopupAnimationLeft">
         <item name="android:windowEnterAnimation">@anim/o_anim_popup_left_in</item>
         <item name="android:windowExitAnimation">@anim/o_anim_popup_left_out</item>
     </style>
 
     <!-- 从右侧弹出的PopupWindow动画样式 -->
-    <style name="o_PopupAnimationFromRight">
+    <style name="o_PopupAnimationRight">
         <item name="android:windowEnterAnimation">@anim/o_anim_popup_right_in</item>
         <item name="android:windowExitAnimation">@anim/o_anim_popup_right_out</item>
     </style>

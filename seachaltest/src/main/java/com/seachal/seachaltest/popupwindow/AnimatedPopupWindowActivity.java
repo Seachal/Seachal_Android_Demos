@@ -172,7 +172,7 @@ public class AnimatedPopupWindowActivity extends AppCompatActivity {
         popupWindow.setBackgroundDrawable(new ColorDrawable());
         
         // 设置动画样式（从底部弹出）
-        popupWindow.setAnimationStyle(R.style.o_PopupAnimationFromBottom);
+        popupWindow.setAnimationStyle(R.style.o_PopupAnimationBottom);
         
         // 在屏幕底部显示PopupWindow
         popupWindow.showAtLocation(getWindow().getDecorView(), Gravity.BOTTOM, 0, 0);
@@ -203,7 +203,7 @@ public class AnimatedPopupWindowActivity extends AppCompatActivity {
         popupWindow.setBackgroundDrawable(new ColorDrawable());
         
         // 设置动画样式（从顶部弹出）
-        popupWindow.setAnimationStyle(R.style.o_PopupAnimationFromTop);
+        popupWindow.setAnimationStyle(R.style.o_PopupAnimationTop);
         
         // 在屏幕顶部显示PopupWindow
         popupWindow.showAtLocation(getWindow().getDecorView(), Gravity.TOP, 0, 0);
@@ -234,7 +234,7 @@ public class AnimatedPopupWindowActivity extends AppCompatActivity {
         popupWindow.setBackgroundDrawable(new ColorDrawable());
         
         // 设置动画样式（从左侧弹出）
-        popupWindow.setAnimationStyle(R.style.o_PopupAnimationFromLeft);
+        popupWindow.setAnimationStyle(R.style.o_PopupAnimationLeft);
         
         // 在屏幕左侧显示PopupWindow
         popupWindow.showAtLocation(getWindow().getDecorView(), Gravity.START | Gravity.CENTER_VERTICAL, 0, 0);
@@ -265,7 +265,7 @@ public class AnimatedPopupWindowActivity extends AppCompatActivity {
         popupWindow.setBackgroundDrawable(new ColorDrawable());
         
         // 设置动画样式（从右侧弹出）
-        popupWindow.setAnimationStyle(R.style.o_PopupAnimationFromRight);
+        popupWindow.setAnimationStyle(R.style.o_PopupAnimationRight);
         
         // 在屏幕右侧显示PopupWindow
         popupWindow.showAtLocation(getWindow().getDecorView(), Gravity.END | Gravity.CENTER_VERTICAL, 0, 0);

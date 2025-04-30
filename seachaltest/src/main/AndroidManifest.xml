@@ -27,7 +27,7 @@
             android:name=".TextView.SpannableStringActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".onSaveInstanceState.ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
@@ -217,8 +217,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity">
-        </activity>
+
+
         <activity android:name=".Activity.ClipActivity" />
         <activity android:name=".Activity.CountDownTimerActivity" />
         <activity android:name=".customview.CustomTextViewTestActivity" />
@@ -269,6 +269,18 @@
         <activity
             android:name=".customtab.CustomTabDemoActivity"
             android:label="自定义Tab示例" />
+
+        <activity android:name=".popupwindow.PopupWindowMenuActivity"
+            android:label="popupwindow示例"
+            />
+
+         <activity android:name=".popupwindow.AnimatedPopupWindowActivity" />
+         <activity android:name=".popupwindow.ArrowPopupWindowActivity" />
+         <activity android:name=".popupwindow.BasicPopupWindowActivity" />
+         <activity android:name=".popupwindow.CustomLayoutPopupWindowActivity" />
+         <activity android:name=".popupwindow.DimBackgroundPopupWindowActivity" />
+         <activity android:name=".popupwindow.ListPopupWindowActivity" />
+         <activity android:name=".popupwindow.PopupMenuActivity" />
     </application>
 
 </manifest>

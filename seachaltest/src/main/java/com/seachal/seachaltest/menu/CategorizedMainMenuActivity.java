@@ -389,6 +389,11 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         Category developerToolsCategory = new Category("开发工具和调试");
         developerToolsCategory.addActivity(new StartActivityBean("调试工具", "Android调试技巧演示", DebugActivity.class));
         categories.add(developerToolsCategory);
+        
+        // FlexboxLayout布局示例
+        Category flexboxCategory = new Category("FlexboxLayout布局");
+        flexboxCategory.addActivity(new StartActivityBean("FlexboxLayout示例集", "FlexboxLayout的各种用法和特性展示", com.seachal.seachaltest.flexbox.FlexboxLayoutMenuActivity.class));
+        categories.add(flexboxCategory);
 
         return categories;
     }
