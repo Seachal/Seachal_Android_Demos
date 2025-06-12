@@ -141,7 +141,7 @@ public class RecyclerViewTestActivity extends AppCompatActivity {
             }
         }
 
-        //GridSpanSizeLookup.getSpanSize 返回1表示占1个span，返回gridManager.getSpanCount()表示占用整行
+        //GridSpanSizeLookup.getSpanSize返回1表示占1个span，返回gridManager.getSpanCount()表示占用整行
         public class GridSpanSizeLookup extends GridLayoutManager.SpanSizeLookup {
             @Override
             public int getSpanSize(int position) {

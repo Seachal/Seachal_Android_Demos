@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- 标题栏 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="GridLayoutManager 演示"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="2dp" />
+
+    <!-- 按钮区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="8dp"
+        android:elevation="1dp">
+
+        <Button
+            android:id="@+id/btn_basic"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="基础场景"
+            android:textSize="12sp"
+            android:textColor="@color/btn_text_color_selector"
+            android:background="@drawable/btn_selector"
+            android:layout_marginEnd="8dp"
+            android:selected="true" />
+
+        <Button
+            android:id="@+id/btn_with_decoration"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="带间距"
+            android:textSize="12sp"
+            android:textColor="@color/btn_text_color_selector"
+            android:background="@drawable/btn_selector"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_precise_spacing"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="精确间距"
+            android:textSize="12sp"
+            android:textColor="@color/btn_text_color_selector"
+            android:background="@drawable/btn_selector" />
+
+    </LinearLayout>
+
+    <!-- 说明文字 -->
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="基础场景：GridLayoutManager(this, 2) 无特殊设置"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="8dp" />
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF" />
+
+</LinearLayout> 

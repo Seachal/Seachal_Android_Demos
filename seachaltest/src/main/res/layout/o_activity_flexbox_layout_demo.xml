@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".flexbox.FlexboxLayoutDemoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 功能描述文本 -->
+        <TextView
+            android:id="@+id/o_tv_feature_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textSize="14sp"
+            android:textColor="#333333" />
+
+        <!-- 基础FlexboxLayout示例 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="基础FlexboxLayout示例"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/o_flexbox_basic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            app:flexWrap="wrap"
+            app:alignItems="stretch"
+            app:alignContent="stretch"
+            app:flexDirection="row"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#9C27B0"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F44336"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目5" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- 方向控制 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="方向控制 (FlexDirection)"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/o_btn_direction_row"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="水平方向 (Row)"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_direction_column"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="垂直方向 (Column)"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/o_flexbox_direction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            app:flexDirection="row">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目3" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- 换行控制 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="换行控制 (FlexWrap)"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/o_btn_wrap_nowrap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="不换行"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_wrap_wrap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="换行"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_wrap_wrap_reverse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="反向换行"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/o_flexbox_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目1" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目2" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目3" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#9C27B0"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目4" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- 主轴对齐 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="主轴对齐 (JustifyContent)"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/o_btn_justify_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="起点对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_justify_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="居中对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_justify_end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="终点对齐"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/o_btn_justify_space_between"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="两端对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_justify_space_around"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="环绕对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_justify_space_evenly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="均匀对齐"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/o_flexbox_justify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            app:flexDirection="row"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目3" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- 交叉轴对齐 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="交叉轴对齐 (AlignItems)"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/o_btn_align_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="起点对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_align_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="居中对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_align_end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="终点对齐"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/o_btn_align_stretch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="拉伸对齐"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/o_flexbox_align"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            app:flexDirection="row"
+            app:alignItems="stretch">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                android:text="项目3" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- 排序控制 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="排序控制 (Order)"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/o_flexbox_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            app:flexDirection="row">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF9800"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                app:layout_order="3"
+                android:text="项目1 (order=3)" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                app:layout_order="1"
+                android:text="项目2 (order=1)" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:padding="8dp"
+                android:layout_margin="4dp"
+                app:layout_order="2"
+                android:text="项目3 (order=2)" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </LinearLayout>
+</ScrollView>
