@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- 标题栏 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="🌟 GridSpaceDecoration 演示"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="2dp" />
+
+    <!-- 描述文本 -->
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="🎯 基础网格：2列布局，item间距16dp，无边距\n适用场景：简单的图片网格、商品列表等"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:background="#FFFFFF"
+        android:layout_marginTop="1dp" />
+
+    <!-- 按钮区域 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <Button
+                android:id="@+id/btn_basic_grid"
+                style="@style/DemoButtonStyle"
+                android:text="🎯 基础网格" />
+
+            <Button
+                android:id="@+id/btn_grid_with_margin"
+                style="@style/DemoButtonStyle"
+                android:text="🎨 带边距网格" />
+
+            <Button
+                android:id="@+id/btn_complex_grid"
+                style="@style/DemoButtonStyle"
+                android:text="🔧 复杂布局" />
+
+            <Button
+                android:id="@+id/btn_responsive_grid"
+                style="@style/DemoButtonStyle"
+                android:text="📱 响应式网格" />
+
+            <Button
+                android:id="@+id/btn_horizontal_grid"
+                style="@style/DemoButtonStyle"
+                android:text="🔄 水平网格" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF" />
+
+</LinearLayout> 

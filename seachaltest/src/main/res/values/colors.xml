@@ -198,6 +198,10 @@
     <color name="c_ff6037">#ff6037</color>
     <color name="c_ff891d">#ff891d</color>
     <color name="c_ff508f">#ff508f</color>
+
+    <!-- GridSpaceDecoration演示按钮颜色 -->
+    <color name="demo_button_text_color">@color/colorPrimary</color>
+    <color name="demo_button_background">@android:color/transparent</color>
     <color name="c_9785fc">#9785fc</color>
     <color name="c_bebebe">#bebebe</color>
     <color name="c_ffc292">#ffc292</color>

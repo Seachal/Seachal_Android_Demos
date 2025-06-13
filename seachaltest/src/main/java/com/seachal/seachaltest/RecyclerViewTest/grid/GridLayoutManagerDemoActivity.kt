@@ -1,4 +1,4 @@
-package com.seachal.seachaltest.RecyclerViewTest
+package com.seachal.seachaltest.RecyclerViewTest.grid
 
 import android.content.Context
 import android.graphics.Rect
@@ -146,11 +146,14 @@ class GridLayoutManagerDemoActivity : AppCompatActivity(), View.OnClickListener 
         recyclerView.layoutManager = layoutManager
         
         // 添加精确间距的ItemDecoration
-        recyclerView.addItemDecoration(PreciseSpacingDecoration(
+        recyclerView.addItemDecoration(
+            PreciseSpacingDecoration(
             edgeMargin = resources.getDimension(R.dimen.dp_px_0).toInt(),     // 左右边距
             horizontalSpacing =resources.getDimension(R.dimen.dp_px_16).toInt(), // 水平间距
             verticalSpacing = resources.getDimension(R.dimen.dp_px_16).toInt()   // 垂直间距
-        ))
+        )
+        )
+
         
         adapter?.let {
             it.itemType = GridDemoAdapter.TYPE_PRECISE_SPACING

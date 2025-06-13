@@ -51,7 +51,7 @@ import com.seachal.seachaltest.ObjectAnimator.ObjectAnimatorActivity;
 import com.seachal.seachaltest.PopupDialog.DialogTestActivity;
 import com.seachal.seachaltest.R;
 import com.seachal.seachaltest.RecyclerViewTest.RecyclerViewTestActivity;
-import com.seachal.seachaltest.RecyclerViewTest.GridLayoutManagerDemoActivity;
+import com.seachal.seachaltest.RecyclerViewTest.grid.GridLayoutManagerDemoActivity;
 import com.seachal.seachaltest.ScrollListFragment.ScrollListFragmentActivity;
 import com.seachal.seachaltest.ShareGeneratePicture.ShareGeneratePictureActivity;
 import com.seachal.seachaltest.TextView.SpannableStringActivity;
@@ -279,6 +279,7 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         Category layoutCategory = new Category("布局组件");
         layoutCategory.addActivity(new StartActivityBean("RecyclerView多种Grid布局", "展示不同类型的网格布局", RecyclerViewTestActivity.class));
         layoutCategory.addActivity(new StartActivityBean("GridLayoutManager演示", "完整的GridLayoutManager使用示例", GridLayoutManagerDemoActivity.class));
+        layoutCategory.addActivity(new StartActivityBean("🌟 GridSpaceDecoration演示", "专业的网格间距装饰器，支持复杂布局和精确间距控制", com.seachal.seachaltest.RecyclerViewTest.GridSpaceDecorationDemoActivity.class));
         layoutCategory.addActivity(new StartActivityBean("CardView基础", "基础卡片视图使用方法", CardViewActivity.class));
         layoutCategory.addActivity(new StartActivityBean("CardView滚动效果", "滚动时卡片的动画效果", CardVeiwScrollActivity.class));
         layoutCategory.addActivity(new StartActivityBean("MaterialCardView", "Material Design风格卡片", CardViewActivity3.class));

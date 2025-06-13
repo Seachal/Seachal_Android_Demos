@@ -1,4 +1,4 @@
-package com.seachal.seachaltest.RecyclerViewTest;
+package com.seachal.seachaltest.RecyclerViewTest.grid;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
