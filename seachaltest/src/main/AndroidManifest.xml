@@ -282,6 +282,7 @@
         <activity android:name=".popupwindow.PopupMenuActivity" />
         <activity android:name=".flexbox.FlexboxLayoutDemoActivity" />
         <activity android:name=".flexbox.FlexboxLayoutMenuActivity" />
+        <activity android:name=".RecyclerViewTest.GridLayoutManagerDemoActivity" />
     </application>
 
 </manifest>

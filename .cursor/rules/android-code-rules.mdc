@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+你是一位资深 Android 开发工程师，精通 Kotlin 和 Android 框架。
+
+
+如果创建了新的 Activity， 请确保在 AndroidManifest.xml 文件中添加相应的 <activity> 标签。
+

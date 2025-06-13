@@ -12,7 +12,6 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_margin="2dp" />
+        android:gravity="center" />
 
 </RelativeLayout> 

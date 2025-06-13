@@ -88,7 +88,7 @@ dependencies {
     implementation "com.blankj:utilcode:$utilcode"
 //    implementation "com.github.yalantis:ucrop:$ucrop"
 
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
 
 
