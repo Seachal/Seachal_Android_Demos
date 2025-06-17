@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".webview.BasicWebViewActivity">
+
+    <!-- 顶部控制面板 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background_light"
+        android:padding="8dp">
+
+        <!-- URL 输入区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网址："
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background"
+                android:hint="请输入网址"
+                android:inputType="textUri"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:singleLine="true"
+                android:imeOptions="actionGo" />
+
+            <Button
+                android:id="@+id/btn_go"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_primary"
+                android:text="访问"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:minWidth="0dp" />
+
+        </LinearLayout>
+
+        <!-- 快速选择区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="快选："
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_urls"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_background" />
+
+        </LinearLayout>
+
+        <!-- 导航按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/button_nav"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="后退"
+                android:scaleType="centerInside"
+                android:padding="12dp" />
+
+            <ImageButton
+                android:id="@+id/btn_forward"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/button_nav"
+                android:src="@drawable/ic_arrow_forward"
+                android:contentDescription="前进"
+                android:scaleType="centerInside"
+                android:padding="12dp" />
+
+            <ImageButton
+                android:id="@+id/btn_refresh"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/button_nav"
+                android:src="@drawable/ic_refresh"
+                android:contentDescription="刷新"
+                android:scaleType="centerInside"
+                android:padding="12dp" />
+
+            <ImageButton
+                android:id="@+id/btn_stop"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_nav"
+                android:src="@drawable/ic_stop"
+                android:contentDescription="停止"
+                android:scaleType="centerInside"
+                android:padding="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <!-- 进度条 -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="@color/colorPrimary"
+        android:visibility="gone" />
+
+    <!-- 状态栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/status_background"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_info"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.7" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="准备就绪"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+    <!-- WebView 容器 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+</LinearLayout> 

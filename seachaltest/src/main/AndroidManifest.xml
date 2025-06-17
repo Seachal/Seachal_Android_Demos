@@ -282,7 +282,9 @@
         <activity android:name=".popupwindow.PopupMenuActivity" />
         <activity android:name=".flexbox.FlexboxLayoutDemoActivity" />
         <activity android:name=".flexbox.FlexboxLayoutMenuActivity" />
-        <activity android:name=".RecyclerViewTest.grid.GridLayoutManagerDemoActivity" />
+        <activity android:name=".RecyclerViewTest.grid.GridLayoutManagerDemoActivity"
+            android:resizeableActivity="false"
+            />
         <activity 
             android:name=".RecyclerViewTest.GridSpaceDecorationDemoActivity"
             android:exported="false"

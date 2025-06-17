@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".webview.JSInteractionActivity">
+
+    <!-- WebView 容器 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <!-- 控制面板 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background_light"
+        android:padding="12dp">
+
+        <!-- Android 调用 JavaScript 区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📱 Android 调用 JavaScript"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 函数调用输入 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="函数:"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_js_function"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edittext_background"
+                android:hint="函数名"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="参数:"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_js_param"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background"
+                android:hint="参数值"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btn_call_js"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/button_primary"
+                android:text="调用函数"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:minWidth="0dp" />
+
+            <Button
+                android:id="@+id/btn_inject_js"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/button_secondary"
+                android:text="注入代码"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:minWidth="0dp" />
+
+        </LinearLayout>
+
+        <!-- JavaScript 返回结果 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔄 JavaScript 返回结果:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_js_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/result_background"
+            android:padding="8dp"
+            android:text="等待调用结果..."
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Android 日志区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📝 Android 日志:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp" />
+
+        <ScrollView
+            android:id="@+id/scroll_view_log"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/result_background"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_android_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="等待日志信息..."
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="2dp" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout> 

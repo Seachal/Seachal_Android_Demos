@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 进度指示器容器 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <!-- 进度条 -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:max="100"
+            android:progress="0" />
+
+        <!-- 状态文本 -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="准备加载..."
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="4dp" />
+
+        <!-- 进度文本 -->
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="加载进度: 0%"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+    <!-- WebView 容器 -->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout> 
