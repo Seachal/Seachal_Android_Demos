@@ -123,8 +123,8 @@ class BasicWebViewActivity : AppCompatActivity() {
             // 设置缓存策略
             cacheMode = WebSettings.LOAD_DEFAULT
             
-            // 启用缓存
-            setAppCacheEnabled(true)
+            // 启用缓存（注意：setAppCacheEnabled 在 API 33+ 中已废弃）
+            // setAppCacheEnabled(true) // 已废弃，使用 cacheMode 替代
             
             // 支持缩放
             setSupportZoom(true)

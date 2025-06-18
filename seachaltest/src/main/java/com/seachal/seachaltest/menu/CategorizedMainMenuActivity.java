@@ -398,6 +398,16 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         flexboxCategory.addActivity(new StartActivityBean("FlexboxLayout示例集", "FlexboxLayout的各种用法和特性展示", com.seachal.seachaltest.flexbox.FlexboxLayoutMenuActivity.class));
         categories.add(flexboxCategory);
 
+        // WebView 示例
+        Category webViewCategory = new Category("WebView 示例");
+        webViewCategory.addActivity(new StartActivityBean("WebView 示例菜单", "WebView 功能的完整演示集合", com.seachal.seachaltest.webview.WebViewMenuActivity.class));
+        webViewCategory.addActivity(new StartActivityBean("基础 WebView", "基本的网页加载和导航功能", com.seachal.seachaltest.webview.BasicWebViewActivity.class));
+        webViewCategory.addActivity(new StartActivityBean("JavaScript 交互", "Android 与 JavaScript 双向通信", com.seachal.seachaltest.webview.JSInteractionActivity.class));
+        webViewCategory.addActivity(new StartActivityBean("进度条 WebView", "带加载进度显示的 WebView", com.seachal.seachaltest.webview.ProgressWebViewActivity.class));
+        webViewCategory.addActivity(new StartActivityBean("文件操作", "WebView 文件上传下载功能", com.seachal.seachaltest.webview.FileOperationActivity.class));
+        webViewCategory.addActivity(new StartActivityBean("缓存管理", "WebView 缓存策略和离线访问", com.seachal.seachaltest.webview.CacheWebViewActivity.class));
+        categories.add(webViewCategory);
+
         return categories;
     }
 }

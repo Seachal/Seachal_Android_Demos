@@ -599,6 +599,7 @@
     <!-- WebView 示例相关颜色 -->
     <color name="divider_color">#E0E0E0</color>
     <color name="background_light">#F5F5F5</color>
+    <color name="background_color">#F5F5F5</color>
     <color name="text_hint">#999999</color>
     <color name="text_secondary">#666666</color>
     <color name="status_background">#F0F0F0</color>

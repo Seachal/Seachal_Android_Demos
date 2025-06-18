@@ -123,8 +123,21 @@
                 android:id="@+id/btn_inject_js"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/button_secondary"
                 android:text="注入代码"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:minWidth="0dp" />
+
+            <Button
+                android:id="@+id/btn_get_page_info"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/button_primary"
+                android:text="获取页面信息"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"
                 android:paddingStart="16dp"
@@ -150,6 +163,51 @@
             android:background="@drawable/result_background"
             android:padding="8dp"
             android:text="等待调用结果..."
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Android 输入区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💬 JavaScript 调用 Android:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_android_input"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/edittext_background"
+            android:hint="JavaScript 传递的数据将显示在这里"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:layout_marginBottom="8dp" />
+
+        <!-- JavaScript 输出区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📤 JavaScript 输出:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_js_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/result_background"
+            android:padding="8dp"
+            android:text="等待 JavaScript 输出..."
             android:textSize="12sp"
             android:textColor="@color/text_secondary"
             android:fontFamily="monospace"

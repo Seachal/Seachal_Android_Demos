@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.webkit.*
+import android.net.http.SslError
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.seachal.seachaltest.R

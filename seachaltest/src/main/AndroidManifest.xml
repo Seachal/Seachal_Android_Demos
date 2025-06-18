@@ -289,6 +289,38 @@
             android:name=".RecyclerViewTest.GridSpaceDecorationDemoActivity"
             android:exported="false"
             android:label="🌟 GridSpaceDecoration演示" />
+
+        <!-- WebView 示例相关 Activity -->
+        <activity 
+            android:name=".webview.WebViewMenuActivity"
+            android:exported="false"
+            android:label="WebView示例菜单" />
+        
+        <activity 
+            android:name=".webview.BasicWebViewActivity"
+            android:exported="false"
+            android:label="基础WebView示例" />
+            
+        <activity 
+            android:name=".webview.JSInteractionActivity"
+            android:exported="false"
+            android:label="JavaScript交互示例" />
+            
+        <activity 
+            android:name=".webview.ProgressWebViewActivity"
+            android:exported="false"
+            android:label="带进度条WebView示例" />
+            
+        <activity 
+            android:name=".webview.FileOperationActivity"
+            android:exported="false"
+            android:label="文件操作WebView示例" />
+            
+        <activity 
+            android:name=".webview.CacheWebViewActivity"
+            android:exported="false"
+            android:label="缓存管理WebView示例" />
+            
     </application>
 
 </manifest>

@@ -99,7 +99,7 @@ class WebViewMenuActivity : AppCompatActivity() {
             add(StartActivityBean(
                 "缓存管理",
                 "演示 WebView 的缓存策略、离线访问、缓存清理等功能",
-                CacheManagementActivity::class.java
+                CacheWebViewActivity::class.java
             ))
             
             // 安全设置示例

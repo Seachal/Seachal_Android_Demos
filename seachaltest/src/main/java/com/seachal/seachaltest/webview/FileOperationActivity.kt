@@ -457,17 +457,10 @@ class FileOperationActivity : AppCompatActivity() {
                         <p>点击下面的链接下载测试文件：</p>
                         
                         <!-- 文本文件下载 -->
-                        <a href="data:text/plain;charset=utf-8,这是一个测试文本文件的内容。%0A可以包含多行内容。%0A下载时间：${new Date().toLocaleString()}" 
-                           download="test.txt" class="download-link">📄 下载文本文件 (test.txt)</a>
+                        <a href="javascript:void(0)" onclick="downloadTextFile()" class="download-link">📄 下载文本文件 (test.txt)</a>
                         
                         <!-- JSON 文件下载 -->
-                        <a href="data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify({
-                            name: "测试数据",
-                            timestamp: new Date().toISOString(),
-                            data: [1, 2, 3, 4, 5],
-                            nested: { key: "value" }
-                        }, null, 2))}" 
-                           download="data.json" class="download-link">📊 下载 JSON 文件 (data.json)</a>
+                        <a href="javascript:void(0)" onclick="downloadJsonFile()" class="download-link">📊 下载 JSON 文件 (data.json)</a>
                         
                         <!-- CSV 文件下载 -->
                         <a href="data:text/csv;charset=utf-8,姓名,年龄,城市%0A张三,25,北京%0A李四,30,上海%0A王五,28,广州" 
@@ -594,17 +587,48 @@ class FileOperationActivity : AppCompatActivity() {
                         });
                     }
                     
+                    // 下载文本文件
+                    function downloadTextFile() {
+                        const content = '这是一个测试文本文件的内容。\\n可以包含多行内容。\\n下载时间：' + new Date().toLocaleString();
+                        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'test.txt';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }
+                    
+                    // 下载JSON文件
+                    function downloadJsonFile() {
+                        const data = {
+                            name: "测试数据",
+                            timestamp: new Date().toISOString(),
+                            data: [1, 2, 3, 4, 5],
+                            nested: { key: "value" }
+                        };
+                        const content = JSON.stringify(data, null, 2);
+                        const blob = new Blob([content], { type: 'application/json;charset=utf-8' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'data.json';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }
+                    
                     // 生成并下载文件
                     function generateAndDownload() {
-                        const content = `文件生成时间: ${new Date().toLocaleString()}
-用户代理: ${navigator.userAgent}
-屏幕尺寸: ${screen.width}x${screen.height}
-语言: ${navigator.language}
-在线状态: ${navigator.onLine ? '在线' : '离线'}
-
-这是一个动态生成的文件内容。
-包含当前的系统信息和时间戳。
-`;
+                        const content = '文件生成时间: ' + new Date().toLocaleString() + '\\n' +
+                            '用户代理: ' + navigator.userAgent + '\\n' +
+                            '屏幕尺寸: ' + screen.width + 'x' + screen.height + '\\n' +
+                            '语言: ' + navigator.language + '\\n' +
+                            '在线状态: ' + (navigator.onLine ? '在线' : '离线') + '\\n\\n' +
+                            '这是一个动态生成的文件内容。\\n包含当前的系统信息和时间戳。';
                         
                         const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
                         const url = URL.createObjectURL(blob);
