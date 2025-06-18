@@ -6,6 +6,32 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Android 11+ 包可见性声明 - 用于应用安装检查 -->
+    <queries>
+        <!-- 微信 -->
+        <package android:name="com.tencent.mm" />
+        <!-- QQ -->
+        <package android:name="com.tencent.mobileqq" />
+        <!-- 支付宝 -->
+        <package android:name="com.eg.android.AlipayGphone" />
+        <!-- 淘宝 -->
+        <package android:name="com.taobao.taobao" />
+        <!-- 抖音 -->
+        <package android:name="com.ss.android.ugc.aweme" />
+        <!-- YouTube -->
+        <package android:name="com.google.android.youtube" />
+        <!-- Chrome -->
+        <package android:name="com.android.chrome" />
+        <!-- 百度 -->
+        <package android:name="com.baidu.searchbox" />
+        
+        <!-- 通用查询：所有启动器应用 -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
     <!-- usesCleartextTraffic   [Android 媒体播放器无法通过 HTTP 播放声音文件 - 堆栈溢出](https://stackoverflow.com/questions/60538374/android-media-player-does-not-play-sound-files-over-http)-->
     <application
         android:name=".BaseApp"
@@ -320,6 +346,36 @@
             android:name=".webview.CacheWebViewActivity"
             android:exported="false"
             android:label="缓存管理WebView示例" />
+            
+        <activity 
+            android:name=".webview.SecuritySettingsActivity"
+            android:exported="false"
+            android:label="WebView安全设置示例" />
+            
+        <activity 
+            android:name=".webview.CookieManagementActivity"
+            android:exported="false"
+            android:label="Cookie管理示例" />
+            
+        <activity 
+            android:name=".webview.CustomWebViewClientActivity"
+            android:exported="false"
+            android:label="自定义WebViewClient示例" />
+            
+        <activity 
+            android:name=".webview.HybridDevelopmentActivity"
+            android:exported="false"
+            android:label="混合开发示例" />
+            
+        <activity 
+            android:name=".webview.PerformanceOptimizationActivity"
+            android:exported="false"
+            android:label="性能优化示例" />
+            
+        <activity 
+            android:name=".webview.AppInstallCheckActivity"
+            android:exported="false"
+            android:label="应用安装检查验证" />
             
     </application>
 

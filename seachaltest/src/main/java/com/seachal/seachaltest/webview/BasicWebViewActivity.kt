@@ -55,10 +55,10 @@ class BasicWebViewActivity : AppCompatActivity() {
     private lateinit var webView: WebView
     private lateinit var etUrl: EditText
     private lateinit var btnGo: Button
-    private lateinit var btnBack: Button
-    private lateinit var btnForward: Button
-    private lateinit var btnRefresh: Button
-    private lateinit var btnStop: Button
+    private lateinit var btnBack: ImageButton
+    private lateinit var btnForward: ImageButton
+    private lateinit var btnRefresh: ImageButton
+    private lateinit var btnStop: ImageButton
     private lateinit var tvStatus: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var spinnerUrls: Spinner

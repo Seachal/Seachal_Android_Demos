@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.seachal.seachaltest.R
 import com.seachal.seachaltest.bean.StartActivityBean
-import com.seachal.seachaltest.menu.MenuAdapter
+// MenuAdapter 在同一包中，无需导入
 
 /**
  * WebView 示例菜单活动
@@ -136,6 +136,13 @@ class WebViewMenuActivity : AppCompatActivity() {
                 "演示 WebView 的性能优化方法，包括预加载、内存管理等",
                 PerformanceOptimizationActivity::class.java
             ))
+            
+            // 应用安装检查验证示例
+            add(StartActivityBean(
+                "应用安装检查验证",
+                "演示通过 JavaScript 接口检查设备上应用的安装状态",
+                AppInstallCheckActivity::class.java
+            ))
         }
     }
     
@@ -143,11 +150,7 @@ class WebViewMenuActivity : AppCompatActivity() {
      * 设置 RecyclerView
      */
     private fun setupRecyclerView() {
-        adapter = MenuAdapter(this, menuItems) { bean ->
-            // 点击事件处理
-            val intent = Intent(this, bean.targetClass)
-            startActivity(intent)
-        }
+        adapter = MenuAdapter(this, menuItems)
         
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@WebViewMenuActivity)

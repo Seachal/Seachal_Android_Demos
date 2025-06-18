@@ -1,7 +1,7 @@
 ---
 description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 你是一位资深 Android 开发工程师，精通 Kotlin 和 Android 框架。
 
