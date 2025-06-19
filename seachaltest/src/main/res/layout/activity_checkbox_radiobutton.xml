@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".checkbox_radiobutton.CheckBoxRadioButtonActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="CheckBox 和 RadioButton 示例"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- CheckBox 示例区域 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="CheckBox 示例"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- 默认样式 CheckBox -->
+                <CheckBox
+                    android:id="@+id/cb_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="默认样式 CheckBox"
+                    android:textSize="16sp" />
+
+                <!-- 自定义样式 CheckBox 1 - 使用 XML 样式 -->
+                <CheckBox
+                    android:id="@+id/cb_custom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_custom_selector"
+                    android:text="自定义样式 CheckBox 1 (红色主题)"
+                    android:textColor="@color/text_red"
+                    android:textSize="16sp" />
+
+                <!-- 自定义样式 CheckBox 2 - 使用 tint 属性 -->
+                <CheckBox
+                    android:id="@+id/cb_custom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:buttonTint="@color/checkbox_green_tint"
+                    android:text="自定义样式 CheckBox 2 (绿色主题)"
+                    android:textColor="@color/text_green"
+                    android:textSize="16sp" />
+
+                <!-- 自定义样式 CheckBox 3 - 代码设置 -->
+                <CheckBox
+                    android:id="@+id/cb_custom3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="自定义样式 CheckBox 3 (代码设置)"
+                    android:textSize="14sp" />
+
+                <!-- 分割线 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="8dp"
+                    android:background="@color/divider_color" />
+
+                <!-- 兴趣爱好选择区域 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="选择您的兴趣爱好："
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <!-- 全选 CheckBox -->
+                                    <CheckBox
+                        android:id="@+id/cb_select_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="全选 ☑️"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                <!-- 兴趣爱好 CheckBox 组 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_sports"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:buttonTint="@color/hobby_tint"
+                        android:text="运动 🏃‍♂️"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_music"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:buttonTint="@color/hobby_tint"
+                        android:text="音乐 🎵"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_reading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:buttonTint="@color/hobby_tint"
+                        android:text="阅读 📚"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_travel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:buttonTint="@color/hobby_tint"
+                        android:text="旅行 ✈️"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- CheckBox 结果显示 -->
+                <TextView
+                    android:id="@+id/tv_checkbox_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_result_text"
+                    android:padding="12dp"
+                    android:text="未选择任何兴趣爱好"
+                    android:textColor="@color/text_result"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- RadioButton 示例区域 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="RadioButton 示例"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- 性别选择 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="选择性别："
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rg_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/gender_tint"
+                        android:text="男性 👨"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/gender_tint"
+                        android:text="女性 👩"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_other"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/gender_tint"
+                        android:text="其他 🏳️‍🌈"
+                        android:textSize="14sp" />
+                </RadioGroup>
+
+                <!-- 分割线 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="8dp"
+                    android:background="@color/divider_color" />
+
+                <!-- 颜色选择 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="选择您喜欢的颜色："
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rg_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rb_red"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:button="@drawable/radiobutton_red_selector"
+                        android:text="红色 ❤️"
+                        android:textColor="@color/text_red"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_green"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:buttonTint="@color/radiobutton_green_tint"
+                        android:text="绿色 💚"
+                        android:textColor="@color/text_green"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_blue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="蓝色 💙 (代码设置样式)"
+                        android:textSize="14sp" />
+                </RadioGroup>
+
+                <!-- RadioButton 结果显示 -->
+                <TextView
+                    android:id="@+id/tv_radio_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_result_text"
+                    android:padding="12dp"
+                    android:text="性别: 未选择, 喜欢的颜色: 未选择"
+                    android:textColor="@color/text_result"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_primary"
+                android:onClick="resetAllSelections"
+                android:padding="12dp"
+                android:text="重置所有选择"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_secondary"
+                android:onClick="showSelectedResults"
+                android:padding="12dp"
+                android:text="显示选择结果"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView> 

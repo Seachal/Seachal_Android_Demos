@@ -226,6 +226,62 @@ class AppInstallCheckActivity : AppCompatActivity() {
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             }
         }
+        
+        /**
+         * 检查包名是否在当前配置的查询列表中
+         * 用于前端验证是否可以正常检查某个应用
+         * @param packageName 应用包名
+         * @return 是否已配置
+         */
+        @JavascriptInterface
+        fun isPackageConfigured(packageName: String): Boolean {
+            val configuredPackages = setOf(
+                "com.tencent.mm",                    // 微信
+                "com.tencent.mobileqq",              // QQ
+                "com.eg.android.AlipayGphone",       // 支付宝
+                "com.taobao.taobao",                 // 淘宝
+                "com.ss.android.ugc.aweme",          // 抖音
+                "com.google.android.youtube",        // YouTube
+                "com.android.chrome",                // Chrome
+                "com.baidu.searchbox"                // 百度
+            )
+            
+            val isConfigured = configuredPackages.contains(packageName)
+            Log.d(TAG, "检查包名 [$packageName] 是否已配置: $isConfigured")
+            return isConfigured
+        }
+        
+        /**
+         * 获取当前已配置的所有包名列表
+         * @return JSON 格式的包名列表
+         */
+        @JavascriptInterface
+        fun getConfiguredPackages(): String {
+            val configuredPackages = mapOf(
+                "微信" to "com.tencent.mm",
+                "QQ" to "com.tencent.mobileqq",
+                "支付宝" to "com.eg.android.AlipayGphone",
+                "淘宝" to "com.taobao.taobao",
+                "抖音" to "com.ss.android.ugc.aweme",
+                "YouTube" to "com.google.android.youtube",
+                "Chrome" to "com.android.chrome",
+                "百度" to "com.baidu.searchbox"
+            )
+            
+            val json = StringBuilder()
+            json.append("{")
+            configuredPackages.entries.forEachIndexed { index, entry ->
+                json.append("\"${entry.key}\": \"${entry.value}\"")
+                if (index < configuredPackages.size - 1) {
+                    json.append(",")
+                }
+            }
+            json.append("}")
+            
+            val result = json.toString()
+            Log.d(TAG, "返回已配置的包名列表: $result")
+            return result
+        }
     }
     
     // HTML 演示页面内容
@@ -371,6 +427,7 @@ class AppInstallCheckActivity : AppCompatActivity() {
                     
                     <div class="test-group">
                         <button class="btn btn-info" onclick="checkCustomApp()">检查应用</button>
+                        <button class="btn" onclick="showConfiguredPackages()">查看已配置包名</button>
                         <button class="btn btn-warning" onclick="clearCustomResult()">清空结果</button>
                     </div>
                     
@@ -450,7 +507,7 @@ class AppInstallCheckActivity : AppCompatActivity() {
                     }
                 }
                 
-                // 检查自定义应用
+                // 检查自定义应用 (带包名验证)
                 function checkCustomApp() {
                     const packageName = document.getElementById('packageInput').value.trim();
                     
@@ -463,11 +520,38 @@ class AppInstallCheckActivity : AppCompatActivity() {
                     
                     if (window.AndroidInterface) {
                         try {
+                            // 🆕 先检查包名是否已配置
+                            const isConfigured = window.AndroidInterface.isPackageConfigured(packageName);
+                            addLog('包名配置状态: ' + (isConfigured ? '✅ 已配置' : '❌ 未配置'));
+                            
+                            if (!isConfigured) {
+                                const warningMsg = '⚠️ 警告: 包名 [' + packageName + '] 未在客户端配置\\n' +
+                                                 '即使应用已安装，检查结果也会返回 false\\n' +
+                                                 '请联系客户端开发者在 AndroidManifest.xml 的 <queries> 中添加此包名\\n' +
+                                                 '\\n仍要继续检查吗？(结果可能不准确)';
+                                
+                                document.getElementById('customResult').textContent = warningMsg;
+                                addLog('⚠️ 包名未配置，检查结果可能不准确');
+                                
+                                // 显示警告 Toast
+                                window.AndroidInterface.showToast('包名未配置，结果可能不准确');
+                                
+                                // 继续检查但标注结果不可信
+                                const isInstalled = window.AndroidInterface.isAppInstalled(packageName);
+                                const unreliableResult = warningMsg + '\\n\\n❓ 检查结果 (不可信): ' + (isInstalled ? '已安装' : '未安装');
+                                document.getElementById('customResult').textContent = unreliableResult;
+                                addLog('不可信结果: ' + packageName + ' - ' + (isInstalled ? '已安装' : '未安装'));
+                                return;
+                            }
+                            
+                            // 包名已配置，可以安全检查
                             const isInstalled = window.AndroidInterface.isAppInstalled(packageName);
-                            const result = '应用包名: ' + packageName + '\\n状态: ' + (isInstalled ? '✅ 已安装' : '❌ 未安装');
+                            const result = '✅ 包名已配置，检查结果可信\\n' +
+                                         '应用包名: ' + packageName + '\\n' +
+                                         '安装状态: ' + (isInstalled ? '✅ 已安装' : '❌ 未安装');
                             
                             document.getElementById('customResult').textContent = result;
-                            addLog(packageName + ' 检查结果: ' + (isInstalled ? '已安装' : '未安装'));
+                            addLog('✅ ' + packageName + ' 检查结果 (可信): ' + (isInstalled ? '已安装' : '未安装'));
                             
                             // 显示 Toast
                             window.AndroidInterface.showToast(packageName + ' ' + (isInstalled ? '已' : '未') + '安装');
@@ -526,6 +610,43 @@ class AppInstallCheckActivity : AppCompatActivity() {
                 function refreshCommonApps() {
                     addLog('刷新常见应用状态...');
                     checkCommonApps();
+                }
+                
+                // 🆕 显示已配置的包名列表
+                function showConfiguredPackages() {
+                    addLog('获取已配置的包名列表...');
+                    
+                    if (window.AndroidInterface) {
+                        try {
+                            const configuredJson = window.AndroidInterface.getConfiguredPackages();
+                            const configuredData = JSON.parse(configuredJson);
+                            
+                            let resultText = '📋 当前已配置的应用包名列表:\\n\\n';
+                            Object.entries(configuredData).forEach(function(entry) {
+                                const appName = entry[0];
+                                const packageName = entry[1];
+                                resultText += '• ' + appName + ': ' + packageName + '\\n';
+                            });
+                            
+                            resultText += '\\n✅ 以上包名可以正常检查安装状态';
+                            resultText += '\\n⚠️ 未列出的包名会始终返回 false';
+                            resultText += '\\n\\n如需添加新的应用检查，请联系客户端开发者';
+                            resultText += '\\n在 AndroidManifest.xml 的 <queries> 中添加对应包名';
+                            
+                            document.getElementById('customResult').textContent = resultText;
+                            addLog('已显示 ' + Object.keys(configuredData).length + ' 个已配置的包名');
+                            
+                            window.AndroidInterface.showToast('共 ' + Object.keys(configuredData).length + ' 个已配置包名');
+                        } catch (error) {
+                            const errorMsg = '获取配置列表时发生错误: ' + error.message;
+                            document.getElementById('customResult').textContent = errorMsg;
+                            addLog(errorMsg);
+                        }
+                    } else {
+                        const errorMsg = '错误: AndroidInterface 未找到';
+                        document.getElementById('customResult').textContent = errorMsg;
+                        addLog(errorMsg);
+                    }
                 }
                 
                 // 清空自定义结果

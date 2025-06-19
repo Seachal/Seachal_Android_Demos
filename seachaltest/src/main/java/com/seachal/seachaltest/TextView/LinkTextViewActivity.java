@@ -314,7 +314,7 @@ public class LinkTextViewActivity extends AppCompatActivity {
         spanStr.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                //                startActivity(new Intent(LinkTextViewActivity.this, CustomTextViewTestActivity.class));
+                //  startActivity(new Intent(LinkTextViewActivity.this, CustomTextViewTestActivity.class));
                 Uri uri = Uri.parse("https://www.baidu.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);

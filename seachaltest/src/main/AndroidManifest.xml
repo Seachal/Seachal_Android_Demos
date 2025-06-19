@@ -377,6 +377,12 @@
             android:exported="false"
             android:label="应用安装检查验证" />
             
+        <!-- CheckBox 和 RadioButton 示例 -->
+        <activity 
+            android:name=".checkbox_radiobutton.CheckBoxRadioButtonActivity"
+            android:exported="false"
+            android:label="CheckBox和RadioButton示例" />
+            
     </application>
 
 </manifest>

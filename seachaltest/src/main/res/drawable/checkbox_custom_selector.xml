@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中状态 -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <solid android:color="@color/checkbox_red_checked" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/checkbox_red_checked" />
+        </shape>
+    </item>
+    
+    <!-- 未选中状态 -->
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/checkbox_red_normal" />
+        </shape>
+    </item>
+    
+    <!-- 默认状态 -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/checkbox_red_normal" />
+        </shape>
+    </item>
+</selector> 

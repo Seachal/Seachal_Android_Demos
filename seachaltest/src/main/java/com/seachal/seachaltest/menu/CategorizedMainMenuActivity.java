@@ -273,6 +273,7 @@ public class CategorizedMainMenuActivity extends AppCompatActivity {
         buttonCategory.addActivity(new StartActivityBean("Button测试", "测试各种按钮类型和样式", ButtonActivity.class));
         buttonCategory.addActivity(new StartActivityBean("FloatingActionButton", "Material Design浮动操作按钮实现", FloatingActionButtonActivity.class));
         buttonCategory.addActivity(new StartActivityBean("点击事件禁用", "禁用视图点击事件的方法演示", OnClickAbleFasleActivity.class));
+        buttonCategory.addActivity(new StartActivityBean("CheckBox和RadioButton示例", "复选框和单选按钮的使用，包含自定义样式和颜色", com.seachal.seachaltest.checkbox_radiobutton.CheckBoxRadioButtonActivity.class));
         categories.add(buttonCategory);
 
         // UI组件 - 布局相关
