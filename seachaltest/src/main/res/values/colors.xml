@@ -604,4 +604,48 @@
     <color name="text_secondary">#666666</color>
     <color name="status_background">#F0F0F0</color>
 
+    <!-- CheckBox 和 RadioButton 状态颜色 -->
+    <color name="checkbox_checked_color">#FF6B00</color>          <!-- 选中时的橙色 -->
+    <color name="checkbox_unchecked_color">#BEBEBE</color>        <!-- 未选中时的灰色 -->
+    <color name="checkbox_disabled_color">#E0E0E0</color>         <!-- 禁用时的浅灰色 -->
+    
+    <color name="radiobutton_checked_color">#FF6B00</color>       <!-- 选中时的橙色 -->
+    <color name="radiobutton_unchecked_color">#BEBEBE</color>     <!-- 未选中时的灰色 -->
+    <color name="radiobutton_disabled_color">#E0E0E0</color>      <!-- 禁用时的浅灰色 -->
+
+
+    <!-- CheckBox 和 RadioButton 示例颜色定义 -->
+
+    <!-- 文本颜色 -->
+    <color name="cb_text_blue">#3182CE</color>
+    <color name="cb_text_result">#2D3748</color>
+    <color name="cb_text_custom">#9F7AEA</color>
+    <color name="text_result">#2D3748</color>
+
+    <!-- CheckBox 颜色 -->
+    <color name="checkbox_green_tint">#38A169</color>
+    <color name="checkbox_red_normal">#FEB2B2</color>
+    <color name="checkbox_red_checked">#E53E3E</color>
+
+    <!-- RadioButton 颜色 -->
+    <color name="radiobutton_green_tint">#38A169</color>
+    <color name="radiobutton_red_normal">#FEB2B2</color>
+    <color name="radiobutton_red_checked">#E53E3E</color>
+
+    <!-- 通用颜色 -->
+    <color name="gender_tint">#805AD5</color>
+    <color name="hobby_tint">#ED8936</color>
+
+    <!-- 背景颜色 -->
+    <color name="bg_result">#F7FAFC</color>
+    <color name="bg_result_border">#E2E8F0</color>
+
+    <!-- 按钮颜色 -->
+    <color name="button_primary">#4299E1</color>
+    <color name="button_primary_pressed">#3182CE</color>
+    <color name="button_secondary">#F7FAFC</color>
+    <color name="button_secondary_pressed">#EDF2F7</color>
+    <color name="button_border">#CBD5E0</color>
+
+
 </resources>

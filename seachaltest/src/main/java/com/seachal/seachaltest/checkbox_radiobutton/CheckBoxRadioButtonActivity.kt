@@ -251,7 +251,7 @@ class CheckBoxRadioButtonActivity : AppCompatActivity() {
             }
             
             // 设置文字颜色
-            setTextColor(ContextCompat.getColor(this@CheckBoxRadioButtonActivity, R.color.cb_text_custom))
+            setTextColor(ContextCompat.getColor(this@CheckBoxRadioButtonActivity, R.color.text_black))
             
             // 设置文字大小
             textSize = 16f

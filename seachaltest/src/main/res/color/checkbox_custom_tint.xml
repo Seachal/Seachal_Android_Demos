@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中状态 - 橙色 -->
+    <item android:state_checked="true" android:color="@color/checkbox_checked_color" />
+    <!-- 禁用状态 - 浅灰色 -->
+    <item android:state_enabled="false" android:color="@color/checkbox_disabled_color" />
+    <!-- 默认状态（未选中）- 灰色 -->
+    <item android:color="@color/checkbox_unchecked_color" />
+</selector> 

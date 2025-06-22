@@ -88,6 +88,14 @@
                     android:text="自定义样式 CheckBox 3 (代码设置)"
                     android:textSize="14sp" />
 
+                <CheckBox
+                    android:id="@+id/cb_custom4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="自定义样式 CheckBox 4  )"
+                    android:buttonTint="@color/checkbox_custom_tint"
+                    android:textSize="14sp" />
                 <!-- 分割线 -->
                 <View
                     android:layout_width="match_parent"
@@ -294,6 +302,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="蓝色 💙 (代码设置样式)"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_blue1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="橙色"
+                        android:buttonTint="@color/radiobutton_green_tint"
                         android:textSize="14sp" />
                 </RadioGroup>
 
