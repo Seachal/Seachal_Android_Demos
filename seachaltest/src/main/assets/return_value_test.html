@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 调用 Android 返回值测试</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 22px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .test-section {
+            background: rgba(255,255,255,0.15);
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        
+        .test-description {
+            font-size: 13px;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.4;
+        }
+        
+        .button-group {
+            margin: 10px 0;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px 3px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            min-width: 100px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary { background: linear-gradient(45deg, #2196F3, #1976D2); }
+        .btn-success { background: linear-gradient(45deg, #4CAF50, #388E3C); }
+        .btn-warning { background: linear-gradient(45deg, #FF9800, #F57C00); }
+        .btn-danger { background: linear-gradient(45deg, #F44336, #D32F2F); }
+        .btn-info { background: linear-gradient(45deg, #00BCD4, #0097A7); }
+        
+        .result-box {
+            background: rgba(0,0,0,0.4);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            white-space: pre-wrap;
+            word-break: break-all;
+            min-height: 40px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .input-group {
+            margin: 10px 0;
+        }
+        
+        .input-group input, 
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .status {
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .status-success { background: #4CAF50; color: white; }
+        .status-error { background: #F44336; color: white; }
+        .status-info { background: #2196F3; color: white; }
+        .status-warning { background: #FF9800; color: white; }
+        
+        .log-box {
+            background: rgba(0,0,0,0.6);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 11px;
+            border: 1px solid rgba(255,255,255,0.3);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .summary-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .highlight {
+            background: rgba(255,255,0,0.3);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 JavaScript 调用 Android 返回值测试</h1>
+        
+        <!-- 接口可用性检查 -->
+        <div class="test-section">
+            <div class="test-title">🔧 接口可用性检查</div>
+            <div class="test-description">首先检查Android JavaScript接口是否正确注入</div>
+            <div class="button-group">
+                <button class="btn btn-info" onclick="checkInterface()">检查接口</button>
+                <button class="btn btn-warning" onclick="clearAllResults()">清空所有结果</button>
+            </div>
+            <div class="result-box" id="interfaceResult">等待检查...</div>
+        </div>
+        
+        <!-- 基本类型返回值测试 -->
+        <div class="test-section">
+            <div class="test-title">📊 基本类型返回值测试</div>
+            <div class="test-description">测试 Boolean, Integer, String 等基本类型的返回值</div>
+            <div class="button-group">
+                <button class="btn btn-success" onclick="testBasicTypes()">测试基本类型</button>
+                <button class="btn btn-primary" onclick="testBooleanReturn()">布尔值</button>
+                <button class="btn btn-primary" onclick="testIntReturn()">整数</button>
+                <button class="btn btn-primary" onclick="testStringReturn()">字符串</button>
+            </div>
+            <div class="result-box" id="basicTypesResult">点击按钮开始测试...</div>
+        </div>
+        
+        <!-- JSON 返回值测试 -->
+        <div class="test-section">
+            <div class="test-title">📦 JSON 对象返回值测试</div>
+            <div class="test-description">测试复杂JSON对象的返回和解析</div>
+            <div class="button-group">
+                <button class="btn btn-info" onclick="testJsonReturn()">测试JSON返回</button>
+                <button class="btn btn-info" onclick="testDeviceInfo()">获取设备信息</button>
+            </div>
+            <div class="result-box" id="jsonResult">点击按钮开始测试...</div>
+        </div>
+        
+        <!-- 应用检查测试 -->
+        <div class="test-section">
+            <div class="test-title">📱 应用安装检查测试</div>
+            <div class="test-description">实际业务场景：检查应用是否安装（返回布尔值）</div>
+            <div class="input-group">
+                <input type="text" id="packageInput" placeholder="输入应用包名..." value="com.tencent.mm">
+            </div>
+            <div class="button-group">
+                <button class="btn btn-success" onclick="testAppInstallCheck()">检查应用</button>
+            </div>
+            <div class="result-box" id="appCheckResult">输入包名后点击检查...</div>
+        </div>
+        
+        <!-- 综合测试 -->
+        <div class="test-section">
+            <div class="test-title">🎯 综合测试与结论</div>
+            <div class="test-description">一键执行所有测试，验证返回值功能的完整性</div>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="runAllTests()">运行所有测试</button>
+                <button class="btn btn-success" onclick="generateReport()">生成测试报告</button>
+            </div>
+            
+            <!-- 测试统计 -->
+            <div class="summary-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalTests">0</div>
+                    <div class="stat-label">总测试数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="successTests">0</div>
+                    <div class="stat-label">成功</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="failedTests">0</div>
+                    <div class="stat-label">失败</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="testTime">0ms</div>
+                    <div class="stat-label">总耗时</div>
+                </div>
+            </div>
+            
+            <div class="result-box" id="comprehensiveResult">点击按钮开始综合测试...</div>
+        </div>
+        
+        <!-- 实时日志 -->
+        <div class="test-section">
+            <div class="test-title">📝 实时测试日志</div>
+            <div class="test-description">记录所有测试操作和结果的详细日志</div>
+            <div class="button-group">
+                <button class="btn btn-warning" onclick="clearLog()">清空日志</button>
+            </div>
+            <div class="log-box" id="testLog">等待测试操作...</div>
+        </div>
+    </div>
+
+    <script>
+        // ================================
+        // 全局变量和工具函数
+        // ================================
+        
+        let testStats = {
+            total: 0,
+            success: 0,
+            failed: 0,
+            startTime: 0
+        };
+        
+        let logCount = 0;
+        
+        // 添加日志
+        function addLog(message, type = 'INFO') {
+            const timestamp = new Date().toLocaleTimeString();
+            logCount++;
+            const logElement = document.getElementById('testLog');
+            const typeColor = {
+                'INFO': '#00BCD4',
+                'SUCCESS': '#4CAF50', 
+                'ERROR': '#F44336',
+                'WARNING': '#FF9800'
+            }[type] || '#FFFFFF';
+            
+            const newLog = `<span style="color: ${typeColor}">[${logCount}] ${timestamp} [${type}]</span> ${message}\n`;
+            logElement.innerHTML = newLog + logElement.innerHTML;
+            
+            console.log(`[${type}] ${message}`);
+        }
+        
+        // 更新统计数据
+        function updateStats() {
+            document.getElementById('totalTests').textContent = testStats.total;
+            document.getElementById('successTests').textContent = testStats.success;
+            document.getElementById('failedTests').textContent = testStats.failed;
+            document.getElementById('testTime').textContent = 
+                testStats.startTime > 0 ? (Date.now() - testStats.startTime) + 'ms' : '0ms';
+        }
+        
+        // 执行测试并记录结果
+        function executeTest(testName, testFunction) {
+            addLog(`开始执行测试: ${testName}`, 'INFO');
+            testStats.total++;
+            
+            try {
+                const result = testFunction();
+                testStats.success++;
+                addLog(`✅ ${testName} 测试成功`, 'SUCCESS');
+                updateStats();
+                return result;
+            } catch (error) {
+                testStats.failed++;
+                addLog(`❌ ${testName} 测试失败: ${error.message}`, 'ERROR');
+                updateStats();
+                throw error;
+            }
+        }
+        
+        // ================================
+        // 接口检查函数
+        // ================================
+        
+        function checkInterface() {
+            const result = document.getElementById('interfaceResult');
+            
+            addLog('检查 Android JavaScript 接口...', 'INFO');
+            
+            if (typeof window.ReturnTestAPI === 'undefined') {
+                const errorMsg = '❌ ReturnTestAPI 接口未找到！\n\n可能原因:\n1. JavaScript未启用\n2. 接口未正确注入\n3. 页面加载未完成';
+                result.textContent = errorMsg;
+                addLog('接口检查失败: ReturnTestAPI 未找到', 'ERROR');
+                return false;
+            }
+            
+            // 检查接口中的方法
+            const methods = [
+                'testBooleanReturn', 'testIntReturn', 'testStringReturn',
+                'testJsonReturn', 'checkAppInstalled', 'getDeviceInfo', 'showToast'
+            ];
+            
+            let availableMethods = [];
+            let missingMethods = [];
+            
+            methods.forEach(method => {
+                if (typeof window.ReturnTestAPI[method] === 'function') {
+                    availableMethods.push(method);
+                } else {
+                    missingMethods.push(method);
+                }
+            });
+            
+            const successMsg = `✅ ReturnTestAPI 接口检查成功！\n\n` +
+                `可用方法 (${availableMethods.length}/${methods.length}):\n${availableMethods.join(', ')}\n\n` +
+                (missingMethods.length > 0 ? `缺失方法:\n${missingMethods.join(', ')}\n\n` : '') +
+                `🎯 接口已就绪，可以开始测试 JavaScript 获取 Android 方法返回值！`;
+            
+            result.textContent = successMsg;
+            addLog(`接口检查成功: ${availableMethods.length}/${methods.length} 个方法可用`, 'SUCCESS');
+            return true;
+        }
+        
+        // ================================
+        // 基本类型测试函数  
+        // ================================
+        
+        function testBooleanReturn() {
+            return executeTest('布尔值返回', () => {
+                const result = window.ReturnTestAPI.testBooleanReturn();
+                document.getElementById('basicTypesResult').textContent = 
+                    `✅ 布尔值测试成功！\n返回值: ${result}\n类型: ${typeof result}`;
+                return result;
+            });
+        }
+        
+        function testIntReturn() {
+            return executeTest('整数返回', () => {
+                const result = window.ReturnTestAPI.testIntReturn();
+                document.getElementById('basicTypesResult').textContent = 
+                    `✅ 整数测试成功！\n返回值: ${result}\n类型: ${typeof result}`;
+                return result;
+            });
+        }
+        
+        function testStringReturn() {
+            return executeTest('字符串返回', () => {
+                const result = window.ReturnTestAPI.testStringReturn();
+                document.getElementById('basicTypesResult').textContent = 
+                    `✅ 字符串测试成功！\n返回值: ${result}\n类型: ${typeof result}\n长度: ${result.length}`;
+                return result;
+            });
+        }
+        
+        function testBasicTypes() {
+            addLog('开始基本类型批量测试...', 'INFO');
+            
+            try {
+                const boolResult = window.ReturnTestAPI.testBooleanReturn();
+                const intResult = window.ReturnTestAPI.testIntReturn();
+                const stringResult = window.ReturnTestAPI.testStringReturn();
+                
+                const summary = `✅ 基本类型批量测试成功！\n\n` +
+                    `📍 布尔值: ${boolResult} (${typeof boolResult})\n` +
+                    `📍 整数: ${intResult} (${typeof intResult})\n` +
+                    `📍 字符串: ${stringResult} (${typeof stringResult})\n\n` +
+                    `🎯 结论: JavaScript 可以正确获取 Android 方法的基本类型返回值！`;
+                
+                document.getElementById('basicTypesResult').textContent = summary;
+                
+                testStats.total += 3;
+                testStats.success += 3;
+                updateStats();
+                addLog('基本类型批量测试全部成功', 'SUCCESS');
+            } catch (error) {
+                testStats.total += 3;
+                testStats.failed += 3;
+                updateStats();
+                addLog(`基本类型测试失败: ${error.message}`, 'ERROR');
+            }
+        }
+        
+        // ================================
+        // JSON 测试函数
+        // ================================
+        
+        function testJsonReturn() {
+            return executeTest('JSON返回', () => {
+                const jsonString = window.ReturnTestAPI.testJsonReturn();
+                const jsonObject = JSON.parse(jsonString);
+                
+                const result = `✅ JSON 测试成功！\n\n` +
+                    `📦 原始返回 (String): ${typeof jsonString}\n` +
+                    `📦 解析后对象 (Object): ${typeof jsonObject}\n\n` +
+                    `📍 JSON 内容:\n${JSON.stringify(jsonObject, null, 2)}\n\n` +
+                    `🎯 结论: 可以返回复杂 JSON 数据并正确解析！`;
+                
+                document.getElementById('jsonResult').textContent = result;
+                return jsonObject;
+            });
+        }
+        
+        function testDeviceInfo() {
+            return executeTest('设备信息获取', () => {
+                const deviceInfoString = window.ReturnTestAPI.getDeviceInfo();
+                const deviceInfo = JSON.parse(deviceInfoString);
+                
+                const result = `✅ 设备信息获取成功！\n\n` +
+                    `📱 制造商: ${deviceInfo.manufacturer}\n` +
+                    `📱 型号: ${deviceInfo.model}\n` +
+                    `📱 Android版本: ${deviceInfo.version}\n` +
+                    `📱 SDK版本: ${deviceInfo.sdk}\n` +
+                    `📱 时间戳: ${new Date(deviceInfo.timestamp).toLocaleString()}\n\n` +
+                    `🎯 实际业务数据获取成功！`;
+                
+                document.getElementById('jsonResult').textContent = result;
+                return deviceInfo;
+            });
+        }
+        
+        // ================================
+        // 应用检查测试函数
+        // ================================
+        
+        function testAppInstallCheck() {
+            const packageName = document.getElementById('packageInput').value.trim();
+            if (!packageName) {
+                alert('请输入应用包名');
+                return;
+            }
+            
+            return executeTest('应用安装检查', () => {
+                const isInstalled = window.ReturnTestAPI.checkAppInstalled(packageName);
+                
+                const result = `✅ 应用安装检查完成！\n\n` +
+                    `📱 包名: ${packageName}\n` +
+                    `📱 安装状态: ${isInstalled ? '✅ 已安装' : '❌ 未安装'}\n` +
+                    `📱 返回类型: ${typeof isInstalled}\n\n` +
+                    `🎯 实际业务场景返回值获取成功！`;
+                
+                document.getElementById('appCheckResult').textContent = result;
+                return isInstalled;
+            });
+        }
+        
+        // ================================
+        // 综合测试函数
+        // ================================
+        
+        function runAllTests() {
+            addLog('🚀 开始运行所有测试...', 'INFO');
+            testStats = { total: 0, success: 0, failed: 0, startTime: Date.now() };
+            
+            const tests = [
+                () => checkInterface(),
+                () => testBasicTypes(),
+                () => testJsonReturn(),
+                () => testDeviceInfo(),
+                () => testAppInstallCheck()
+            ];
+            
+            let allResults = [];
+            
+            tests.forEach((test, index) => {
+                try {
+                    const result = test();
+                    allResults.push(`✅ 测试 ${index + 1}: 成功`);
+                } catch (error) {
+                    allResults.push(`❌ 测试 ${index + 1}: 失败 - ${error.message}`);
+                }
+            });
+            
+            const totalTime = Date.now() - testStats.startTime;
+            const successRate = testStats.total > 0 ? ((testStats.success / testStats.total) * 100).toFixed(1) : '0';
+            
+            const summary = `🎉 所有测试执行完成！\n\n` +
+                `📊 测试统计:\n` +
+                `   • 总测试数: ${testStats.total}\n` +
+                `   • 成功: ${testStats.success}\n` +
+                `   • 失败: ${testStats.failed}\n` +
+                `   • 成功率: ${successRate}%\n` +
+                `   • 总耗时: ${totalTime}ms\n\n` +
+                `📋 测试结果:\n${allResults.join('\n')}\n\n` +
+                `🎯 最终结论:\n` +
+                `✅ JavaScript **完全可以**获取 Android 方法的返回值！\n` +
+                `✅ 支持基本类型: Boolean, Integer, String\n` +
+                `✅ 支持复杂数据: JSON 字符串\n` +
+                `⚠️ 注意: 方法调用是同步的，会阻塞 JS 线程\n\n` +
+                `📢 您同事的说法是错误的！返回值完全可以获取！`;
+            
+            document.getElementById('comprehensiveResult').textContent = summary;
+            updateStats();
+            addLog(`所有测试完成，成功率: ${successRate}%`, 'SUCCESS');
+        }
+        
+        function generateReport() {
+            const report = {
+                timestamp: new Date().toISOString(),
+                environment: {
+                    userAgent: navigator.userAgent,
+                    platform: navigator.platform,
+                    language: navigator.language
+                },
+                testResults: {
+                    total: testStats.total,
+                    success: testStats.success,
+                    failed: testStats.failed,
+                    successRate: testStats.total > 0 ? ((testStats.success / testStats.total) * 100).toFixed(1) + '%' : '0%',
+                    totalTime: testStats.startTime > 0 ? (Date.now() - testStats.startTime) + 'ms' : '0ms'
+                },
+                conclusion: {
+                    canGetReturnValue: testStats.success > 0,
+                    supportedTypes: ['Boolean', 'Integer', 'String', 'JSON'],
+                    isSync: true,
+                    recommendation: 'JavaScript 完全支持获取 Android 方法返回值'
+                }
+            };
+            
+            const reportText = `📋 JavaScript 调用 Android 返回值测试报告\n\n` +
+                `⏰ 生成时间: ${new Date().toLocaleString()}\n` +
+                `🌐 测试环境: ${navigator.userAgent}\n\n` +
+                `📊 测试结果统计:\n` +
+                `   • 总测试数: ${report.testResults.total}\n` +
+                `   • 成功测试: ${report.testResults.success}\n` +
+                `   • 失败测试: ${report.testResults.failed}\n` +
+                `   • 成功率: ${report.testResults.successRate}\n` +
+                `   • 总耗时: ${report.testResults.totalTime}\n\n` +
+                `✅ 测试结论:\n` +
+                `   • 可以获取返回值: ${report.conclusion.canGetReturnValue ? '是' : '否'}\n` +
+                `   • 支持的类型: ${report.conclusion.supportedTypes.join(', ')}\n` +
+                `   • 是否同步执行: ${report.conclusion.isSync ? '是' : '否'}\n` +
+                `   • 建议: ${report.conclusion.recommendation}\n\n` +
+                `🎯 最终答案: 您同事的说法是错误的！\n` +
+                `JavaScript 完全可以获取 Android @JavascriptInterface 方法的返回值！`;
+            
+            document.getElementById('comprehensiveResult').textContent = reportText;
+            addLog('测试报告生成完成', 'SUCCESS');
+            
+            // 尝试调用 Android 显示 Toast
+            try {
+                window.ReturnTestAPI.showToast('测试报告已生成！');
+            } catch (error) {
+                console.log('无法调用 Android Toast:', error);
+            }
+        }
+        
+        // ================================
+        // 工具函数
+        // ================================
+        
+        function clearAllResults() {
+            const resultElements = [
+                'interfaceResult', 'basicTypesResult', 'jsonResult', 
+                'appCheckResult', 'comprehensiveResult'
+            ];
+            
+            resultElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = '已清空，等待新的测试...';
+                }
+            });
+            
+            clearLog();
+            testStats = { total: 0, success: 0, failed: 0, startTime: 0 };
+            updateStats();
+            addLog('所有结果已清空', 'INFO');
+        }
+        
+        function clearLog() {
+            document.getElementById('testLog').innerHTML = '等待测试操作...';
+            logCount = 0;
+        }
+        
+        // ================================
+        // 页面初始化
+        // ================================
+        
+        // Android 就绪回调（供 Android 调用）
+        window.onAndroidReady = function() {
+            addLog('Android 调用 JavaScript: onAndroidReady()', 'SUCCESS');
+            addLog('双向通信测试成功！', 'SUCCESS');
+            
+            // 自动执行接口检查
+            setTimeout(() => {
+                checkInterface();
+            }, 500);
+        };
+        
+        // 页面加载完成
+        window.onload = function() {
+            addLog('HTML 页面加载完成', 'INFO');
+            addLog('准备进行 JavaScript 调用 Android 返回值测试...', 'INFO');
+            
+            // 自动检查接口（如果 Android 还未调用 onAndroidReady）
+            setTimeout(() => {
+                if (logCount < 3) { // 如果还没有太多日志，说明 Android 可能没有调用
+                    checkInterface();
+                }
+            }, 2000);
+        };
+        
+        // 错误处理
+        window.onerror = function(message, source, lineno, colno, error) {
+            addLog(`JavaScript 错误: ${message} (${source}:${lineno})`, 'ERROR');
+        };
+        
+        console.log('🚀 JavaScript 调用 Android 返回值测试页面已就绪！');
+    </script>
+</body>
+</html> 

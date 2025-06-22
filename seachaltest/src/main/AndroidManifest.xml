@@ -383,6 +383,12 @@
             android:exported="false"
             android:label="CheckBox和RadioButton示例" />
             
+        <!-- HTML文件测试示例 - JavaScript调用Android返回值验证 -->
+        <activity 
+            android:name=".webview.HtmlFileTestActivity"
+            android:exported="false"
+            android:label="HTML文件JS返回值测试" />
+            
     </application>
 
 </manifest>
