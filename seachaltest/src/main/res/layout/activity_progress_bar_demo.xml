@@ -258,12 +258,12 @@
 
         </LinearLayout>
 
-        <!-- SeekBar演示 -->
+        <!-- SeekBar/Slider演示 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="2. SeekBar控件"
+            android:text="2. SeekBar/Slider控件演示"
             android:textColor="@color/text_black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -280,7 +280,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="默认SeekBar（可拖动）"
+                android:text="默认SeekBar（可拖动调节进度）"
                 android:textColor="@color/text_black"
                 android:textSize="14sp" />
 
@@ -297,7 +297,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/card_background"
             android:orientation="vertical"
             android:padding="16dp">
@@ -306,7 +306,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="自定义样式SeekBar（可拖动）"
+                android:text="自定义样式SeekBar（圆形滑块）"
                 android:textColor="@color/text_black"
                 android:textSize="14sp" />
 
@@ -318,6 +318,289 @@
                 android:progress="30"
                 android:progressDrawable="@drawable/seekbar_custom_track"
                 android:thumb="@drawable/seekbar_custom_thumb" />
+
+        </LinearLayout>
+
+        <!-- 离散值SeekBar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="离散值Slider（步进式调节）"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_discrete_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="当前值: 5"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seek_bar_discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5" />
+
+        </LinearLayout>
+
+        <!-- 音量控制Slider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="音量控制Slider（实际应用场景）"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_volume_down"
+                    android:contentDescription="音量减小" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_volume"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="50" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/ic_volume_up"
+                    android:contentDescription="音量增大" />
+
+                <TextView
+                    android:id="@+id/tv_volume_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:minWidth="30dp"
+                    android:text="50%"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 温度调节Slider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="温度调节Slider（范围：16-30°C）"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16°C"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_temperature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_weight="1"
+                    android:max="14"
+                    android:progress="7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30°C"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_temperature_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:minWidth="40dp"
+                    android:text="23°C"
+                    android:textColor="@color/progress_custom_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 颜色调节Slider组 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="RGB颜色调节Slider组（实时预览）"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <!-- 颜色预览 -->
+            <View
+                android:id="@+id/color_preview"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="#808080" />
+
+            <!-- R值调节 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="R:"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="14sp" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_red"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="128" />
+
+                <TextView
+                    android:id="@+id/tv_red_value"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="128"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- G值调节 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="G:"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="14sp" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_green"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="128" />
+
+                <TextView
+                    android:id="@+id/tv_green_value"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="128"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- B值调节 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="B:"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_blue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="128" />
+
+                <TextView
+                    android:id="@+id/tv_blue_value"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="128"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -400,7 +683,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="4dp"
-                android:text="• 点击开始动画按钮开始自动进度演示\n• SeekBar可以手动拖动来控制所有进度条\n• 自定义View支持动画效果和颜色配置\n• 渐变进度条包含光影流动效果\n• 所有进度条都支持0-100%的进度范围"
+                android:text="• 点击开始动画按钮开始自动进度演示\n• SeekBar可以手动拖动来控制所有进度条\n• 离散值Slider支持步进式调节（0-10）\n• 音量控制Slider模拟实际音量调节场景\n• 温度调节Slider支持16-30°C范围调节\n• RGB颜色调节支持实时颜色预览\n• 自定义View支持动画效果和颜色配置\n• 渐变进度条包含光影流动效果"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
 

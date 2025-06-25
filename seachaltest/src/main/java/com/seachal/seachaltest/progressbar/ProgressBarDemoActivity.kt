@@ -1,9 +1,11 @@
 package com.seachal.seachaltest.progressbar
 
 import android.animation.ValueAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -12,6 +14,7 @@ import com.seachal.seachaltest.R
 /**
  * 进度条演示Activity
  * 包含ProgressBar、SeekBar、自定义View等多种进度条实现
+ * 新增 Slider 控件演示：离散值、音量控制、温度调节、RGB颜色调节
  * 
  * @author Seachal
  * @date 2025-01-27
@@ -27,9 +30,15 @@ class ProgressBarDemoActivity : AppCompatActivity() {
     private lateinit var progressBarCircular: ProgressBar
     private lateinit var progressBarCircularCustom: ProgressBar
     
-    // SeekBar
+    // SeekBar/Slider
     private lateinit var seekBar: SeekBar
     private lateinit var seekBarCustom: SeekBar
+    private lateinit var seekBarDiscrete: SeekBar
+    private lateinit var seekBarVolume: SeekBar
+    private lateinit var seekBarTemperature: SeekBar
+    private lateinit var seekBarRed: SeekBar
+    private lateinit var seekBarGreen: SeekBar
+    private lateinit var seekBarBlue: SeekBar
     
     // 自定义进度条
     private lateinit var customProgressView: CustomProgressView
@@ -43,6 +52,13 @@ class ProgressBarDemoActivity : AppCompatActivity() {
     // 进度显示
     private lateinit var tvProgress: TextView
     private lateinit var tvSeekBarProgress: TextView
+    private lateinit var tvDiscreteValue: TextView
+    private lateinit var tvVolumeValue: TextView
+    private lateinit var tvTemperatureValue: TextView
+    private lateinit var tvRedValue: TextView
+    private lateinit var tvGreenValue: TextView
+    private lateinit var tvBlueValue: TextView
+    private lateinit var colorPreview: View
     
     // 动画控制
     private var progressAnimator: ValueAnimator? = null
@@ -57,6 +73,7 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         initViews()
         setupListeners()
         setupProgressAnimation()
+        updateColorPreview()
     }
 
     /**
@@ -72,9 +89,15 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         progressBarCircular = findViewById(R.id.progress_bar_circular)
         progressBarCircularCustom = findViewById(R.id.progress_bar_circular_custom)
         
-        // SeekBar
+        // SeekBar/Slider
         seekBar = findViewById(R.id.seek_bar)
         seekBarCustom = findViewById(R.id.seek_bar_custom)
+        seekBarDiscrete = findViewById(R.id.seek_bar_discrete)
+        seekBarVolume = findViewById(R.id.seek_bar_volume)
+        seekBarTemperature = findViewById(R.id.seek_bar_temperature)
+        seekBarRed = findViewById(R.id.seek_bar_red)
+        seekBarGreen = findViewById(R.id.seek_bar_green)
+        seekBarBlue = findViewById(R.id.seek_bar_blue)
         
         // 自定义进度条
         customProgressView = findViewById(R.id.custom_progress_view)
@@ -88,10 +111,18 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         // 进度显示
         tvProgress = findViewById(R.id.tv_progress)
         tvSeekBarProgress = findViewById(R.id.tv_seekbar_progress)
+        tvDiscreteValue = findViewById(R.id.tv_discrete_value)
+        tvVolumeValue = findViewById(R.id.tv_volume_value)
+        tvTemperatureValue = findViewById(R.id.tv_temperature_value)
+        tvRedValue = findViewById(R.id.tv_red_value)
+        tvGreenValue = findViewById(R.id.tv_green_value)
+        tvBlueValue = findViewById(R.id.tv_blue_value)
+        colorPreview = findViewById(R.id.color_preview)
         
         // 设置初始进度
         val initialProgress = 30
         updateAllProgress(initialProgress)
+        updateSpecialSliders()
         tvProgress.text = "进度: ${initialProgress}%"
         tvSeekBarProgress.text = "SeekBar进度: ${seekBar.progress}"
     }
@@ -100,7 +131,7 @@ class ProgressBarDemoActivity : AppCompatActivity() {
      * 设置监听器
      */
     private fun setupListeners() {
-        // SeekBar监听器
+        // 主要SeekBar监听器
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
@@ -111,13 +142,10 @@ class ProgressBarDemoActivity : AppCompatActivity() {
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                // 用户开始拖动时停止自动动画
                 stopProgressAnimation()
             }
 
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                // 拖动结束
-            }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
         // 自定义SeekBar监听器
@@ -136,6 +164,56 @@ class ProgressBarDemoActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+
+        // 离散值SeekBar监听器
+        seekBarDiscrete.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                tvDiscreteValue.text = "当前值: $progress"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        // 音量控制SeekBar监听器
+        seekBarVolume.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                tvVolumeValue.text = "${progress}%"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        // 温度调节SeekBar监听器
+        seekBarTemperature.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val temperature = 16 + progress // 16°C - 30°C
+                tvTemperatureValue.text = "${temperature}°C"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        // RGB 颜色调节 SeekBar 监听器
+        val colorChangeListener = object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                when (seekBar?.id) {
+                    R.id.seek_bar_red -> tvRedValue.text = progress.toString()
+                    R.id.seek_bar_green -> tvGreenValue.text = progress.toString()
+                    R.id.seek_bar_blue -> tvBlueValue.text = progress.toString()
+                }
+                updateColorPreview()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        }
+
+        seekBarRed.setOnSeekBarChangeListener(colorChangeListener)
+        seekBarGreen.setOnSeekBarChangeListener(colorChangeListener)
+        seekBarBlue.setOnSeekBarChangeListener(colorChangeListener)
 
         // 按钮监听器
         btnStartProgress.setOnClickListener {
@@ -216,13 +294,45 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         progressBarCustom.progress = clampedProgress
         progressBarRounded.progress = clampedProgress
         
-        // SeekBar
+        // 主要SeekBar
         seekBar.progress = clampedProgress
         seekBarCustom.progress = clampedProgress
         
         // 自定义View
         customProgressView.setProgress(clampedProgress)
         gradientProgressView.setProgress(clampedProgress)
+    }
+
+    /**
+     * 更新特殊 Slider 的初始值
+     */
+    private fun updateSpecialSliders() {
+        // 离散值滑块
+        tvDiscreteValue.text = "当前值: ${seekBarDiscrete.progress}"
+        
+        // 音量控制
+        tvVolumeValue.text = "${seekBarVolume.progress}%"
+        
+        // 温度调节
+        val temperature = 16 + seekBarTemperature.progress
+        tvTemperatureValue.text = "${temperature}°C"
+        
+        // RGB 值显示
+        tvRedValue.text = seekBarRed.progress.toString()
+        tvGreenValue.text = seekBarGreen.progress.toString()
+        tvBlueValue.text = seekBarBlue.progress.toString()
+    }
+
+    /**
+     * 更新颜色预览
+     */
+    private fun updateColorPreview() {
+        val red = seekBarRed.progress
+        val green = seekBarGreen.progress
+        val blue = seekBarBlue.progress
+        
+        val color = Color.rgb(red, green, blue)
+        colorPreview.setBackgroundColor(color)
     }
 
     /**
@@ -253,7 +363,7 @@ class ProgressBarDemoActivity : AppCompatActivity() {
                     btnStopProgress.isEnabled = false
                     
                     if (currentProgress >= 100) {
-                        showToast("下载完成！")
+                        showToast("进度演示完成！")
                     }
                 }
             }
