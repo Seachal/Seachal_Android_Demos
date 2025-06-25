@@ -389,6 +389,12 @@
             android:exported="false"
             android:label="HTML文件JS返回值测试" />
             
+        <!-- 进度条演示示例 -->
+        <activity 
+            android:name=".progressbar.ProgressBarDemoActivity"
+            android:exported="false"
+            android:label="🎯 进度条演示案例" />
+            
     </application>
 
 </manifest>

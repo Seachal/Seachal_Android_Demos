@@ -90,11 +90,59 @@
 
                 <CheckBox
                     android:id="@+id/cb_custom4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_px_32"
+                    android:layout_marginBottom="16dp"
+                    android:text="自定义样式 CheckBox 4"
+                    android:buttonTint="@color/checkbox_custom_tint"
+                    android:textSize="14sp" />
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="2x的图， 放在 1x 的文件夹下， 图标显的更大了"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <CheckBox
+                    android:id="@+id/cb_custom5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_px_32"
                     android:layout_marginBottom="16dp"
-                    android:text="自定义样式 CheckBox 4  )"
-                    android:buttonTint="@color/checkbox_custom_tint"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableStart="@drawable/o_ic_checkbox_selected"
+                    android:textSize="14sp" />
+
+
+                <CheckBox
+                    android:id="@+id/cb_custom51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_px_32"
+                    android:layout_marginBottom="16dp"
+                    android:button="@drawable/o_ic_checkbox_selected_1x"
+                    android:textSize="14sp" />
+
+
+                <CheckBox
+                    android:id="@+id/cb_custom6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_px_32"
+                    android:layout_marginBottom="16dp"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableStart="@drawable/o_ic_checkbox_selected_1x"
+                    android:textSize="14sp" />
+
+<!--                -->
+                <CheckBox
+                    android:id="@+id/cb_custom7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_px_32"
+                    android:layout_marginBottom="16dp"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableStart="@drawable/o_ic_checkbox_selected_2x"
                     android:textSize="14sp" />
                 <!-- 分割线 -->
                 <View

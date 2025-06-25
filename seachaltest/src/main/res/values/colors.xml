@@ -647,5 +647,14 @@
     <color name="button_secondary_pressed">#EDF2F7</color>
     <color name="button_border">#CBD5E0</color>
 
+    <!-- 进度条相关颜色 -->
+    <color name="progress_background_color">#E5E5E5</color>        <!-- 进度条背景颜色 -->
+    <color name="progress_custom_color">#FF6B00</color>            <!-- 自定义进度条颜色 -->
+    <color name="progress_gradient_start">#FF6B00</color>          <!-- 渐变开始颜色 -->
+    <color name="progress_gradient_end">#FFB347</color>            <!-- 渐变结束颜色 -->
+    <color name="seekbar_thumb_color">#FF6B00</color>              <!-- SeekBar拖动块颜色 -->
+    <color name="seekbar_track_color">#E5E5E5</color>              <!-- SeekBar轨道颜色 -->
+    <color name="progress_shadow_color">#33FF6B00</color>          <!-- 进度条阴影颜色 -->
+
 
 </resources>
