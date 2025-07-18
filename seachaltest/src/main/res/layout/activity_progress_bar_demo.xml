@@ -693,7 +693,6 @@
                 android:id="@+id/material_slider_basic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:thumbDrawable="@drawable/icon_custom_thumb_2x"
                 android:value="50f"
                 android:valueFrom="0f"
                 android:valueTo="100f" />
