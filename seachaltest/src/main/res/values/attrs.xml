@@ -17,6 +17,23 @@
         </attr>
     </declare-styleable>
 
+    <!-- OrangeProgressBar 自定义属性 -->
+    <declare-styleable name="OrangeProgressBar">
+        <!-- 进度条高度 (px) -->
+        <attr name="progressBarHeight" format="dimension" />
+        <!-- 指示器大小 (px) -->
+        <attr name="thumbSize" format="dimension" />
+        <!-- 当前进度 -->
+        <attr name="orangeProgress" format="integer" />
+        <!-- 最大进度 -->
+        <attr name="orangeMaxProgress" format="integer" />
+        <!-- 进度颜色 -->
+        <attr name="progressColor" format="color" />
+        <!-- 背景颜色 -->
+        <attr name="backgroundColor" format="color" />
+        <!-- 指示器颜色 -->
+        <attr name="thumbColor" format="color" />
+    </declare-styleable>
 
     <!--WheelView 属性-->
     <declare-styleable name="WheelView">

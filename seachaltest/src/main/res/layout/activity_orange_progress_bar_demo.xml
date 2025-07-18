@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="OrangeProgressBar 自定义进度条演示"
+            android:textColor="@color/text_black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- 控制面板 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="🎛️ 控制面板"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- 进度显示 -->
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="当前进度: 30%"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp" />
+
+            <!-- 进度控制器 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="拖动控制进度："
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/seek_bar_controller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:max="100"
+                android:progress="30" />
+
+            <!-- 按钮组 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_set_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FF8A50"
+                    android:text="随机进度"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_animate"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4CAF50"
+                    android:text="动画演示"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_reset"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#9E9E9E"
+                    android:text="重置"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_change_colors"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#2196F3"
+                    android:text="变色"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 进度条演示 -->
+        
+        <!-- 示例1：默认配置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="📊 示例1：默认配置 (进度条16px，指示器20px)"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="标准的橙色渐变进度条，适用于大多数场景"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp" />
+
+            <com.seachal.seachaltest.customview.OrangeProgressBar
+                android:id="@+id/orange_progress_bar_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                app:progressBarHeight="16dp"
+                app:thumbSize="20dp"
+                app:orangeProgress="30"
+                app:orangeMaxProgress="100" />
+
+        </LinearLayout>
+
+        <!-- 示例2：大指示器 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="🔵 示例2：大指示器 (进度条16px，指示器28px)"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="更大的指示器，便于用户操作和视觉识别"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp" />
+
+            <com.seachal.seachaltest.customview.OrangeProgressBar
+                android:id="@+id/orange_progress_bar_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                app:progressBarHeight="16dp"
+                app:thumbSize="28dp"
+                app:orangeProgress="50"
+                app:orangeMaxProgress="100" />
+
+        </LinearLayout>
+
+        <!-- 示例3：高进度条 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="📏 示例3：高进度条 (进度条24px，指示器20px)"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="更高的进度条，适用于需要突出进度显示的场景"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp" />
+
+            <com.seachal.seachaltest.customview.OrangeProgressBar
+                android:id="@+id/orange_progress_bar_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                app:progressBarHeight="24dp"
+                app:thumbSize="20dp"
+                app:orangeProgress="70"
+                app:orangeMaxProgress="100" />
+
+        </LinearLayout>
+
+        <!-- 示例4：自定义颜色 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="🎨 示例4：自定义颜色主题"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="绿色主题，通过XML属性或代码动态设置颜色"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp" />
+
+            <com.seachal.seachaltest.customview.OrangeProgressBar
+                android:id="@+id/orange_progress_bar_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                app:progressBarHeight="16dp"
+                app:thumbSize="20dp"
+                app:orangeProgress="85"
+                app:orangeMaxProgress="100"
+                app:progressColor="#4CAF50"
+                app:backgroundColor="#E8F5E8"
+                app:thumbColor="#2E7D32" />
+
+        </LinearLayout>
+
+        <!-- 使用说明 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="📖 使用说明"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✅ 支持自定义进度条高度 (progressBarHeight)\n✅ 支持自定义指示器大小 (thumbSize)\n✅ 支持自定义颜色主题\n✅ 支持进度动画效果\n✅ 支持XML属性配置\n✅ 支持代码动态修改"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView> 

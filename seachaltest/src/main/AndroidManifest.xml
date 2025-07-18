@@ -46,6 +46,9 @@
             android:name=".ViewGroupAndChildActivity"
             android:exported="false" />
         <activity
+            android:name=".customview.OrangeProgressBarDemoActivity"
+            android:exported="false" />
+        <activity
             android:name=".viewpager2.Viewpager2Activity"
             android:exported="false" />
         <activity
