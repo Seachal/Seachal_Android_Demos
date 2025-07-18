@@ -27,7 +27,7 @@ class OrangeProgressBar @JvmOverloads constructor(
     private var progress: Int = 0 // 当前进度
     private var maxProgress: Int = 100 // 最大进度
     private var progressColor: Int = Color.parseColor("#FF8A50") // 进度色
-    private var backgroundColor: Int = Color.parseColor("#E0E0E0") // 背景色
+    private var backgroundColor: Int = Color.parseColor("#EEEEEE") // 背景色
     private var thumbColor: Int = Color.parseColor("#FF5722") // 指示器颜色
     
     // 画笔

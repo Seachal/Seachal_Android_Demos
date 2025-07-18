@@ -154,10 +154,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
-                app:progressBarHeight="16dp"
-                app:thumbSize="20dp"
+                app:orangeMaxProgress="100"
                 app:orangeProgress="30"
-                app:orangeMaxProgress="100" />
+                app:progressBarHeight="16dp"
+                app:thumbSize="20dp" />
 
         </LinearLayout>
 
