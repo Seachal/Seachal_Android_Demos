@@ -11,6 +11,7 @@ import com.seachal.seachaltest.R
 /**
  * 自定义橙色进度条
  * 包含渐变效果和圆形指示器
+ * 支持完全自定义颜色配置
  * 
  * @author Seachal
  * @date 2025-01-27
@@ -50,7 +51,7 @@ class OrangeProgressBar @JvmOverloads constructor(
                 progress = typedArray.getInt(R.styleable.OrangeProgressBar_orangeProgress, 0)
                 maxProgress = typedArray.getInt(R.styleable.OrangeProgressBar_orangeMaxProgress, 100)
                 progressColor = typedArray.getColor(R.styleable.OrangeProgressBar_progressColor, Color.parseColor("#FF8A50"))
-                backgroundColor = typedArray.getColor(R.styleable.OrangeProgressBar_backgroundColor, Color.parseColor("#E0E0E0"))
+                backgroundColor = typedArray.getColor(R.styleable.OrangeProgressBar_backgroundColor, Color.parseColor("#EEEEEE"))
                 thumbColor = typedArray.getColor(R.styleable.OrangeProgressBar_thumbColor, Color.parseColor("#FF5722"))
             } finally {
                 typedArray.recycle()
@@ -95,23 +96,44 @@ class OrangeProgressBar @JvmOverloads constructor(
         }
     }
     
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        super.onSizeChanged(w, h, oldw, oldh)
-        
-        // 创建进度条渐变效果
-        if (w > 0) {
+    /**
+     * 创建进度条渐变效果
+     * 基于当前的 progressColor 生成渐变色
+     */
+    private fun createProgressGradient(width: Float) {
+        if (width > 0) {
+            // 根据 progressColor 生成渐变色
+            val baseColor = progressColor
+            val startColor = adjustColorBrightness(baseColor, 1.1f) // 稍微亮一点
+            val endColor = adjustColorBrightness(baseColor, 0.8f) // 稍微暗一点
+            
             progressGradient = LinearGradient(
-                0f, 0f, w.toFloat(), 0f,
-                intArrayOf(
-                    Color.parseColor("#FF8A50"),
-                    Color.parseColor("#FF7043"),
-                    Color.parseColor("#FF5722")
-                ),
+                0f, 0f, width, 0f,
+                intArrayOf(startColor, baseColor, endColor),
                 null,
                 Shader.TileMode.CLAMP
             )
             progressPaint.shader = progressGradient
         }
+    }
+    
+    /**
+     * 调整颜色亮度
+     * @param color 原始颜色
+     * @param factor 亮度因子 (>1 变亮, <1 变暗)
+     */
+    private fun adjustColorBrightness(color: Int, factor: Float): Int {
+        val hsv = FloatArray(3)
+        Color.colorToHSV(color, hsv)
+        hsv[2] = Math.min(1.0f, hsv[2] * factor) // 调整亮度
+        return Color.HSVToColor(hsv)
+    }
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        
+        // 创建进度条渐变效果
+        createProgressGradient(w.toFloat())
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -241,17 +263,64 @@ class OrangeProgressBar @JvmOverloads constructor(
      */
     fun setProgressColor(color: Int) {
         this.progressColor = color
-        thumbPaint.color = color
+        // 重新创建渐变效果
+        createProgressGradient(width.toFloat())
         invalidate()
     }
+    
+    /**
+     * 获取进度颜色
+     */
+    fun getProgressColor(): Int = progressColor
     
     /**
      * 设置背景颜色
      * @param color 颜色值
      */
-    override fun setBackgroundColor(color: Int) {
+    fun setProgressBackgroundColor(color: Int) {
         this.backgroundColor = color
         backgroundPaint.color = color
+        invalidate()
+    }
+    
+    /**
+     * 获取背景颜色
+     */
+    fun getProgressBackgroundColor(): Int = backgroundColor
+    
+    /**
+     * 设置指示器颜色
+     * @param color 颜色值
+     */
+    fun setThumbColor(color: Int) {
+        this.thumbColor = color
+        thumbPaint.color = color
+        invalidate()
+    }
+    
+    /**
+     * 获取指示器颜色
+     */
+    fun getThumbColor(): Int = thumbColor
+    
+    /**
+     * 同时设置三个主要颜色
+     * @param progressColor 进度颜色
+     * @param backgroundColor 背景颜色
+     * @param thumbColor 指示器颜色
+     */
+    fun setColors(progressColor: Int, backgroundColor: Int, thumbColor: Int) {
+        this.progressColor = progressColor
+        this.backgroundColor = backgroundColor
+        this.thumbColor = thumbColor
+        
+        // 更新画笔
+        backgroundPaint.color = backgroundColor
+        thumbPaint.color = thumbColor
+        
+        // 重新创建渐变效果
+        createProgressGradient(width.toFloat())
+        
         invalidate()
     }
     

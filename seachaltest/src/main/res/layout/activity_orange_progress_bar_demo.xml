@@ -157,7 +157,7 @@
                 app:orangeMaxProgress="100"
                 app:orangeProgress="30"
                 app:progressBarHeight="16dp"
-                app:thumbSize="20dp" />
+                app:thumbSize="24dp" />
 
         </LinearLayout>
 
