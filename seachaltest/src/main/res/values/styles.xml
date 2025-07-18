@@ -44,6 +44,17 @@
     </style>
 
 <!--     dialog -->
+    <!-- 自定义SeekBar样式 -->
+    <style name="CustomSeekBarStyle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/custom_seekbar_track</item>
+        <item name="android:thumb">@drawable/custom_seekbar_thumb</item>
+        <item name="android:thumbOffset">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:maxHeight">16dp</item>
+        <item name="android:minHeight">16dp</item>
+    </style>
+
     <style name="video_style_dialog_progress" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item> <!-- 背景透明 -->
         <item name="android:windowNoTitle">true</item>
@@ -143,6 +154,22 @@
         <item name="android:textColor">@color/demo_button_text_color</item>
         <item name="backgroundTint">@color/demo_button_background</item>
         <item name="cornerRadius">20dp</item>
+    </style>
+
+    <!-- 渐变 SeekBar 样式 -->
+    <style name="GradientSeekBarStyle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/gradient_seekbar_track</item>
+        <item name="android:thumb">@drawable/icon_custom_thumb_1x</item>
+        <item name="android:thumbOffset">0dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    
+    <!-- 渐变 Material Slider 主题 -->
+    <style name="GradientSliderTheme" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">#FF7043</item>
+        <item name="colorPrimaryVariant">#FF5722</item>
+        <item name="colorAccent">#FF8A50</item>
     </style>
 
 </resources>

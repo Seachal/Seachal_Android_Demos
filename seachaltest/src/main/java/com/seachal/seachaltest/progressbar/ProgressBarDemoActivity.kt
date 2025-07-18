@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.slider.Slider
+import com.google.android.material.slider.RangeSlider
 import com.seachal.seachaltest.R
 
 /**
@@ -33,12 +35,21 @@ class ProgressBarDemoActivity : AppCompatActivity() {
     // SeekBar/Slider
     private lateinit var seekBar: SeekBar
     private lateinit var seekBarCustom: SeekBar
+    private lateinit var seekBarCustomBeautiful: SeekBar // 新增的美观进度条
     private lateinit var seekBarDiscrete: SeekBar
     private lateinit var seekBarVolume: SeekBar
     private lateinit var seekBarTemperature: SeekBar
     private lateinit var seekBarRed: SeekBar
     private lateinit var seekBarGreen: SeekBar
     private lateinit var seekBarBlue: SeekBar
+    
+    // Material Design Slider
+    private lateinit var materialSliderBasic: Slider
+    private lateinit var materialSliderLabeled: Slider
+    private lateinit var materialSliderStep: Slider
+    private lateinit var materialRangeSlider: RangeSlider
+    private lateinit var materialSliderCustom: Slider
+    private lateinit var materialSliderVertical: Slider
     
     // 自定义进度条
     private lateinit var customProgressView: CustomProgressView
@@ -52,13 +63,37 @@ class ProgressBarDemoActivity : AppCompatActivity() {
     // 进度显示
     private lateinit var tvProgress: TextView
     private lateinit var tvSeekBarProgress: TextView
+    private lateinit var tvCustomProgress: TextView // 美观进度条的文本显示
     private lateinit var tvDiscreteValue: TextView
     private lateinit var tvVolumeValue: TextView
     private lateinit var tvTemperatureValue: TextView
     private lateinit var tvRedValue: TextView
     private lateinit var tvGreenValue: TextView
-    private lateinit var tvBlueValue: TextView
-    private lateinit var colorPreview: View
+            private lateinit var tvBlueValue: TextView
+        private lateinit var colorPreview: View
+        
+            // Material Design Slider 文本显示
+    private lateinit var tvMaterialBasicValue: TextView
+    private lateinit var tvMaterialStepValue: TextView
+    private lateinit var tvMaterialRangeValue: TextView
+    private lateinit var tvMaterialCustomValue: TextView
+    private lateinit var tvMaterialVerticalValue: TextView
+    
+    // 美观渐变进度条
+    private lateinit var progressBarGradient: ProgressBar
+    private lateinit var seekBarGradient: SeekBar
+    private lateinit var sliderGradientMaterial: Slider
+    private lateinit var beautifulProgressView: BeautifulProgressView
+    
+    // 美观进度条文本显示
+    private lateinit var tvGradientProgressValue: TextView
+    private lateinit var tvGradientSeekBarValue: TextView
+    private lateinit var tvGradientMaterialValue: TextView
+    private lateinit var tvBeautifulProgressValue: TextView
+    
+    // 美观进度条按钮
+    private lateinit var btnBeautifulAnimate: Button
+    private lateinit var btnBeautifulReset: Button
     
     // 动画控制
     private var progressAnimator: ValueAnimator? = null
@@ -92,12 +127,21 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         // SeekBar/Slider
         seekBar = findViewById(R.id.seek_bar)
         seekBarCustom = findViewById(R.id.seek_bar_custom)
+        seekBarCustomBeautiful = findViewById(R.id.seekbar_custom_beautiful) // 美观进度条
         seekBarDiscrete = findViewById(R.id.seek_bar_discrete)
         seekBarVolume = findViewById(R.id.seek_bar_volume)
         seekBarTemperature = findViewById(R.id.seek_bar_temperature)
         seekBarRed = findViewById(R.id.seek_bar_red)
         seekBarGreen = findViewById(R.id.seek_bar_green)
         seekBarBlue = findViewById(R.id.seek_bar_blue)
+        
+        // Material Design Slider
+        materialSliderBasic = findViewById(R.id.material_slider_basic)
+        materialSliderLabeled = findViewById(R.id.material_slider_labeled)
+        materialSliderStep = findViewById(R.id.material_slider_step)
+        materialRangeSlider = findViewById(R.id.material_range_slider)
+        materialSliderCustom = findViewById(R.id.material_slider_custom)
+        materialSliderVertical = findViewById(R.id.material_slider_vertical)
         
         // 自定义进度条
         customProgressView = findViewById(R.id.custom_progress_view)
@@ -111,6 +155,7 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         // 进度显示
         tvProgress = findViewById(R.id.tv_progress)
         tvSeekBarProgress = findViewById(R.id.tv_seekbar_progress)
+        tvCustomProgress = findViewById(R.id.tv_custom_progress) // 美观进度条文本
         tvDiscreteValue = findViewById(R.id.tv_discrete_value)
         tvVolumeValue = findViewById(R.id.tv_volume_value)
         tvTemperatureValue = findViewById(R.id.tv_temperature_value)
@@ -119,10 +164,37 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         tvBlueValue = findViewById(R.id.tv_blue_value)
         colorPreview = findViewById(R.id.color_preview)
         
+        // Material Design Slider 文本显示
+        tvMaterialBasicValue = findViewById(R.id.tv_material_basic_value)
+        tvMaterialStepValue = findViewById(R.id.tv_material_step_value)
+        tvMaterialRangeValue = findViewById(R.id.tv_material_range_value)
+        tvMaterialCustomValue = findViewById(R.id.tv_material_custom_value)
+        tvMaterialVerticalValue = findViewById(R.id.tv_material_vertical_value)
+        
+        // 美观渐变进度条
+        progressBarGradient = findViewById(R.id.progress_bar_gradient)
+        seekBarGradient = findViewById(R.id.seekbar_gradient)
+        sliderGradientMaterial = findViewById(R.id.slider_gradient_material)
+        beautifulProgressView = findViewById(R.id.beautiful_progress_view)
+        
+        // 美观进度条文本显示
+        tvGradientProgressValue = findViewById(R.id.tv_gradient_progress_value)
+        tvGradientSeekBarValue = findViewById(R.id.tv_gradient_seekbar_value)
+        tvGradientMaterialValue = findViewById(R.id.tv_gradient_material_value)
+        tvBeautifulProgressValue = findViewById(R.id.tv_beautiful_progress_value)
+        
+        // 美观进度条按钮
+        btnBeautifulAnimate = findViewById(R.id.btn_beautiful_animate)
+        btnBeautifulReset = findViewById(R.id.btn_beautiful_reset)
+        
         // 设置初始进度
         val initialProgress = 30
         updateAllProgress(initialProgress)
         updateSpecialSliders()
+        
+        // 设置 Material Design Slider 初始值
+        materialRangeSlider.values = listOf(25f, 75f)
+        
         tvProgress.text = "进度: ${initialProgress}%"
         tvSeekBarProgress.text = "SeekBar进度: ${seekBar.progress}"
     }
@@ -156,6 +228,24 @@ class ProgressBarDemoActivity : AppCompatActivity() {
                     tvProgress.text = "进度: ${progress}%"
                     tvSeekBarProgress.text = "SeekBar进度: $progress"
                 }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                stopProgressAnimation()
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        // 美观进度条监听器
+        seekBarCustomBeautiful.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    updateAllProgress(progress)
+                    tvProgress.text = "进度: ${progress}%"
+                    tvSeekBarProgress.text = "SeekBar进度: $progress"
+                }
+                tvCustomProgress.text = "${progress}%"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -227,6 +317,123 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         btnResetProgress.setOnClickListener {
             resetProgress()
         }
+
+        // Material Design Slider 监听器
+        setupMaterialSliderListeners()
+        
+        // 美观渐变进度条监听器
+        setupBeautifulProgressListeners()
+    }
+
+    /**
+     * 设置美观渐变进度条监听器
+     */
+    private fun setupBeautifulProgressListeners() {
+        // 渐变 SeekBar 监听器
+        seekBarGradient.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                tvGradientSeekBarValue.text = "当前值: $progress"
+                
+                // 同步更新其他美观进度条
+                if (fromUser) {
+                    progressBarGradient.progress = progress
+                    sliderGradientMaterial.value = progress.toFloat()
+                    beautifulProgressView.setProgress(progress.toFloat())
+                    
+                    // 更新文本显示
+                    tvGradientProgressValue.text = "进度: ${progress}%"
+                    tvGradientMaterialValue.text = "Material 值: $progress"
+                    tvBeautifulProgressValue.text = "精美进度: ${progress}%"
+                }
+            }
+            
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+        
+        // Material Slider 监听器
+        sliderGradientMaterial.addOnChangeListener { slider, value, fromUser ->
+            tvGradientMaterialValue.text = "Material 值: ${value.toInt()}"
+            
+            if (fromUser) {
+                val intValue = value.toInt()
+                progressBarGradient.progress = intValue
+                seekBarGradient.progress = intValue
+                beautifulProgressView.setProgress(value)
+                
+                // 更新文本显示
+                tvGradientProgressValue.text = "进度: ${intValue}%"
+                tvGradientSeekBarValue.text = "当前值: $intValue"
+                tvBeautifulProgressValue.text = "精美进度: ${intValue}%"
+            }
+        }
+        
+        // 美观自定义View按钮监听器
+        btnBeautifulAnimate.setOnClickListener {
+            val targetProgress = (0..100).random().toFloat()
+            beautifulProgressView.setProgressWithAnimation(targetProgress, 2000)
+            
+            // 同步更新其他控件
+            progressBarGradient.progress = targetProgress.toInt()
+            seekBarGradient.progress = targetProgress.toInt()
+            sliderGradientMaterial.value = targetProgress
+            
+            // 更新文本显示
+            val intValue = targetProgress.toInt()
+            tvGradientProgressValue.text = "进度: ${intValue}%"
+            tvGradientSeekBarValue.text = "当前值: $intValue"
+            tvGradientMaterialValue.text = "Material 值: $intValue"
+            tvBeautifulProgressValue.text = "精美进度: ${intValue}%"
+        }
+        
+        btnBeautifulReset.setOnClickListener {
+            // 重置所有美观进度条
+            progressBarGradient.progress = 0
+            seekBarGradient.progress = 0
+            sliderGradientMaterial.value = 0f
+            beautifulProgressView.setProgressWithAnimation(0f, 500)
+            
+            // 重置文本显示
+            tvGradientProgressValue.text = "进度: 0%"
+            tvGradientSeekBarValue.text = "当前值: 0"
+            tvGradientMaterialValue.text = "Material 值: 0"
+            tvBeautifulProgressValue.text = "精美进度: 0%"
+        }
+    }
+
+    /**
+     * 设置 Material Design Slider 监听器
+     */
+    private fun setupMaterialSliderListeners() {
+        // 基础 Material Slider
+        materialSliderBasic.addOnChangeListener { slider, value, fromUser ->
+            tvMaterialBasicValue.text = "当前值: ${value.toInt()}"
+        }
+
+        // 步进 Material Slider
+        materialSliderStep.addOnChangeListener { slider, value, fromUser ->
+            tvMaterialStepValue.text = "当前步进值: ${value.toInt()}"
+        }
+
+        // 范围选择 Material RangeSlider
+        materialRangeSlider.addOnChangeListener { rangeSlider, value, fromUser ->
+            val values = rangeSlider.values
+            if (values.size >= 2) {
+                val min = values[0].toInt()
+                val max = values[1].toInt()
+                tvMaterialRangeValue.text = "选择范围: $min - $max"
+            }
+        }
+
+        // 自定义样式 Material Slider（音量控制）
+        materialSliderCustom.addOnChangeListener { slider, value, fromUser ->
+            tvMaterialCustomValue.text = "音量: ${value.toInt()}%"
+        }
+
+        // 垂直 Material Slider
+        materialSliderVertical.addOnChangeListener { slider, value, fromUser ->
+            tvMaterialVerticalValue.text = "${value.toInt()}%"
+        }
     }
 
     /**
@@ -297,6 +504,7 @@ class ProgressBarDemoActivity : AppCompatActivity() {
         // 主要SeekBar
         seekBar.progress = clampedProgress
         seekBarCustom.progress = clampedProgress
+        seekBarCustomBeautiful.progress = clampedProgress // 美观进度条同步
         
         // 自定义View
         customProgressView.setProgress(clampedProgress)

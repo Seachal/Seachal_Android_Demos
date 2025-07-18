@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- 按下状态 -->
+    <item android:state_pressed="true">
+        <bitmap android:src="@drawable/icon_custom_thumb_2x" />
+    </item>
+    
+    <!-- 获得焦点状态 -->
+    <item android:state_focused="true">
+        <bitmap android:src="@drawable/icon_custom_thumb_2x" />
+    </item>
+    
+    <!-- 默认状态 -->
+    <item>
+        <bitmap android:src="@drawable/icon_custom_thumb_1x" />
+    </item>
+    
+</selector> 
