@@ -151,6 +151,9 @@ class OrangeProgressBar @JvmOverloads constructor(
         val barRight = (width - paddingRight).toFloat()
         val cornerRadius = progressBarHeight / 2
         
+        // 调试日志
+        android.util.Log.d("OrangeProgressBar", "drawProgressBar - progressBarHeight: $progressBarHeight, thumbSize: $thumbSize")
+        
         // 绘制背景
         val backgroundRect = RectF(barLeft, barTop, barRight, barBottom)
         canvas.drawRoundRect(backgroundRect, cornerRadius, cornerRadius, backgroundPaint)

@@ -156,8 +156,8 @@
                 android:layout_marginHorizontal="8dp"
                 app:orangeMaxProgress="100"
                 app:orangeProgress="30"
-                app:progressBarHeight="10dp"
-                app:thumbSize="24dp" />
+                app:progressBarHeight="16dp"
+                app:thumbSize="20dp" />
 
         </LinearLayout>
 
