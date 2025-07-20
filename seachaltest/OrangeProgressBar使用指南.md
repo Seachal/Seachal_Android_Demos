@@ -67,7 +67,7 @@ orangeProgressBar.setThumbSize(28f)         // 设置指示器大小为28px
 
 // 颜色配置
 orangeProgressBar.setProgressColor(Color.parseColor("#4CAF50"))      // 绿色
-orangeProgressBar.setBackgroundColor(Color.parseColor("#E8F5E8"))    // 浅绿色
+orangeProgressBar.setProgressBackgroundColor(Color.parseColor("#E8F5E8"))    // 浅绿色
 orangeProgressBar.setThumbColor(Color.parseColor("#2E7D32"))         // 深绿色
 
 // 动画效果
@@ -118,7 +118,7 @@ fun setThumbSize(size: Float)
 fun setProgressColor(color: Int)
 
 // 设置背景颜色
-fun setBackgroundColor(color: Int)
+fun setProgressBackgroundColor(color: Int)
 ```
 
 ## 🎨 设计样例
@@ -219,10 +219,10 @@ orangeProgressBar.setThumbSize(20f * density)
 ```kotlin
 // 根据主题模式切换颜色
 if (isDarkTheme) {
-    orangeProgressBar.setBackgroundColor(Color.parseColor("#424242"))
+    orangeProgressBar.setProgressBackgroundColor(Color.parseColor("#424242"))
     orangeProgressBar.setProgressColor(Color.parseColor("#FF8A50"))
 } else {
-    orangeProgressBar.setBackgroundColor(Color.parseColor("#E0E0E0"))
+    orangeProgressBar.setProgressBackgroundColor(Color.parseColor("#E0E0E0"))
     orangeProgressBar.setProgressColor(Color.parseColor("#FF8A50"))
 }
 ```

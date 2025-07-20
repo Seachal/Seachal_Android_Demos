@@ -112,7 +112,7 @@ class OrangeProgressBarDemoActivity : AppCompatActivity() {
         
         // 第四个：自定义颜色
         orangeProgressBar4.setProgressColor(Color.parseColor("#4CAF50"))
-        orangeProgressBar4.setBackgroundColor(Color.parseColor("#E8F5E8"))
+        orangeProgressBar4.setProgressBackgroundColor(Color.parseColor("#E8F5E8"))
         orangeProgressBar4.setProgress(85)
         
         // 同步SeekBar
@@ -154,18 +154,18 @@ class OrangeProgressBarDemoActivity : AppCompatActivity() {
         val randomIndex = colors.indices.random()
         
         orangeProgressBar1.setProgressColor(colors[randomIndex])
-        orangeProgressBar1.setBackgroundColor(backgrounds[randomIndex])
+        orangeProgressBar1.setProgressBackgroundColor(backgrounds[randomIndex])
         
         val randomIndex2 = colors.indices.random()
         orangeProgressBar2.setProgressColor(colors[randomIndex2])
-        orangeProgressBar2.setBackgroundColor(backgrounds[randomIndex2])
+        orangeProgressBar2.setProgressBackgroundColor(backgrounds[randomIndex2])
         
         val randomIndex3 = colors.indices.random()
         orangeProgressBar3.setProgressColor(colors[randomIndex3])
-        orangeProgressBar3.setBackgroundColor(backgrounds[randomIndex3])
+        orangeProgressBar3.setProgressBackgroundColor(backgrounds[randomIndex3])
         
         val randomIndex4 = colors.indices.random()
         orangeProgressBar4.setProgressColor(colors[randomIndex4])
-        orangeProgressBar4.setBackgroundColor(backgrounds[randomIndex4])
+        orangeProgressBar4.setProgressBackgroundColor(backgrounds[randomIndex4])
     }
 } 

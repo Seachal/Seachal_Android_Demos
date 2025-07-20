@@ -28,7 +28,7 @@ class OrangeProgressBar @JvmOverloads constructor(
     private var progress: Int = 0 // 当前进度
     private var maxProgress: Int = 100 // 最大进度
     private var progressColor: Int = Color.parseColor("#FF8A50") // 进度色
-    private var backgroundColor: Int = Color.parseColor("#EEEEEE") // 背景色
+    private var progressBackgroundColor: Int = Color.parseColor("#EEEEEE") // 背景色
     private var thumbColor: Int = Color.parseColor("#FF5722") // 指示器颜色
     
     // 画笔
@@ -51,7 +51,7 @@ class OrangeProgressBar @JvmOverloads constructor(
                 progress = typedArray.getInt(R.styleable.OrangeProgressBar_orangeProgress, 0)
                 maxProgress = typedArray.getInt(R.styleable.OrangeProgressBar_orangeMaxProgress, 100)
                 progressColor = typedArray.getColor(R.styleable.OrangeProgressBar_progressColor, Color.parseColor("#FF8A50"))
-                backgroundColor = typedArray.getColor(R.styleable.OrangeProgressBar_backgroundColor, Color.parseColor("#EEEEEE"))
+                progressBackgroundColor = typedArray.getColor(R.styleable.OrangeProgressBar_backgroundColor, Color.parseColor("#EEEEEE"))
                 thumbColor = typedArray.getColor(R.styleable.OrangeProgressBar_thumbColor, Color.parseColor("#FF5722"))
             } finally {
                 typedArray.recycle()
@@ -67,7 +67,7 @@ class OrangeProgressBar @JvmOverloads constructor(
     private fun initPaints() {
         // 背景画笔
         backgroundPaint.apply {
-            color = backgroundColor
+            color = progressBackgroundColor
             style = Paint.Style.FILL
         }
         
@@ -274,19 +274,19 @@ class OrangeProgressBar @JvmOverloads constructor(
     fun getProgressColor(): Int = progressColor
     
     /**
-     * 设置背景颜色
+     * 设置进度条背景颜色
      * @param color 颜色值
      */
     fun setProgressBackgroundColor(color: Int) {
-        this.backgroundColor = color
+        this.progressBackgroundColor = color
         backgroundPaint.color = color
         invalidate()
     }
     
     /**
-     * 获取背景颜色
+     * 获取进度条背景颜色
      */
-    fun getProgressBackgroundColor(): Int = backgroundColor
+    fun getProgressBackgroundColor(): Int = progressBackgroundColor
     
     /**
      * 设置指示器颜色
@@ -311,11 +311,11 @@ class OrangeProgressBar @JvmOverloads constructor(
      */
     fun setColors(progressColor: Int, backgroundColor: Int, thumbColor: Int) {
         this.progressColor = progressColor
-        this.backgroundColor = backgroundColor
+        this.progressBackgroundColor = backgroundColor
         this.thumbColor = thumbColor
         
         // 更新画笔
-        backgroundPaint.color = backgroundColor
+        backgroundPaint.color = progressBackgroundColor
         thumbPaint.color = thumbColor
         
         // 重新创建渐变效果
