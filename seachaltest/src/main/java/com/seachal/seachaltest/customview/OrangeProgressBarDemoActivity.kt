@@ -102,12 +102,14 @@ class OrangeProgressBarDemoActivity : AppCompatActivity() {
         // 第一个：默认配置
         orangeProgressBar1.setProgress(30)
         
-        // 第二个：大指示器
-        orangeProgressBar2.setThumbSize(28f)
+        val density = resources.displayMetrics.density
+        
+        // 第二个：大指示器（thumbSize 28dp）
+        orangeProgressBar2.setThumbSize(28f * density)
         orangeProgressBar2.setProgress(50)
         
-        // 第三个：高进度条
-        orangeProgressBar3.setProgressBarHeight(24f)
+        // 第三个：高进度条（progressBarHeight 24dp）
+        orangeProgressBar3.setProgressBarHeight(24f * density)
         orangeProgressBar3.setProgress(70)
         
         // 第四个：自定义颜色
