@@ -30,7 +30,7 @@
         <!-- 进度颜色 -->
         <attr name="progressColor" format="color" />
         <!-- 背景颜色 -->
-        <attr name="backgroundColor" format="color" />
+        <attr name="progressBackgroundColor" format="color" />
         <!-- 指示器颜色 -->
         <attr name="thumbColor" format="color" />
     </declare-styleable>

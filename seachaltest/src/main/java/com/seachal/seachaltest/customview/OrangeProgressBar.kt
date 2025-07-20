@@ -51,7 +51,7 @@ class OrangeProgressBar @JvmOverloads constructor(
                 progress = typedArray.getInt(R.styleable.OrangeProgressBar_orangeProgress, 0)
                 maxProgress = typedArray.getInt(R.styleable.OrangeProgressBar_orangeMaxProgress, 100)
                 progressColor = typedArray.getColor(R.styleable.OrangeProgressBar_progressColor, Color.parseColor("#FF8A50"))
-                progressBackgroundColor = typedArray.getColor(R.styleable.OrangeProgressBar_backgroundColor, Color.parseColor("#EEEEEE"))
+                progressBackgroundColor = typedArray.getColor(R.styleable.OrangeProgressBar_progressBackgroundColor, Color.parseColor("#EEEEEE"))
                 thumbColor = typedArray.getColor(R.styleable.OrangeProgressBar_thumbColor, Color.parseColor("#FF5722"))
             } finally {
                 typedArray.recycle()

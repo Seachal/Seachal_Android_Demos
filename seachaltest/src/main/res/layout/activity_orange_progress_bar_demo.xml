@@ -273,7 +273,7 @@
                 app:orangeProgress="85"
                 app:orangeMaxProgress="100"
                 app:progressColor="#4CAF50"
-                app:backgroundColor="#E8F5E8"
+                app:progressBackgroundColor="#E8F5E8"
                 app:thumbColor="#2E7D32" />
 
         </LinearLayout>
