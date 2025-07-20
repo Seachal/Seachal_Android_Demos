@@ -56,7 +56,7 @@
         app:orangeProgress="45"
         app:orangeMaxProgress="100"
         app:progressColor="#2196F3"
-        app:backgroundColor="#E3F2FD"
+        app:progressBackgroundColor="#E3F2FD"
         app:thumbColor="#1976D2" />
 
     <!-- XML 自定义颜色进度条 2 -->
@@ -78,7 +78,7 @@
         app:orangeProgress="80"
         app:orangeMaxProgress="100"
         app:progressColor="#4CAF50"
-        app:backgroundColor="#E8F5E8"
+        app:progressBackgroundColor="#E8F5E8"
         app:thumbColor="#2E7D32" />
 
     <!-- 代码动态设置颜色的进度条 -->
@@ -133,7 +133,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="✨ 支持三个颜色属性的完全自定义：\n• progressColor - 进度颜色\n• backgroundColor - 背景颜色\n• thumbColor - 指示器颜色\n\n可以在 XML 中设置，也可以通过代码动态修改"
+        android:text="✨ 支持三个颜色属性的完全自定义：\n• progressColor - 进度颜色\n• progressBackgroundColor - 背景颜色\n• thumbColor - 指示器颜色\n\n可以在 XML 中设置，也可以通过代码动态修改"
         android:textSize="12sp"
         android:textColor="#999999"
         android:lineSpacingExtra="2dp"
