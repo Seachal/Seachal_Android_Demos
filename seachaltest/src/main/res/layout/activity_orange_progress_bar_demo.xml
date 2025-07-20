@@ -136,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="📊 示例1：默认配置 (进度条16px，指示器20px)"
+                android:text="📊 示例1：默认配置 (进度条22px，指示器40px)"
                 android:textColor="@color/text_black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -156,8 +156,8 @@
                 android:layout_marginHorizontal="8dp"
                 app:orangeMaxProgress="100"
                 app:orangeProgress="30"
-                app:progressBarHeight="16dp"
-                app:thumbSize="20dp" />
+                app:progressBarHeight="@dimen/dp_px_22"
+                app:thumbSize="@dimen/dp_px_40" />
 
         </LinearLayout>
 
